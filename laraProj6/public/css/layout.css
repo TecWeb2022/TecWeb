@@ -187,7 +187,7 @@ img { border-radius: 3px; }
 header {
    height: 96px;
    width: 100%;
-   background: #383232 url(../images/header-bg.jpg);
+   background-color: #11ABB0;
 }
 
 /* header logo */
@@ -255,7 +255,7 @@ ul#nav li a {
    line-height: 32px;
 	text-decoration: none;
    text-align: left;
-   color: #8a8383;
+   color: #000000;
 
 	-webkit-transition: color .2s ease-in-out;
 	-moz-transition: color .2s ease-in-out;
