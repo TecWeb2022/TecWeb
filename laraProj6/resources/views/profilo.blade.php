@@ -4,6 +4,10 @@
 
 @section('content')
 
+<script type="text/javascript">
+    document.getElementsByClassName("noCurrent")[1].className = "current";
+</script>
+
 <!-- Works Section
    ================================================== -->
    <section id="works">
