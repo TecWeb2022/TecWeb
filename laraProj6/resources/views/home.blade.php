@@ -38,7 +38,7 @@
    </section> <!-- Intro Section End-->
    
    <!-- ci va la missione -->
-   <section id="mission">
+   <section class="mission">
        
        <div class="row">
          <div class="twelve columns align-center">
@@ -68,7 +68,7 @@
 
        <div class="row" style="max-width: 1300px; display: flex; justify-content:center;">
 
-         <div class="bgrid-quarters s-bgrid-halves">
+         <div class=" flex-box"><!--bgrid-quarters s-bgrid-halves">-->
 
            <div class="columns_bianco">
               <h2>Vedi nel dettaglio ogni alloggio</h2>
@@ -111,6 +111,43 @@
 
    </section> <!-- Info Section End-->
 
+      <section class="mission">
+       
+       <div class="row">
+         <div class="twelve columns align-center">
+            <h2>TITOLO</h2>
+         </div>
+      </div>
+       
+       <div class="row">
+         <div class="twelve columns align-center">
+            <p>
+           La nostra azienda 'Airdrop'
+            </p>
+         </div>
+      </div>
+       
+   </section>
+   <!--  Section End-->
+   
+      <section class="mission">
+       
+       <div class="row">
+         <div class="twelve columns align-center">
+            <h2>TITOLO</h2>
+         </div>
+      </div>
+       
+       <div class="row">
+         <div class="twelve columns align-center">
+            <p>
+           La nostra azienda 'Airdrop',
+       </p>
+         </div>
+      </div>
+       
+   </section>
+   <!-- Section End-->
    <!-- Journal Section
    ================================================== -->
    <section id="journal">

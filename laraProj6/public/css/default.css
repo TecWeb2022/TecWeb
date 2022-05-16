@@ -632,6 +632,7 @@ input[type="checkbox"] { display: inline; }
    float: left;
 }
 .columns_bianco {
+   width: 25%; 
    position: relative;
    padding: 0 20px;
    margin: 5px;
@@ -707,6 +708,10 @@ input[type="checkbox"] { display: inline; }
 .row .pull-10     { right: 83.33333%; }
 .row .push-11     { left: 91.66667%; }
 .row .pull-11     { right: 91.66667%; }
+
+.flex-box{
+    display: flex;
+}
 
 /* block grids
 --------------------------------------------------------------------- */

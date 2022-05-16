@@ -1240,18 +1240,18 @@ footer .copyright  li:first-child:before {
 /* g. mission (fatta da noi)
 /* ------------------------------------------------------------------ */
 
-#mission {
+.mission {
    /*background: #fff url(../images/content-bg.jpg);*/
    background: #fff ;
    padding-top: 60px;
    padding-bottom: 42px;
 }
-#mission h2 {
+.mission h2 {
   font: 18px/30px notosans-bold, sans-serif;
   color: #11ABB0;
   margin-bottom: 6px;
 }
-#mission p {
+.mission p {
   font-size: 15px;
   line-height: 30px
 }
