@@ -1,3 +1,12 @@
+<!-- comment
+auth('admin')
+    // The user is authenticated...
+endauth
+ 
+guest('admin')
+    // The user is not authenticated...
+endguest
+-->
 @extends('layouts.public')
 
 @section('title', 'Home')
@@ -65,7 +74,11 @@
    <!-- Info Section
    ================================================== -->
    <section id="info">
-
+      <div class="row">
+         <div class="twelve columns align-center">
+            <h2>SERVIZI OFFERTI</h2>
+         </div>
+      </div>
        <div class="row" style="max-width: 1300px; ">
 
          <div class="bgrid-quarters s-bgrid-halves flex-box">
@@ -115,14 +128,18 @@
        
        <div class="row">
          <div class="twelve columns align-center">
-            <h2>TITOLO</h2>
+            <h2>ACCESSO AI SERVIZI</h2>
          </div>
       </div>
        
        <div class="row">
          <div class="twelve columns align-center">
             <p>
-           La nostra azienda 'Airdrop'
+           Per riuscire a sfruttare al massimo i servizi garantiti dalla piattaforma, è necessario
+           effettuare la registrazione al sito e successivamente il login con l'account personale
+           tramite l'apposita Form. Una volta eseguiti questi passaggi, verranno resi disponibili
+           i servizi assegnati ad ogni tipologia di utente mediante i bottoni presenti nella Homepage 
+           personalizzata ad hoc.
             </p>
          </div>
       </div>
@@ -134,7 +151,7 @@
        
        <div class="row">
          <div class="twelve columns align-center">
-            <h2>TITOLO</h2>
+            <h2>REGOLAMENTO GENERALE D'USO</h2>
          </div>
       </div>
        
