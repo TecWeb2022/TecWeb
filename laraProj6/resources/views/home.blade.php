@@ -1,11 +1,11 @@
 <!-- comment
-@auth('admin')
+auth('admin')
     // The user is authenticated...
-@endauth
+endauth
  
-@guest('admin')
+guest('admin')
     // The user is not authenticated...
-@endguest
+endguest
 -->
 @extends('layouts.public')
 
