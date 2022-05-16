@@ -19,3 +19,4 @@ Route::view('/profilo', 'profilo')
 
 Route::view('/modifica', 'modifica')
         ->name('modifica');
+

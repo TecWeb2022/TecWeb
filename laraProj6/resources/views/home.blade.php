@@ -1,3 +1,12 @@
+<!-- comment
+@auth('admin')
+    // The user is authenticated...
+@endauth
+ 
+@guest('admin')
+    // The user is not authenticated...
+@endguest
+-->
 @extends('layouts.public')
 
 @section('title', 'Home')
