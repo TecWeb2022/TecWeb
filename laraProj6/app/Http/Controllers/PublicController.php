@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Faq;
+use App\Models\Resources\Faq;
+use App\Models\Catalog;
 
 class PublicController extends Controller
 {
 
     protected $faqModel;
+    protected $catalogModel;
     
     public function __construct() {
         $this->faqModel = new Faq;
+        $this->catalogModel = new Catalog;
     }
     
     /*
@@ -27,5 +30,11 @@ class PublicController extends Controller
         $faqs = $this->faqModel->get();
         return view('home')
             ->with('faqs', $faqs);
+    }
+    
+    public function getCatalogo() {
+        $cat = $this->catalogModel->getAcc(1);
+        return view('catalogo')
+            ->with('cat', $cat);
     }
 }

@@ -59,6 +59,38 @@ img { border-radius: 3px; }
    margin: 0 auto;
    width: 91.66667%;
 }
+
+/* fatto da Matteo, serve a centrare il catalogo */
+#page-content2 {
+   padding-top: 54px;
+   padding-bottom: 54px;
+   margin: 0 25%;
+   width: 100%;
+}
+
+/* fatta da Matteo*/ 
+.imgn_casa{
+   position: absolute;
+   left: -50px;
+   display: initial;
+
+   height: 200px;
+   width: 200px;
+}
+
+/* fatta da Matteo*/ 
+.icona_posizione {
+   height: 15px;
+   width: 15px; 
+}
+
+.dettagli_cat {
+    clear: both;
+    margin: 2px 0 0 110px;
+    padding: 0;
+    line-height: 24px;
+}
+
 /* page */
 .page section {
    padding-top: 24px;

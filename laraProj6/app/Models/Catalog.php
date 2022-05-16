@@ -8,10 +8,8 @@ use App\Users;
 
 class Catalog
 {
-    
-    public function getAcc(){
-        $acc = Accomodation::where();
-        
-        return $acc->paginate(1);
+    public function getAcc($paged=2){
+        $acc = Accomodation::where('id', '<', 2^64-1);
+        return $acc->paginate($paged);
     }
 }
