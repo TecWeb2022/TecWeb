@@ -14,6 +14,9 @@
 Route::get('/', 'PublicController@getFaqs')
         ->name('home');
 
+Route::get('/catalogo', 'PublicController@getCatalogo')
+        ->name('catalogo');
+
 Route::view('/profilo', 'profilo')
         ->name('profilo');
 
