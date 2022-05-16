@@ -65,7 +65,11 @@
    <!-- Info Section
    ================================================== -->
    <section id="info">
-
+      <div class="row">
+         <div class="twelve columns align-center">
+            <h2>SERVIZI OFFERTI</h2>
+         </div>
+      </div>
        <div class="row" style="max-width: 1300px; ">
 
          <div class="bgrid-quarters s-bgrid-halves flex-box">
