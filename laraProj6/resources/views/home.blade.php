@@ -66,9 +66,9 @@
    ================================================== -->
    <section id="info">
 
-       <div class="row" style="max-width: 1300px; display: flex; justify-content:center;">
+       <div class="row" style="max-width: 1300px; ">
 
-         <div class=" flex-box"><!--bgrid-quarters s-bgrid-halves">-->
+         <div class="bgrid-quarters s-bgrid-halves flex-box">
 
            <div class="columns_bianco">
               <h2>Vedi nel dettaglio ogni alloggio</h2>
@@ -88,7 +88,7 @@
               </p>
            </div>
 
-           <div class="columns_bianco s-first">
+           <div class="columns_bianco">
               <h2>Inserisci e monitora i tuoi alloggi</h2>
 
               <p>Se intendi registrarti come locatore, hai la possibilità di inserire, visualizzare e
@@ -165,16 +165,16 @@
          <article class="row entry">
             @foreach($faqs as $faq)
             <div class="entry-header">
-               
-               <div class="ten columns entry-title pull-right">
-                  <h3>DOMANDA {{ $faq->id }}: {{ $faq->domanda }}</h3>
-               </div>
+ 
+                    <div class="ten columns entry-title pull-right">
+                       <h3>DOMANDA {{ $faq->id }}: {{ $faq->domanda }}</h3>
+                    </div>
 
-               <div class="two columns post-meta end">
-                  
-                  <h3>#{{ $faq->id }}</h3>
-                  
-               </div>
+                    <div class="two columns post-meta end">
+
+                       <h3>#{{ $faq->id }}</h3>
+
+                    </div>
 
             </div>
 
