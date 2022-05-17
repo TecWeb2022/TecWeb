@@ -17,13 +17,13 @@ Route::get('/', 'PublicController@getFaqs')
 Route::get('/catalogo', 'PublicController@getCatalogo')
         ->name('catalogo');
 
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')
+        ->name('register');
+
+Route::post('register', 'Auth\RegisterController@register');
+
 Route::view('/profilo', 'profilo')
         ->name('profilo');
 
 Route::view('/modifica', 'modifica')
         ->name('modifica');
-
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')
-        ->name('register');
-
-Route::post('register', 'Auth\RegisterController@register');
