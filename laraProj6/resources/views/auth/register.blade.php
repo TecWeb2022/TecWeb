@@ -3,6 +3,11 @@
 @section('title', 'Registrazione')
 
 @section('content')
+
+<script type="text/javascript">
+    document.getElementsByClassName("noCurrent")[3].className = "current";
+</script>
+
    <section id="works">
 
       <div class="row">
@@ -13,7 +18,7 @@
             
             <div  class="wrap-input">
                 {{ Form::label('tipologia', 'Affitta subito!', ['class' => 'label-input']) }}
-                {{ Form::radio('tipologia', 'locatario',['class' => 'input', 'id' => '']) }}
+                {{ Form::radio('tipologia', 'locatario',['class' => 'input', 'id' => 'locatario']) }}
                 @if ($errors->first('tipologia'))
                 <ul class="errors">
                     @foreach ($errors->get('tipologia') as $message)
@@ -25,7 +30,7 @@
             
            <div  class="wrap-input">
                 {{ Form::label('tipologia', 'Diventa un host!', ['class' => 'label-input']) }}
-                {{ Form::radio('tipologia', 'host',true ,['class' => 'input', 'id' => '']) }}
+                {{ Form::radio('tipologia', 'host',true ,['class' => 'input', 'id' => 'locatore']) }}
                 @if ($errors->first('tipologia'))
                 <ul class="errors">
                     @foreach ($errors->get('tipologia') as $message)
@@ -36,11 +41,11 @@
             </div>
             
             <div  class="wrap-input">
-                {{ Form::label('cognome', '*', ['class' => 'label-input','title' => 'Valore obbligatorio']) }}
-                {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'surname', 'placeholder' => 'Cognome']) }}
-                @if ($errors->first('cognome'))
+                {{ Form::label('nome', 'Nome', ['class' => 'label-input','title' => 'Valore obbligatorio']) }}
+                {{ Form::text('nome', '', ['class' => 'input', 'id' => 'surname', 'placeholder' => 'Nome']) }}
+                @if ($errors->first('nome'))
                 <ul class="errors">
-                    @foreach ($errors->get('cognome') as $message)
+                    @foreach ($errors->get('nome') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
@@ -48,7 +53,7 @@
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('cognome', 'Cognome*', ['class' => 'label-input','title' => 'Valore obbligatorio']) }}
+                {{ Form::label('cognome', 'Cognome', ['class' => 'label-input','title' => 'Valore obbligatorio']) }}
                 {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'surname', 'placeholder' => 'Cognome']) }}
                 @if ($errors->first('cognome'))
                 <ul class="errors">
