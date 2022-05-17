@@ -966,6 +966,12 @@ ol.commentlist {
    margin: 0 5px;
    color: #AEB6B7;
 }
+
+/* inserito da Matteo (serve per spostare la parte del nome e del orario inserimento dx)*/
+.comment-info{
+    margin: 0 0 0 110px;
+}
+
 .commentlist li .comment-text {
 	clear: both;
 	margin: 24px 0 0 0;
