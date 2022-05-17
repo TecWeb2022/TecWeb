@@ -34,6 +34,7 @@ class PublicController extends Controller
     
     public function getCatalogo() {
         $cat = $this->catalogModel->getAcc(1);
+        //$cat->main_photo = $this->catalogModel->getMainPhoto(1);
         return view('catalogo')
             ->with('cat', $cat);
     }
