@@ -29,9 +29,21 @@ class RegisterController extends Controller
      * @var string
      */
     
-    //protected $redirectTo = '/home';
-    protected $redirectTo = '/';
-
+    protected $redirectTo = '/home';
+    //protected $redirectTo = '/';
+    /*
+    protected function redirectTo() {
+        $role = auth()->user()->tipologia;
+        switch ($role) {
+            case 'admin': return '/admin';
+                break;
+            case 'user': return '/user';
+                break;
+            default: return '/';
+        };
+    }
+    */
+     
     /**
      * Create a new controller instance.
      *
@@ -51,11 +63,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'nome' => ['required', 'string', 'max:255'],
+            'cognome' => ['required', 'string', 'max:255'],
+            'data_nasc' => ['required', 'datetime'],
             'username' => ['required', 'string', 'min:8', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed']
         ]);
     }
 
@@ -68,9 +80,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'surname' => $data['surname'],
-            'email' => $data['email'],
+            'nome' => $data['nome'],
+            'cognome' => $data['cognome'],
+            'data_nasc' => $data['data_nasc'],
+            'tipologia' => $data['tipologia'],
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
         ]);

@@ -23,3 +23,7 @@ Route::view('/profilo', 'profilo')
 Route::view('/modifica', 'modifica')
         ->name('modifica');
 
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')
+        ->name('register');
+
+Route::post('register', 'Auth\RegisterController@register');

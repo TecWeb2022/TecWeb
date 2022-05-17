@@ -594,6 +594,16 @@ input[type="radio"] {
 
 input[type="checkbox"] { display: inline; }
 
+/*FORM Laravel collective by Luca*/
+.errors{
+    color: #ff0000;
+}
+
+.register-form{
+  
+}
+
+
 /* ------------------------------------------------------------------ */
 /* d. Grid
 ---------------------------------------------------------------------
