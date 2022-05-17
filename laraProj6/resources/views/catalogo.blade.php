@@ -29,7 +29,7 @@
                   <li>
 
                      <div class="imgn_casa">
-                        <img width="10" height="10" class="imgn_casa" src="" palt="">
+                        <img width="10" height="10" class="imgn_casa" src="{{ $acc->path_photo }}" palt="">
                      </div>
 
                      <div class="comment-info">
