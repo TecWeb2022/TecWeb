@@ -184,19 +184,19 @@ endguest
             <div class="entry-header">
  
                     <div class="ten columns entry-title pull-right">
-                       <h3>DOMANDA {{ $faq->id }}: {{ $faq->domanda }}</h3>
+                       <h3>{{ $faq->domanda }}</h3>
                     </div>
 
-                    <div class="two columns post-meta end">
+                    <!--div class="two columns post-meta end">
 
                        <h3>#{{ $faq->id }}</h3>
 
-                    </div>
+                    </div-->
 
             </div>
 
             <div class="ten columns offset-2 post-content">
-                <p>RISPOSTA NUMERO {{ $faq->id }}: {{ $faq->risposta }}
+                <p>{{ $faq->risposta }}
                </p>
             </div>
          @endforeach
@@ -208,7 +208,7 @@ endguest
 
    <!-- Tweets Section
    ================================================== -->
-   <section id="tweets">
+   <!--section id="tweets">
 
       <div class="row">
 
@@ -225,7 +225,7 @@ endguest
                </span>
                <b><a href="#">2 Days Ago</a></b>
             </li>
-            <!--
+            
             <li>
                <span>
                This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
@@ -234,13 +234,13 @@ endguest
                </span>
                <b><a href="#">3 Days Ago</a></b>
             </li>
-            -->
+            
          </ul>
 
          <p class="align-center"><a href="#" class="button">Follow us</a></p>
 
       </div>
 
-   </section> <!-- Tweet Section End-->
+   </section--> <!-- Tweet Section End-->
 
 @endsection
