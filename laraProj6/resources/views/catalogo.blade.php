@@ -49,8 +49,8 @@
                          <!--p>4 camere, 6 posti letto, 110 m2</p-->
                      
                             <div class="center">
-                                <button onclick=""> {{ $acc->canone }} €/notte</button> </div>
-                        
+                                <button onclick="location.href = '{{ route('register') }}';"> {{ $acc->canone }} €/notte</button> </div>
+                         <!-- onclick va messo in un file js -->
                          <!-- Seconda casa in affitto -->
                      </div>
                     @endforeach
