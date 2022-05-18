@@ -36,6 +36,7 @@ class CreateAccomodationsTable extends Migration
             $table->smallInteger('num_camere');
             $table->boolean('locale_ricreativo')->default(false);
             $table->boolean('angolo_studio')->default(false);
+            $table->string('path_foto')->nullable();
             
             $table->string('proprietario');//->index();
             //$table->foreign('proprietario')->references('id')->on('users');

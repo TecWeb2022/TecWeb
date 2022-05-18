@@ -29,8 +29,7 @@
                   <li>
 
                      <div class="imgn_casa">
-                        @include('helpers/mainAccPhoto', ['id_acc' => $acc->id])
-                        
+                        <img width="10" height="10" class="imgn_casa" src="{{ $acc->path_foto }}" palt="">
                      </div>
 
                      <div class="comment-info">
@@ -46,7 +45,6 @@
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
                          <p>{{ $acc->tipologia }}</p>
                          @include('helpers/descrAcc', ['acc' => $acc])
-                         <!--p>4 camere, 6 posti letto, 110 m2</p-->
                      
                             <div class="center">
                                 <button onclick="location.href = '{{ route('register') }}';"> {{ $acc->canone }} €/notte</button> </div>

@@ -12,14 +12,9 @@ class Catalog
     
     public function getAcc($paged=2){
         $acc = Accomodation::where('id', '<', 2^64-1);
-        /*
-        foreach ($acc as $value) {
-            $value->path_photo = $this->tablePhotoAcc($value->id);
-        }
-        */
         return $acc->paginate($paged);
     }
-    
+    /*
     public function getPhoto() {
         $photos = array();
         $i = 0;
@@ -30,12 +25,14 @@ class Catalog
         }
         return $photos;
     }
-    
+    */
+    /*
     public function tablePhotoAcc($id_acc) {
         $photo = Photo::where('id_alloggio', $id_acc)->first();
         //$photo = $photos->where('id_alloggio', $id_acc)->first();
         return $photo;
     }
+    */
     
     /*
     public function getMainPhoto($id_acc){
