@@ -147,7 +147,7 @@ endguest
    </section>
    <!--  Section End-->
    
-      <section class="mission">
+      <section class="regolamento">
        
        <div class="row">
          <div class="twelve columns align-center">

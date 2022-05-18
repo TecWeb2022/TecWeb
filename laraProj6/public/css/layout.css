@@ -1293,3 +1293,22 @@ footer .copyright  li:first-child:before {
   font-size: 15px;
   line-height: 30px
 }
+
+/* ------------------------------------------------------------------ */
+/* g. Regolamento d'uso' (fatta da noi)
+/* ------------------------------------------------------------------ */
+.regolamento {
+   background: #fff url(../images/bg02.png);
+   /*background: #fff ;*/
+   padding-top: 60px;
+   padding-bottom: 42px;
+}
+.regolamento h2 {
+  font: 18px/30px notosans-bold, sans-serif;
+  color: #11ABB0;
+  margin-bottom: 6px;
+}
+.regolamento p {
+  font-size: 15px;
+  line-height: 30px
+}
