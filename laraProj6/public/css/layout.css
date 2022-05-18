@@ -226,7 +226,7 @@ header {
 header .logo {
    position: absolute;
    left: 20px;
-   top: 48px;
+   top: 28px;
 }
 header .logo a {
    display: block;
@@ -234,8 +234,8 @@ header .logo a {
 	padding: 0;
 	border: none;
 	outline: none;
-   width: 113px;
-   height: 24px;
+   width: 226px;
+   height: 48px;
 }
 
 /* primary navigation
