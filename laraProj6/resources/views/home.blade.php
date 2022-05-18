@@ -31,7 +31,7 @@ endguest
 					  <h1><span>Alloggi per tutte le esigenze.</span></h1>
                                              <p>Le esigenze di ogni studente sono alla base del nostro progetto, a partire
                                                 dal quale è nata la piattaforma web per la ricerca e la prenotazione di alloggi 
-                                                per il mondo studentesco, StudentB&B.
+                                                per il mondo studentesco, HouStudent.
                                              </p>
 				 </div>
                                  <div style="height: 200px; text-align: center;">
@@ -61,7 +61,7 @@ endguest
            La nostra azienda 'Airdrop', nasce con lo scopo di agevolare la vita degli studenti, 
            in particolare l'obiettivo principale corrisponde a rendere fruibile un'ampia gamma di offerte
            per trovare una sistemazione nella città scelta da ogni ragazzo per il proprio percorso di studi.
-           Questo viene reso possibile dalla rete informatica che si viene ad instaurare grazie alla piattaforma StudentB&B, 
+           Questo viene reso possibile dalla rete informatica che si viene ad instaurare grazie alla piattaforma HouStudent, 
            la quale riesce ad intersecare la necessità di alcuni locatori che intendono comunicare la disponibilità
            di affitto delle loro proprietà a prezzi contenuti e la necessità degli studenti di trovare un alloggio
            economico situato in posizioni strategiche per lo spostamento verso la sede degli studi.
