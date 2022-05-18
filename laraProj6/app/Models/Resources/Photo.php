@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     protected $table = 'photos';
-    protected $primaryKey = 'path';
+    protected $primaryKey = 'id';
     public $timestamps = false;
     
     // Relazione One-To-One con Accomodation

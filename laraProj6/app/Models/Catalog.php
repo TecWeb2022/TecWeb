@@ -25,7 +25,7 @@ class Catalog
         $i = 0;
         $acc = Accomodation::where('id', '<', 2^64-1);
         foreach ($acc as $value) {
-            $photos[$i] = $this->tablePhotoAcc($value->id);
+            $photos[$i] = $this->tablePhotoAcc($value->id)->path;
             $i = $i + 1;
         }
         return $photos;

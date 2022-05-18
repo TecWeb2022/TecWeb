@@ -29,7 +29,8 @@
                   <li>
 
                      <div class="imgn_casa">
-                        <img width="10" height="10" class="imgn_casa" src="{{ $photos[0] }}" palt="">
+                        @include('helpers/mainAccPhoto', ['id_acc' => $acc->id])
+                        
                      </div>
 
                      <div class="comment-info">
@@ -44,11 +45,11 @@
                          <img width="10" height="10" class="icona_posizione" src="images/position-icon.png" alt="">
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
                          <p>{{ $acc->tipologia }}</p>
-                         
-                         <p>4 camere, 6 posti letto, 110 m2</p>
+                         @include('helpers/descrAcc', ['acc' => $acc])
+                         <!--p>4 camere, 6 posti letto, 110 m2</p-->
                      
                             <div class="center">
-                                <button> 275€ /notte</button> </div>
+                                <button onclick=""> {{ $acc->canone }} €/notte</button> </div>
                         
                          <!-- Seconda casa in affitto -->
                      </div>
