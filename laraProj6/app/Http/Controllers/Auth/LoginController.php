@@ -39,6 +39,7 @@ use AuthenticatesUsers;
             case 'loc': return '/loc';
                 break;
             case 'host': return '/host';
+                break;  
             default: return '/';
         };
     }

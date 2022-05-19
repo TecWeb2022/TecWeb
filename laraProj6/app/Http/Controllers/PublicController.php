@@ -38,4 +38,11 @@ class PublicController extends Controller
         return view('catalogo')
             ->with('cat', $cat);
     }
+    
+    public function getAccById($id){
+        $acc = $this->catalogModel->gettAccById($id);
+        
+        return view('visualizzaAcc')
+                ->with('acc',$acc);
+    }
 }

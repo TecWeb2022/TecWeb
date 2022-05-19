@@ -1312,3 +1312,13 @@ footer .copyright  li:first-child:before {
   font-size: 15px;
   line-height: 30px
 }
+
+.sfondo_righe{
+    background: #fff url(../images/bg02.png);
+}
+
+.scheda{
+    background: #fff;
+    border-radius: 4px;
+    margin: 20px;
+}

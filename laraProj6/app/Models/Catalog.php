@@ -14,6 +14,11 @@ class Catalog
         $acc = Accomodation::where('id', '<', 2^64-1);
         return $acc->paginate($paged);
     }
+    
+    public function getAccById($id){
+        $acc = Accomodation::where('id','=',$id);
+        return $acc;
+    }
     /*
     public function getPhoto() {
         $photos = array();

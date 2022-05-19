@@ -3,20 +3,20 @@
 @section('title', 'Registrazione')
 
 @section('content')
-<div class="static">
-    <h3>Login</h3>
-    <p>Utilizza questa form per autenticarti al sito</p>
+   <section id="works">
 
-    <div class="container-contact">
-        <div class="wrap-contact1">
+      <div class="row">
+          
+          <div class="column">
+            <h1>Login</h1>
             {{ Form::open(array('route' => 'login', 'class' => 'contact-form')) }}
             
              <div  class="wrap-input">
                  <p> Se non hai già un account <a  href="{{ route('register') }}">registrati</a></p>
              </div>            
              <div  class="wrap-input">
-                {{ Form::label('username', 'Nome Utente', ['class' => 'label-input']) }}
-                {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
+                {{ Form::label('username', 'Username') }}
+                {{ Form::text('username', '', ['id' => 'username']) }}
                 @if ($errors->first('username'))
                 <ul class="errors">
                     @foreach ($errors->get('username') as $message)
@@ -27,8 +27,8 @@
             </div>
             
              <div  class="wrap-input">
-                {{ Form::label('password', 'Password', ['class' => 'label-input']) }}
-                {{ Form::password('password', ['class' => 'input', 'id' => 'password']) }}
+                {{ Form::label('password', 'Password') }}
+                {{ Form::password('password', ['id' => 'password']) }}
                 @if ($errors->first('password'))
                 <ul class="errors">
                     @foreach ($errors->get('password') as $message)
@@ -46,5 +46,5 @@
         </div>
     </div>
 
-</div>
+</section>
 @endsection

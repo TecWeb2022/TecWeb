@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/media-queries.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layout.css') }}" >
-        <title>Studentb&amp;b | @yield('title', 'Home')</title>
+        <title>HouStudent | @yield('title', 'Home')</title>
     </head>
     <body>
         <!-- Header
