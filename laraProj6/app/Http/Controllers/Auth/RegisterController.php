@@ -65,8 +65,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nome' => ['required', 'string', 'max:255'],
             'cognome' => ['required', 'string', 'max:255'],
-            'data_nasc' => ['required', 'date'], //controllare datetime
-            'username' => ['required', 'string', 'min:8', 'unique:users'],
+            'data_nasc' => ['required', 'date'],
+            'username' => ['required', 'string', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed']
         ]);
     }
@@ -85,7 +85,7 @@ class RegisterController extends Controller
             'data_nasc' => $data['data_nasc'],
             'tipologia' => $data['tipologia'],
             'username' => $data['username'],
-            'password' => Hash::make($data['password']),
+            'password' => $data['password'],
         ]);
     }
 }

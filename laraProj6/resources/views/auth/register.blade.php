@@ -17,32 +17,18 @@
             {{ Form::open(array('route' => 'register', 'class' => 'register-form')) }}
             
             <div  class="wrap-input">
-                {{ Form::label('tipologia', 'Affitta subito!', ['class' => 'label-input']) }}
-                {{ Form::radio('tipologia', 'locatario',['class' => 'input', 'id' => 'locatario']) }}
-                @if ($errors->first('tipologia'))
-                <ul class="errors">
-                    @foreach ($errors->get('tipologia') as $message)
-                    <li class="errors">{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
+                {{ Form::label('locatario', 'Affitta subito!') }}
+                {{ Form::radio('tipologia', 'loc',true,['id' => 'locatario']) }}
             </div>
             
            <div  class="wrap-input">
-                {{ Form::label('tipologia', 'Diventa un host!', ['class' => 'label-input']) }}
-                {{ Form::radio('tipologia', 'host',true ,['class' => 'input', 'id' => 'locatore']) }}
-                @if ($errors->first('tipologia'))
-                <ul class="errors">
-                    @foreach ($errors->get('tipologia') as $message)
-                    <li class="errors">{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
+                {{ Form::label('locatore', 'Diventa un host!') }}
+                {{ Form::radio('tipologia', 'host' ,false,['id' => 'locatore']) }}
             </div>
             
             <div  class="wrap-input">
-                {{ Form::label('nome', 'Nome', ['class' => 'label-input','title' => 'Valore obbligatorio']) }}
-                {{ Form::text('nome', '', ['class' => 'input', 'id' => 'surname', 'placeholder' => 'Nome']) }}
+                {{ Form::label('nome', 'Nome', ['title' => 'Valore obbligatorio']) }}
+                {{ Form::text('nome', '', ['id' => 'nome', 'placeholder' => 'Nome']) }}
                 @if ($errors->first('nome'))
                 <ul class="errors">
                     @foreach ($errors->get('nome') as $message)
@@ -53,8 +39,8 @@
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('cognome', 'Cognome', ['class' => 'label-input','title' => 'Valore obbligatorio']) }}
-                {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'surname', 'placeholder' => 'Cognome']) }}
+                {{ Form::label('cognome', 'Cognome', ['title' => 'Valore obbligatorio']) }}
+                {{ Form::text('cognome', '', ['id' => 'cognome', 'placeholder' => 'Cognome']) }}
                 @if ($errors->first('cognome'))
                 <ul class="errors">
                     @foreach ($errors->get('cognome') as $message)
@@ -65,8 +51,8 @@
             </div>
             
              <div  class="wrap-input">
-                {{ Form::label('data_nasc', 'Data di nascita', ['class' => 'label-input']) }}
-                {{ Form::date('data_nasc', '', ['class' => 'input','id' => 'data_nasc']) }}
+                {{ Form::label('data_nasc', 'Data di nascita') }}
+                {{ Form::date('data_nasc', '', ['id' => 'data_nasc']) }}
                 @if ($errors->first('data_nasc'))
                 <ul class="errors">
                     @foreach ($errors->get('data_nasc') as $message)
@@ -77,8 +63,8 @@
             </div>
             
              <div  class="wrap-input">
-                {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
-                {{ Form::text('username', '', ['class' => 'input','id' => 'username', 'placeholder' => 'Username']) }}
+                {{ Form::label('username', 'Username') }}
+                {{ Form::text('username', '', ['id' => 'username', 'placeholder' => 'Username']) }}
                 @if ($errors->first('username'))
                 <ul class="errors">
                     @foreach ($errors->get('username') as $message)
@@ -89,8 +75,8 @@
             </div>
             
              <div  class="wrap-input">
-                {{ Form::label('password', 'Password', ['class' => 'label-input']) }}
-                {{ Form::password('password', ['class' => 'input', 'id' => 'password','placeholder' => 'Password']) }}
+                {{ Form::label('password', 'Password') }}
+                {{ Form::password('password', ['id' => 'password','placeholder' => 'Password']) }}
                 @if ($errors->first('password'))
                 <ul class="errors">
                     @foreach ($errors->get('password') as $message)
@@ -101,8 +87,8 @@
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('password-confirm', 'Conferma password', ['class' => 'label-input']) }}
-                {{ Form::password('password_confirmation', ['class' => 'input', 'id' => 'password-confirm','placeholder' => 'Conferma password']) }}
+                {{ Form::label('password-confirm', 'Conferma password') }}
+                {{ Form::password('password_confirmation', ['id' => 'password-confirm','placeholder' => 'Conferma password']) }}
             </div>
             
             <div class="container-form-btn">                
