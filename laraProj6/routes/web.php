@@ -17,6 +17,11 @@ Route::get('/', 'PublicController@getFaqs')
 Route::get('/catalogo', 'PublicController@getCatalogo')
         ->name('catalogo');
 
+Route::get('/catalogoLocatario', 'LocController@getCatPag')
+        ->name('catalogoLoc');
+
+Route::post('/catalogoLocatario', 'LocController@filters');
+
 /*REGISTRAZIONE*/
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')

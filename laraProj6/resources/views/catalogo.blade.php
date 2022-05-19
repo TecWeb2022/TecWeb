@@ -8,6 +8,14 @@
     document.getElementsByClassName("noCurrent")[1].className = "current";
 </script>
 
+@guest
+    {{ Form::open(array('route' => 'catalogoLoc', 'class' => 'filters-form')) }}
+    
+    
+    
+    {{ Form::close() }}
+@endguest
+
 @isset($cat)
 <!-- Content
    ================================================== -->

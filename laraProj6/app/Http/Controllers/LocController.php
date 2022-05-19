@@ -27,5 +27,12 @@ class LocController extends Controller {
         return view('catalogo')
             ->with('cat', $cat);
     }
+    
+    public function filters(Request $request)
+    {
+        $filt = $request->all();
+        return view('catalogo')
+            ->with('cat', $cat);
+    }
 
 }
