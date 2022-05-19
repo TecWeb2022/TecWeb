@@ -36,8 +36,9 @@ use AuthenticatesUsers;
         switch ($role) {
             case 'admin': return '/admin';
                 break;
-            case 'user': return '/user';
+            case 'loc': return '/loc';
                 break;
+            case 'host': return '/host';
             default: return '/';
         };
     }
