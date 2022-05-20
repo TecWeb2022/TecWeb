@@ -62,9 +62,6 @@ class Catalog
             }
         }
         return $cat;
-    public function getAccById($id){
-        $acc = Accomodation::where('id','=',$id);
-        return $acc;
     }
     /*
     public function getPhoto() {
