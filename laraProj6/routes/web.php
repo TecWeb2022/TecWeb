@@ -28,6 +28,10 @@ Route::get('/alloggio/{id}', function($id){
    return $id;
 });
 
+Route::get('/alloggio/{id}', function($id){
+   return $id;
+});
+
 /*REGISTRAZIONE*/
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')
