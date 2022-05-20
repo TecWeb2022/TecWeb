@@ -3,4 +3,5 @@
     <li class="noCurrent"><a href="{{ route('catalogo') }}" title="Catalogo degli alloggi">Catalogo</a></li>
     <li class="noCurrent"><a href="{{ route('login') }}" title="Login">Login</a></li>
     <li class="noCurrent"><a href="{{ route('register') }}" title="Registrazione">Registrati</a></li>
+    <li class="noCurrent"><a href="{{ route('insertAcc') }}" title="Inserimento offerta">Inserimento offerta</a></li>
 </ul>
