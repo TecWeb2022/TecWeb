@@ -3,6 +3,11 @@
 @section('title', 'Registrazione')
 
 @section('content')
+
+<script type="text/javascript">
+    currNavBar(2);
+</script>
+
    <section id="works">
 
       <div class="row">
