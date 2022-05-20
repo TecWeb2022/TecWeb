@@ -15,6 +15,11 @@ class Catalog
         return $acc->paginate($paged);
     }
     
+    public function getAccById($id){
+        $acc = Accomodation::where('id','=',$id);
+        return $acc;
+    }
+    
     public function getCatByFilters($filtri) {
         $cat = Accomodation::where('id', '<', 2^64-1);
         foreach($filtri as $key => $value) {
