@@ -16,14 +16,8 @@
     <div  class="wrap-input">
         {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore facoltativo']) }}
         
-        {{ Form::text('tipologia', '', ['id' => 'tipologia', 'placeholder' => 'Tipologia']) }}
-        @if ($errors->first('nome'))
-        <ul class="errors">
-        @foreach ($errors->get('nome') as $message)
-        <li>{{ $message }}</li>
-        @endforeach
-        </ul>
-        @endif
+        {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia']) }}
+       
     </div>
     
     <div  class="wrap-input">
