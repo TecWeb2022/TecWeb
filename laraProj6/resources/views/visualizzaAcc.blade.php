@@ -14,26 +14,24 @@
  <section id="works">
 
       <div class="row row-bianco">
-          <h2 class="text-center">{{ $acc->nome}}</h2>
+          <h2 class="text-center add-bottom">{{ $acc->nome}}</h2>
           
           <div class="column">
-                <div class="imgn_visual_casa">
-                        <img width="10" height="10" class="imgn_visual_casa" src="{{ $acc->path_foto }}" palt="">
+                <div class="div_imgn_visual_casa">
+                        <img  class="imgn_visual_casa" src="{{ $acc->path_foto }}" palt="">
                 </div>
           </div>
           <div class="column">
-                <div class="comment-info">
-                         <cite>{{ $acc->nome }}</cite>
+               <h3>{{ $acc->tipologia }}</h3>
 
-                        <div class="comment-meta">
-                           <p>Disponibilità: {{ $acc->inizio_disp }} / {{ $acc->fine_disp }}</p>
-                        </div>
+               <p>Disponibilità: {{ $acc->inizio_disp }} / {{ $acc->fine_disp }}</p>
+                        
                      </div>
 
                      <div class="dettagli_cat">
-                         <img width="10" height="10" class="icona_posizione" src="images/position-icon.png" alt="">
+                         <img class="icona_posizione" src="/images/position-icon.png" alt="">
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
-                         <p>{{ $acc->tipologia }}</p>
+                         
                          @include('helpers/descrAcc', ['acc' => $acc])
                      
                             <div class="center">
