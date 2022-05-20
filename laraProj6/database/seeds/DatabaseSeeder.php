@@ -25,7 +25,12 @@ class DatabaseSeeder extends Seeder
            ['id'=>2,'nome'=>'Posto letto su casa di mare','descr'=> 'Camera per studenti. Situata nei pressi di Ancona est, vicinissima al mare. Vicino a punti di snodo per raggiungere le universtià di tutta la città.',
                'tipologia'=>'cs','citta'=>'Ancona','prov'=>'AN','via'=>'Via San Tommaso','num_civ'=>2,'sup'=>23,'inizio_disp'=>'2022-10-12','fine_disp'=>'2022-10-19',
                'eta_min'=>18,'eta_max'=>27,'sesso'=>"F",'canone'=>15.00,'posti_letto_tot'=>1,'cucina'=>true,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
-               'path_foto'=>'/images/alloggi/CameraSingolaProva.jpg', 'proprietario' => 3]
+               'path_foto'=>'/images/alloggi/CameraSingolaProva.jpg', 'proprietario' => 3],
+           ['id'=>3,'nome'=>'Appartamento Centobuchi','descr'=> 'Appartamento spazioso per studneti a pochi chilometri dal centro di San Benedetto del Tronto. Cittadina con possibilità di mezzi pubblici di ogni tipo. ',
+               'tipologia'=>'ap','citta'=>'Centobuchi','prov'=>'AP','via'=>'Via San Giacomo','num_civ'=>100,'sup'=>89,'inizio_disp'=>'2022-05-24','fine_disp'=>'2022-09-11',
+               'eta_min'=>18,'eta_max'=>30,'sesso'=>"M",'canone'=>100.00,'posti_letto_tot'=>null,'cucina'=>true,'num_bagni'=>2,'num_camere'=>3,'locale_ricreativo'=>false,'angolo_studio'=>true,
+               'path_foto'=>'/images/alloggi/casacento.jpg', 'proprietario' => 2]
+           
        ]);
                
        DB::table('users')->insert([
