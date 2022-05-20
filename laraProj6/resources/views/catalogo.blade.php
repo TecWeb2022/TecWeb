@@ -5,21 +5,58 @@
 @section('content')
 
 <script type="text/javascript">
-    document.getElementsByClassName("noCurrent")[1].className = "current";
+    currNavBar(1);
 </script>
-<br>
-<center><h1>Filtri per il catalogo</h1></center>
-<center><h4>Ricerca l'alloggio in base alle tue esigenze!</h4></center>
 
-    {{ Form::open(array('url' => '/catalogoFiltrato', 'class' => 'filters-form')) }}
-    
-    <div  class="wrap-input">
-        {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore facoltativo']) }}
+<section id="works">
+    <center><h2>Filtri per il catalogo</h2></center>
+    <center><h1>Ricerca l'alloggio in base alle tue esigenze!</h1></center>
+
+    <div class="row">
         
-        {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia']) }}
-       
-    </div>
+     <div class="column">
+        {{ Form::open(array('url' => '/catalogoFiltrato', 'class' => 'filters-form')) }}
+
+        <div  class="wrap-input">
+            {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore obbligatorio']) }}
+
+            {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia']) }}
+        </div>
+        
+        <div  class="wrap-input">
+        {{ Form::label('prov', 'Provincia', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::text('prov', '', ['id' => 'prov', 'placeholder' => 'Provincia']) }}
+        @if ($errors->first('prov'))
+        <ul class="errors">
+        @foreach ($errors->get('prov') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
+        
+        </div>
+        
+        <div  class="wrap-input">
+        {{ Form::label('posti_letto_tot', 'Numero posti letto tot', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::text('posti_letto_tot', '', ['id' => 'posti_letto_tot', 'placeholder' => 'Numero posti letto tot']) }}
+        @if ($errors->first('nome'))
+        <ul class="errors">
+        @foreach ($errors->get('nome') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
+        
+        </div>
+
+        <div class="container-form-btn">                
+            {{ Form::submit('Filtra', ['class' => 'form-btn1']) }}
+        </div>
+     </div>
     
+    <div class="column">
     <div  class="wrap-input">
         {{ Form::label('prezzo_min', 'Prezzo minimo', ['title' => 'Valore facoltativo']) }}
         
@@ -31,8 +68,37 @@
         @endforeach
         </ul>
         @endif
+        </div>
+        
+         <div  class="wrap-input">
+        {{ Form::label('sup', 'Superficie minima', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::text('sup', '', ['id' => 'sup', 'placeholder' => 'Superficie']) }}
+        @if ($errors->first('nome'))
+        <ul class="errors">
+        @foreach ($errors->get('nome') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
+        </div>
+        
+        <div  class="wrap-input">
+        {{ Form::label('letti_camera', 'Letti nella camera', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::text('letti_camera', '', ['id' => 'letti_camera', 'placeholder' => 'Letti nella camera', 'disabled']) }}
+        @if ($errors->first('nome'))
+        <ul class="errors">
+        @foreach ($errors->get('nome') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
+        </div>
+        
     </div>
-    
+         
+    <div class="column">
     <div  class="wrap-input">
         {{ Form::label('prezzo_max', 'Prezzo massimo', ['title' => 'Valore facoltativo']) }}
         
@@ -44,13 +110,30 @@
         @endforeach
         </ul>
         @endif
+        
+        </div>
+        
+         <div  class="wrap-input">
+        {{ Form::label('num_camere', 'Numero minimo camere', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::text('num_camere', '', ['id' => 'num_camere', 'placeholder' => 'Numero minimo camere']) }}
+        @if ($errors->first('nome'))
+        <ul class="errors">
+        @foreach ($errors->get('nome') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
+        
+        </div>
     </div>
     
-    <div class="container-form-btn">                
-        {{ Form::submit('Filtra', ['class' => 'form-btn1']) }}
-    </div>
     
     {{ Form::close() }}
+
+</div>
+
+</section>
 
 
 

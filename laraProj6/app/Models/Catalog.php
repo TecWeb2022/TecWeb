@@ -37,7 +37,7 @@ class Catalog
                         break;
                     */
                     case 'sup':
-                    case 'posti_letto':
+                    case 'posti_letto_tot':
                     case 'num_camere':
                     case 'num_bagni':
                     case 'prezzo_min':

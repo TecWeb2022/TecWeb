@@ -8,7 +8,7 @@ class Accomodation extends Model
 {
     protected $table = 'accomodations';
     protected $primaryKey = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
     
     // Relazione One-To-One con User (proprietario)
     public function mitt() {
