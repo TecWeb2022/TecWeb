@@ -7,14 +7,58 @@
 <script type="text/javascript">
     document.getElementsByClassName("noCurrent")[1].className = "current";
 </script>
+<br>
+<center><h1>Filtri per il catalogo</h1></center>
+<center><h4>Ricerca l'alloggio in base alle tue esigenze!</h4></center>
 
-@guest
-    {{ Form::open(array('route' => 'catalogoLoc', 'class' => 'filters-form')) }}
+    {{ Form::open(array('url' => '/catalogoFiltrato', 'class' => 'filters-form')) }}
     
+    <div  class="wrap-input">
+        {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::text('tipologia', '', ['id' => 'tipologia', 'placeholder' => 'Tipologia']) }}
+        @if ($errors->first('nome'))
+        <ul class="errors">
+        @foreach ($errors->get('nome') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
+    </div>
     
+    <div  class="wrap-input">
+        {{ Form::label('prezzo_min', 'Prezzo minimo', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::text('prezzo_min', '', ['id' => 'prezzo_min', 'placeholder' => 'Prezzo minimo']) }}
+        @if ($errors->first('nome'))
+        <ul class="errors">
+        @foreach ($errors->get('nome') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
+    </div>
+    
+    <div  class="wrap-input">
+        {{ Form::label('prezzo_max', 'Prezzo massimo', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::text('prezzo_max', '', ['id' => 'prezzo_max', 'placeholder' => 'Prezzo massimo']) }}
+        @if ($errors->first('nome'))
+        <ul class="errors">
+        @foreach ($errors->get('nome') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
+    </div>
+    
+    <div class="container-form-btn">                
+        {{ Form::submit('Filtra', ['class' => 'form-btn1']) }}
+    </div>
     
     {{ Form::close() }}
-@endguest
+
+
 
 @isset($cat)
 <!-- Content
@@ -29,7 +73,7 @@
             ================================================== -->
             <div id="comments">
 
-                <center><h3>I più frequenti</h3></center>
+                <center><h3>Catalogo alloggi</h3></center>
                <!-- commentlist -->
                <ol class="commentlist">
                   @foreach($cat as $acc)

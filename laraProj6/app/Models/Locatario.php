@@ -3,47 +3,20 @@
 namespace App\Models;
 
 use App\Models\Resources\Accomodation;
+use App\Models\Catalog;
 use App\Models\Resources\Message;
 use App\Models\Resources\Option;
 
 class Locatario {
     
-    public function getCatByFilters($filtri) {
-        $cat = Accomodation::where('id', '<', 2^64-1);
-        foreach($filtri as $key => $value) {
-            if($value != '' && $value != null) {
-                $segno = '=';
-                switch($key) {
-                    /*
-                    case 'tipologia':
-                    case 'prov':
-                    case 'cucina':
-                    case 'locale_ricreativo':
-                    case 'angolo_studio':
-                    case 'posti_letto':
-                        $segno = '=';
-                        break;
-                    */
-                    case 'sup':
-                    case 'posti_letto':
-                    case 'num_camere':
-                    case 'num_bagni':
-                    case 'prezzo_max':
-                    case 'fine_disp':
-                        $segno = '>=';
-                        break;
-                    case 'inizio_disp':
-                    case 'prezzo_min':
-                        $segno = '<=';
-                        break;
-                    default:
-                        $segno = '=';
-                        break;
-                }
-                $cat = $cat::where($key, $segno, $value);
-            }
-        }
-        return $cat;
+    protected $_catModel;
+    
+    public function __construct() {
+        $this->_catModel = new Catalog;
+    }
+    
+    public function getCatFiltered($filtri) {
+        return $this->_catModel->getCatByFilters($filtri);
     }
 
     /*

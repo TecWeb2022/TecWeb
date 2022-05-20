@@ -15,6 +15,48 @@ class Catalog
         return $acc->paginate($paged);
     }
     
+    public function getCatByFilters($filtri) {
+        $cat = Accomodation::where('id', '<', 2^64-1);
+        foreach($filtri as $key => $value) {
+            if($value != '' && $value != null) {
+                $segno = '=';
+                switch($key) {
+                    /*
+                    case 'tipologia':
+                    case 'prov':
+                    case 'cucina':
+                    case 'locale_ricreativo':
+                    case 'angolo_studio':
+                    case 'posti_letto':
+                        $segno = '=';
+                        break;
+                    */
+                    case 'sup':
+                    case 'posti_letto':
+                    case 'num_camere':
+                    case 'num_bagni':
+                    case 'prezzo_min':
+                    case 'fine_disp':
+                        $segno = '>=';
+                        break;
+                    case 'inizio_disp':
+                    case 'prezzo_max':
+                        $segno = '<=';
+                        break;
+                    default:
+                        $segno = '=';
+                        break;
+                }
+                if($key != '_token' && $key != 'prezzo_min' && $key != 'prezzo_max') {
+                    $cat = $cat->where($key, $segno, $value);
+                }
+                //DA FARE IF PER PREZZOMIN E MAX -> RICORDARSI CHE LA $KEY DEVE ESSERE CANONE E NON PREZZOMIN O MAX
+                if($key == 'prezzo_min' || $key == 'prezzo_max') {
+                    $cat = $cat->where('canone', $segno, $value);
+                }
+            }
+        }
+        return $cat;
     public function getAccById($id){
         $acc = Accomodation::where('id','=',$id);
         return $acc;
