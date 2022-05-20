@@ -78,6 +78,14 @@ img { border-radius: 3px; }
    width: 200px;
 }
 
+/* fatta da Luca*/ 
+.imgn_visual_casa{
+   position: relative;
+   display: initial;
+
+   height: 400px;
+   width: 400px;
+}
 /* fatta da Matteo*/ 
 .icona_posizione {
    height: 15px;

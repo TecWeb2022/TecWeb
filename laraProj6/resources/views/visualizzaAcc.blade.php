@@ -11,12 +11,17 @@
 @isset($acc)
 <!-- Content
    ================================================== -->
-   <div class="sfondo_righe">
-       <div class="scheda">
-                <div class="imgn_casa">
-                        <img width="10" height="10" class="imgn_casa" src="{{ $acc->path_foto }}" palt="">
-                     </div>
-                
+ <section id="works">
+
+      <div class="row row-bianco">
+          <h2 class="text-center">{{ $acc->nome}}</h2>
+          
+          <div class="column">
+                <div class="imgn_visual_casa">
+                        <img width="10" height="10" class="imgn_visual_casa" src="{{ $acc->path_foto }}" palt="">
+                </div>
+          </div>
+          <div class="column">
                 <div class="comment-info">
                          <cite>{{ $acc->nome }}</cite>
 
@@ -37,9 +42,12 @@
                          <!-- Seconda casa in affitto -->
                      </div>
            
-       </div>
+           </div>
+          <div class="column">
+                
+          </div>
          </div> <!-- Comments End -->
-
+ </section>
 @endisset()
 
 @endsection
