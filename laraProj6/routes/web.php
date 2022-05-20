@@ -22,9 +22,8 @@ Route::get('/catalogoLocatario', 'LocController@getCatPag')
 
 Route::post('/catalogoLocatario', 'LocController@filters');
 
-Route::get('/alloggio/{id}', function($id){
-   return $id;
-});
+Route::get('/alloggio/{id}', 'PublicController@getAccById')
+        ->name('visualizzaAcc');
 
 /*REGISTRAZIONE*/
 

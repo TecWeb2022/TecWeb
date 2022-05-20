@@ -1,14 +1,12 @@
 @extends('layouts.public')
 
-@section('title', {{$acc->nome}})
+@section('title', 'Info')
 
 @section('content')
 
 <script type="text/javascript">
     document.getElementsByClassName("noCurrent")[0].className = "current";
 </script>
-
-
 
 @isset($acc)
 <!-- Content

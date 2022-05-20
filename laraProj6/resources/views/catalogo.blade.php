@@ -55,7 +55,7 @@
                          @include('helpers/descrAcc', ['acc' => $acc])
                      
                             <div class="center">
-                                <button onclick="location.href = '{{ route('register') }}';"> {{ $acc->canone }} €/notte</button> </div>
+                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button> </div>
                          <!-- onclick va messo in un file js -->
                          <!-- Seconda casa in affitto -->
                      </div>

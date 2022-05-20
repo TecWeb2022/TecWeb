@@ -16,7 +16,7 @@ class Catalog
     }
     
     public function getAccById($id){
-        $acc = Accomodation::where('id','=',$id);
+        $acc = Accomodation::find($id);
         return $acc;
     }
     /*

@@ -40,7 +40,7 @@ class PublicController extends Controller
     }
     
     public function getAccById($id){
-        $acc = $this->catalogModel->gettAccById($id);
+        $acc = $this->catalogModel->getAccById($id);
         
         return view('visualizzaAcc')
                 ->with('acc',$acc);
