@@ -53,3 +53,8 @@ Route::view('/profilo', 'profilo')
 
 Route::view('/modifica', 'modifica')
         ->name('modifica');
+
+
+
+Route::get('/insertAcc', 'HostController@prova1')
+        ->name('insertAcc');
