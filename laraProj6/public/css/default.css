@@ -566,9 +566,19 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="date"]:focus,
+select:focus,
 textarea:focus {
    color: #B3B7BC;
 	background-color: #3d4145;
+}
+
+/*Fatto da Chris */
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="email"]:disabled,
+input[type="date"]:disabled,
+textarea:disabled {
+   background-color: #ffffff;
 }
 
 textarea { min-height: 200px; }

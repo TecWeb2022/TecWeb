@@ -19,7 +19,7 @@
 
         <div  class="wrap-input">
             {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore obbligatorio']) }}
-            {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'filters()']) }}
+            {{ Form::select('tipologia', ['all' => 'Tutti', 'ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'filters()']) }}
         </div>
         
         <div  class="wrap-input">
@@ -125,21 +125,21 @@
         <div  class="wrap-input">
             <div class="column">
             {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('angolo_studio', '', false, ['id' => 'angolo_studio', 'disabled']) }}
+            {{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio', 'disabled']) }}
 
             {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('locale_ricreativo', '', false, ['id' => 'angollocale_ricreativoo_studio']) }}
+            {{ Form::checkbox('locale_ricreativo', true, false, ['id' => 'locale_ricreativo']) }}
             
             {{ Form::label('garage', 'Garage', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('garage', '', false, ['id' => 'garage']) }}
+            {{ Form::checkbox('garage', true, false, ['id' => 'garage']) }}
             </div>
             
             <div class="column">
             {{ Form::label('wifi', 'Wi-Fi', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('wifi', '', false, ['id' => 'wifi']) }}
+            {{ Form::checkbox('wifi', true, false, ['id' => 'wifi']) }}
 
             {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('climatizzatore', '', false, ['id' => 'climatizzatore']) }}
+            {{ Form::checkbox('climatizzatore', true, false, ['id' => 'climatizzatore']) }}
             </div>
         
         </div>
