@@ -26,16 +26,6 @@ class Catalog
             if($value != '' && $value != null) {
                 $segno = '=';
                 switch($key) {
-                    /*
-                    case 'tipologia':
-                    case 'prov':
-                    case 'cucina':
-                    case 'locale_ricreativo':
-                    case 'angolo_studio':
-                    case 'posti_letto':
-                        $segno = '=';
-                        break;
-                    */
                     case 'sup':
                     case 'posti_letto_tot':
                     case 'num_camere':
@@ -52,10 +42,10 @@ class Catalog
                         $segno = '=';
                         break;
                 }
-                if($key != '_token' && $key != 'prezzo_min' && $key != 'prezzo_max') {
+                if($key != '_token' && $key != 'prezzo_min' && $key != 'prezzo_max' && $value != 'all') {
                     $cat = $cat->where($key, $segno, $value);
                 }
-                //DA FARE IF PER PREZZOMIN E MAX -> RICORDARSI CHE LA $KEY DEVE ESSERE CANONE E NON PREZZOMIN O MAX
+                
                 if($key == 'prezzo_min' || $key == 'prezzo_max') {
                     $cat = $cat->where('canone', $segno, $value);
                 }
