@@ -160,6 +160,21 @@ body {
        Vertical rhythm with leading derived from 6
 --------------------------------------------------------------------- */
 
+.titolo{
+    font-family: raleway-bold, sans-serif;
+    font-size: 18px; line-height: 30px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.testo{
+    font-family: raleway-bold, sans-serif;
+    color: #313131;
+    font-size: 18px; line-height: 20px;
+    font-weight: normal;
+}
+
 h1, h2, h3, h4, h5, h6 {
    color: #313131;
 	font-family: raleway-bold, sans-serif;
@@ -566,9 +581,19 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="date"]:focus,
+select:focus,
 textarea:focus {
    color: #B3B7BC;
 	background-color: #3d4145;
+}
+
+/*Fatto da Chris */
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="email"]:disabled,
+input[type="date"]:disabled,
+textarea:disabled {
+   background-color: #ffffff;
 }
 
 textarea { min-height: 200px; }
@@ -729,6 +754,18 @@ input[type="checkbox"] { display: inline; }
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
+}
+
+.flex-inline{
+    flex-wrap: nowrap;
+}
+
+.flex-left{
+    justify-content: left;
+}
+
+.flex-space{
+    justify-content: space-between;
 }
 
 /* block grids
