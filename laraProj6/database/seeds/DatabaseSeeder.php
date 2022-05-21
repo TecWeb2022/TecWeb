@@ -51,7 +51,27 @@ class DatabaseSeeder extends Seeder
            ['id'=>7,'nome'=>'Piccolo appartamento a Cupra Marittima','descr'=> 'Abitazione piccola e accogliente massimo per tre persone a Cupra Marittima. A pochi passi dal mare e dal centro.',
                'tipologia'=>'ap','citta'=>'Cupra Marittima','prov'=>'AP','via'=>'Via Gianbattista Evangelisti','num_civ'=>7,'sup'=>63,'inizio_disp'=>'2022-06-10','fine_disp'=>'2023-06-01',
                'eta_min'=>20,'eta_max'=>null,'sesso'=>"F",'canone'=>113.00,'posti_letto_tot'=>null,'cucina'=>false,'num_bagni'=>1,'num_camere'=>2,'locale_ricreativo'=>true,'angolo_studio'=>true,
-               'path_foto'=>'/images/alloggi/appCupra.jpeg', 'proprietario' => 3]
+               'path_foto'=>'/images/alloggi/appCupra.jpeg', 'proprietario' => 3],
+           
+           ['id'=>8,'nome'=>'Appartamento vicino all UNIMC','descr'=> 'Abitazione con la possibilità di accolgiere 4 persone massimo, vicino all università degli studi di Macerata',
+               'tipologia'=>'ap','citta'=>'Macerata','prov'=>'MC','via'=>'Via Ettore Ricci','num_civ'=>2,'sup'=>86,'inizio_disp'=>'2022-07-18','fine_disp'=>'2023-08-29',
+               'eta_min'=>19,'eta_max'=>30,'sesso'=>"M",'canone'=>146.00,'posti_letto_tot'=>null,'cucina'=>true,'num_bagni'=>2,'num_camere'=>3,'locale_ricreativo'=>false,'angolo_studio'=>true,
+               'path_foto'=>'/images/alloggi/appMac.jpg', 'proprietario' => 4],
+           
+           ['id'=>9,'nome'=>'Camera singola vicino alla stazione di Urbisaglia Sforzacosta','descr'=> 'Quuesto alloggio è situato nelle vicinanze della stazione Urbisaglia Sforzacosta, agevolnado lo spostatmento degli studneti.',
+               'tipologia'=>'cs','citta'=>'Sforzacosta','prov'=>'MC','via'=>'Borgo Sforzacosta','num_civ'=>83,'sup'=>23,'inizio_disp'=>'2022-10-01','fine_disp'=>'2023-08-01',
+               'eta_min'=>20,'eta_max'=>45,'sesso'=>"F",'canone'=>13.00,'posti_letto_tot'=>null,'cucina'=>true,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
+               'path_foto'=>'/images/alloggi/csBorgo.jpg', 'proprietario' => 2],
+           
+           ['id'=>10,'nome'=>'Camera singola in zona UNITE','descr'=> 'Stanza singola vicina la zona dell UNITE. Comoda per ogni studente che vuole raggiungere con facilità l università. ',
+               'tipologia'=>'cs','citta'=>'Teramo','prov'=>'TE','via'=>'Via Francesco Marcacci','num_civ'=>4,'sup'=>15,'inizio_disp'=>'2022-09-01','fine_disp'=>'2023-05-29',
+               'eta_min'=>20,'eta_max'=>null,'sesso'=>"F",'canone'=>113.00,'posti_letto_tot'=>null,'cucina'=>false,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>false,
+               'path_foto'=>'/images/alloggi/csTE.jpg', 'proprietario' => 3],
+           
+           ['id'=>11,'nome'=>'Camera doppia nella frazione di Brecciarolo','descr'=> 'Camera doppia nella frazione di Brecciarolo.Affittabile a studentesse, a qualche minuto di mezzo dall università UNIVPM di Ascoli Piceno ',
+               'tipologia'=>'cd','citta'=>'Ascoli Piceno','prov'=>'AP','via'=>'Via delle Fresie','num_civ'=>18,'sup'=>25,'inizio_disp'=>'2022-09-25','fine_disp'=>'2023-04-30',
+               'eta_min'=>20,'eta_max'=>null,'sesso'=>"F",'canone'=>113.00,'posti_letto_tot'=>null,'cucina'=>false,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
+               'path_foto'=>'/images/alloggi/cdAP.jpg', 'proprietario' => 1],
            
        ]);
                
