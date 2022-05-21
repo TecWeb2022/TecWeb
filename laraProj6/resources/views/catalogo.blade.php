@@ -194,7 +194,7 @@
                      <div class="dettagli_cat">
                          <img width="10" height="10" class="icona_posizione" src="images/position-icon.png" alt="">
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
-                         <p>{{ $acc->tipologia }}</p>
+                         <p>@include('helpers/tipologiaAcc', ['acc' => $acc])</p>
                          @include('helpers/descrAcc', ['acc' => $acc])
                      
                             <div class="center">
