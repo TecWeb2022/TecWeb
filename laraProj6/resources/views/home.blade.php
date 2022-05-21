@@ -14,7 +14,7 @@ endguest
 @section('content')
 
 <script type="text/javascript">
-    document.getElementsByClassName("noCurrent")[0].className = "current";
+    currNavBar(0);
 </script>
 
 

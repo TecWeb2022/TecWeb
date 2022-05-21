@@ -12,15 +12,14 @@
     <center><h2>Filtri per il catalogo</h2></center>
     <center><h1>Ricerca l'alloggio in base alle tue esigenze!</h1></center>
 
-    <div class="row">
+    <div class="row flex-box">
         
      <div class="column">
         {{ Form::open(array('url' => '/catalogoFiltrato', 'class' => 'filters-form')) }}
 
         <div  class="wrap-input">
             {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore obbligatorio']) }}
-
-            {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia']) }}
+            {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'filters()']) }}
         </div>
         
         <div  class="wrap-input">
@@ -47,13 +46,9 @@
         <li>{{ $message }}</li>
         @endforeach
         </ul>
-        @endif
-        
+        @endif        
         </div>
 
-        <div class="container-form-btn">                
-            {{ Form::submit('Filtra', ['class' => 'form-btn1']) }}
-        </div>
      </div>
     
     <div class="column">
@@ -113,7 +108,7 @@
         
         </div>
         
-         <div  class="wrap-input">
+        <div  class="wrap-input">
         {{ Form::label('num_camere', 'Numero minimo camere', ['title' => 'Valore facoltativo']) }}
         
         {{ Form::text('num_camere', '', ['id' => 'num_camere', 'placeholder' => 'Numero minimo camere']) }}
@@ -126,12 +121,39 @@
         @endif
         
         </div>
+        
+        <div  class="wrap-input">
+            <div class="column">
+            {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('angolo_studio', '', false, ['id' => 'angolo_studio', 'disabled']) }}
+
+            {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('locale_ricreativo', '', false, ['id' => 'angollocale_ricreativoo_studio']) }}
+            
+            {{ Form::label('garage', 'Garage', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('garage', '', false, ['id' => 'garage']) }}
+            </div>
+            
+            <div class="column">
+            {{ Form::label('wifi', 'Wi-Fi', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('wifi', '', false, ['id' => 'wifi']) }}
+
+            {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('climatizzatore', '', false, ['id' => 'climatizzatore']) }}
+            </div>
+        
+        </div>
     </div>
+    </div>
+        
+    <center><div class="container-form-btn">                
+            {{ Form::submit('Filtra', ['class' => 'form-btn1']) }}
+    </div></center>
     
     
     {{ Form::close() }}
 
-</div>
+
 
 </section>
 

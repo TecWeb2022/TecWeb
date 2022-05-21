@@ -5,7 +5,7 @@
 @section('content')
 
 <script type="text/javascript">
-    document.getElementsByClassName("noCurrent")[2].className = "current";
+    currNavBar(2);
 </script>
 
 <!-- Works Section

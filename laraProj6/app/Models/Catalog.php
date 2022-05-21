@@ -10,7 +10,7 @@ class Catalog
 {
     //protected $photos;
     
-    public function getAcc($paged=2){
+    public function getAcc($paged=5){
         $acc = Accomodation::where('id', '<', 2^64-1);
         return $acc->paginate($paged);
     }

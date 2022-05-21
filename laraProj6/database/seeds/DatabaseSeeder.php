@@ -22,14 +22,36 @@ class DatabaseSeeder extends Seeder
            ['id'=>1,'nome'=>'Appartamento carino sul Lago di Garda','descr'=> 'Appartamento accogliente e gradevole. Situato nei pressi del lago, raggiungibile in 3 minuti di macchina. Presenta un giardino ampio.',
                'tipologia'=>'ap','citta'=>'Brescia','prov'=>'BS','via'=>'Via T.Tasso','num_civ'=>80,'sup'=>100,'inizio_disp'=>'2022-05-16','fine_disp'=>'2022-07-19','eta_min'=>18,'eta_max'=>70,'sesso'=>'M','canone'=>156.00,'posti_letto_tot'=>6,'cucina'=>true,'num_bagni'=>3,'num_camere'=>4,'locale_ricreativo'=>true,'angolo_studio'=>false,
                'path_foto'=>'/images/alloggi/AppartamentoLagoGarda.jpg', 'proprietario' => 1],
+           
            ['id'=>2,'nome'=>'Posto letto su casa di mare','descr'=> 'Camera per studenti. Situata nei pressi di Ancona est, vicinissima al mare. Vicino a punti di snodo per raggiungere le universtià di tutta la città.',
                'tipologia'=>'cs','citta'=>'Ancona','prov'=>'AN','via'=>'Via San Tommaso','num_civ'=>2,'sup'=>23,'inizio_disp'=>'2022-10-12','fine_disp'=>'2022-10-19',
                'eta_min'=>18,'eta_max'=>27,'sesso'=>"F",'canone'=>15.00,'posti_letto_tot'=>1,'cucina'=>true,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
                'path_foto'=>'/images/alloggi/CameraSingolaProva.jpg', 'proprietario' => 3],
+           
            ['id'=>3,'nome'=>'Appartamento Centobuchi','descr'=> 'Appartamento spazioso per studneti a pochi chilometri dal centro di San Benedetto del Tronto. Cittadina con possibilità di mezzi pubblici di ogni tipo. ',
-               'tipologia'=>'ap','citta'=>'Centobuchi','prov'=>'AP','via'=>'Via San Giacomo','num_civ'=>100,'sup'=>89,'inizio_disp'=>'2022-05-24','fine_disp'=>'2022-09-11',
+               'tipologia'=>'ap','citta'=>'Centobuchi','prov'=>'AP','via'=>'Via San Giacomo','num_civ'=>101,'sup'=>89,'inizio_disp'=>'2022-05-24','fine_disp'=>'2022-09-11',
                'eta_min'=>18,'eta_max'=>30,'sesso'=>"M",'canone'=>100.00,'posti_letto_tot'=>null,'cucina'=>true,'num_bagni'=>2,'num_camere'=>3,'locale_ricreativo'=>false,'angolo_studio'=>true,
-               'path_foto'=>'/images/alloggi/casacento.jpg', 'proprietario' => 2]
+               'path_foto'=>'/images/alloggi/casacento.jpg', 'proprietario' => 2],
+           
+           ['id'=>4,'nome'=>'Camera grande doppia per universitari fuori sede','descr'=> 'Camera doppia affittabile ad universitari responsabili e con la testa sulle spalle. Astenersi perdi tempo.  ',
+               'tipologia'=>'cd','citta'=>'Ancona','prov'=>'AN','via'=>'Via delle Tavernelle','num_civ'=>53,'sup'=>20,'inizio_disp'=>'2022-06-24','fine_disp'=>'2023-06-11',
+               'eta_min'=>18,'eta_max'=>40,'sesso'=>"M",'canone'=>40.00,'posti_letto_tot'=>null,'cucina'=>true,'num_bagni'=>2,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
+               'path_foto'=>'/images/alloggi/casaTavernelle.jpg', 'proprietario' => 4],
+           
+           ['id'=>5,'nome'=>'Camera singola per studentessa','descr'=> 'Camera singola affittabile a studentessa di medicina, non solo. Vicina a ospedale Torrette di Ancona',
+               'tipologia'=>'cs','citta'=>'Ancona','prov'=>'AN','via'=>'Via Foglia','num_civ'=>2,'sup'=>10,'inizio_disp'=>'2022-06-04','fine_disp'=>'2023-09-01',
+               'eta_min'=>19,'eta_max'=>25,'sesso'=>"F",'canone'=>12.00,'posti_letto_tot'=>null,'cucina'=>true,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
+               'path_foto'=>'/images/alloggi/cameraSTorrette.jpg', 'proprietario' => 4],
+           
+           ['id'=>6,'nome'=>'Camera doppia per studenti','descr'=> 'Affittabile per qualsiasi tipo di età, solo ad univeristari e studenti.',
+               'tipologia'=>'cd','citta'=>'Ancona','prov'=>'AN','via'=>'Via Foglia','num_civ'=>2,'sup'=>13,'inizio_disp'=>'2022-06-04','fine_disp'=>'2023-09-01',
+               'eta_min'=>17,'eta_max'=>null,'sesso'=>"M",'canone'=>56.00,'posti_letto_tot'=>null,'cucina'=>false,'num_bagni'=>2,'num_camere'=>1,'locale_ricreativo'=>true,'angolo_studio'=>true,
+               'path_foto'=>'/images/alloggi/cameraDEco.jpg', 'proprietario' => 1],
+           
+           ['id'=>7,'nome'=>'Piccolo appartamento a Cupra Marittima','descr'=> 'Abitazione piccola e accogliente massimo per tre persone a Cupra Marittima. A pochi passi dal mare e dal centro.',
+               'tipologia'=>'ap','citta'=>'Cupra Marittima','prov'=>'AP','via'=>'Via Gianbattista Evangelisti','num_civ'=>7,'sup'=>63,'inizio_disp'=>'2022-06-10','fine_disp'=>'2023-06-01',
+               'eta_min'=>20,'eta_max'=>null,'sesso'=>"F",'canone'=>113.00,'posti_letto_tot'=>null,'cucina'=>false,'num_bagni'=>1,'num_camere'=>2,'locale_ricreativo'=>true,'angolo_studio'=>true,
+               'path_foto'=>'/images/alloggi/appCupra.jpeg', 'proprietario' => 3]
            
        ]);
                
