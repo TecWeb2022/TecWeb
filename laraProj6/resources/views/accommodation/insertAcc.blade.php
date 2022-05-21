@@ -11,44 +11,80 @@
     
            {{ Form::open(array('route' => 'newproduct.store', 'id' => 'addproduct', 'files' => true, 'class' => 'contact-form')) }}
             <div  class="wrap-input">
-                {{ Form::label('name', 'Nome Prodotto', ['class' => 'label-input']) }}
-                {{ Form::text('name', '', ['class' => 'input', 'id' => 'name']) }}
+                {{ Form::label('nome', 'Nome Alloggio', ['class' => 'label-input']) }}
+                {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('catId', 'Categoria', ['class' => 'label-input']) }}
-                {{ Form::select('catId', $cats, '', ['class' => 'input','id' => 'catId']) }}
+                {{ Form::label('descr', 'Descrizione', ['class' => 'label-input']) }}
+                {{ Form::textarea('descr', '', ['class' => 'input', 'id' => 'descr', 'rows' => 2]) }}
+            </div>
+           
+            
+
+            <div  class="wrap-input">
+                {{ Form::label('path_foto', 'Immagine', ['class' => 'label-input']) }}
+                {{ Form::file('path_foto', ['class' => 'input', 'id' => 'path_foto']) }}
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('image', 'Immagine', ['class' => 'label-input']) }}
-                {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
+                {{ Form::label('tipologia', 'Tipologia', ['class' => 'label-input']) }}
+                {{ Form::text('tipologia', '', ['class' => 'input', 'id' => 'tipologia']) }}
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('descShort', 'Descrizione Breve', ['class' => 'label-input']) }}
-                {{ Form::text('descShort', '', ['class' => 'input', 'id' => 'descShort']) }}
+                {{ Form::label('citta', 'Città', ['class' => 'label-input']) }}
+                {{ Form::text('citta', '', ['class' => 'input', 'id' => 'citta']) }}
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('price', 'Prezzo', ['class' => 'label-input']) }}
-                {{ Form::text('price', '', ['class' => 'input', 'id' => 'price']) }}
+                {{ Form::label('prov', 'Provincia(per esteso)', ['class' => 'label-input']) }}
+                {{ Form::text('prov', '', ['class' => 'input', 'id' => 'prov']) }}
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('discountPerc', 'Sconto (%)', ['class' => 'label-input']) }}
-                {{ Form::text('discountPerc', '', ['class' => 'input', 'id' => 'discountPerc']) }}
+                {{ Form::label('via', 'Via', ['class' => 'label-input']) }}
+                {{ Form::text('via', '', ['class' => 'input', 'id' => 'via']) }}
+            </div>
+           
+            <div  class="wrap-input">
+                {{ Form::label('num_civ', 'Numero civico', ['class' => 'label-input']) }}
+                {{ Form::text('num_civ', '', ['class' => 'input','id' => 'num_civ']) }}
+            </div>
+           
+            <div  class="wrap-input">
+                {{ Form::label('inizio_disp', 'Inizio disponibilità offerta', ['class' => 'label-input']) }}
+                {{ Form::date('inizio_disp', $data =>fine_disp =>format('Y-m-d')) }}
+            </div>
+           
+           <div  class="wrap-input">
+                {{ Form::label('fine_disp', 'Inizio disponibilità offerta', ['class' => 'label-input']) }}
+                {{ Form::date('fine_disp', $data =>fine_disp =>format('Y-m-d')) }}
+            </div>
+           
+           
+            <div  class="wrap-input">
+                {{ Form::label('eta_min', 'Età minima', ['class' => 'label-input']) }}
+                {{ Form::text('eta_min', '', ['class' => 'input', 'id' => 'eta_min']) }}
+            </div>
+           
+            <div  class="wrap-input">
+                {{ Form::label('eta_max', 'Sesso(M/F)', ['class' => 'label-input']) }}
+                {{ Form::text('eta_max', '', ['class' => 'input', 'id' => 'eta_max']) }}
+            </div>
+           
+            <div  class="wrap-input">
+                {{ Form::label('sesso', 'Età massima', ['class' => 'label-input']) }}
+                {{ Form::text('sesso', '', ['class' => 'input', 'id' => 'sesso']) }}
             </div>
 
+           
             <div  class="wrap-input  rs1-wrap-input">
                 {{ Form::label('discounted', 'In Sconto', ['class' => 'label-input']) }}
                 {{ Form::select('discounted', ['1' => 'Si', '0' => 'No'], 1, ['class' => 'input','id' => 'discounted']) }}
             </div>
 
-            <div  class="wrap-input">
-                {{ Form::label('descLong', 'Descrizione Estesa', ['class' => 'label-input']) }}
-                {{ Form::textarea('descLong', '', ['class' => 'input', 'id' => 'descLong', 'rows' => 2]) }}
-            </div>
+           
 
             <div class="container-form-btn">
                 {{ Form::submit('Aggiungi offerta', ['class' => 'form-btn1', 'id' => 'sub-btn']) }}
