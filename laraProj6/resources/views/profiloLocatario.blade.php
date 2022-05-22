@@ -16,37 +16,15 @@
           
           <div class="column">
             <h1>Profilo utente</h1>
+            
+            <div>
+            <p class="titolo">Nome: <span class="testo">{{ auth()->user()->nome }}</span></p>
+            <p class="titolo">Cognome: <span class="testo">{{ auth()->user()->cognome }}</span></p>
+            <p class="titolo">Data di nascita: <span class="testo">{{ auth()->user()->datanasc }}</span></p>
+            <p class="titolo">Username: <span class="testo">{{ auth()->user()->username }}</span></p>
+            </div>
 
-            <form name="profilo" action="{{ route('modificaLoc') }}" method="post">
-                <p>
-                    <label for="nome">Nome</label>
-                    <input id="nome" size="40" type="text" placeholder="{{ auth()->user()->nome }}" disabled>
-                </p>
-                <p>
-                    <label for="cognome">Cognome</label>
-                    <input id="cognome" size="40" type="text" placeholder="{{ auth()->user()->cognome }}" disabled>
-                </p>
-                <p>
-                    <label for="datanasc">Data di nascita</label>
-                    <input id="datanasc" type="text" placeholder="{{ auth()->user()->data_nasc }}" title="Data di nascita" disabled>
-                </p>
-                <p>
-                    <label for="username">Username</label>
-                    <input id="username" size="40" type="text" placeholder="{{ auth()->user()->username }}" disabled>
-                </p>
-                <p>
-                    <input id="passw" size="40" type="password" placeholder="********" disabled>
-                </p>
-                <p>
-                    <input type="submit" value="Modifica i tuoi dati">
-                </p>
-            </form>
-        </div>
-          
-        <!--div class="column">
-            <h1>Sei già registrato?</h1>
-            <button>Vai al Login</button>
-        </div-->
+            <button onclick="location.href = '{{ route('profiloLocdaModificare') }}';">Modifica i tuoi dati</button>
 
     </div>
 

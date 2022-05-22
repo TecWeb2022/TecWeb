@@ -24,6 +24,9 @@ Route::get('/homeLocatario', 'LocController@index')
 Route::view('/profiloLocatario', 'profiloLocatario')
         ->name('profiloLoc');
 
+Route::view('/profiloLocatarioDamodificare', 'modificaLocatario')
+        ->name('profiloLocdaModificare');
+
 Route::post('/profiloLocatario/modifica', 'LocController@modificaLoc')
         ->name('modificaLoc');
 

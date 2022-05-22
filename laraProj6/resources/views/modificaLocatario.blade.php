@@ -11,35 +11,31 @@
       <div class="row">
           
           <div class="column">
-            <h1>Profilo utente</h1>
-
-            <form name="login">
-                <p>
-                    <input id="nome" size="40" type="text" placeholder="Nome" autofocus>
-                </p>
-                <p>
-                    <input id="cognome" size="40" type="password" placeholder="Cognome">
-                </p>
-                <p>
-                    <!--label for="datanasc">Data di nascita</label-->
-                    <input id="datanasc" type="date" title="Data di nascita">
-                </p>
-                <p>
-                    <input id="username" size="40" type="text" placeholder="Username">
-                </p>
-                <p>
-                    <input id="passw" size="40" type="password" placeholder="Password">
-                </p>
-                <p>
-                    <input type="submit" value="Salva">
-                </p>
-            </form>
-        </div>
-          
-        <!--div class="column">
-            <h1>Sei già registrato?</h1>
-            <button>Vai al Login</button>
-        </div-->
+            <h1>Modifica profilo utente</h1>
+            
+            <div class="row flex-box">
+            {{ Form::open(array('route' => 'modificaLoc', 'class' => 'filters-form')) }}
+            
+                <div>
+                {{ Form::label('nome', 'Nome', ['title' => 'Nome utente']) }}
+                {{ Form::text('nome', '', ['id' => 'nome', 'placeholder' => '']) }}
+                </div>
+            
+                <div>
+                {{ Form::label('cognome', 'Cognome', ['title' => 'Cognome utente']) }}
+                {{ Form::text('cognome', '', ['id' => 'cognome', 'placeholder' => '']) }}
+                </div>
+            
+                <div>
+                {{ Form::label('datanasc', 'Data di nascita', ['title' => 'Data di nascita utente']) }}
+                {{ Form::text('datanasc', '', ['id' => 'datanasc', 'placeholder' => '']) }}
+                </div>
+            
+            <div class="container-form-btn">                
+            {{ Form::submit('Salva i dati', ['class' => 'form-btn1']) }}
+            </div>
+            {{ Form::close() }}
+            </div>
 
     </div>
 

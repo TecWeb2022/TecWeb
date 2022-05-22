@@ -9,7 +9,7 @@ endguest
 -->
 @extends('layouts.locatario')
 
-@section('title', 'Home')
+@section('title', 'Home Locatario')
 
 @section('content')
 

@@ -36,8 +36,9 @@ class LocController extends Controller {
         return view('profiloLocatario');
     }
 
-    public function modificaLoc($id, $request) {
+    public function modificaLoc(Request $request) {
         $dati = $request->all();
+        $id = auth()->user()->id;
         $this->_locModel->modificaDati($id, $dati);
         return view('profiloLocatario');
     }
