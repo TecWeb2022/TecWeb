@@ -17,12 +17,14 @@ Route::get('/', 'PublicController@getFaqs')
 Route::get('/catalogo', 'PublicController@getCatalogo')
         ->name('catalogo');
 
-/*
-Route::get('/catalogoLocatario', 'LocController@getCatPag')
-        ->name('catalogoLoc');
-*/
 
-Route::post('/catalogoFiltrato', 'LocController@filters');
+Route::get('/homeLocatario', 'LocController@index')
+        ->name('homeLoc');
+
+Route::get('/catalogo/filtri', 'LocController@getCatPag')
+        ->name('catalogoLoc');
+
+Route::post('/catalogo/filtri', 'LocController@filters');
 
 Route::get('/alloggio/{id}', function($id){
    return $id;

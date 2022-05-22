@@ -19,16 +19,14 @@ class LocController extends Controller {
         $this->_locModel = new Locatario;
     }
 
-    /*
     public function index() {
         return view('locatario');
     }
-    */
 
     public function getCatPag($filtri = array(), $paged = 5) {
         $cat = $this->_locModel->getCatFiltered($filtri);
         $cat = $cat->paginate($paged);
-        return view('catalogo')
+        return view('catalogoLoc')
             ->with('cat', $cat);
     }
     

@@ -28,17 +28,11 @@ endguest
 		  <div class="row">
 			 <div class="twelve columns">
 				 <div class="slider-text">
-					  <h1><span>Alloggi per tutte le esigenze.</span></h1>
-                                             <p>Le esigenze di ogni studente sono alla base del nostro progetto, a partire
-                                                dal quale è nata la piattaforma web per la ricerca e la prenotazione di alloggi 
-                                                per il mondo studentesco, HouStudent.
+					  <h1><span>Area Locatore</span></h1>
+                                             <p>Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }}
                                              </p>
 				 </div>
-                                 <div style="height: 200px; text-align: center;">
-                                     
-                                     <button onclick="location.href = '{{ route('register') }}';">Registrati nel sito</button>
-                                     
-                                 </div>
+
 			  </div>
 		 </div>
 		
@@ -220,42 +214,5 @@ endguest
       </div>
          </section>
    @endisset()
-
-   <!-- Tweets Section
-   ================================================== -->
-   <!--section id="tweets">
-
-      <div class="row">
-
-         <div class="tweeter-icon align-center">
-            <i class="fa fa-twitter"></i>
-         </div>
-
-         <ul id="twitter" class="align-center">
-            <li>
-               <span>
-               This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-               Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-               <a href="#">http://t.co/CGIrdxIlI3</a>
-               </span>
-               <b><a href="#">2 Days Ago</a></b>
-            </li>
-            
-            <li>
-               <span>
-               This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-               Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-               <a href="#">http://t.co/CGIrdxIlI3</a>
-               </span>
-               <b><a href="#">3 Days Ago</a></b>
-            </li>
-            
-         </ul>
-
-         <p class="align-center"><a href="#" class="button">Follow us</a></p>
-
-      </div>
-
-   </section--> <!-- Tweet Section End-->
 
 @endsection
