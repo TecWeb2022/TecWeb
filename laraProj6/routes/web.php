@@ -58,3 +58,22 @@ Route::post('logout', 'Auth\LoginController@logout')
 
 Route::get('/insertAcc', 'HostController@prova1')
         ->name('insertAcc');
+
+
+/*******ADMIN*******/
+
+
+/*Route::get('/homeAdmin', '')
+        ->name('homeAd');
+
+Route::get('/gestFaqs', '')
+        ->name('gestFaq');
+
+Route::get('/aggiungiFaqs', '')
+        ->name('addFaq');
+
+Route::get('/modificaFaqs', '')
+        ->name('modFaq');
+
+Route::get('/statistche', '')
+        ->name('stats'); */
