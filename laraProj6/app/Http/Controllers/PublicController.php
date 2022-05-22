@@ -10,12 +10,12 @@ use App\Models\Catalog;
 class PublicController extends Controller
 {
 
-    protected $faqModel;
-    protected $catalogModel;
+    protected $_faqModel;
+    protected $_catalogModel;
     
     public function __construct() {
-        $this->faqModel = new Faq;
-        $this->catalogModel = new Catalog;
+        $this->_faqModel = new Faq;
+        $this->_catalogModel = new Catalog;
     }
     
     /*
@@ -27,20 +27,20 @@ class PublicController extends Controller
     */
     
     public function getFaqs() {
-        $faqs = $this->faqModel->get();
+        $faqs = $this->_faqModel->get();
         return view('home')
             ->with('faqs', $faqs);
     }
     
     public function getCatalogo() {
-        $cat = $this->catalogModel->getAcc(5);
+        $cat = $this->_catalogModel->getAcc(5);
         //$cat->main_photo = $this->catalogModel->getMainPhoto(1);
         return view('catalogo')
             ->with('cat', $cat);
     }
     
-    public function getAccById($id){
-        $acc = $this->catalogModel->getAccById($id);
+    public function infoAcc($id){
+        $acc = $this->_catalogModel->getAccById($id);
         
         return view('visualizzaAcc')
                 ->with('acc',$acc);

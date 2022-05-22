@@ -36,8 +36,17 @@ Route::get('/alloggio/{id}', function($id){
    return $id;
 });
 
-Route::get('/alloggio/{id}', 'PublicController@getAccById')
+Route::get('/alloggio/{id}', 'PublicController@infoAcc')
         ->name('visualizzaAcc');
+
+Route::get('/alloggioLoc/{id}', 'LocController@infoAcc')
+        ->name('visualizzaAccLoc');
+
+Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
+        ->name('opzioneAcc');
+
+Route::post('/alloggio/{id}/opzione', 'LocController@invioOpzForm')
+        ->name('opzioneAccPost');
 
 /*REGISTRAZIONE*/
 

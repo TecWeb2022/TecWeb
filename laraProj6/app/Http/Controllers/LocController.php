@@ -7,6 +7,7 @@ use App\Models\Resources\Accomodation;
 use App\Models\Resources\Message;
 use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
+use App\Models\Catalog;
 
 //use App\Http\Requests\NewProductRequest;
 
@@ -16,11 +17,13 @@ class LocController extends Controller {
 
     protected $_locModel;
     protected $_faqModel;
+    protected $_catalogModel;
 
     public function __construct() {
         //$this->middleware('can:isLoc');
         $this->_locModel = new Locatario;
         $this->_faqModel = new Faq;
+        $this->_catalogModel = new Catalog;
     }
 
     public function index() {
@@ -62,5 +65,30 @@ class LocController extends Controller {
         $filt = $request->all();
         return $this->getCatPag($filt, 5);
     }
+    
+    public function infoAcc($id){
+        $acc = $this->_catalogModel->getAccById($id);
+        
+        return view('locatario.visualizzaAcc')
+                ->with('acc',$acc);
+    }
+    
+    public function opzioneForm($id_acc){
+         $acc = $this->_catalogModel->getAccById($id_acc);
+         
+         return view('locatario.opzioneAcc')
+                ->with('acc', $acc);
+    }
+
+    public function invioOpzForm(Request $request,$id_acc)
+    {
+        //manca il validator
+        $opzione = new Option;
+        $opzione->fill($request->all());
+        Auth::id();
+        $opzione->save();
+        return view('catalogoLoc');
+    }
+    
 
 }

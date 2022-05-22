@@ -29,18 +29,18 @@ class RegisterController extends Controller
      * @var string
      */
     
-    protected $redirectTo = '/home';
+   // protected $redirectTo = '/home';
     //protected $redirectTo = '/';
     
-    protected function redirectTo() {
+        protected function redirectTo() {
         $role = auth()->user()->tipologia;
         switch ($role) {
-            case 'admin': return '/admin';
+            case 'admin': return '/homeAdmin';
                 break;
-            case 'loc': return '/locatario';
+            case 'loc': return '/homeLocatario';
                 break;
-            case 'host': return '/locatore';
-                break;
+            case 'host': return '/homeHost';
+                break;  
             default: return '/';
         };
     }

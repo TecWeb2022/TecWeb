@@ -14,4 +14,4 @@
 }
 
 @endphp
-<span class="testo">{{ $descr }}</span>
+{{ $descr }}

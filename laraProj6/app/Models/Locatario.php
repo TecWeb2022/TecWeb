@@ -29,4 +29,5 @@ class Locatario {
         }
         $loc->save();
     }
+    
 }
