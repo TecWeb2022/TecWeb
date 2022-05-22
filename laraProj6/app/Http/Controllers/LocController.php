@@ -42,6 +42,17 @@ class LocController extends Controller {
     
     public function filters(Request $request)
     {
+        $rules =[
+            'prov' => 'string|max:20|nullable',
+            'posti_letto_tot' => 'integer|min:0|nullable',
+            'prezzo_min' => 'numeric|min:0|nullable',
+            'prezzo_max' => 'numeric|min:0|nullable',
+            'sup' => 'numeric|min:0|nullable',
+            'letti_camera' => 'numeric|min:0|nullable',
+            'num_camere' => 'numeric|min:0|nullable',
+        ];
+        $this->validate($request, $rules);
+        
         $filt = $request->all();
         return $this->getCatPag($filt, 5);
     }
