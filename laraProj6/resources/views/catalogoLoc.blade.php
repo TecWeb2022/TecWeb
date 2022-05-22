@@ -56,9 +56,9 @@
         {{ Form::label('prezzo_min', 'Prezzo minimo', ['title' => 'Valore facoltativo']) }}
         
         {{ Form::text('prezzo_min', '', ['id' => 'prezzo_min', 'placeholder' => 'Prezzo minimo']) }}
-        @if ($errors->first('nome'))
+        @if ($errors->first('prezzo_min'))
         <ul class="errors">
-        @foreach ($errors->get('nome') as $message)
+        @foreach ($errors->get('prezzo_min') as $message)
         <li>{{ $message }}</li>
         @endforeach
         </ul>
@@ -69,9 +69,9 @@
         {{ Form::label('sup', 'Superficie minima', ['title' => 'Valore facoltativo']) }}
         
         {{ Form::text('sup', '', ['id' => 'sup', 'placeholder' => 'Superficie']) }}
-        @if ($errors->first('nome'))
+        @if ($errors->first('sup'))
         <ul class="errors">
-        @foreach ($errors->get('nome') as $message)
+        @foreach ($errors->get('sup') as $message)
         <li>{{ $message }}</li>
         @endforeach
         </ul>
@@ -82,9 +82,9 @@
         {{ Form::label('letti_camera', 'Letti nella camera', ['title' => 'Valore facoltativo']) }}
         
         {{ Form::text('letti_camera', '', ['id' => 'letti_camera', 'placeholder' => 'Letti nella camera', 'disabled']) }}
-        @if ($errors->first('nome'))
+        @if ($errors->first('letti_camera'))
         <ul class="errors">
-        @foreach ($errors->get('nome') as $message)
+        @foreach ($errors->get('letti_camera') as $message)
         <li>{{ $message }}</li>
         @endforeach
         </ul>
@@ -98,9 +98,9 @@
         {{ Form::label('prezzo_max', 'Prezzo massimo', ['title' => 'Valore facoltativo']) }}
         
         {{ Form::text('prezzo_max', '', ['id' => 'prezzo_max', 'placeholder' => 'Prezzo massimo']) }}
-        @if ($errors->first('nome'))
+        @if ($errors->first('prezzo_max'))
         <ul class="errors">
-        @foreach ($errors->get('nome') as $message)
+        @foreach ($errors->get('prezzo_max') as $message)
         <li>{{ $message }}</li>
         @endforeach
         </ul>
@@ -112,9 +112,9 @@
         {{ Form::label('num_camere', 'Numero minimo camere', ['title' => 'Valore facoltativo']) }}
         
         {{ Form::text('num_camere', '', ['id' => 'num_camere', 'placeholder' => 'Numero minimo camere']) }}
-        @if ($errors->first('nome'))
+        @if ($errors->first('num_camere'))
         <ul class="errors">
-        @foreach ($errors->get('nome') as $message)
+        @foreach ($errors->get('num_camere') as $message)
         <li>{{ $message }}</li>
         @endforeach
         </ul>

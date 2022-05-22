@@ -33,6 +33,12 @@ class LocController extends Controller {
         return view('profiloLocatario');
     }
 
+    public function modificaLoc($id, $request) {
+        $dati = $request->all();
+        $this->_locModel->modificaDati($id, $dati);
+        return view('profiloLocatario');
+    }
+    
     public function getCatPag($filtri = array(), $paged = 5) {
         $cat = $this->_locModel->getCatFiltered($filtri);
         $cat = $cat->paginate($paged);

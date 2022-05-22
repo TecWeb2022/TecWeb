@@ -17,22 +17,25 @@
           <div class="column">
             <h1>Profilo utente</h1>
 
-            <form name="login" action="{{ route('modifica') }}" method="get">
+            <form name="profilo" action="{{ route('modificaLoc') }}" method="post">
                 <p>
-                    <input id="nome" size="40" type="text" placeholder="Nome" readonly>
+                    <label for="nome">Nome</label>
+                    <input id="nome" size="40" type="text" placeholder="{{ auth()->user()->nome }}" disabled>
                 </p>
                 <p>
-                    <input id="cognome" size="40" type="password" placeholder="Cognome" readonly>
+                    <label for="cognome">Cognome</label>
+                    <input id="cognome" size="40" type="text" placeholder="{{ auth()->user()->cognome }}" disabled>
                 </p>
                 <p>
-                    <!--label for="datanasc">Data di nascita</label-->
-                    <input id="datanasc" type="date" title="Data di nascita" readonly>
+                    <label for="datanasc">Data di nascita</label>
+                    <input id="datanasc" type="text" placeholder="{{ auth()->user()->data_nasc }}" title="Data di nascita" disabled>
                 </p>
                 <p>
-                    <input id="username" size="40" type="text" placeholder="Username" readonly>
+                    <label for="username">Username</label>
+                    <input id="username" size="40" type="text" placeholder="{{ auth()->user()->username }}" disabled>
                 </p>
                 <p>
-                    <input id="passw" size="40" type="password" placeholder="Password" readonly>
+                    <input id="passw" size="40" type="password" placeholder="********" disabled>
                 </p>
                 <p>
                     <input type="submit" value="Modifica i tuoi dati">

@@ -24,6 +24,9 @@ Route::get('/homeLocatario', 'LocController@index')
 Route::view('/profiloLocatario', 'profiloLocatario')
         ->name('profiloLoc');
 
+Route::post('/profiloLocatario/modifica', 'LocController@modificaLoc')
+        ->name('modificaLoc');
+
 Route::get('/catalogo/filtri', 'LocController@getCatPag')
         ->name('catalogoLoc');
 
@@ -52,11 +55,6 @@ Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
 
 /* * * * * * * * * * * * * * * * * * */
-
-Route::view('/modifica', 'modifica')
-        ->name('modifica');
-
-
 
 Route::get('/insertAcc', 'HostController@prova1')
         ->name('insertAcc');

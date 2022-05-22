@@ -18,7 +18,7 @@
                        
              <div  class="wrap-input">
                 {{ Form::label('username', 'Username') }}
-                {{ Form::text('username', '', ['id' => 'username']) }}
+                {{ Form::text('username', '', ['id' => 'username', 'autofocus']) }}
                 @if ($errors->first('username'))
                 <ul class="errors">
                     @foreach ($errors->get('username') as $message)

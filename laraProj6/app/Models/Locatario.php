@@ -6,6 +6,7 @@ use App\Models\Resources\Accomodation;
 use App\Models\Catalog;
 use App\Models\Resources\Message;
 use App\Models\Resources\Option;
+use App\User;
 
 class Locatario {
     
@@ -19,30 +20,13 @@ class Locatario {
         return $this->_catModel->getCatByFilters($filtri);
     }
 
-    /*
-    public function getAccByFilters($tipoAcc = '', $prov = '', $dataInizio = '', $dataFine = '3000-01-01', $prezzoMin = 0.0, $prezzoMax = PHP_FLOAT_MAX,
-            $dimAcc = null, $numCam = null, $numPSTot = null, $cucina = null, $locRicr = null,
-            $angStud = null, $postiStanza = null, $dimCam = null) {
-        
-        if($dataInizio == '') {
-            $dataInizio = date('Y-m-d');
+    public function modificaDati($id, $dati = array()) {
+        $loc = User::find($id);
+        foreach($dati as $key => $value) {
+            if($key != '_token') {
+                $loc->$key = $value;
+            }
         }
-        
-        $cat = null;
-        
-        switch($tipoAcc) {
-            case 'ap':
-                $cat = Accomodation::where('tipologia', '=', 'ap');
-                break;
-            case 'cs':
-                break;
-            case 'cd':
-                break;
-            default:
-                break;
-        }
-        //return Category::where('parId', '!=', 0)->get();
+        $loc->save();
     }
-    */
-
 }
