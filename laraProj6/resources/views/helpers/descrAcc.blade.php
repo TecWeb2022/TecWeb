@@ -3,15 +3,13 @@
     $descr = '';
     switch($acc->tipologia) {
         case 'ap':
-            $descr = "$acc->num_camere camere, $acc->posti_letto posti letto, $acc->sup m^2";
+            $descr = "$acc->num_camere camere, $acc->posti_letto_tot posti letto totali, dimensione $acc->sup m²";
             break;
         case 'cs':
-            $descr = "";
-            break;
         case 'cd':
-            $descr = "";
+            $descr = "$acc->letti_camera letti nella camera, dimensione $acc->sup m²";
             break;
-}
+    }
 
 @endphp
 <p>{{ $descr }}</p>

@@ -17,12 +17,20 @@ Route::get('/', 'PublicController@getFaqs')
 Route::get('/catalogo', 'PublicController@getCatalogo')
         ->name('catalogo');
 
-/*
-Route::get('/catalogoLocatario', 'LocController@getCatPag')
-        ->name('catalogoLoc');
-*/
 
-Route::post('/catalogoFiltrato', 'LocController@filters');
+Route::get('/homeLocatario', 'LocController@index')
+        ->name('homeLoc');
+
+Route::view('/profiloLocatario', 'profiloLocatario')
+        ->name('profiloLoc');
+
+Route::post('/profiloLocatario/modifica', 'LocController@modificaLoc')
+        ->name('modificaLoc');
+
+Route::get('/catalogo/filtri', 'LocController@getCatPag')
+        ->name('catalogoLoc');
+
+Route::post('/catalogo/filtri', 'LocController@filters');
 
 Route::get('/alloggio/{id}', function($id){
    return $id;
@@ -47,14 +55,6 @@ Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
 
 /* * * * * * * * * * * * * * * * * * */
-
-Route::view('/profilo', 'profilo')
-        ->name('profilo');
-
-Route::view('/modifica', 'modifica')
-        ->name('modifica');
-
-
 
 Route::get('/insertAcc', 'HostController@prova1')
         ->name('insertAcc');
