@@ -7,7 +7,7 @@ guest('admin')
     // The user is not authenticated...
 endguest
 -->
-@extends('layouts.public')
+@extends('layouts.locatario')
 
 @section('title', 'Home')
 
@@ -28,7 +28,7 @@ endguest
 		  <div class="row">
 			 <div class="twelve columns">
 				 <div class="slider-text">
-					  <h1><span>Area Locatore</span></h1>
+					  <h1><span>Area Locatario</span></h1>
                                              <p>Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }}
                                              </p>
 				 </div>

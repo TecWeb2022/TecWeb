@@ -21,6 +21,9 @@ Route::get('/catalogo', 'PublicController@getCatalogo')
 Route::get('/homeLocatario', 'LocController@index')
         ->name('homeLoc');
 
+Route::view('/profiloLocatario', 'profiloLocatario')
+        ->name('profiloLoc');
+
 Route::get('/catalogo/filtri', 'LocController@getCatPag')
         ->name('catalogoLoc');
 
@@ -49,9 +52,6 @@ Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
 
 /* * * * * * * * * * * * * * * * * * */
-
-Route::view('/profilo', 'profilo')
-        ->name('profilo');
 
 Route::view('/modifica', 'modifica')
         ->name('modifica');
