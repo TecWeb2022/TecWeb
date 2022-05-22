@@ -75,16 +75,19 @@ Route::get('/insertAcc', 'HostController@prova1')
 /*******ADMIN*******/
 
 
-/*Route::get('/homeAdmin', '')
+/*Route::get('/homeAdmin', 'PublicControllerget@Faqs')
         ->name('homeAd');
 
-Route::get('/gestFaqs', '')
+Route::get('/gestFaqs', 'PublicControllerget@Faqs')
         ->name('gestFaq');
 
-Route::get('/aggiungiFaqs', '')
+Route::get('/aggiungiFaqs', 'PublicControllerget@Faqs')
         ->name('addFaq');
 
 Route::get('/modificaFaqs', '')
+        ->name('modFaq');
+ * 
+ * Route::post('/modificaFaqs', '')
         ->name('modFaq');
 
 Route::get('/statistche', '')
