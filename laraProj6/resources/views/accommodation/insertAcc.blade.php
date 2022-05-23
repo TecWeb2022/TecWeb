@@ -1,4 +1,6 @@
+@extends('layouts.locatore')
 
+@section('title', 'Nuovo Alloggio')
 
 @section('content')
 <section id="works">
@@ -9,15 +11,20 @@
             <h1>Inserisci una nuova offerta</h1>
 
     
-           {{ Form::open(array('route' => 'newproduct.store', 'id' => 'addproduct', 'files' => true, 'class' => 'contact-form')) }}
+           {{ Form::open(array('route' => 'insertAccPost', 'id' => 'inserimentoAcc', 'files' => true, 'class' => 'contact-form')) }}
             <div  class="wrap-input">
                 {{ Form::label('nome', 'Nome Alloggio', ['class' => 'label-input']) }}
                 {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
             </div>
-
+            
             <div  class="wrap-input">
+                {{ Form::label('tipologia', 'Tipologia', ['class' => 'label-input']) }}
+                {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'']) }}
+            </div>
+            
+           <div  class="wrap-input">
                 {{ Form::label('descr', 'Descrizione', ['class' => 'label-input']) }}
-                {{ Form::textarea('descr', '', ['class' => 'input', 'id' => 'descr', 'rows' => 2]) }}
+                {{ Form::textarea('descr', '', ['class' => 'input', 'id' => 'descr', 'rows' => 4]) }}
             </div>
            
             
@@ -26,10 +33,7 @@
                 {{ Form::file('path_foto', ['class' => 'input', 'id' => 'path_foto']) }}
             </div>
 
-            <div  class="wrap-input">
-                {{ Form::label('tipologia', 'Tipologia', ['class' => 'label-input']) }}
-                {{ Form::select('tipologia', ['all' => 'Tutti', 'ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'filters()']) }}
-            </div>
+            
 
             <div  class="wrap-input">
                 {{ Form::label('citta', 'Città', ['class' => 'label-input']) }}
@@ -37,7 +41,7 @@
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('prov', 'Provincia(per esteso)', ['class' => 'label-input']) }}
+                {{ Form::label('prov', 'Provincia', ['class' => 'label-input']) }}
                 {{ Form::text('prov', '', ['class' => 'input', 'id' => 'prov']) }}
             </div>
 
@@ -57,7 +61,7 @@
             </div>
            
            <div  class="wrap-input">
-                {{ Form::label('fine_disp', 'Inizio disponibilità offerta', ['class' => 'label-input']) }}
+                {{ Form::label('fine_disp', 'Fine disponibilità offerta', ['class' => 'label-input']) }}
                 {{ Form::date('fine_disp', '', ['class' => 'input', 'id' => 'fine_disp']) }}
             </div>
            
@@ -78,7 +82,7 @@
             </div>
            
             <div  class="wrap-input">
-                {{ Form::label('canone', 'Canone(in €,per notte)', ['class' => 'label-input']) }}
+                {{ Form::label('canone', 'Canone(in €,per mese)', ['class' => 'label-input']) }}
                 {{ Form::text('canone', '', ['class' => 'input', 'id' => 'canone']) }}
             </div>
            

@@ -11,12 +11,18 @@
 |
 */
 
+/*           PUBBLICO           */
 Route::get('/', 'PublicController@getFaqs')
         ->name('home');
 
 Route::get('/catalogo', 'PublicController@getCatalogo')
         ->name('catalogo');
 
+Route::get('/alloggio/{id}', 'PublicController@infoAcc')
+        ->name('visualizzaAcc');
+
+
+/*           LOCATARIO           */
 
 Route::get('/homeLocatario', 'LocController@index')
         ->name('homeLoc');
@@ -39,9 +45,6 @@ Route::get('/alloggio/{id}', function($id){
    return $id;
 });
 
-Route::get('/alloggio/{id}', 'PublicController@infoAcc')
-        ->name('visualizzaAcc');
-
 Route::get('/alloggioLoc/{id}', 'LocController@infoAcc')
         ->name('visualizzaAccLoc');
 
@@ -51,7 +54,7 @@ Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
 Route::post('/alloggio/{id}/opzione', 'LocController@invioOpzForm')
         ->name('opzioneAccPost');
 
-/*REGISTRAZIONE*/
+/*          REGISTRAZIONE           */
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')
         ->name('register');
@@ -66,11 +69,24 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
 
-/* * * * * * * * * * * * * * * * * * */
+/* * * * * * *LOCATORE * * * * * * * * * * * */
 
 Route::get('/insertAcc', 'HostController@prova1')
         ->name('insertAcc');
 
+Route::post('/insertAcc', 'HostController@insertAcc')
+        ->name('insertAccPost');
+
+Route::get('/homeHost', 'HostController@index')
+        ->name('homeHost');       
+
+/* da vedere se 
+Route::get('/catalogo/host', 'HostController@')
+        ->name('catalogoHost');
+
+Route::get('/alloggioHost/{id}', 'HostController@infoAcc')
+        ->name('visualizzaAccHost');
+*/
 
 /*******ADMIN*******/
 
