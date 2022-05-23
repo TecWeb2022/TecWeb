@@ -71,7 +71,7 @@ Route::post('logout', 'Auth\LoginController@logout')
 
 /* * * * * * *LOCATORE * * * * * * * * * * * */
 
-Route::get('/insertAcc', 'HostController@prova1')
+Route::view('/insertAcc', 'accommodation.insertAcc')
         ->name('insertAcc');
 
 Route::post('/insertAcc', 'HostController@insertAcc')

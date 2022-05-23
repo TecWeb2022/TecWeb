@@ -29,8 +29,8 @@
            
             
             <div  class="wrap-input">
-                {{ Form::label('path_foto', 'Immagine', ['class' => 'label-input']) }}
-                {{ Form::file('path_foto', ['class' => 'input', 'id' => 'path_foto']) }}
+                {{ Form::label('foto', 'Immagine', ['class' => 'label-input']) }}
+                {{ Form::file('foto', ['class' => 'input', 'id' => 'foto']) }}
             </div>
 
             
