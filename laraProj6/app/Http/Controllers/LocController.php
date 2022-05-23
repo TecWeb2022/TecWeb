@@ -8,6 +8,7 @@ use App\Models\Resources\Message;
 use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
+use App\Http\Requests\ModifyProfileRequest;
 use Carbon\Carbon;
 
 //use App\Http\Requests\NewProductRequest;
@@ -37,7 +38,7 @@ class LocController extends Controller {
         return view('profiloLocatario');
     }
 
-    public function modificaLoc(Request $request) {
+    public function modificaLoc(ModifyProfileRequest $request) {
         $dati = $request->all();
         $id = auth()->user()->id;
         $this->_locModel->modificaDati($id, $dati);

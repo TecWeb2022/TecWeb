@@ -31,10 +31,10 @@ class Catalog
                     case 'num_camere':
                     case 'num_bagni':
                     case 'prezzo_min':
-                    case 'fine_disp':
+                    case 'inizio_disp':
                         $segno = '>=';
                         break;
-                    case 'inizio_disp':
+                    case 'fine_disp':
                     case 'prezzo_max':
                         $segno = '<=';
                         break;

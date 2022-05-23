@@ -37,7 +37,7 @@
                          <cite>{{ $acc->nome }}</cite>
 
                         <div class="comment-meta">
-                           <p>Disponibilità: {{ $acc->inizio_disp }} / {{ $acc->fine_disp }}</p>
+                           <p>Disponibilità: {{ date('d-m-Y', strtotime($acc->inizio_disp)) }} / {{ date('d-m-Y', strtotime($acc->fine_disp)) }}</p>
                         </div>
                      </div>
 
@@ -47,8 +47,15 @@
                          <p>@include('helpers/tipologiaAcc', ['acc' => $acc])</p>
                          @include('helpers/descrAcc', ['acc' => $acc])
                      
+                         @if($acc->assegnato == false)
                             <div class="center">
-                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button> </div>
+                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button>
+                            </div>
+                         @else
+                         <div class="center">
+                             <button disabled>Assegnato</button>
+                         </div>
+                         @endif
                          <!-- onclick va messo in un file js -->
                          <!-- Seconda casa in affitto -->
                      </div>

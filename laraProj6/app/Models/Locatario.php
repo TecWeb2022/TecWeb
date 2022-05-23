@@ -7,6 +7,7 @@ use App\Models\Catalog;
 use App\Models\Resources\Message;
 use App\Models\Resources\Option;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class Locatario {
     
@@ -23,8 +24,12 @@ class Locatario {
     public function modificaDati($id, $dati = array()) {
         $loc = User::find($id);
         foreach($dati as $key => $value) {
-            if($key != '_token') {
-                $loc->$key = $value;
+            if($key != '_token' && $key!= 'password_confirmation') {
+                if($key != 'password') {
+                    $loc->$key = $value;
+                } else {
+                    $loc->$key = Hash::make($value);
+                }
             }
         }
         $loc->save();

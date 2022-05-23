@@ -48,6 +48,19 @@
         </ul>
         @endif        
         </div>
+        
+        <div  class="wrap-input">
+        {{ Form::label('inizio_disp', 'Inizio disponibilità', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::date('inizio_disp', '', ['id' => 'inizio_disp']) }}
+        @if ($errors->first('inizio_disp'))
+        <ul class="errors">
+        @foreach ($errors->get('inizio_disp') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif        
+        </div>
 
      </div>
     
@@ -81,7 +94,7 @@
         <div  class="wrap-input">
         {{ Form::label('letti_camera', 'Letti nella camera', ['title' => 'Valore facoltativo']) }}
         
-        {{ Form::text('letti_camera', '', ['id' => 'letti_camera', 'placeholder' => 'Letti nella camera', 'disabled']) }}
+        {{ Form::text('letti_camera', '', ['id' => 'letti_camera', 'placeholder' => 'Letti nella camera']) }}
         @if ($errors->first('letti_camera'))
         <ul class="errors">
         @foreach ($errors->get('letti_camera') as $message)
@@ -89,6 +102,19 @@
         @endforeach
         </ul>
         @endif
+        </div>
+        
+        <div  class="wrap-input">
+        {{ Form::label('fine_disp', 'Fine disponibilità', ['title' => 'Valore facoltativo']) }}
+        
+        {{ Form::date('fine_disp', '', ['id' => 'fine_disp']) }}
+        @if ($errors->first('fine_disp'))
+        <ul class="errors">
+        @foreach ($errors->get('fine_disp') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif        
         </div>
         
     </div>
@@ -125,7 +151,7 @@
         <div  class="wrap-input">
             <div class="column">
             {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio', 'disabled']) }}
+            {{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio']) }}
 
             {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo']) }}
             {{ Form::checkbox('locale_ricreativo', true, false, ['id' => 'locale_ricreativo']) }}
@@ -187,18 +213,25 @@
                          <cite>{{ $acc->nome }}</cite>
 
                         <div class="comment-meta">
-                           <p>Disponibilità: {{ $acc->inizio_disp }} / {{ $acc->fine_disp }}</p>
+                           <p>Disponibilità: {{ date('d-m-Y', strtotime($acc->inizio_disp)) }} / {{ date('d-m-Y', strtotime($acc->fine_disp)) }}</p>
                         </div>
                      </div>
 
                      <div class="dettagli_cat">
-                         <img width="10" height="10" class="icona_posizione" src="images/position-icon.png" alt="">
+                         <img width="10" height="10" class="icona_posizione" src="../../public/images/position-icon.png" alt="">
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
                          <p>@include('helpers/tipologiaAcc', ['acc' => $acc])</p>
                          @include('helpers/descrAcc', ['acc' => $acc])
                      
-                            <div class="center">
-                                <button onclick="location.href = '{{ route('visualizzaAccLoc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button> </div>
+                         @if($acc->assegnato == false)
+                         <div class="center">
+                                <button onclick="location.href = '{{ route('visualizzaAccLoc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button>
+                         </div>
+                         @else
+                         <div class="center">
+                             <button disabled>Assegnato</button>
+                         </div>
+                         @endif
                          <!-- onclick va messo in un file js -->
                          <!-- Seconda casa in affitto -->
                      </div>

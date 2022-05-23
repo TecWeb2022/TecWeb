@@ -4,6 +4,11 @@
 
 @section('content')
 
+<script type="text/javascript">
+    currNavBar(2);
+    name(Auth::user()->nome);
+</script>
+
 <!-- Works Section
    ================================================== -->
    <section id="works">
@@ -18,7 +23,7 @@
             
                 <div>
                 {{ Form::label('nome', 'Nome', ['title' => 'Nome utente']) }}
-                {{ Form::text('nome', '', ['id' => 'nome', 'placeholder' => '']) }}
+                {{ Form::text('nome', Auth::user()->nome, ['id' => 'nome']) }}
                 @if ($errors->first('nome'))
                 <ul class="errors">
                     @foreach ($errors->get('nome') as $message)
@@ -30,7 +35,7 @@
             
                 <div>
                 {{ Form::label('cognome', 'Cognome', ['title' => 'Cognome utente']) }}
-                {{ Form::text('cognome', '', ['id' => 'cognome', 'placeholder' => '']) }}
+                {{ Form::text('cognome', Auth::user()->cognome, ['id' => 'cognome']) }}
                 @if ($errors->first('cognome'))
                 <ul class="errors">
                     @foreach ($errors->get('cognome') as $message)
@@ -42,24 +47,12 @@
             
                 <div>
                 {{ Form::label('data_nasc', 'Data di nascita', ['title' => 'Data di nascita utente']) }}
-                {{ Form::date('data_nasc', '', ['id' => 'data_nasc', 'placeholder' => '']) }}
+                {{ Form::date('data_nasc', Auth::user()->data_nasc, ['id' => 'data_nasc']) }}
                 </div>
             
                 <div>
                 {{ Form::label('username', 'Username', ['title' => 'Username utente']) }}
-                {{ Form::text('username', '', ['id' => 'username', 'placeholder' => '']) }}
-                @if ($errors->first('username'))
-                <ul class="errors">
-                    @foreach ($errors->get('username') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-                </div>
-            
-                <div>
-                {{ Form::label('username', 'Username', ['title' => 'Username utente']) }}
-                {{ Form::text('username', '', ['id' => 'username', 'placeholder' => '']) }}
+                {{ Form::text('username', Auth::user()->username, ['id' => 'username']) }}
                 @if ($errors->first('username'))
                 <ul class="errors">
                     @foreach ($errors->get('username') as $message)
@@ -71,7 +64,7 @@
             
                 <div>
                 {{ Form::label('password', 'Password') }}
-                {{ Form::password('password', ['id' => 'password','placeholder' => 'Password']) }}
+                {{ Form::password('password', ['id' => 'password','placeholder' => 'Nuova password']) }}
                 @if ($errors->first('password'))
                 <ul class="errors">
                     @foreach ($errors->get('password') as $message)

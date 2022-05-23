@@ -40,6 +40,7 @@ class CreateAccomodationsTable extends Migration
             $table->boolean('garage')->default(false);
             $table->boolean('climatizzatore')->default(false);
             $table->string('path_foto')->nullable();
+            $table->boolean('assegnato')->default(false);
             
             $table->string('proprietario');//->index();
             //$table->foreign('proprietario')->references('id')->on('users');
