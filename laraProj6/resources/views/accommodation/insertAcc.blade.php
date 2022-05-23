@@ -6,7 +6,7 @@
       <div class="row">
           
           <div class="column">
-            <h1>Inserisci un'offerta</h1>
+            <h1>Inserisci una nuova offerta</h1>
 
     
            {{ Form::open(array('route' => 'newproduct.store', 'id' => 'addproduct', 'files' => true, 'class' => 'contact-form')) }}
@@ -21,7 +21,6 @@
             </div>
            
             
-
             <div  class="wrap-input">
                 {{ Form::label('path_foto', 'Immagine', ['class' => 'label-input']) }}
                 {{ Form::file('path_foto', ['class' => 'input', 'id' => 'path_foto']) }}
@@ -29,7 +28,7 @@
 
             <div  class="wrap-input">
                 {{ Form::label('tipologia', 'Tipologia', ['class' => 'label-input']) }}
-                {{ Form::text('tipologia', '', ['class' => 'input', 'id' => 'tipologia']) }}
+                {{ Form::select('tipologia', ['all' => 'Tutti', 'ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'filters()']) }}
             </div>
 
             <div  class="wrap-input">
@@ -69,23 +68,67 @@
             </div>
            
             <div  class="wrap-input">
-                {{ Form::label('eta_max', 'Sesso(M/F)', ['class' => 'label-input']) }}
+                {{ Form::label('eta_max', 'Età massima', ['class' => 'label-input']) }}
                 {{ Form::text('eta_max', '', ['class' => 'input', 'id' => 'eta_max']) }}
             </div>
            
             <div  class="wrap-input">
-                {{ Form::label('sesso', 'Età massima', ['class' => 'label-input']) }}
+                {{ Form::label('sesso', 'Sesso(M/F)', ['class' => 'label-input']) }}
                 {{ Form::text('sesso', '', ['class' => 'input', 'id' => 'sesso']) }}
             </div>
-
            
-            <div  class="wrap-input  rs1-wrap-input">
-                {{ Form::label('discounted', 'In Sconto', ['class' => 'label-input']) }}
-                {{ Form::select('discounted', ['1' => 'Si', '0' => 'No'], 1, ['class' => 'input','id' => 'discounted']) }}
+            <div  class="wrap-input">
+                {{ Form::label('canone', 'Canone(in €,per notte)', ['class' => 'label-input']) }}
+                {{ Form::text('canone', '', ['class' => 'input', 'id' => 'canone']) }}
             </div>
-
            
+            <div  class="wrap-input">
+                {{ Form::label('posti_letto_tot', 'Posti letto totali', ['class' => 'label-input']) }}
+                {{ Form::text('posti_letto_tot', '', ['class' => 'input', 'id' => 'posti_letto_tot']) }}
+            </div>
+           
+            <div  class="wrap-input">
+                {{ Form::label('letti_camera', 'Posti letto camera', ['class' => 'label-input']) }}
+                {{ Form::text('letti_camera', '', ['class' => 'input', 'id' => 'letti_camera']) }}
+            </div>
+           
+            <div  class="wrap-input">
+                {{ Form::label('num_bagni', 'Numero di bagni', ['class' => 'label-input']) }}
+                {{ Form::text('num_bagni', '', ['class' => 'input', 'id' => 'num_bagni']) }}
+            </div>
+           
+            <div  class="wrap-input">
+                {{ Form::label('num_camere', 'Numero di camere', ['class' => 'label-input']) }}
+                {{ Form::text('num_camere', '', ['class' => 'input', 'id' => 'num_camere']) }}
+            </div>
+           
+           
+           <div  class="wrap-input">
+            <div class="column">
+            {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio', 'disabled']) }}
 
+            {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('locale_ricreativo', true, false, ['id' => 'locale_ricreativo']) }}
+            
+            {{ Form::label('garage', 'Garage', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('garage', true, false, ['id' => 'garage']) }}
+            </div>
+            
+            <div class="column">
+            {{ Form::label('wifi', 'Wi-Fi', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('wifi', true, false, ['id' => 'wifi']) }}
+
+            {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('climatizzatore', true, false, ['id' => 'climatizzatore']) }}
+            
+            {{ Form::label('cucina', 'Cucina', ['title' => 'Valore facoltativo']) }}
+            {{ Form::checkbox('cucina', true, false, ['id' => 'cucina']) }}
+            </div>
+        
+        </div>
+           
+           
             <div class="container-form-btn">
                 {{ Form::submit('Aggiungi offerta', ['class' => 'form-btn1', 'id' => 'sub-btn']) }}
             </div>

@@ -45,10 +45,12 @@ class NewAccommodationRequest extends FormRequest {
             'eta_min' =>'numeric|min:0',
             'eta_max' =>'numeric|min:0',
             'sesso' =>'max:1',
-            
             'canone' => 'required|numeric|min:0',
-            'discountPerc' => 'required|integer|min:0|max:100',
-            'discounted' => 'required',
+            'posti_letto_tot' =>'numeric|min:1',
+            'letti_camera' =>'numeric|min:1',
+            'num_bagni' =>'numeric|min:1',
+            'num_camere' =>'numeric|min:1'
+            
         ];
     }
 
