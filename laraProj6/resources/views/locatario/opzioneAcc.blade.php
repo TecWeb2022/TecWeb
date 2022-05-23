@@ -23,12 +23,10 @@
                 </div>
           </div>
           <div class="column">
-               @php
-               $
-               @endphp
-               {{ Form::open(array('route' => 'opzioneAccPost', 'class' => 'register-form')) }}
-            
+               {{ Form::open(array('route' => array('opzioneAccPost',$acc->id), 'class' => 'register-form')) }}
+               @csrf
             <div  class="wrap-input">
+                <h3>Inserisci i dati per fare richiesta di affitto</h3>
                 {{ Form::label('data_inizio', 'Data inizio soggiorno') }}
                 {{ Form::date('data_inizio', '', ['id' => 'data_inizio']) }}
                 @if ($errors->first('data_inizio'))
@@ -65,7 +63,7 @@
             </div>
           
             <div class="container-form-btn">                
-                {{ Form::submit('Registra', ['class' => 'form-btn1']) }}
+                {{ Form::submit('Conferma affitto', ['class' => 'form-btn1']) }}
             </div>
             
             {{ Form::close() }}
@@ -76,7 +74,7 @@
               <div class="column">
                   <h3>Chatta col proprietario</h3>
                   <div class="flex-box">
-                        <button onclick="location.href = '{{ route('OpzioneAcc') }}';"> Affitta per {{ $acc->canone}}€ al mese</button> 
+                        <button onclick="location.href = '{{ route('catalogoLoc') }}';"> Affitta per {{ $acc->canone}}€ al mese</button> 
                   </div>
               </div>
          

@@ -8,6 +8,7 @@ use App\Models\Resources\Message;
 use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
+use Carbon\Carbon;
 
 //use App\Http\Requests\NewProductRequest;
 
@@ -81,12 +82,17 @@ class LocController extends Controller {
                 ->with('acc', $acc);
     }
 
-    public function invioOpzForm(Request $request,$id_acc)
+    public function invioOpzForm(Request $request,$id)
     {
         //manca il validator
         $opzione = new Option;
-        $opzione->fill($request->all());
-        Auth::id();
+        $opzione['nota'] = $request->input('nota');
+        $opzione['data_inizio'] = $request->input('data_inizio');
+        $opzione['data_fine'] = $request->input('data_fine');
+        $opzione['data_invio'] = Carbon::now();
+        $opzione['id_alloggio'] = $id; 
+        $opzione['id_locatario'] = auth()->user()->id;
+        
         $opzione->save();
         return view('catalogoLoc');
     }
