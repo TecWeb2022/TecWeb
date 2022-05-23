@@ -1,4 +1,4 @@
-@extends('layouts.public')
+@extends('layouts.locatario')
 
 @section('title', 'Modifica profilo utente')
 
@@ -19,16 +19,71 @@
                 <div>
                 {{ Form::label('nome', 'Nome', ['title' => 'Nome utente']) }}
                 {{ Form::text('nome', '', ['id' => 'nome', 'placeholder' => '']) }}
+                @if ($errors->first('nome'))
+                <ul class="errors">
+                    @foreach ($errors->get('nome') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
                 </div>
             
                 <div>
                 {{ Form::label('cognome', 'Cognome', ['title' => 'Cognome utente']) }}
                 {{ Form::text('cognome', '', ['id' => 'cognome', 'placeholder' => '']) }}
+                @if ($errors->first('cognome'))
+                <ul class="errors">
+                    @foreach ($errors->get('cognome') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
                 </div>
             
                 <div>
-                {{ Form::label('datanasc', 'Data di nascita', ['title' => 'Data di nascita utente']) }}
-                {{ Form::text('datanasc', '', ['id' => 'datanasc', 'placeholder' => '']) }}
+                {{ Form::label('data_nasc', 'Data di nascita', ['title' => 'Data di nascita utente']) }}
+                {{ Form::date('data_nasc', '', ['id' => 'data_nasc', 'placeholder' => '']) }}
+                </div>
+            
+                <div>
+                {{ Form::label('username', 'Username', ['title' => 'Username utente']) }}
+                {{ Form::text('username', '', ['id' => 'username', 'placeholder' => '']) }}
+                @if ($errors->first('username'))
+                <ul class="errors">
+                    @foreach ($errors->get('username') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+                </div>
+            
+                <div>
+                {{ Form::label('username', 'Username', ['title' => 'Username utente']) }}
+                {{ Form::text('username', '', ['id' => 'username', 'placeholder' => '']) }}
+                @if ($errors->first('username'))
+                <ul class="errors">
+                    @foreach ($errors->get('username') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+                </div>
+            
+                <div>
+                {{ Form::label('password', 'Password') }}
+                {{ Form::password('password', ['id' => 'password','placeholder' => 'Password']) }}
+                @if ($errors->first('password'))
+                <ul class="errors">
+                    @foreach ($errors->get('password') as $message)
+                    <li class="errors">{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+                </div>
+
+                <div>
+                {{ Form::label('password-confirm', 'Conferma password') }}
+                {{ Form::password('password_confirmation', ['id' => 'password-confirm','placeholder' => 'Conferma password']) }}
                 </div>
             
             <div class="container-form-btn">                
@@ -40,3 +95,5 @@
     </div>
 
     </section> <!-- Works Section End-->
+    
+@endsection

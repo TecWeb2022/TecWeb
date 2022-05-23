@@ -19,6 +19,11 @@ class HostController extends Controller {
         $this->_hostModel = new Host;
     }
     
+    public function insertAcc(Request $request) {
+        $acc = $request->all();
+        //DA COMPLETARE
+    }
+    
     public function prova1 (){
         return view('accommodation/insertAcc');
     }

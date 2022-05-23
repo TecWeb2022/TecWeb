@@ -20,7 +20,7 @@
             <div>
             <p class="titolo">Nome: <span class="testo">{{ auth()->user()->nome }}</span></p>
             <p class="titolo">Cognome: <span class="testo">{{ auth()->user()->cognome }}</span></p>
-            <p class="titolo">Data di nascita: <span class="testo">{{ auth()->user()->datanasc }}</span></p>
+            <p class="titolo">Data di nascita: <span class="testo">{{ auth()->user()->data_nasc }}</span></p>
             <p class="titolo">Username: <span class="testo">{{ auth()->user()->username }}</span></p>
             </div>
 

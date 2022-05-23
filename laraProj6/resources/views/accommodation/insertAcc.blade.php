@@ -53,12 +53,12 @@
            
             <div  class="wrap-input">
                 {{ Form::label('inizio_disp', 'Inizio disponibilità offerta', ['class' => 'label-input']) }}
-                {{ Form::date('inizio_disp', $data =>fine_disp =>format('Y-m-d')) }}
+                {{ Form::date('inizio_disp', '', ['class' => 'input', 'id' => 'inizio_disp']) }}
             </div>
            
            <div  class="wrap-input">
                 {{ Form::label('fine_disp', 'Inizio disponibilità offerta', ['class' => 'label-input']) }}
-                {{ Form::date('fine_disp', $data =>fine_disp =>format('Y-m-d')) }}
+                {{ Form::date('fine_disp', '', ['class' => 'input', 'id' => 'fine_disp']) }}
             </div>
            
            
