@@ -37,7 +37,7 @@ class NewAccommodationRequest extends FormRequest {
             'path_foto' => 'file|mimes:jpeg,png|max:1024',
             'tipologia' => 'required|max:2',
             'citta' => 'required|max:20',
-            'prov' => 'required|max:20',
+            'prov' => 'required|max:2',
             'num_civ' =>'required|numeric|min:0',
             'sup' =>'required|numeric|min:0',
             'inizio_disp' =>'required|data',

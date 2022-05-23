@@ -66,10 +66,16 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
 
-/* * * * * * * * * * * * * * * * * * */
+/* * * * * * *LOCATORE * * * * * * * * * * * */
 
 Route::get('/insertAcc', 'HostController@prova1')
         ->name('insertAcc');
+
+Route::post('/insertAcc', 'HostController@insertAcc')
+        ->name('insertAccPost');
+
+Route::get('/homeHost', 'HostController@index')
+        ->name('homeHost');       
 
 
 /*******ADMIN*******/
