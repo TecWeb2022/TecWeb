@@ -29,6 +29,7 @@ body { background: #D2D8D8 url(../images/bg.jpg); }
 img { border-radius: 3px; }
 .content-outer { background: #fff }
 
+
 /* page title */
 #page-title {
    background: #383232 url(../images/header-bg.jpg);
@@ -83,6 +84,8 @@ img { border-radius: 3px; }
     
    max-width:  100%;
 }
+
+.benvenuto_admin{color:whitesmoke;}
 
 /* fatta da Luca*/ 
 .div_imgn_visual_casa{

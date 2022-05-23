@@ -91,15 +91,15 @@ Route::get('/alloggioHost/{id}', 'HostController@infoAcc')
 /*******ADMIN*******/
 
 
-/*Route::get('/homeAdmin', 'PublicControllerget@Faqs')
-        ->name('homeAd');
+Route::get('/homeAdmin', 'AdminController@getFaqs')
+        ->name('homeAdmin');
 
-Route::get('/gestFaqs', 'PublicControllerget@Faqs')
-        ->name('gestFaq');
+Route::get('/gestFaqs', 'AdminController@getFaqs2')
+        ->name('gestFaqs');
 
-Route::get('/aggiungiFaqs', 'PublicControllerget@Faqs')
-        ->name('addFaq');
-
+Route::get('/nuovaFaq', 'AdminController@aggiungiFaq')
+        ->name('nuovaFaq');
+/*
 Route::get('/modificaFaqs', '')
         ->name('modFaq');
  * 
