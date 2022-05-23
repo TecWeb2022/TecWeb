@@ -20,8 +20,8 @@
 			 <div class="twelve columns">
 				 <div class="slider-text">
 					  <h1><span>Area Admin</span></h1>
-                                          <p>Benvenuto {{ Auth::user()->nome }} <!--{{ Auth::user()->cognome }}-->
-                                             </p>
+                                          <h2 class='benvenuto_admin'>Benvenuto {{ Auth::user()->nome }} <!--{{ Auth::user()->cognome }}-->
+                                             </h2>
 				 </div>
 
 			  </div>

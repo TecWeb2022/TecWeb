@@ -1,11 +1,11 @@
-@extends('layouts.public')
+@extends('layouts.admin')
 
-@section('title', 'Home')
+@section('title', 'gestFaqs')
 
 @section('content')
 
 <script type="text/javascript">
-    currNavBar(0);
+    currNavBar(1);
 </script>
 
 
@@ -56,7 +56,7 @@
             <div class="ten columns offset-2 post-content">
                 <p>{{ $faq->risposta }}
                </p>
-               <button class='btn' type="button" ><i class='fa fa-pencil fa-2x center2'></i></button> <button class='btn'type="button" ><i class='fa fa-trash-o fa-2x center2'></i></button> 
+               <button class='btn' type="button" ><i class='fa fa-pencil fa-2x center2'></i></button> <button class='btn' type="button" ><i class='fa fa-trash-o fa-2x center2'></i></button> 
             </div>
              @endforeach
          </article> <!-- Entry End -->
@@ -69,7 +69,7 @@
                 
                  <label class='labelAdd'>Aggiungi una nuova FAQ</label>
                 
-                 <button class="btn2 iconbutton2 " onclick="location.href='{{ route('addFaqs')}}'" >
+                 <button class="btn2 iconbutton2 " onclick="location.href='nuovaFaq'" >  <!-- metterci la route addFaqs -->
                     <i class="fa fa-plus"></i> 
                  </button> 
             </div>

@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
-@section('title', 'NuovaFaq')
+@section('title', 'nuovaFaq')
 
 @section('content')
 
 <script type="text/javascript">
-    currNavBar(0);
+    currNavBar(1);
 </script>
 
 <!-- Works Section
@@ -18,10 +18,10 @@
             <h1>Aggiungi una nuova FAQ</h1>
 
             <!--form name="domanda_faq" action="" method="post"--> 
-            {{Form::open(array('route' => '', 'class' => 'contact-form'))}}
+            {{Form::open(array('route' => 'nuovaFaq', 'class' => 'contact-form'))}}
                 <p>
                     <!--input id="domanda" size="40" type="text" placeholder="Domanda" autofocus-->
-                {{ Form::label('aggiungi', 'Aggiungi una nuova domanda ') }}
+                {{ Form::label('aggiungi', 'Nuova domanda ') }}
                 {{ Form::text('aggiungi', '', ['domanda' => 'domanda', 'autofocus']) }}
                 @if ($errors->first('domanda'))
                 <ul class="errors">
@@ -34,6 +34,7 @@
                 </p>
                 <p>
                     <!--textarea class="" id="risposta" name="Risposta" rows="5" cols="51" placeholder="Risposta(max 255 caratteri)"></textarea-->
+                    {{ Form::label('aggiungi', 'Risposta') }}
                 {{ Form::textarea('aggiungi', '', ['risposta' => 'risposta', 'autofocus']) }}
                  @if ($errors->first('risposta'))
                 <ul class="errors">

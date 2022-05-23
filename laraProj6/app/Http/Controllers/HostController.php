@@ -7,6 +7,8 @@ use App\Models\Resources\Accomodation;
 use App\Models\Resources\Message;
 use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
+use App\Models\Catalog;
+use App\Http\Requests\NewAccommodationRequest;
 
 use Illuminate\Http\Request;
 
@@ -29,20 +31,47 @@ class HostController extends Controller {
             ->with('faqs', $faqs->get());
     }
     
-    public function insertAcc(Request $request) {
-        $acc = $request->all();
-        //DA COMPLETARE
-    }
-    
-    public function prova1 (){
-        return view('accommodation/insertAcc');
-    }
-    
-    
-    
-    
+    public function insertAcc(NewAccommodationRequest $request) {
+        
+        
+        if ($request->hasFile('foto')) {
+            $image = $request->file('foto');
+            $imageName = $image->getClientOriginalName();
+        } else {
+            $imageName = NULL;
+        }
 
-    
-    
+        
+        $acc = new Accomodation;
+        $validatedrequest = $request->validated();
+        foreach($validatedrequest as $key => $value ) {
+            if($validatedrequest[$key] === 'foto') {}
+                else {
+                $acc[$key] = $validatedrequest[$key];
+                }
+        }
+        
+        $acc->path_foto = $imageName;
+        $acc->save();
+
+        if (!is_null($imageName)) {
+            $destinationPath = public_path() . '/images/alloggi';
+            $image->move($destinationPath, $imageName);
+        };
+
+        return response()->json(['redirect' => route('homeHost')]);
+        
     }
+    
+    
+    public function infoAcc($id){
+        $cat = new Catalog;
+        $acc = $cat->getAccById($id);
+        
+        return view('accommodation.visualizzaAccHost')
+                ->with('acc',$acc);
+    }
+    
+    
+}
 
