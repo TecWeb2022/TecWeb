@@ -22,7 +22,7 @@ class LocController extends Controller {
     protected $_catalogModel;
 
     public function __construct() {
-        //$this->middleware('can:isLoc');
+        $this->middleware('can:isLoc');
         $this->_locModel = new Locatario;
         $this->_faqModel = new Faq;
         $this->_catalogModel = new Catalog;
@@ -42,14 +42,23 @@ class LocController extends Controller {
         $dati = $request->all();
         $id = auth()->user()->id;
         $this->_locModel->modificaDati($id, $dati);
-        return view('profiloLocatario');
+        return view('locatario')
+            ->with('modificatoConSuccesso', true);
     }
     
     public function getCatPag($filtri = array(), $paged = 5) {
         $cat = $this->_locModel->getCatFiltered($filtri);
         $cat = $cat->paginate($paged);
-        return view('catalogoLoc')
-            ->with('cat', $cat);
+        $filters = '';
+        if($filtri != array()) {
+            foreach($filtri as $key => $value) {
+                $filters .= $key . '=' . $value;
+            }
+        }
+        //return view('catalogoLoc')
+        return view('catalogo')
+            ->with('cat', $cat)
+            ->with('filters', $filters);
     }
     
     public function filters(Request $request)

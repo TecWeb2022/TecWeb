@@ -16,7 +16,7 @@
                 <div class="row">
                    <div class="twelve columns">
                       <div class="logo">
-                         <a href="index.html"><img alt="" src="images/logo.png"></a>
+                         <a href="{{ Route('homeLoc') }}"><img alt="" src="/images/logo.png"></a>
                       </div>
 
                       <nav id="nav-wrap">

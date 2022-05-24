@@ -7,6 +7,7 @@ guest('admin')
     // The user is not authenticated...
 endguest
 -->
+
 @extends('layouts.locatario')
 
 @section('title', 'Home Locatario')
@@ -17,6 +18,11 @@ endguest
     currNavBar(0);
 </script>
 
+@isset($modificatoConSuccesso)
+    <script type="text/javascript">
+        alert("Profilo modificato con successo!");
+    </script>
+@endisset()
 
 <!-- Intro Section
    ================================================== -->
