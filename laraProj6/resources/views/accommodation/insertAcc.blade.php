@@ -22,11 +22,15 @@
                 {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'']) }}
             </div>
             
-           <div  class="wrap-input">
+            <div  class="wrap-input">
                 {{ Form::label('descr', 'Descrizione', ['class' => 'label-input']) }}
                 {{ Form::textarea('descr', '', ['class' => 'input', 'id' => 'descr', 'rows' => 4]) }}
             </div>
            
+            <div  class="wrap-input">
+                {{ Form::label('sup', 'Superficie(m^2)', ['class' => 'label-input']) }}
+                {{ Form::text('sup', '', ['class' => 'input', 'id' => 'sup']) }}
+            </div>
             
             <div  class="wrap-input">
                 {{ Form::label('foto', 'Immagine', ['class' => 'label-input']) }}
