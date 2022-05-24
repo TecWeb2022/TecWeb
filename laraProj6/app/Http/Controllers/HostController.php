@@ -9,6 +9,7 @@ use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use App\Http\Requests\NewAccommodationRequest;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
@@ -52,6 +53,9 @@ class HostController extends Controller {
         }
         
         $acc->path_foto = $imageName;
+        //$acc->updated_at = null;
+        //$acc->created_at = Carbon::now();
+        $acc->proprietario = auth()->user()->id;
         $acc->save();
 
         if (!is_null($imageName)) {

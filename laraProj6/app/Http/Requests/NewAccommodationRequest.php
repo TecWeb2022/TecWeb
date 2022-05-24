@@ -31,25 +31,25 @@ class NewAccommodationRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'name' => 'required|max:25',
-            'id' => 'required',
-            'desc' => 'required|max:500',
+            'nome' => 'required|string|max:25',            
+            'descr' => 'required|string|max:500',
             'path_foto' => 'file|mimes:jpeg,png|max:1024',
             'tipologia' => 'required|max:2',
             'citta' => 'required|max:20',
             'prov' => 'required|max:2',
+            'via' => 'required|max:30',
             'num_civ' =>'required|numeric|min:0',
             'sup' =>'required|numeric|min:0',
             'inizio_disp' =>'required',
             'fine_disp' =>'required',
-            'eta_min' =>'numeric|min:0',
-            'eta_max' =>'numeric|min:0',
+            'eta_min' =>'integer|min:0',
+            'eta_max' =>'integer|min:0',
             'sesso' =>'max:1',
             'canone' => 'required|numeric|min:0',
-            'posti_letto_tot' =>'numeric|min:1',
-            'letti_camera' =>'numeric|min:1',
-            'num_bagni' =>'numeric|min:1',
-            'num_camere' =>'numeric|min:1'
+            'posti_letto_tot' =>'integer|min:0',
+            'letti_camera' =>'integer|min:0',
+            'num_bagni' =>'integer|min:0',
+            'num_camere' =>'integer|min:0'
             
         ];
     }

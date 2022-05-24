@@ -82,7 +82,7 @@
            
             <div  class="wrap-input">
                 {{ Form::label('sesso', 'Sesso(M/F)', ['class' => 'label-input']) }}
-                {{ Form::text('sesso', '', ['class' => 'input', 'id' => 'sesso']) }}
+                {{ Form::select('sesso', ['M' => 'Uomo', 'F' => 'Donna', '' => 'Non specificato'],'', ['id' => 'sesso'] ) }}
             </div>
            
             <div  class="wrap-input">
@@ -136,14 +136,14 @@
         
         </div>
            
-           
+            <div class="row">
             <div class="container-form-btn">
                 {{ Form::submit('Aggiungi offerta', ['class' => 'form-btn1', 'id' => 'sub-btn']) }}
             </div>
-
-            {{ Form::close() }}
+                {{ Form::close() }}
+            </div>
         </div>
-    </div>
+    </div> 
 
 
 @endsection
