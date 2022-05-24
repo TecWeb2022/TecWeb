@@ -13,6 +13,12 @@ endguest
 
 @section('content')
 
+@isset($modificatoConSuccesso)
+    <script type="text/javascript">
+        alert("Profilo modificato con successo!");
+    </script>
+@endisset()
+
 <script type="text/javascript">
     currNavBar(0);
 </script>
@@ -27,18 +33,28 @@ endguest
 
 		  <div class="row">
 			 <div class="twelve columns">
+                             @guest
 				 <div class="slider-text">
 					  <h1><span>Alloggi per tutte le esigenze.</span></h1>
                                              <p>Le esigenze di ogni studente sono alla base del nostro progetto, a partire
                                                 dal quale è nata la piattaforma web per la ricerca e la prenotazione di alloggi 
                                                 per il mondo studentesco, HouStudent.
                                              </p>
-				 </div>
-                                 <div style="height: 200px; text-align: center;">
-                                     
-                                     <button onclick="location.href = '{{ route('register') }}';">Registrati nel sito</button>
-                                     
+                                             
+                                          <div style="height: 200px; text-align: center;">
+                                            <button onclick="location.href = '{{ route('register') }}';">Registrati nel sito</button>
+                                          </div>
                                  </div>
+                             @endguest
+                             @can('isLoc')
+                                <div class="slider-text">
+                                    <h1><span>Area Locatario</span></h1>
+                                    <p>Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }}
+                                    </p>
+                                </div>
+                             @endcan
+				 
+                                 
 			  </div>
 		 </div>
 		

@@ -42,9 +42,6 @@ Route::get('/catalogo/filtri', 'LocController@getCatPag')
 Route::post('/catalogo/filtri', 'LocController@filters');
 
 
-Route::get('/alloggioLoc/{id}', 'LocController@infoAcc')
-        ->name('visualizzaAccLoc');
-
 Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
         ->name('opzioneAcc');
 
