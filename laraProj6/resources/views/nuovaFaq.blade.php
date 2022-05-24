@@ -18,11 +18,11 @@
             <h1>Aggiungi una nuova FAQ</h1>
 
             <!--form name="domanda_faq" action="" method="post"--> 
-            {{Form::open(array('route' => 'nuovaFaq', 'class' => 'contact-form'))}}
+            {{Form::open(array('route' => 'inserimentoFaq', 'class' => 'contact-form'))}}
                 <p>
                     <!--input id="domanda" size="40" type="text" placeholder="Domanda" autofocus-->
-                {{ Form::label('aggiungi', 'Nuova domanda ') }}
-                {{ Form::text('aggiungi', '', ['domanda' => 'domanda', 'autofocus']) }}
+                {{ Form::label('domanda', 'Nuova domanda ') }}
+                {{ Form::text('domanda', '', ['id' => 'domanda', 'autofocus']) }}
                 @if ($errors->first('domanda'))
                 <ul class="errors">
                     @foreach ($errors->get('domanda') as $message)
@@ -34,8 +34,8 @@
                 </p>
                 <p>
                     <!--textarea class="" id="risposta" name="Risposta" rows="5" cols="51" placeholder="Risposta(max 255 caratteri)"></textarea-->
-                    {{ Form::label('aggiungi', 'Risposta (max 255 caratteri)') }}
-                {{ Form::textarea('aggiungi', '', ['risposta' => 'risposta', 'autofocus']) }}
+                    {{ Form::label('risposta', 'Risposta (max 255 caratteri)') }}
+                {{ Form::textarea('risposta', '', ['id' => 'risposta', 'autofocus']) }}
                  @if ($errors->first('risposta'))
                 <ul class="errors">
                     @foreach ($errors->get('risposta') as $message)

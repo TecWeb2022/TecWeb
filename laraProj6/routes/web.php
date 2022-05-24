@@ -94,8 +94,13 @@ Route::get('/homeAdmin', 'AdminController@getFaqs')
 Route::get('/gestFaqs', 'AdminController@getFaqs2')
         ->name('gestFaqs');
 
-Route::get('/nuovaFaq', 'AdminController@aggiungiFaq')
+Route::get('/nuovaFaq', 'AdminController@showNuovaFaq')
         ->name('nuovaFaq');
+
+Route::post('/nuovaFaq', 'AdminController@nuovaFaq')
+        ->name('inserimentoFaq');
+
+
 /*
 Route::get('/modificaFaqs', '')
         ->name('modFaq');
