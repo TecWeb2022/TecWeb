@@ -18,9 +18,17 @@
          
       <div class="flex-box flex-inline add-bottom">
           <div class="column">
-                <div class="div_imgn_visual_casa">
-                        <img  class="imgn_visual_casa" src="{{ $acc->path_foto }}" palt="">
-                </div>
+               <p class="titolo">Tipologia: 
+               <span class="testo">@include('helpers/tipologiaAcc', ['acc' => $acc])</span>
+               </p>
+               <p class="titolo">Disponibilità: <span class="testo">{{ $acc->inizio_disp }} / {{ $acc->fine_disp }}</span></p> 
+               <div class="flex-box flex-inline flex-left">
+                    <img class="icona_posizione" src="/images/position-icon.png" alt="">
+                    <h5><a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a></h5>
+               </div>
+              <p class="titolo">Descrizione: <span class="testo">{{ $acc->descr}}</span></p> 
+              <p class="titolo">Prezzo al mese: <span class="testo">{{ $acc->canone }} €</span></p> 
+               
           </div>
           <div class="column">
                {{ Form::open(array('route' => array('opzioneAccPost',$acc->id), 'class' => 'register-form')) }}
@@ -74,7 +82,7 @@
               <div class="column">
                   <h3>Chatta col proprietario</h3>
                   <div class="flex-box">
-                        <button onclick="location.href = '{{ route('catalogoLoc') }}';"> Affitta per {{ $acc->canone}}€ al mese</button> 
+                        <button onclick="location.href = '{{ route('catalogo') }}';"> Affitta per {{ $acc->canone}}€ al mese</button> 
                   </div>
               </div>
          
