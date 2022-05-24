@@ -1289,6 +1289,16 @@ footer .copyright  li:first-child:before {
 }
 #go-top a:hover { background-color: #0F9095; }
 
+
+.card-content {
+display: flex;
+display: -webkit-flex;
+flex-direction: column;
+-webkit-flex-direction: column;
+padding: 10px 0;
+}
+.mgtop-auto {margin-top: auto;}
+
 /* ------------------------------------------------------------------ */
 /* g. mission (fatta da noi)
 /* ------------------------------------------------------------------ */
