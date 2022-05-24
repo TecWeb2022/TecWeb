@@ -31,4 +31,8 @@ class AdminController extends Controller
     public function aggiungiFaq() {
     return view('nuovaFaq');
     }
+    
+    public function stats() {
+    return view('statistiche');
+    }
 }  

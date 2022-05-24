@@ -5,7 +5,7 @@
 @section('content')
 
 <script type="text/javascript">
-    currNavBar(1);
+    currNavBar(2);
 </script>
 
 <!-- Works Section
@@ -34,7 +34,7 @@
                 </p>
                 <p>
                     <!--textarea class="" id="risposta" name="Risposta" rows="5" cols="51" placeholder="Risposta(max 255 caratteri)"></textarea-->
-                    {{ Form::label('aggiungi', 'Risposta') }}
+                    {{ Form::label('aggiungi', 'Risposta (max 255 caratteri)') }}
                 {{ Form::textarea('aggiungi', '', ['risposta' => 'risposta', 'autofocus']) }}
                  @if ($errors->first('risposta'))
                 <ul class="errors">

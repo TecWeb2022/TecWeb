@@ -105,6 +105,6 @@ Route::get('/modificaFaqs', '')
  * 
  * Route::post('/modificaFaqs', '')
         ->name('modFaq');
-
-Route::get('/statistche', '')
-        ->name('stats'); */
+*/
+Route::get('/statistche', 'AdminController@stats')
+        ->name('statistiche'); 
