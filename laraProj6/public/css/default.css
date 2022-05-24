@@ -648,6 +648,12 @@ input[type="checkbox"] { display: inline; }
    max-width: 1020px;
    margin: 0 auto;
 }
+/*fatta da Matteo*/
+.row2 {
+   width: 96%;
+   max-width: 1020px;
+   margin: 0 0 ;
+}
 
 .row-bianco{
     background: #fff;
@@ -680,8 +686,7 @@ input[type="checkbox"] { display: inline; }
    float: left;
 }
 .columns_bianco {
-   
-   
+  
    padding: 0 20px;
    margin: 5px;
    background-color: #ffffff;
@@ -778,6 +783,7 @@ input[type="checkbox"] { display: inline; }
 --------------------------------------------------------------------- */
 .bgrid-sixths [class*="column"]   { width: 16.66667%; }
 .bgrid-quarters [class*="column"] { width: 25%; }
+.bgrid-thirds-one [class*="column"]   { width: 31%; }
 .bgrid-thirds [class*="column"]   { width: 33.33333%; }
 .bgrid-halves [class*="column"]   { width: 50%; }
 
@@ -798,6 +804,7 @@ properly.
    .s-bgrid-sixths [class*="column"]   { width: 16.66667%; }
    .s-bgrid-quarters [class*="column"] { width: 25%; }
    .s-bgrid-thirds [class*="column"]   { width: 33.33333%; }
+   .s-bgrid-thirds-one [class*="column"]   { width: 33.33%; }
    .s-bgrid-halves [class*="column"]   { width: 50%; }
 
    /* block grids left clearing */

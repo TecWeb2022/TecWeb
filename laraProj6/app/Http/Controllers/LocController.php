@@ -10,6 +10,7 @@ use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use App\Http\Requests\ModifyProfileRequest;
 use Carbon\Carbon;
+use App\Http\Requests\FilterRequest;
 
 //use App\Http\Requests\NewProductRequest;
 
@@ -22,7 +23,7 @@ class LocController extends Controller {
     protected $_catalogModel;
 
     public function __construct() {
-        //$this->middleware('can:isLoc');
+        $this->middleware('can:isLoc');
         $this->_locModel = new Locatario;
         $this->_faqModel = new Faq;
         $this->_catalogModel = new Catalog;
@@ -30,7 +31,7 @@ class LocController extends Controller {
 
     public function index() {
         $faqs = $this->_faqModel->get();
-        return view('locatario')
+        return view('home')
             ->with('faqs', $faqs);
     }
     
@@ -42,38 +43,22 @@ class LocController extends Controller {
         $dati = $request->all();
         $id = auth()->user()->id;
         $this->_locModel->modificaDati($id, $dati);
-        return view('profiloLocatario');
+        return view('locatario')
+            ->with('modificatoConSuccesso', true);
     }
     
     public function getCatPag($filtri = array(), $paged = 5) {
         $cat = $this->_locModel->getCatFiltered($filtri);
         $cat = $cat->paginate($paged);
-        return view('catalogoLoc')
+        return view('catalogo')
             ->with('cat', $cat);
     }
     
-    public function filters(Request $request)
+    public function filters(FilterRequest $request)
     {
-        $rules =[
-            'prov' => 'string|max:20|nullable',
-            'posti_letto_tot' => 'integer|min:0|nullable',
-            'prezzo_min' => 'numeric|min:0|nullable',
-            'prezzo_max' => 'numeric|min:0|nullable',
-            'sup' => 'numeric|min:0|nullable',
-            'letti_camera' => 'numeric|min:0|nullable',
-            'num_camere' => 'numeric|min:0|nullable',
-        ];
-        $this->validate($request, $rules);
+        $filt = $request->validated();
         
-        $filt = $request->all();
         return $this->getCatPag($filt, 5);
-    }
-    
-    public function infoAcc($id){
-        $acc = $this->_catalogModel->getAccById($id);
-        
-        return view('locatario.visualizzaAcc')
-                ->with('acc',$acc);
     }
     
     public function opzioneForm($id_acc){

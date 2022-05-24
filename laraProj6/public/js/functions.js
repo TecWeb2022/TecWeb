@@ -23,6 +23,11 @@ function filters() {
     }
 }
 
+function refreshWindow()
+{
+    window.location.reload(true);
+}
+
 //Inutilizzata, da vedere se serve
 function forms(id, placeholders, n) {
     for(i=0; i<n; i++){

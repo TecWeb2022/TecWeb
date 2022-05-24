@@ -82,7 +82,12 @@
               <div class="column">
                   <h3>Affittalo subito!</h3>
                   <div class="flex-box">
-                        <button onclick="location.href = '{{ route('login') }}';"> Affitta!</button> 
+                        @guest
+                        <button onclick="location.href = '{{ route('login') }}';"> Affitta!</button>
+                        @endguest
+                        @can('isLoc')
+                        <button onclick="location.href = '{{ route('opzioneAcc', [ 'id' => $acc->id ])}}';"> Affitta!</button>
+                        @endcan
                   </div>
               </div>
          

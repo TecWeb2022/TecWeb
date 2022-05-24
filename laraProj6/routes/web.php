@@ -30,8 +30,8 @@ Route::get('/homeLocatario', 'LocController@index')
 Route::view('/profiloLocatario', 'profiloLocatario')
         ->name('profiloLoc');
 
-Route::view('/profiloLocatarioDamodificare', 'modificaLocatario')
-        ->name('profiloLocdaModificare');
+Route::view('/profiloLocatario/modifica', 'modificaLocatario')
+        ->name('profiloLocModifica');
 
 Route::post('/profiloLocatario/modifica', 'LocController@modificaLoc')
         ->name('modificaLoc');
@@ -41,12 +41,6 @@ Route::get('/catalogo/filtri', 'LocController@getCatPag')
 
 Route::post('/catalogo/filtri', 'LocController@filters');
 
-Route::get('/alloggio/{id}', function($id){
-   return $id;
-});
-
-Route::get('/alloggioLoc/{id}', 'LocController@infoAcc')
-        ->name('visualizzaAccLoc');
 
 Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
         ->name('opzioneAcc');
@@ -97,14 +91,19 @@ Route::get('/homeAdmin', 'AdminController@getFaqs')
 Route::get('/gestFaqs', 'AdminController@getFaqs2')
         ->name('gestFaqs');
 
-Route::get('/nuovaFaq', 'AdminController@aggiungiFaq')
+Route::get('/nuovaFaq', 'AdminController@showNuovaFaq')
         ->name('nuovaFaq');
+
+Route::post('/nuovaFaq', 'AdminController@nuovaFaq')
+        ->name('inserimentoFaq');
+
+
 /*
 Route::get('/modificaFaqs', '')
         ->name('modFaq');
  * 
  * Route::post('/modificaFaqs', '')
         ->name('modFaq');
-
-Route::get('/statistche', '')
-        ->name('stats'); */
+*/
+Route::get('/statistche', 'AdminController@stats')
+        ->name('statistiche'); 

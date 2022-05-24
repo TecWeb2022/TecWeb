@@ -20,11 +20,11 @@
             <div>
             <p class="titolo">Nome: <span class="testo">{{ auth()->user()->nome }}</span></p>
             <p class="titolo">Cognome: <span class="testo">{{ auth()->user()->cognome }}</span></p>
-            <p class="titolo">Data di nascita: <span class="testo">{{ auth()->user()->data_nasc }}</span></p>
+            <p class="titolo">Data di nascita: <span class="testo">{{ date('d-m-Y', strtotime(auth()->user()->data_nasc)) }}</span></p>
             <p class="titolo">Username: <span class="testo">{{ auth()->user()->username }}</span></p>
             </div>
 
-            <button onclick="location.href = '{{ route('profiloLocdaModificare') }}';">Modifica i tuoi dati</button>
+            <button onclick="location.href = '{{ route('profiloLocModifica') }}';">Modifica i tuoi dati</button>
 
     </div>
 

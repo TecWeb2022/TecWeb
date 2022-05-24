@@ -98,6 +98,24 @@ img { border-radius: 3px; }
    height: 15px;
    width: 15px; 
 }
+/* fatta da Matteo*/ 
+.iconbutton2{
+display:flex;
+align-items:center;
+justify-content:center;
+height: 100%;
+color:white;
+}
+/* fatta da Matteo*/ 
+.btn2{
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
+    text-align:center;
+    background-color: #11abb0;
+    margin-left: 47.5%;
+}
+
 
 .dettagli_cat {
     clear: both;
@@ -105,6 +123,17 @@ img { border-radius: 3px; }
     padding: 0;
     line-height: 24px;
 }
+
+/*Fatta da Matteo*/
+.labelAdd{
+          display: inline-block;
+          vertical-align: middle;
+          margin: 10px 0;
+          text-align: center;
+          margin-left: 40%;
+          color: #11abb0;
+}
+
 
 /* page */
 .page section {
