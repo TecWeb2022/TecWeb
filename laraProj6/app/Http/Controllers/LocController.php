@@ -31,7 +31,7 @@ class LocController extends Controller {
 
     public function index() {
         $faqs = $this->_faqModel->get();
-        return view('locatario')
+        return view('home')
             ->with('faqs', $faqs);
     }
     
@@ -50,16 +50,8 @@ class LocController extends Controller {
     public function getCatPag($filtri = array(), $paged = 5) {
         $cat = $this->_locModel->getCatFiltered($filtri);
         $cat = $cat->paginate($paged);
-        $filters = '';
-        if($filtri != array()) {
-            foreach($filtri as $key => $value) {
-                $filters .= $key . '=' . $value;
-            }
-        }
-        //return view('catalogoLoc')
         return view('catalogo')
-            ->with('cat', $cat)
-            ->with('filters', $filters);
+            ->with('cat', $cat);
     }
     
     public function filters(FilterRequest $request)
@@ -67,13 +59,6 @@ class LocController extends Controller {
         $filt = $request->validated();
         
         return $this->getCatPag($filt, 5);
-    }
-    
-    public function infoAcc($id){
-        $acc = $this->_catalogModel->getAccById($id);
-        
-        return view('locatario.visualizzaAcc')
-                ->with('acc',$acc);
     }
     
     public function opzioneForm($id_acc){

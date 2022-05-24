@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('nome');
             $table->string('cognome');
             $table->date('data_nasc');
+            $table->string('sesso',1);
             $table->string('tipologia');
             $table->string('username');
             $table->string('password');

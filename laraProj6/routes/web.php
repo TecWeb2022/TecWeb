@@ -30,8 +30,8 @@ Route::get('/homeLocatario', 'LocController@index')
 Route::view('/profiloLocatario', 'profiloLocatario')
         ->name('profiloLoc');
 
-Route::view('/profiloLocatarioDamodificare', 'modificaLocatario')
-        ->name('profiloLocdaModificare');
+Route::view('/profiloLocatario/modifica', 'modificaLocatario')
+        ->name('profiloLocModifica');
 
 Route::post('/profiloLocatario/modifica', 'LocController@modificaLoc')
         ->name('modificaLoc');
@@ -41,9 +41,6 @@ Route::get('/catalogo/filtri', 'LocController@getCatPag')
 
 Route::post('/catalogo/filtri', 'LocController@filters');
 
-
-Route::get('/alloggioLoc/{id}', 'LocController@infoAcc')
-        ->name('visualizzaAccLoc');
 
 Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
         ->name('opzioneAcc');

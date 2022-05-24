@@ -76,15 +76,18 @@ class DatabaseSeeder extends Seeder
        ]);
                
        DB::table('users')->insert([
-           ['id'=>1,'nome'=>'Matteo','cognome'=>'Straccia','data_nasc'=>'1998-12-24','tipologia'=>'admin','username'=>'mattew98','password'=>Hash::make('ciao1234')],
-           ['id'=>2,'nome'=>'Reed','cognome'=>'Richards','data_nasc'=>'1978-04-12','tipologia'=>'host','username'=>'mrfanta04','password'=>Hash::make('suestorm')],
-           ['id'=>3,'nome'=>'Norman','cognome'=>'Osborn','data_nasc'=>'1981-08-03','tipologia'=>'loc','username'=>'greengob1','password'=>Hash::make('hatesm')],
-           ['id'=>4,'nome'=>'Layla','cognome'=>'El-Fouly','data_nasc'=>'1991-02-14','tipologia'=>'loc','username'=>'sacarlscarab','password'=>Hash::make('dad')]
-       ]);
+           ['id'=>1,'nome'=>'Matteo','cognome'=>'Straccia','data_nasc'=>'1998-12-24','sesso' => 'M','tipologia'=>'admin','username'=>'mattew98','password'=>Hash::make('ciao1234')],
+           ['id'=>2,'nome'=>'Reed','cognome'=>'Richards','data_nasc'=>'1978-04-12','sesso' => 'M','tipologia'=>'host','username'=>'mrfanta04','password'=>Hash::make('suestorm')],
+           ['id'=>3,'nome'=>'Norman','cognome'=>'Osborn','data_nasc'=>'1981-08-03','sesso' => 'M','tipologia'=>'loc','username'=>'greengob1','password'=>Hash::make('hatesm')],
+           ['id'=>4,'nome'=>'Layla','cognome'=>'El-Fouly','data_nasc'=>'1991-02-14','sesso' => 'F','tipologia'=>'loc','username'=>'pippo','password'=>Hash::make('dad')],
+           ['id'=>5,'nome'=>'Giuseppe','cognome'=>'Verdi','data_nasc'=>'1980-02-14','sesso' => 'M','tipologia'=>'host','username'=>'lorelore','password'=>Hash::make('u5jCgyFE')],
+           ['id'=>6,'nome'=>'Aldo','cognome'=>'Rossi','data_nasc'=>'1999-05-16','sesso' => 'M','tipologia'=>'loc','username'=>'lariolario','password'=>Hash::make('u5jCgyFE')],
+           ['id'=>7,'nome'=>'Sara','cognome'=>'Bianchi','data_nasc'=>'1992-10-02','sesso' => 'F','tipologia'=>'admin','username'=>'adminadmin','password'=>Hash::make('u5jCgyFE')]
+           ]);
                
        DB::table('messages')->insert([
-           ['id'=>1,'testo'=>'Salve sono interesato al suo alloggio','visualizzato'=>false,'inviato'=>'2022-05-15','id_mitt'=>3,'id_dest'=>2,'id_alloggio'=>2],
-           ['id'=>2,'testo'=>'Salve sono interesato al suo alloggio','visualizzato'=>true,'inviato'=>'2022-05-15','id_mitt'=>4,'id_dest'=>2,'id_alloggio'=>2]
+           ['id'=>1,'testo'=>'Salve sono interessato al suo alloggio','visualizzato'=>false,'inviato'=>'2022-05-15','id_mitt'=>3,'id_dest'=>2,'id_alloggio'=>2],
+           ['id'=>2,'testo'=>'Salve sono interessato al suo alloggio','visualizzato'=>true,'inviato'=>'2022-05-15','id_mitt'=>4,'id_dest'=>2,'id_alloggio'=>2]
        ]);
        
        DB::table('options')->insert([
