@@ -10,6 +10,7 @@ use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use App\Http\Requests\ModifyProfileRequest;
 use Carbon\Carbon;
+use App\Http\Requests\FilterRequest;
 
 //use App\Http\Requests\NewProductRequest;
 
@@ -61,20 +62,10 @@ class LocController extends Controller {
             ->with('filters', $filters);
     }
     
-    public function filters(Request $request)
+    public function filters(FilterRequest $request)
     {
-        $rules =[
-            'prov' => 'string|max:20|nullable',
-            'posti_letto_tot' => 'integer|min:0|nullable',
-            'prezzo_min' => 'numeric|min:0|nullable',
-            'prezzo_max' => 'numeric|min:0|nullable',
-            'sup' => 'numeric|min:0|nullable',
-            'letti_camera' => 'numeric|min:0|nullable',
-            'num_camere' => 'numeric|min:0|nullable',
-        ];
-        $this->validate($request, $rules);
+        $filt = $request->validated();
         
-        $filt = $request->all();
         return $this->getCatPag($filt, 5);
     }
     

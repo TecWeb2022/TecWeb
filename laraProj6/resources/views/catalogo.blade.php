@@ -224,7 +224,8 @@
                          <p>@include('helpers/tipologiaAcc', ['acc' => $acc])</p>
                          @include('helpers/descrAcc', ['acc' => $acc])
                      
-                         @if($acc->assegnato == false)
+                       
+                       @if($acc->assegnato == false)
                          <div class="center">
                              <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button>
                          </div>
