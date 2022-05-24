@@ -7,7 +7,7 @@
 
       <div class="row">
           
-          <div class="column">
+          <div class="card-content">
             <h1>Inserisci una nuova offerta</h1>
 
     
@@ -114,7 +114,7 @@
            <div  class="wrap-input">
             <div class="column">
             {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio', 'disabled']) }}
+            {{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio']) }}
 
             {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo']) }}
             {{ Form::checkbox('locale_ricreativo', true, false, ['id' => 'locale_ricreativo']) }}
@@ -136,13 +136,14 @@
         
         </div>
            
-            <div class="row">
-            <div class="container-form-btn">
-                {{ Form::submit('Aggiungi offerta', ['class' => 'form-btn1', 'id' => 'sub-btn']) }}
+            
             </div>
-                {{ Form::close() }}
-            </div>
-        </div>
+                <div class="row">
+                    <div style="text-align:center" class="container-form-btn">
+                    {{ Form::submit('Aggiungi offerta', ['class' => 'form-btn1', 'id' => 'sub-btn']) }}
+                    </div>
+                    {{ Form::close() }}
+                </div>
     </div> 
 
 
