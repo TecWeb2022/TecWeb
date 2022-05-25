@@ -91,19 +91,23 @@ Route::get('/homeAdmin', 'AdminController@getFaqs')
 Route::get('/gestFaqs', 'AdminController@getFaqs2')
         ->name('gestFaqs');
 
+Route::post('/modificaFaq/{id}', 'AdminController@getPageWithFaq')
+        ->name('modifyFaq');
+
+Route::post('/modificaFaq', 'AdminController@modificaFaq')
+        ->name('faqModificata');
+
+Route::post('/eliminaFaq', 'AdminController@eliminaFaq')
+        ->name('eliminaFaq');
+
 Route::get('/nuovaFaq', 'AdminController@showNuovaFaq')
         ->name('nuovaFaq');
 
 Route::post('/nuovaFaq', 'AdminController@nuovaFaq')
         ->name('inserimentoFaq');
 
+Route::view('/statistiche', 'admin.statistiche')
+        ->name('statistiche');
 
-/*
-Route::get('/modificaFaqs', '')
-        ->name('modFaq');
- * 
- * Route::post('/modificaFaqs', '')
-        ->name('modFaq');
-*/
-Route::get('/statistche', 'AdminController@stats')
-        ->name('statistiche'); 
+Route::post('/statisticheFiltrate', 'AdminController@stats')
+        ->name('statisticheFiltrate'); 

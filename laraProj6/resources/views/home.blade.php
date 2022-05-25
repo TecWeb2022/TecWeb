@@ -13,11 +13,11 @@ endguest
 
 @section('content')
 
-@isset($modificatoConSuccesso)
+@isset($profilo)
     <script type="text/javascript">
         alert("Profilo modificato con successo!");
     </script>
-@endisset()
+@endisset
 
 <script type="text/javascript">
     currNavBar(0);
@@ -53,7 +53,13 @@ endguest
                                     </p>
                                 </div>
                              @endcan
-				 
+                             @can('isAdmin')
+                             <div class="slider-text">
+                                    <h1><span>Area Admin</span></h1>
+                                    <h2 class='benvenuto_admin'>Benvenuto {{ Auth::user()->nome }} <!--{{ Auth::user()->cognome }}-->
+                                    </h2>
+                             </div>
+                             @endcan
                                  
 			  </div>
 		 </div>

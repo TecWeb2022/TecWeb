@@ -44,7 +44,7 @@ class LocController extends Controller {
         $id = auth()->user()->id;
         $this->_locModel->modificaDati($id, $dati);
         return view('locatario')
-            ->with('modificatoConSuccesso', true);
+            ->with('profilo', true);
     }
     
     public function getCatPag($filtri = array(), $paged = 5) {

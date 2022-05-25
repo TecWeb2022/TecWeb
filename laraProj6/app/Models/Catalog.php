@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use App\Models\Resources\Accomodation;
-use App\Models\Resources\Photo;
-use App\Users;
 
 class Catalog
 {
-    //protected $photos;
+    public function getAllAcc() {
+        return Accomodation::where('id', '<', pow(2, 64) - 1);
+    }
     
     public function getAcc($paged=5){
         $acc = Accomodation::where('id', '<', 2^64-1);
