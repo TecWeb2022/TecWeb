@@ -24,7 +24,7 @@
           </div>
           <div class="column">
                <p class="titolo">Tipologia: 
-               <span class="testo">@include('helpers/tipologiaAcc', ['acc' => $acc])</span>
+               <span class="testo">@include('helpers/tipologiaAcc', ['tipologia' => $acc->tipologia])</span>
                </p>
                <p class="titolo">Disponibilità: <span class="testo">{{ $acc->inizio_disp }} / {{ $acc->fine_disp }}</span></p> 
                <div class="flex-box flex-inline flex-left">
@@ -87,7 +87,9 @@
                         @endguest
                         
                         @can('isLoc')
-                        @if(($acc->sesso == null || $acc->sesso == Auth::user()->sesso) )
+                        @if(($acc->sesso == null || $acc->sesso == Auth::user()->sesso) and
+                            ($acc->eta_min == null || $acc->eta_min <= @include('helpers/calcoloEta', ['data_nasc' => Auth::user()->data_nasc]) and
+                            ($acc->eta_max == null || $acc->eta_max >= @include('helpers/calcoloEta', ['data_nasc' => Auth::user()->data_nasc]))
                             <button onclick="location.href = '{{ route('opzioneAcc', [ 'id' => $acc->id ])}}';">Affitta!</button>
                         @else
                             <button title="Purtroppo non rispetti i vincoli imposti dal locatore" disabled>Non puoi affittare</button>

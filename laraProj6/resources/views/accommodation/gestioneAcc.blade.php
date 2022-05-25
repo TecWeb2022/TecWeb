@@ -44,11 +44,12 @@
                      <div class="dettagli_cat">
                          <img width="10" height="10" class="icona_posizione" src="images/position-icon.png" alt="">
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
-                         <p>@include('helpers/tipologiaAcc', ['acc' => $acc])</p>
+                         <p class="remove-bottom">@include('helpers/tipologiaAcc', ['tipologia' => $acc->tipologia])</p>
                          @include('helpers/descrAcc', ['acc' => $acc])
                          <p>Prezzo {{ $acc->canone }} €/notte</p>
-                            <div class="center">
-                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button> 
+                            <div class="flex-box flex-space">
+                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';">Modifica</button> 
+                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';">Elimina</button> 
                             </div>
                          <!-- onclick va messo in un file js -->
                          <!-- Seconda casa in affitto -->

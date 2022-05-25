@@ -21,6 +21,7 @@ class CreateOptionsTable extends Migration
             //$table->foreign('id_alloggio')->references('id')->on('accomodations');
             $table->string('id_locatario');//->index();
             //$table->foreign('id_locatario')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 

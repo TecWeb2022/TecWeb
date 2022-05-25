@@ -50,6 +50,11 @@
                 @endif
             </div>
             
+            <div  class="wrap-input">
+                {{ Form::label('sesso', 'Sesso', ['title' => 'Valore obbligatorio']) }}
+                {{ Form::select('sesso', ['M' => 'Uomo', 'F' => 'Donna'], ['id' => 'sesso', 'placeholder' => 'Sesso']) }}
+            </div>
+            
              <div  class="wrap-input">
                 {{ Form::label('data_nasc', 'Data di nascita') }}
                 {{ Form::date('data_nasc', '', ['id' => 'data_nasc']) }}
