@@ -40,27 +40,27 @@
           
           
           @isset($stats)
-          <div class="column">
-              <h2 class="center2">Risultati</h2>
+          <div class=" columns_bianco colonna_risultati">
+              <h2 class="align-center">Risultati</h2>
               <!--div class="bgrid-thirds-one s-bgrid-halves"-->
 
-           <div class="columns_bianco">
-              <h2 class="center2">Alloggi nel sito</h2>
+           <div>
+              <h2 class="align-center bordo_risultati">Alloggi nel sito</h2>
 
-              <p class="paragrafo center2">{{ $stats['alloggi_tot'] }}</p>
+              <p class="paragrafo align-center ">{{ $stats['alloggi_tot'] }}</p>
            </div>
 
-           <div class="columns_bianco">
-              <h2 class="center2">Offerte locatari</h2>
+           <div>
+              <h2 class="align-center bordo_risultati">Offerte locatari</h2>
 
-              <p class="paragrafo center2">{{ $stats['offerte'] }}</p>
+              <p class="paragrafo align-center">{{ $stats['offerte'] }}</p>
            </div>
+              
+           <div>
+              <h2 class="align-center bordo_risultati">Alloggi locati</h2>
 
-           <div class="columns_bianco s-first">
-              <h2 class="center2">Alloggi locati</h2>
-
-              <p class="paragrafo2 center2">{{ $stats['alloggi_locati'] }}</p>
-           <!--/div-->
+              <p class="paragrafo align-center">{{ $stats['alloggi_locati'] }}</p>
+           </div>
           </div>
         </div>
         @endisset

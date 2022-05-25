@@ -685,6 +685,20 @@ input[type="checkbox"] { display: inline; }
    min-height: 1px;
    float: left;
 }
+/* fatta da Matteo*/
+.column2, .columns2 {
+   position: relative;
+   padding: 0 0;
+   min-height: 1px;
+   float: left;
+}
+/* fatta da Matteo per risultati stats*/
+
+
+.sposta_btn_elimina {
+    margin-right: 480px;
+}
+
 .columns_bianco {
   
    padding: 0 20px;
@@ -694,9 +708,24 @@ input[type="checkbox"] { display: inline; }
    min-height: 1px;
    max-width: 215px;
 }
+
 .columns_bianco h2{
-    margin-top: 10px;
+    margin-top: 0px;
 }
+
+.columns_bianco_alloggi {
+  
+   padding: 0 20px;
+   margin: 5px;
+   background-color: #ffffff;
+   border-radius: 3px;
+   min-height: 1px;
+   max-width: 215px;
+}
+
+
+
+
 .column.centered, .columns.centered  {
     float: none;
     margin: 0 auto;

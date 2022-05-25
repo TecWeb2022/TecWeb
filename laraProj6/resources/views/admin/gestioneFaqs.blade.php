@@ -38,11 +38,11 @@
       <div class="blog-entries">
             @isset($faqs)
          <!-- Entry -->
-         <article class="row entry">
+         <article class="row align-center entry">
                 @foreach($faqs as $faq)
             <div class="entry-header">
 
-               <div class="ten columns entry-title pull-right">
+               <div class="twelve">
                   <h3>{{ $faq->domanda }}</h3>
                </div>
 
@@ -56,7 +56,8 @@
             <div class="ten columns offset-2 post-content">
                 <p>{{ $faq->risposta }}
                </p>
-               
+             <div class="row center2">
+               <div class='columns2'>
                {{ Form::open(array('route' => array('modifyFaq', $faq->id), 'class' => 'register-form')) }}
                
                {{ Form::hidden('id', $faq->id, ['id' => 'id']) }}
@@ -64,17 +65,18 @@
                {{ Form::submit('Modifica', ['class' => 'btn']) }}
 
                {{ Form::close() }}
+               </div>
             
-            
-            
+            <div class='columns2'>
                {{ Form::open(array('route' => 'eliminaFaq', 'class' => 'register-form')) }}
                
                {{ Form::hidden('id', $faq->id, ['id' => 'id']) }}
                
-               {{ Form::submit('Elimina', ['class' => 'btn']) }}
+               {{ Form::submit('Elimina', ['class' => 'btn sposta_btn_elimina']) }}
 
                {{ Form::close() }}
-               
+               </div>
+            </div>
                <!--button class='btn' type="button" >Modifica</button> <button class='btn' type="button" >Elimina</i></button--> 
             </div>
              @endforeach

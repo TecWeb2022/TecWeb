@@ -130,7 +130,6 @@ color:white;
           vertical-align: middle;
           margin: 10px 0;
           text-align: center;
-          margin-left: 40%;
           color: #11abb0;
 }
 
@@ -722,6 +721,34 @@ ul#nav ul li a {
    border-top: 1px dotted #d8d8d8;
    padding-top: 36px;
 }
+
+
+/*fatta da Matteo*/
+.bordo_dom{
+     border-top: 1px dotted #d8d8d8;
+}
+
+/*fatta da Matteo*/
+.bordo_risultati{
+     border-top: 1px dotted #d8d8d8;
+}
+
+/*fatta da Matteo*/
+.colonna_risultati{
+  padding: 10px 20px 0 20px;
+  margin: 70px 350px 0 0;
+}
+/*fatta da Matteo*/
+.prova1{
+    margin-right: 130px;
+}
+
+/*fatta da Matteo*/
+#alloggi_locati{
+    padding-right:40px;
+    margin-bottom: -30px;
+}
+
 #journal .blog-entries article.entry:first-child {
    border-top: none;
    padding-top: 18px;
