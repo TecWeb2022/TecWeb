@@ -70,6 +70,12 @@ Route::view('/insertAcc', 'accommodation.insertAcc')
 
 Route::post('/insertAcc', 'HostController@insertAcc')
         ->name('insertAccPost');
+//modificaHostAcc da completare col nome della funzione
+Route::get('/modificaHostAcc', 'HostController@')
+        ->name('modificaHostAcc');
+
+Route::post('/modificaHostAcc','HostController@')
+        ->name('modificaHostAccPost');
 
 Route::get('/homeHost', 'HostController@index')
         ->name('homeHost');
