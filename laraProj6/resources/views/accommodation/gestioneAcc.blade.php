@@ -5,7 +5,7 @@
 @section('content')
 
 <script type="text/javascript">
-    currNavBar(1);
+    currNavBar(2);
 </script>
 
 
@@ -30,7 +30,7 @@
                   <li>
 
                      <div class="imgn_casa">
-                        <img width="10" height="10" class="imgn_casa" src="{{ $acc->path_foto }}" palt="">
+                        <img class="imgn_casa" src="{{ $acc->path_foto }}" palt="">
                      </div>
 
                      <div class="comment-info">
@@ -46,9 +46,10 @@
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
                          <p>@include('helpers/tipologiaAcc', ['acc' => $acc])</p>
                          @include('helpers/descrAcc', ['acc' => $acc])
-                     
+                         <p>Prezzo {{ $acc->canone }} €/notte</p>
                             <div class="center">
-                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button> </div>
+                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button> 
+                            </div>
                          <!-- onclick va messo in un file js -->
                          <!-- Seconda casa in affitto -->
                      </div>
@@ -64,8 +65,9 @@
             </div>  <!-- Comments End -->
 
          </div>
-
+       
          </div> <!-- Comments End -->
+         <div class="fab" title="Inserisci una nuova offerta" id="fab"><a href="{{route('insertAcc')}}"> + </a></div>
 
 @endisset()
 

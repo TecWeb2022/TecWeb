@@ -72,7 +72,10 @@ Route::post('/insertAcc', 'HostController@insertAcc')
         ->name('insertAccPost');
 
 Route::get('/homeHost', 'HostController@index')
-        ->name('homeHost');       
+        ->name('homeHost');
+
+Route::get('/gestioneAnnunci', 'HostController@getAlloggiHost')
+        ->name('gestioneAnn');
 
 /* da vedere se 
 Route::get('/catalogo/host', 'HostController@')

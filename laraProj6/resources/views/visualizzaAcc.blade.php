@@ -87,9 +87,7 @@
                         @endguest
                         
                         @can('isLoc')
-                        @if(($acc->sesso == null || $acc->sesso == Auth::user()->sesso) and
-                            ($acc->eta_min == null || $acc->eta_min <= (floor(abs(strtotime(date("d-m-Y")) - strtotime(Auth::user()->data_nasc)) / (365 * 60 * 60 * 24)) ) and
-                            ($acc->eta_max == null || $acc->eta_max >= (floor(abs(strtotime(date("d-m-Y")) - strtotime(Auth::user()->data_nasc)) / (365 * 60 * 60 * 24)) ))
+                        @if(($acc->sesso == null || $acc->sesso == Auth::user()->sesso) )
                             <button onclick="location.href = '{{ route('opzioneAcc', [ 'id' => $acc->id ])}}';">Affitta!</button>
                         @else
                             <button title="Purtroppo non rispetti i vincoli imposti dal locatore" disabled>Non puoi affittare</button>

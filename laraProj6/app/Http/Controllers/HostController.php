@@ -76,6 +76,12 @@ class HostController extends Controller {
                 ->with('acc',$acc);
     }
     
-    
+    public function getAlloggiHost(){
+        $cat = new Catalog;
+        $catHost = $cat->getAllAcc()->where('proprietario', '=', auth()->user()->id);
+        $catHost = $catHost->paginate(5);
+        return view('accommodation.gestioneAcc')
+                ->with('catHost', $catHost);
+    }
 }
 
