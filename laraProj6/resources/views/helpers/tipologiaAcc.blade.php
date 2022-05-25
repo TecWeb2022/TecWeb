@@ -1,7 +1,7 @@
 @php
    
     $descr = '';
-    switch($acc->tipologia) {
+    switch($tipologia) {
         case 'ap':
             $descr = "Appartamento";
             break;

@@ -162,7 +162,10 @@ class AdminController extends Controller
         $stats = [
             'alloggi_tot' => $alloggi_tot,
             'offerte' => $offerte,
-            'alloggi_locati' => $alloggi_locati
+            'alloggi_locati' => $alloggi_locati,
+            'filter_tipologia' => $request['tipologia'],
+            'filter_inizio' => $request['inizio'],
+            'filter_fine' => $request['fine']
         ];
         return view('admin.statistiche')
             ->with('stats', $stats);
