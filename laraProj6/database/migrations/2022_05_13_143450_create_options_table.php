@@ -16,9 +16,6 @@ class CreateOptionsTable extends Migration
         Schema::create('options', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nota')->nullable();
-            $table->dateTime('data_invio');
-            $table->date('data_inizio');
-            $table->date('data_fine');
             $table->dateTime('data_stipula')->nullable();
             $table->bigInteger('id_alloggio')->unsigned();//->index();
             //$table->foreign('id_alloggio')->references('id')->on('accomodations');

@@ -8,7 +8,7 @@ class Option extends Model
 {
     protected $table = 'options';
     protected $primaryKey = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
     
     // Relazione One-To-One con User (locatario)
     public function locatario() {
