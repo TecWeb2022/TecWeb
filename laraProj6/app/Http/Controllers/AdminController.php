@@ -7,7 +7,7 @@ use App\Http\Requests\NewFaqRequest;
 
 use App\Models\Resources\Faq;
 use App\Models\Resources\Accomodation;
-
+use App\Models\Resources\Option;
 
 class AdminController extends Controller
 {
@@ -85,70 +85,78 @@ class AdminController extends Controller
         $alloggi_locati = 0;
         $offerte = 0;
         
-        /*
-        switch($request['tipologia']) {
+        $tip = $request['tipologia'];
+        switch($tip) {
             case 'all':
-                $alloggi_tot = Accomodation::all()
-                        ->where('fine_disp', '<=', $request['fine'])
-                        ->where('inizio_disp', '>=', $request['inizio'])
-                        ->count();
-                $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)
-                        ->where('inizio_disp', '>=', $request['inizio'])
-                        ->where('fine_disp', '<=', $request['fine'])
-                        ->count();
-
-                
-                /*
-                $alloggi_tot = Accomodation::all()->whereBetween('inizio_disp', [strtotime('0000-01-01'), $request['inizio']])
-                        ->whereBetween('fine_disp', [$request['fine'], strtotime('3000-01-01')])
-                        ->count();
-                $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)
-                        ->whereBetween('inizio_disp', [strtotime('0000-01-01'), $request['inizio']])
-                        ->whereBetween('fine_disp', [$request['fine'], strtotime('3000-01-01')])
-                        ->count();
-                
-                break;
-            
-            case 'ap':
-                break;
-            
-            case 'cs':
-                break;
-            
-            case 'cd':
+                if($request['inizio'] == null && $request['fine'] == null) {
+                    $alloggi_tot = Accomodation::all()->count();
+                    $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)->count();
+                    $offerte = Option::all()->count();
+                } else if($request['inizio'] != null && $request['fine'] == null) {
+                    $alloggi_tot = Accomodation::all()->where('inizio_disp', '>=', $request['inizio'])
+                            ->count();
+                    $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)
+                            ->where('inizio_disp', '>=', $request['inizio'])
+                            ->count();
+                    $offerte = Option::all()->where('created_at', '>=', $request['inizio'])
+                            ->count();
+                } else if($request['inizio'] == null && $request['fine'] != null) {
+                    $alloggi_tot = Accomodation::all()
+                            ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                    $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)
+                            ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                    $offerte = Option::all()->where('created_at', '<=', $request['fine'])
+                            ->count();
+                } else {
+                    $alloggi_tot = Accomodation::all()->where('inizio_disp', '>=', $request['inizio'])
+                            ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                    $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)
+                            ->where('inizio_disp', '>=', $request['inizio'])
+                            ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                    $offerte = Option::all()->whereBetween('created_at', [$request['inizio'], $request['fine']])
+                            ->count();
+                }
                 break;
             
             default:
+                if($request['inizio'] == null && $request['fine'] == null) {
+                    $alloggi_tot = Accomodation::all()->where('tipologia', '=', $tip)->count();
+                    $alloggi_locati = Accomodation::all()->where('tipologia', '=', $tip)
+                            ->where('assegnato', '=', true)->count();
+                    $offerte = Option::all()
+                            ->count();
+                } else if($request['inizio'] != null && $request['fine'] == null) {
+                    $alloggi_tot = Accomodation::all()->where('tipologia', '=', $tip)
+                            ->where('inizio_disp', '>=', $request['inizio'])
+                            ->count();
+                    $alloggi_locati = Accomodation::all()->where('tipologia', '=', $tip)
+                            ->where('assegnato', '=', true)
+                            ->where('inizio_disp', '>=', $request['inizio'])
+                            ->count();
+                } else if($request['inizio'] == null && $request['fine'] != null) {
+                    $alloggi_tot = Accomodation::all()->where('tipologia', '=', $tip)
+                            ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                    $alloggi_locati = Accomodation::all()->where('tipologia', '=', $tip)
+                            ->where('assegnato', '=', true)
+                            ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                } else {
+                    $alloggi_tot = Accomodation::all()->where('tipologia', '=', $tip)
+                            ->where('inizio_disp', '>=', $request['inizio'])
+                            ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                    $alloggi_locati = Accomodation::all()->where('tipologia', '=', $tip)
+                            ->where('assegnato', '=', true)
+                            ->where('inizio_disp', '>=', $request['inizio'])
+                            ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                }
                 break;
-        }
-        */
-        
-        if($request['tipologia'] == 'all') {
-            if($request['inizio'] == null && $request['fine'] == null) {
-                $alloggi_tot = Accomodation::all()->count();
-                $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)->count();
-            } else if($request['inizio'] != null && $request['fine'] == null) {
-                $alloggi_tot = Accomodation::all()->where('inizio_disp', '>=', $request['inizio'])
-                        ->count();
-                $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)
-                        ->where('inizio_disp', '>=', $request['inizio'])
-                        ->count();
-            } else if($request['inizio'] == null && $request['fine'] != null) {
-                $alloggi_tot = Accomodation::all()
-                        ->where('fine_disp', '<=', $request['fine'])
-                        ->count();
-                $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)
-                        ->where('fine_disp', '<=', $request['fine'])
-                        ->count();
-            } else {
-                $alloggi_tot = Accomodation::all()->where('inizio_disp', '>=', $request['inizio'])
-                        ->where('fine_disp', '<=', $request['fine'])
-                        ->count();
-                $alloggi_locati = Accomodation::all()->where('assegnato', '=', true)
-                        ->where('inizio_disp', '>=', $request['inizio'])
-                        ->where('fine_disp', '<=', $request['fine'])
-                        ->count();
-            }
         }
         
         $stats = [
