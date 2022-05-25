@@ -91,8 +91,11 @@ class DatabaseSeeder extends Seeder
        ]);
        
        DB::table('options')->insert([
-           ['id'=>1,'nota'=>'','data_invio'=>'2022-05-17','data_inizio'=>'2022-10-13','data_fine'=>'2022-10-19','data_stipula'=>null,'id_alloggio'=>2,'id_locatario'=>3],
-           ['id'=>2,'nota'=>'','data_invio'=>'2022-05-17','data_inizio'=>'2022-10-13','data_fine'=>'2022-10-19','data_stipula'=>null,'id_alloggio'=>2,'id_locatario'=>4]
+           ['id'=>1,'nota'=>'','data_stipula'=>null,'created_at' => '2022-05-24 15:26:40','id_alloggio'=>2,'id_locatario'=>3],
+           ['id'=>2,'nota'=>'','data_stipula'=>null,'created_at' => '2022-10-24 20:30:00','id_alloggio'=>1,'id_locatario'=>4],
+           ['id'=>3,'nota'=>'Sono interessato alla casa','data_stipula'=>null,'created_at' => '2022-10-25 17:30:00','id_alloggio'=>1,'id_locatario'=>6],
+           ['id'=>4,'nota'=>'','data_stipula'=>null,'created_at' => '2022-10-25 22:30:00','id_alloggio'=>1,'id_locatario'=>3],
+           ['id'=>5,'nota'=>'','data_stipula'=>null,'created_at' => '2022-12-20 10:00:00','id_alloggio'=>3,'id_locatario'=>4]
        ]);
     }
 }
