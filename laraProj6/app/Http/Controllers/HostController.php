@@ -18,11 +18,13 @@ class HostController extends Controller {
     
     protected $_hostModel;
     protected $_faqModel;
+    protected $_catalogModel;
 
     public function _construct() {
         $this->middleware('can:isHost');
         $this->_faqModel= new Faq;
         $this->_hostModel = new Host;
+        $this->_catalogModel = new Catalog;
     }
     
     public function index() {
@@ -33,16 +35,6 @@ class HostController extends Controller {
     }
     
     public function insertAcc(NewAccommodationRequest $request) {
-        
-        /*
-        if ($request->hasFile('foto')) {
-            $image = $request->file('foto');
-            $imageName = $image->getClientOriginalName();
-        } else {
-            $imageName = NULL;
-        }
-         * 
-         */
 
        $acc = new Accomodation;
        $validatedrequest = $request->validated();
@@ -60,33 +52,34 @@ class HostController extends Controller {
         $acc->proprietario = auth()->user()->id;
         $acc->save();
       
-        
-        /*
-        if (!is_null($imageName)) {
-            $destinationPath = public_path() . '/images/alloggi';
-            $image->move($destinationPath, $imageName);
-        };
-         * 
-         */
-        return redirect()->route('gestioneAnn');
-        
+        return redirect()->route('gestioneAnn');  
     }
     
     
     public function infoAcc($id){
-        $cat = new Catalog;
-        $acc = $cat->getAccById($id);
+        $acc = $this->_catalogModel->getAccById($id);
         
         return view('accommodation.visualizzaAccHost')
                 ->with('acc',$acc);
     }
     
     public function getAlloggiHost(){
-        $cat = new Catalog;
-        $catHost = $cat->getAllAcc()->where('proprietario', '=', auth()->user()->id);
+        $catHost = $this->_catalogModel->getAllAcc()->where('proprietario', '=', auth()->user()->id);
         $catHost = $catHost->paginate(5);
         return view('accommodation.gestioneAcc')
                 ->with('catHost', $catHost);
+    }
+    
+    public function getAlloggioModifica($id){
+        $acc = $this->_catalogModel->getAccById($id);
+        
+        return view('modificaHostAcc')
+            ->with('acc',$acc);
+    }
+    
+    public function modificaAlloggio(NewAccommodationRequest $request){
+        
+        
     }
 }
 
