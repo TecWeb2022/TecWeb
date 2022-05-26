@@ -48,7 +48,8 @@
                          @include('helpers/descrAcc', ['acc' => $acc])
                          <p>Prezzo {{ $acc->canone }} €/notte</p>
                             <div class="flex-box flex-space">
-                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';">Modifica</button> 
+                                <button onclick="location.href = '{{ route('infoAccHost', [ 'id' => $acc->id ]) }}';">Info</button> 
+                                <button onclick="location.href = '{{ route('modificaHostAcc', [ 'id' => $acc->id ]) }}';">Modifica</button> 
                                 <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';">Elimina</button> 
                             </div>
                          <!-- onclick va messo in un file js -->

@@ -57,14 +57,16 @@ class HostController extends Controller {
     
     
     public function infoAcc($id){
-        $acc = $this->_catalogModel->getAccById($id);
+        $cat = new Catalog;
+        $acc = $cat->getAccById($id);
         
         return view('accommodation.descrHostAcc')
                 ->with('acc',$acc);
     }
     
     public function getAccsHost(){
-        $catHost = $this->_catalogModel->getAllAcc()->where('proprietario', '=', auth()->user()->id);
+        $cat = new Catalog;
+        $catHost = $cat->getAllAcc()->where('proprietario', '=', auth()->user()->id);
         $catHost = $catHost->paginate(5);
         return view('accommodation.gestioneAcc')
                 ->with('catHost', $catHost);
@@ -72,9 +74,10 @@ class HostController extends Controller {
     
 
     public function getAccModifica($id){
-        $acc = $this->_catalogModel->getAccById($id);
+        $cat = new Catalog;
+        $acc = $cat->getAccById($id);
         
-        return view('modificaHostAcc')
+        return view('accommodation.modificaHostAcc')
             ->with('acc',$acc);
     }
     

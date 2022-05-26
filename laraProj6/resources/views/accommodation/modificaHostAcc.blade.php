@@ -25,7 +25,7 @@
 
                 <div  class="wrap-input">
                     {{ Form::label('tipologia', 'Tipologia', ['class' => 'titolo']) }}
-                    {{ Form::select('tipologia',  ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],$acc->tipologia, ['id' => 'tipologia', 'onclick'=>'']) }}
+                    {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],$acc->tipologia, ['id' => 'tipologia', 'onclick'=>'']) }}
                 </div>
 
                 <div  class="wrap-input">
