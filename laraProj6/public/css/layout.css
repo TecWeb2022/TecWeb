@@ -134,6 +134,12 @@ color:white;
 }
 
 
+.bottone_inline{
+  display: inline-block;
+  width: calc(50% - 4px);
+  margin: 0 auto;
+}
+
 /* page */
 .page section {
    padding-top: 24px;
@@ -735,12 +741,16 @@ ul#nav ul li a {
 
 /*fatta da Matteo*/
 .colonna_risultati{
-  padding: 10px 20px 0 20px;
-  margin: 70px 350px 0 0;
+  padding: 10px 15px 0 15px;
+  margin: 5px 350px 0 0;
 }
 /*fatta da Matteo*/
 .prova1{
     margin-right: 130px;
+}
+/*fatta da Matteo, serve a diminuire il margine della sezione tipologia, data inizio, data fine nella colonna risultati dei filtri*/
+.min_marg{
+    margin-bottom: 0px;
 }
 
 /*fatta da Matteo*/
