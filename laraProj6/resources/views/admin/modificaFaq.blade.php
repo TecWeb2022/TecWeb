@@ -22,7 +22,7 @@
                 <p>
                     <!--input id="domanda" size="40" type="text" placeholder="Domanda" autofocus-->
                 {{ Form::label('domanda', 'Modifica domanda ') }}
-                {{ Form::text('domanda', $faq->domanda, ['id' => 'domanda', 'autofocus']) }}
+                {{ Form::textarea('domanda', $faq->domanda, ['id' => 'domanda', 'autofocus']) }}
                 @if ($errors->first('domanda'))
                 <ul class="errors">
                     @foreach ($errors->get('domanda') as $message)
