@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nome', 'cognome', 'data_nasc', 'tipologia', 'username', 'password',
+        'nome', 'cognome', 'data_nasc','sess', 'tipologia', 'username', 'password',
     ];
 
     /**
@@ -39,5 +40,10 @@ class User extends Authenticatable
     public function hasRole($role) {
         $role = (array)$role;
         return in_array($this->tipologia, $role);
+    }
+    
+    public function getEta(){
+        $eta = (now()->diff($this->data_nasc))->y;
+        return $eta;
     }
 }
