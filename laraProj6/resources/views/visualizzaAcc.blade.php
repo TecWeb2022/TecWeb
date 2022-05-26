@@ -87,13 +87,21 @@
                         @endguest
                         
                         @can('isLoc')
-                        @if(($acc->sesso == null || $acc->sesso == Auth::user()->sesso) and
-                            ($acc->eta_min == null || $acc->eta_min <= @include('helpers/calcoloEta', ['data_nasc' => Auth::user()->data_nasc]) and
-                            ($acc->eta_max == null || $acc->eta_max >= @include('helpers/calcoloEta', ['data_nasc' => Auth::user()->data_nasc]))
+                        @if(($acc->sesso == null || $acc->sesso == Auth::user()->sesso) &&
+                        ($acc->eta_min == null || $acc->eta_min <= Auth::user()->getEta() ) &&
+                        ($acc->eta_max == null || $acc->eta_max >= Auth::user()->getEta() ))
                             <button onclick="location.href = '{{ route('opzioneAcc', [ 'id' => $acc->id ])}}';">Affitta!</button>
                         @else
                             <button title="Purtroppo non rispetti i vincoli imposti dal locatore" disabled>Non puoi affittare</button>
                         @endif
+                        @endcan
+                        
+                        @can('isAdmin')
+                        <button title="Devi essere un locatario" disabled>Non puoi affittare</button>
+                        @endcan
+                        
+                        @can('isHost')
+                        <button title="Devi essere un locatario" disabled>Non puoi affittare</button>
                         @endcan
                   </div>
               </div>

@@ -51,14 +51,14 @@ class AdminController extends Controller
         $faq->risposta = $dati['risposta'];
         $faq->save();
         
-        return redirect()->route('home');
+        return redirect()->route('gestFaqs');
     }
     
     public function eliminaFaq(Request $request) {
         $id_faq = $request['id'];
         $faq = Faq::find($id_faq);
         $faq->delete();
-        return redirect()->route('home');
+        return redirect()->route('gestFaqs');
     }
 
     protected function validator(array $data)
@@ -77,7 +77,7 @@ class AdminController extends Controller
         $faq->risposta = $dati['risposta'];
         $faq->save();
  
-        return redirect()->route('home');
+        return redirect()->route('gestFaqs');
     }
     
     public function stats(Request $request) {

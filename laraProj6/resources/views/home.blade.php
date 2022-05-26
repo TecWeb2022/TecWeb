@@ -56,9 +56,16 @@ endguest
                              @can('isAdmin')
                              <div class="slider-text">
                                     <h1><span>Area Admin</span></h1>
-                                    <h2 class='benvenuto_admin'>Benvenuto {{ Auth::user()->nome }} <!--{{ Auth::user()->cognome }}-->
+                                    <h2 class='benvenuto_admin'>Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }}
                                     </h2>
                              </div>
+                             @endcan
+                             @can('isHost')
+                             <div class="slider-text">
+                                    <h1><span>Area Locatore</span></h1>
+                                    <p>Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }}
+                                    </p>
+                                </div>
                              @endcan
                                  
 			  </div>

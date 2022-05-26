@@ -20,8 +20,8 @@ class HostController extends Controller {
     protected $_faqModel;
 
     public function _construct() {
+        $this->middleware('can:isHost');
         $this->_faqModel= new Faq;
-        //$this->middleware('can:isHost');
         $this->_hostModel = new Host;
     }
     

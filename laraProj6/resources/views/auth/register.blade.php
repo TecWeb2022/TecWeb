@@ -52,7 +52,7 @@
             
             <div  class="wrap-input">
                 {{ Form::label('sesso', 'Sesso', ['title' => 'Valore obbligatorio']) }}
-                {{ Form::select('sesso', ['M' => 'Uomo', 'F' => 'Donna'], ['id' => 'sesso', 'placeholder' => 'Sesso']) }}
+                {{ Form::select('sesso', ['M' => 'Uomo', 'F' => 'Donna'], '', ['id' => 'sesso']) }}
             </div>
             
              <div  class="wrap-input">

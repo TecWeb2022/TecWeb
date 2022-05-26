@@ -77,19 +77,9 @@ Route::get('/modificaHostAcc', 'HostController@')
 Route::post('/modificaHostAcc','HostController@')
         ->name('modificaHostAccPost');
 
-Route::get('/homeHost', 'HostController@index')
-        ->name('homeHost');
-
 Route::get('/gestioneAnnunci', 'HostController@getAlloggiHost')
         ->name('gestioneAnn');
 
-/* da vedere se 
-Route::get('/catalogo/host', 'HostController@')
-        ->name('catalogoHost');
-
-Route::get('/alloggioHost/{id}', 'HostController@infoAcc')
-        ->name('visualizzaAccHost');
-*/
 
 /*******ADMIN*******/
 

@@ -228,7 +228,7 @@
                        
                        @if($acc->assegnato == false)
                          <div class="center">
-                             <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/notte</button>
+                             <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/Mese</button>
                          </div>
                          @else
                          <div class="center">
