@@ -28,42 +28,50 @@ class HostController extends Controller {
     public function index() {
         //$faqs = $this->_faqModel->get();
         $faqs = new Faq;
-        return view('accommodation.host')
+        return view('home')
             ->with('faqs', $faqs->get());
     }
     
     public function insertAcc(NewAccommodationRequest $request) {
         
-        
+        /*
         if ($request->hasFile('foto')) {
             $image = $request->file('foto');
             $imageName = $image->getClientOriginalName();
         } else {
             $imageName = NULL;
         }
+         * 
+         */
 
         
-        $acc = new Accomodation;
+       $acc = new Accomodation;
         $validatedrequest = $request->validated();
+        
+         if ($request->hasFile('foto')) {
+            $path = $request->file('foto')->store('alloggi');
+        }
+      
         foreach($validatedrequest as $key => $value ) {
             if($validatedrequest[$key] === 'foto') {}
                 else {
                 $acc[$key] = $validatedrequest[$key];
                 }
         }
-        
-        $acc->path_foto = $imageName;
-        //$acc->updated_at = null;
-        //$acc->created_at = Carbon::now();
-        $acc->proprietario = auth()->user()->id;
-        $acc->save();
-
+        /*
         if (!is_null($imageName)) {
             $destinationPath = public_path() . '/images/alloggi';
             $image->move($destinationPath, $imageName);
         };
+         * 
+         */
+        
+        $acc->path_foto = $path;
 
-        return response()->json(['redirect' => route('homeHost')]);
+        $acc->proprietario = auth()->user()->id;
+        $acc->save();
+
+        return redirect()->route('gestioneAnn');
         
     }
     

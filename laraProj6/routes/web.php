@@ -65,11 +65,15 @@ Route::post('logout', 'Auth\LoginController@logout')
 
 /* * * * * * *LOCATORE * * * * * * * * * * * */
 
+Route::get('/homeHost', 'HostController@index')
+        ->name('homeHost');
+
 Route::view('/insertAcc', 'accommodation.insertAcc')
         ->name('insertAcc');
 
 Route::post('/insertAcc', 'HostController@insertAcc')
         ->name('insertAccPost');
+
 //modificaHostAcc da completare col nome della funzione
 Route::get('/modificaHostAcc', 'HostController@')
         ->name('modificaHostAcc');

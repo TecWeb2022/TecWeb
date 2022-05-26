@@ -54,12 +54,4 @@ class NewAccommodationRequest extends FormRequest {
         ];
     }
 
-    /**
-     * Override: response in formato JSON
-    */
-    protected function failedValidation(Validator $validator)
-    {
-        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
-    }
-
 }
