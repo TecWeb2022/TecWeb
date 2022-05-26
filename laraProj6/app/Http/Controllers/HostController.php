@@ -87,7 +87,7 @@ class HostController extends Controller {
        
         $path = $request->file('path_foto')->store('alloggi');
         $acc = Accomodation::find($id);
-        
+        //eliminare la foto su acc
         foreach($validatedrequest as $key => $value) {
               $acc->$key = $value;       
         }
