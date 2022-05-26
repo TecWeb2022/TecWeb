@@ -37,11 +37,12 @@
 
                     </div-->
             </div>
-
+                
             <div class="ten columns offset-2 post-content">
                 <p>{{ $faq->risposta }}
                </p>
-               
+               <div class="row bottone_inline">
+               <div class="column">
                {{ Form::open(array('route' => array('modifyFaq', $faq->id), 'class' => 'register-form')) }}
                
                {{ Form::hidden('id', $faq->id, ['id' => 'id']) }}
@@ -49,9 +50,9 @@
                {{ Form::submit('Modifica', ['class' => 'btn']) }}
 
                {{ Form::close() }}
+               </div>
             
-            
-            
+            <div class="column">
                {{ Form::open(array('route' => 'eliminaFaq', 'class' => 'register-form')) }}
                
                {{ Form::hidden('id', $faq->id, ['id' => 'id']) }}
@@ -62,6 +63,8 @@
                
                <!--button class='btn' type="button" >Modifica</button> <button class='btn' type="button" >Elimina</i></button--> 
             </div>
+                 </div>  
+                </div>
              @endforeach
          </article> <!-- Entry End -->
          @endisset

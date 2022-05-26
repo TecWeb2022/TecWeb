@@ -40,44 +40,44 @@
           
           
           @isset($stats)
-          <div class="column">
-              <h2 class="center2">Risultati per i filtri:</h2>
+          <div class="columns_bianco colonna_risultati">
+              <h2 class="align-center">Risultati per i filtri:</h2>
               <!--div class="bgrid-thirds-one s-bgrid-halves"-->
               
               @if($stats['filter_tipologia'] != 'all')
-              <p>Tipologia: @include('helpers/tipologiaAcc', ['tipologia' => $stats['filter_tipologia']])</p>
+              <p class="align-center min_marg">Tipologia: @include('helpers/tipologiaAcc', ['tipologia' => $stats['filter_tipologia']])</p>
               @else
-              <p>Tipologia: qualsiasi</p>
+              <p class="align-center min_marg">Tipologia: qualsiasi</p>
               @endif
               
               @if($stats['filter_inizio'] != null)
-              <p>Data inizio: {{ date('d-m-Y', strtotime($stats['filter_inizio'])) }}</p>
+              <p class="align-center min_marg">Data inizio: {{ date('d-m-Y', strtotime($stats['filter_inizio'])) }}</p>
               @else
-              <p>Data inizio: non specificata</p>
+              <p class="align-center min_marg">Data inizio: non specificata</p>
               @endif
               
               @if($stats['filter_fine'] != null)
-              <p>Data fine: {{ date('d-m-Y', strtotime($stats['filter_fine'])) }}</p>
+              <p class="align-center">Data fine: {{ date('d-m-Y', strtotime($stats['filter_fine'])) }}</p>
               @else
-              <p>Data fine: non specificata</p>
+              <p class="align-center">Data fine: non specificata</p>
               @endif
               
-           <div class="columns_bianco">
-              <h2 class="center2">Alloggi nel sito</h2>
+              <div>
+              <h2 class="align-center bordo_risultati">Alloggi nel sito</h2>
 
-              <p class="paragrafo center2">{{ $stats['alloggi_tot'] }}</p>
-           </div>
+              <p class="paragrafo align-center ">{{ $stats['alloggi_tot'] }}</p>
+              </div>
 
-           <div class="columns_bianco">
-              <h2 class="center2">Offerte locatari</h2>
+              <div>
+              <h2 class="align-center bordo_risultati">Offerte locatari</h2>
 
-              <p class="paragrafo center2">{{ $stats['offerte'] }}</p>
-           </div>
+              <p class="paragrafo align-center">{{ $stats['offerte'] }}</p>
+              </div>
 
-           <div class="columns_bianco s-first">
-              <h2 class="center2">Alloggi locati</h2>
+             <div>
+              <h2 class="align-center bordo_risultati">Alloggi locati</h2>
 
-              <p class="paragrafo2 center2">{{ $stats['alloggi_locati'] }}</p>
+              <p class="paragrafo align-center">{{ $stats['alloggi_locati'] }}</p>
            <!--/div-->
           </div>
         </div>
