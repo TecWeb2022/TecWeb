@@ -85,23 +85,11 @@
          </div>
           <div class="flex-box flex-inline add-bottom">
               <div class="column">
-                  {{ Form::open(array('route' => array('modificaHostAcc', $acc->id), 'class' => 'register-form')) }}
-               
-               {{ Form::hidden('id', $acc->id, ['id' => 'id']) }}
-               
-               {{ Form::submit('Modifica', ['class' => 'btn']) }}
-
-               {{ Form::close() }}
+                  <button onclick="location.href = '{{ route('modificaHostAcc', [ 'id' => $acc->id ])}}';">Modifica questa offerta</button>
               </div>
               
               <div class="column">
-                  {{ Form::open(array('route' => array('visualizzaOpzioneAcc', $acc->id), 'class' => 'register-form')) }}
-               
-               {{ Form::hidden('id', $acc->id, ['id' => 'id']) }}
-               
-               {{ Form::submit('Visualizza richieste di opzione', ['class' => 'btn']) }}
-
-               {{ Form::close() }}
+                  <button onclick="location.href = '{{ route('visualizzaOpzioneAcc', [ 'id' => $acc->id ])}}';">Vedi richieste ricevute</button>
               </div>
               
               
@@ -111,6 +99,6 @@
          </div>
           <!-- Comments End -->
  </section>
-@endisset()
+@endisset
 
 @endsection

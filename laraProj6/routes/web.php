@@ -75,11 +75,14 @@ Route::post('/insertAcc', 'HostController@insertAcc')
         ->name('insertAccPost');
 
 //modificaHostAcc da completare col nome della funzione
-Route::get('/modificaHostAcc', 'HostController@')
+Route::get('/modificaHostAcc/{id}', 'HostController@getAlloggioModifica')
         ->name('modificaHostAcc');
 
-Route::post('/modificaHostAcc','HostController@')
+Route::post('/modificaHostAcc','HostController@modificaAlloggio')
         ->name('modificaHostAccPost');
+
+Route::get('/visualizzaOpzioni','HostController@')
+        ->name('visualizzaOpzioneAcc');
 
 Route::get('/gestioneAnnunci', 'HostController@getAlloggiHost')
         ->name('gestioneAnn');

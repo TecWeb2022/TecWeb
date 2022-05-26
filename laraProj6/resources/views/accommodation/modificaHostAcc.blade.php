@@ -4,6 +4,8 @@
 @section('title', 'Nuovo Alloggio')
 
 @section('content')
+
+@isset($acc)
 <section id="works">
 
       <div class="row">
@@ -23,7 +25,7 @@
 
                 <div  class="wrap-input">
                     {{ Form::label('tipologia', 'Tipologia', ['class' => 'titolo']) }}
-                    {{ Form::select('tipologia', $acc->tipologia, ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'], ['id' => 'tipologia', 'onclick'=>'']) }}
+                    {{ Form::select('tipologia',  ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],$acc->tipologia, ['id' => 'tipologia', 'onclick'=>'']) }}
                 </div>
 
                 <div  class="wrap-input">
@@ -37,13 +39,13 @@
                 </div>
 
                 <div  class="wrap-input">
-                    {{ Form::label('foto', 'Immagine', ['class' => 'titolo']) }}
-                    {{ Form::file('foto', $acc->foto, ['class' => 'input', 'id' => 'foto']) }}
+                    {{ Form::label('path_foto', 'Immagine', ['class' => 'titolo']) }}
+                    {{ Form::file('path_foto', $acc->path_foto, ['class' => 'input', 'id' => 'path_foto']) }}
                 </div>
 
                 <div  class="wrap-input">
                     {{ Form::label('citta', 'Città', ['class' => 'titolo']) }}
-                    {{ Form::text('citta', $acc->foto, ['class' => 'input', 'id' => 'citta']) }}
+                    {{ Form::text('citta', $acc->citta, ['class' => 'input', 'id' => 'citta']) }}
                 </div>
 
                 <div  class="wrap-input">
@@ -87,7 +89,7 @@
            
             <div  class="wrap-input">
                 {{ Form::label('sesso', 'Sesso(M/F)', ['class' => 'titolo']) }}
-                {{ Form::select('sesso', $acc->sesso, ['' => 'Non specificato','M' => 'Uomo', 'F' => 'Donna'], ['id' => 'sesso'] ) }}
+                {{ Form::select('sesso',  ['' => 'Non specificato','M' => 'Uomo', 'F' => 'Donna'], $acc->sesso, ['id' => 'sesso'] ) }}
             </div>
            
             <div  class="wrap-input">
@@ -161,6 +163,6 @@
                 </div>
     </div> 
 
-
+@endisset
 @endsection
  
