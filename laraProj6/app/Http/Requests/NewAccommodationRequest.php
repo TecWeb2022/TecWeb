@@ -33,7 +33,7 @@ class NewAccommodationRequest extends FormRequest {
         return [
             'nome' => 'required|string|max:25',            
             'descr' => 'required|string|max:500',
-            'path_foto' => 'file|mimes:jpeg,png|max:1024',
+            'path_foto' => 'required|file|mimes:jpeg,png|max:1024',
             'tipologia' => 'required|max:2',
             'citta' => 'required|max:20',
             'prov' => 'required|max:2',
@@ -42,14 +42,14 @@ class NewAccommodationRequest extends FormRequest {
             'sup' =>'required|numeric|min:0',
             'inizio_disp' =>'required',
             'fine_disp' =>'required',
-            'eta_min' =>'integer|min:0',
-            'eta_max' =>'integer|min:0',
-            'sesso' =>'max:1',
+            'eta_min' =>'integer|min:0|nullable',
+            'eta_max' =>'integer|min:0|nullable',
+            'sesso' =>'max:1|nullable',
             'canone' => 'required|numeric|min:0',
-            'posti_letto_tot' =>'integer|min:0',
-            'letti_camera' =>'integer|min:0',
-            'num_bagni' =>'integer|min:0',
-            'num_camere' =>'integer|min:0'
+            'posti_letto_tot' =>'integer|min:0|nullable',
+            'letti_camera' =>'integer|min:0|nullable',
+            'num_bagni' =>'integer|min:0|nullable',
+            'num_camere' =>'integer|min:0|nullable'
             
         ];
     }

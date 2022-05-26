@@ -44,20 +44,23 @@ class HostController extends Controller {
          * 
          */
 
-        
        $acc = new Accomodation;
-        $validatedrequest = $request->validated();
-        
-         if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('alloggi');
-        }
-      
+       $validatedrequest = $request->validated();
+       
+       $path = $request->file('path_foto')->store('alloggi');
+       
         foreach($validatedrequest as $key => $value ) {
-            if($validatedrequest[$key] === 'foto') {}
+            if($validatedrequest[$key] === 'path_foto') {}
                 else {
                 $acc[$key] = $validatedrequest[$key];
                 }
         }
+       
+        $acc->path_foto = $path;
+        $acc->proprietario = auth()->user()->id;
+        $acc->save();
+      
+        
         /*
         if (!is_null($imageName)) {
             $destinationPath = public_path() . '/images/alloggi';
@@ -65,12 +68,6 @@ class HostController extends Controller {
         };
          * 
          */
-        
-        $acc->path_foto = $path;
-
-        $acc->proprietario = auth()->user()->id;
-        $acc->save();
-
         return redirect()->route('gestioneAnn');
         
     }
