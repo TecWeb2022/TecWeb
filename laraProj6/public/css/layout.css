@@ -133,7 +133,7 @@ color:white;
           color: #11abb0;
 }
 
-
+/*Fatta da Matteo,serve per allineare i bottoni Modifica e Elimina nella Gestione faq*/
 .bottone_inline{
   display: inline-block;
   width: calc(50% - 4px);
