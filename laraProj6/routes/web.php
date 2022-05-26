@@ -48,6 +48,15 @@ Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
 Route::post('/alloggio/{id}/opzione', 'LocController@invioOpzForm')
         ->name('opzioneAccPost');
 
+Route::get('/messaggiRicevutiLocatario', 'LocController@getMessaggiRicevuti')
+        ->name('messaggisticaLoc');
+
+Route::get('/messaggioLoc/{id_mess}', 'LocController@getMessaggio')
+        ->name('messaggioLoc');
+
+Route::get('/messaggiInviatiLocatario', 'LocController@getMessaggiInviati')
+        ->name('messaggiInvLoc');
+
 /*          REGISTRAZIONE           */
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')

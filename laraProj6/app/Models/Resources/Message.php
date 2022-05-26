@@ -3,12 +3,13 @@
 namespace App\Models\Resources;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Message extends Model
 {
     protected $table = 'messages';
     protected $primaryKey = 'id';
-    public $timestamps = false;
+    public $timestamps = true;
     
     // Relazione One-To-One con User (mittente)
     public function mitt() {

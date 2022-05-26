@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Locatario;
 use App\Models\Resources\Accomodation;
 use App\Models\Resources\Message;
+use App\Models\MessageList;
 use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
@@ -84,4 +85,25 @@ class LocController extends Controller {
     }
     
 
+    public function getMessaggiRicevuti() {
+        $ml = new MessageList;
+        $messRic = $ml->messRicevuti(auth()->user()->id);
+        //$messRic = $messRic->paginate(5);
+        return view('messaggistica')
+            ->with('messRic', $messRic);
+    }
+    
+    public function getMessaggio($id_mess) {
+        //$mess = Message::where('id', '=', $id_mess);
+        $mess = Message::find($id_mess);
+        return view('visualizzaMessaggio')
+            ->with('mess', $mess);
+    }
+    
+    public function getMessaggiInviati() {
+        $ml = new MessageList;
+        $messInv = $ml->messInviati(auth()->user()->id);
+        return view('messaggistica')
+            ->with('messInv', $messInv);
+    }
 }

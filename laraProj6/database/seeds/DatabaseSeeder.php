@@ -86,8 +86,10 @@ class DatabaseSeeder extends Seeder
            ]);
                
        DB::table('messages')->insert([
-           ['id'=>1,'testo'=>'Salve sono interessato al suo alloggio','visualizzato'=>false,'inviato'=>'2022-05-15','id_mitt'=>3,'id_dest'=>2,'id_alloggio'=>2],
-           ['id'=>2,'testo'=>'Salve sono interessato al suo alloggio','visualizzato'=>true,'inviato'=>'2022-05-15','id_mitt'=>4,'id_dest'=>2,'id_alloggio'=>2]
+           ['id'=>1,'testo'=>'Salve sono interessato al suo alloggio','visualizzato'=>false,'id_mitt'=>3,'id_dest'=>2,'id_alloggio'=>2],
+           ['id'=>2,'testo'=>'Salve sono interessato al suo alloggio','visualizzato'=>true,'id_mitt'=>4,'id_dest'=>2,'id_alloggio'=>2],
+           ['id'=>3,'testo'=>'Salve sono interessato al suo alloggio','visualizzato'=>true,'id_mitt'=>5,'id_dest'=>3,'id_alloggio'=>2],
+           ['id'=>4,'testo'=>'Salve sono interessato al suo alloggio','visualizzato'=>false,'id_mitt'=>5,'id_dest'=>3,'id_alloggio'=>2]
        ]);
        
        DB::table('options')->insert([
