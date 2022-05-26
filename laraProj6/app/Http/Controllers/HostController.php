@@ -59,27 +59,39 @@ class HostController extends Controller {
     public function infoAcc($id){
         $acc = $this->_catalogModel->getAccById($id);
         
-        return view('accommodation.visualizzaAccHost')
+        return view('accommodation.descrHostAcc')
                 ->with('acc',$acc);
     }
     
-    public function getAlloggiHost(){
+    public function getAccsHost(){
         $catHost = $this->_catalogModel->getAllAcc()->where('proprietario', '=', auth()->user()->id);
         $catHost = $catHost->paginate(5);
         return view('accommodation.gestioneAcc')
                 ->with('catHost', $catHost);
     }
     
-    public function getAlloggioModifica($id){
+
+    public function getAccModifica($id){
         $acc = $this->_catalogModel->getAccById($id);
         
         return view('modificaHostAcc')
             ->with('acc',$acc);
     }
     
-    public function modificaAlloggio(NewAccommodationRequest $request){
+    public function modificaAcc(NewAccommodationRequest $request, $id){
         
+        $validatedrequest = $request->validated();
+       
+        $path = $request->file('path_foto')->store('alloggi');
+        $acc = Accomodation::find($id);
         
+        foreach($validatedrequest as $key => $value) {
+              $acc->$key = $value;       
+        }
+        $acc->path_foto = $path;
+        $acc->save();
+        return redirect()->route('infoAccHost')
+                ->with('id',$id);
     }
 }
 

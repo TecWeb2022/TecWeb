@@ -74,17 +74,20 @@ Route::view('/insertAcc', 'accommodation.insertAcc')
 Route::post('/insertAcc', 'HostController@insertAcc')
         ->name('insertAccPost');
 
+Route::get('/alloggioHost/{id}', 'HostController@infoAcc')
+        ->name('infoAccHost');
+
 //modificaHostAcc da completare col nome della funzione
-Route::get('/modificaHostAcc/{id}', 'HostController@getAlloggioModifica')
+Route::get('/modificaHostAcc/{id}', 'HostController@getAccModifica')
         ->name('modificaHostAcc');
 
-Route::post('/modificaHostAcc','HostController@modificaAlloggio')
+Route::post('/modificaHostAcc','HostController@modificaAcc')
         ->name('modificaHostAccPost');
 
 Route::get('/visualizzaOpzioni','HostController@')
         ->name('visualizzaOpzioneAcc');
 
-Route::get('/gestioneAnnunci', 'HostController@getAlloggiHost')
+Route::get('/gestioneAnnunci', 'HostController@getAccsHost')
         ->name('gestioneAnn');
 
 
