@@ -73,15 +73,19 @@ class LocController extends Controller {
     {
         //manca il validator
         $opzione = new Option;
-        $opzione['nota'] = $request->input('nota');
-        $opzione['data_inizio'] = $request->input('data_inizio');
-        $opzione['data_fine'] = $request->input('data_fine');
-        $opzione['data_invio'] = Carbon::now();
-        $opzione['id_alloggio'] = $id; 
-        $opzione['id_locatario'] = auth()->user()->id;
+        $opzione->id_alloggio = $id; 
+        $opzione->id_locatario = auth()->user()->id;
         
+        $mess = new Message;
+        $mess->testo = $request->testo;
+        $mess->id_mitt = auth()->user()->id;
+        $acc = new Accomodation;
+        $mess->id_dest = $acc->find($id)->propr->id;
+        $mess->id_alloggio = $id;
+        
+        $mess->save();
         $opzione->save();
-        return view('catalogoLoc');
+        return redirect()->route('catalogoLoc');
     }
     
 

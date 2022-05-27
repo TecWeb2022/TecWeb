@@ -3,6 +3,7 @@
 namespace App\Models\Resources;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Accomodation extends Model
 {
@@ -11,7 +12,7 @@ class Accomodation extends Model
     public $timestamps = true;
     
     // Relazione One-To-One con User (proprietario)
-    public function mitt() {
+    public function propr() {
         return $this->hasOne(User::class, 'id', 'proprietario');
     }
 }
