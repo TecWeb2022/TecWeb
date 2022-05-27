@@ -96,7 +96,7 @@ Route::get('/alloggioHost/{id}', 'HostController@infoAcc')
 Route::get('/modificaHostAcc/{id}', 'HostController@getAccModifica')
         ->name('modificaHostAcc');
 
-Route::post('/modificaHostAcc','HostController@modificaAcc')
+Route::post('/modificaHostAcc/{id}','HostController@modificaAcc')
         ->name('modificaHostAccPost');
 
 Route::get('/visualizzaOpzioni','HostController@')

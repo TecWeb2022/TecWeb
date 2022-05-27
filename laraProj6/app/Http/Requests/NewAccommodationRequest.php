@@ -30,25 +30,25 @@ class NewAccommodationRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'nome' => 'required|string|max:25',            
+            'nome' => 'required|string|max:100',            
             'descr' => 'required|string|max:500',
-            'path_foto' => 'required|file|mimes:jpeg,png|max:1024',
+            'path_foto' => 'required|file|mimes:jpeg,png,jpg|max:1024',
             'tipologia' => 'required|max:2',
-            'citta' => 'required|max:20',
+            'citta' => 'required|max:50',
             'prov' => 'required|max:2',
-            'via' => 'required|max:30',
+            'via' => 'required|max:50',
             'num_civ' =>'required|numeric|min:0',
-            'sup' =>'required|numeric|min:0',
+            'sup' =>'required|numeric|min:0|max:1000|',
             'inizio_disp' =>'required',
             'fine_disp' =>'required',
-            'eta_min' =>'integer|min:0|nullable',
-            'eta_max' =>'integer|min:0|nullable',
+            'eta_min' =>'integer|min:0|max:100|nullable',
+            'eta_max' =>'integer|min:0|max:100|nullable',
             'sesso' =>'max:1|nullable',
             'canone' => 'required|numeric|min:0',
-            'posti_letto_tot' =>'integer|min:0|nullable',
-            'letti_camera' =>'integer|min:0|nullable',
-            'num_bagni' =>'integer|min:0|nullable',
-            'num_camere' =>'integer|min:0|nullable'
+            'posti_letto_tot' =>'integer|min:0|max:1000|nullable',
+            'letti_camera' =>'integer|min:0|max:100|nullable',
+            'num_bagni' =>'integer|min:0|max:100|nullable',
+            'num_camere' =>'integer|min:0|max:500|nullable'
             
         ];
     }

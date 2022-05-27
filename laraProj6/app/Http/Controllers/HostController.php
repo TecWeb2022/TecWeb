@@ -10,6 +10,7 @@ use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use App\Http\Requests\NewAccommodationRequest;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\File; 
 
 use Illuminate\Http\Request;
 
@@ -82,18 +83,27 @@ class HostController extends Controller {
     
     public function modificaAcc(NewAccommodationRequest $request, $id){
         
-        $validatedrequest = $request->validated();
-       
-        $path = $request->file('path_foto')->store('alloggi');
-        $acc = Accomodation::find($id);
+       $validatedrequest = $request->validated();
+        
+       $acc = Accomodation::find($id);
         //eliminare la foto su acc
         foreach($validatedrequest as $key => $value) {
-              $acc->$key = $value;       
+            if($key != 'path_foto'){
+              $acc->$key = $value;  
+            }
         }
-        $acc->path_foto = $path;
+        
+        
+       if($request->hasFile('path_foto')){
+           File::delete('/storage/',$acc->path_foto);
+            $path = $request->file('path_foto')->store('public/alloggi');
+            $acc->path_foto = substr($path, 7);
+        }
+      
         $acc->save();
-        return redirect()->route('infoAccHost')
-                ->with('id',$id);
+        
+        return redirect()->route('infoAccHost',$id);
+                
     }
 }
 

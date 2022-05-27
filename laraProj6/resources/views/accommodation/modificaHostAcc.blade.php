@@ -14,7 +14,7 @@
           
           <div class="flex-box flex-inline add-bottom">
 
-           {{ Form::open(array('route' => 'modificaHostAccPost', 'id' => 'modificaHostAcc', 'files' => true, 'class' => '')) }}
+           {{ Form::open(array('route' => array('modificaHostAccPost','id' => $acc->id), 'id' => 'modificaHostAcc', 'files' => true, 'class' => '')) }}
            
             <div class="column">
                  
