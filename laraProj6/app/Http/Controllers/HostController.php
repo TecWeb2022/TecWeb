@@ -58,6 +58,7 @@ class HostController extends Controller {
         $cat = new Catalog;
         $acc = $cat->getAccById($id);
         
+        //Va controllato che l'id del proprietario corrisponda a quello dell'user
         return view('accommodation.modificaHostAcc')
             ->with('acc',$acc);
     }
