@@ -19,7 +19,7 @@
       <div class="flex-box flex-inline add-bottom">
           <div class="column">
                <p class="titolo">Tipologia: 
-               <span class="testo">@include('helpers/tipologiaAcc', ['acc' => $acc])</span>
+               <span class="testo">@include('helpers/tipologiaAcc', ['tipologia' => $acc->tipologia])</span>
                </p>
                <p class="titolo">Disponibilità: <span class="testo">{{ $acc->inizio_disp }} / {{ $acc->fine_disp }}</span></p> 
                <div class="flex-box flex-inline flex-left">
