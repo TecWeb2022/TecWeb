@@ -87,10 +87,10 @@ class LocController extends Controller {
 
     public function getMessaggiRicevuti() {
         $ml = new MessageList;
-        $messRic = $ml->messRicevuti(auth()->user()->id);
+        $mess = $ml->messRicevuti(auth()->user()->id);
         //$messRic = $messRic->paginate(5);
         return view('messaggistica')
-            ->with('messRic', $messRic);
+            ->with('mess', $mess);
     }
     
     public function getMessaggio($id_mess) {
@@ -104,9 +104,9 @@ class LocController extends Controller {
     
     public function getMessaggiInviati() {
         $ml = new MessageList;
-        $messInv = $ml->messInviati(auth()->user()->id);
+        $mess = $ml->messInviati(auth()->user()->id);
         return view('messaggistica')
-            ->with('messInv', $messInv);
+            ->with('mess', $mess);
     }
     
     public function scriviMess($id_mess) {
