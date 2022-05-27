@@ -23,28 +23,32 @@ currNavBar(3);
                 <center><div><a href="{{ route('messaggisticaLoc') }}">Ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Inviati</a></div></center>
                <!-- commentlist -->
                @isset($messRic)
-               <ol class="commentlist">
+               <ol class="commentlist ">
                   @foreach($messRic as $m)
                   <!--li class="depth-1"-->
                   <li>
-
+                      <!--div class="avatar2">
+                        <img width="50" height="50" src="images/icona_utente.png" alt="">
+                     </div-->
+                      <div class="bordo_messaggi center">
                      <div class="comment-info">
-                         <cite>{{ $m->mitt->nome }} {{ $m->mitt->cognome }}</cite>
+                         <img class="avatar2" src="images/icona_utente.png" alt="">
+                         <h3 class="nome_mitt">{{ $m->mitt->nome }} {{ $m->mitt->cognome }}</h3>
 
                         <div class="comment-meta">
-                           <p>Ricevuto: {{ date('d-m-Y', strtotime($m->created_at)) }}</p>
+                           <p class="ricevuto_messagistica">Ricevuto: {{ date('d-m-Y', strtotime($m->created_at)) }}</p>
                         </div>
                      </div>
 
                      <div class="dettagli_cat">
-                         <p>Nome alloggio: {{ $m->alloggio->nome }}</p>
+                         <cite class="nome_alloggio">Nome alloggio: {{ $m->alloggio->nome }}</cite>
                      </div>
                       @if($m->visualizzato)
-                      <button onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
+                      <button class="btn_mess_vis" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
                       @else
-                      <button onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
+                      <button class="btn_mess_nvis" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
                       @endif
-                      
+                       </div>
                       @endforeach
                      
                         

@@ -115,11 +115,43 @@ color:white;
     background-color: #11abb0;
     margin-left: 47.5%;
 }
+/*fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
+.btn_mess_vis{ 
+    height: 30px;
+    width: 80px;
+    padding: 0 0;
+    text-align: center;
+    background-color: #00686b;
+    margin-top: -40px;
+    margin-bottom: 10px;
+    margin-left: 80%;
+    font-size:13px}
+
+/* fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
+.btn_mess_nvis{
+    height: 30px;
+    width: 80px;
+    padding: 0 0;
+    text-align: center;
+    background-color: #11abb0;
+    margin-top: -40px;
+    margin-bottom: 10px;
+    margin-left: 80%;
+    font-size:13px}
+
+
 
 
 .dettagli_cat {
     clear: both;
     margin: 2px 0 0 110px;
+    padding: 0;
+    line-height: 24px;
+}
+/*Fatta da Matteo*/
+.nome_alloggio {
+    clear: both;
+    margin: 2px 0 0 10px;
     padding: 0;
     line-height: 24px;
 }
@@ -1024,6 +1056,34 @@ ol.commentlist {
    height: 50px;
    width: 50px;
 }
+
+/*fatta da Matteo, serve a settare l'icona utente sulla messagistica*/
+.avatar2  {
+   position: absolute;
+   float: left;
+   left: 0px;
+   
+   margin-top: 6px;
+   height: 90px;
+   width: 90px;
+   border-radius: 100% 100% 100% 100%;
+
+}
+/*fatta da Matteo, serve a settare riquadro messaggi sulla messagistica*/
+.bordo_messaggi{
+    border: 2px solid black;
+    margin: 0 150px 0 -10px;
+    padding: 10px 0 -50px 10px;
+}
+/*fatta da Matteo, serve allineare la riga ricevuto*/
+.ricevuto_messagistica{
+   margin:0 0 -5px 10px;
+}
+
+.nome_mitt{
+    margin:10px 0 0 9px;
+}
+
 .commentlist li .avatar img {
    margin-top: 6px;
    height: 50px;
