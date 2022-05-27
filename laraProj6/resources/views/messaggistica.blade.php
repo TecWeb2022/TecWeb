@@ -11,29 +11,30 @@ currNavBar(3);
 <!-- Content
    ================================================== -->
    <div class="content-outer">
+      <div class="row">
+      
 
-      <div id="page-content2" class="row">
-
-         <div id="primary" class="ten columns">
+         <div id="primary" class="twelve columns">
 
             <!-- Comments
             ================================================== -->
-            <div id="comments">
-
+            
+            <div id="comments" >
+                <center>
                 <center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Messaggi inviati</a></div></center>
                <!-- commentlist -->
                @isset($messRic)
-               <ol class="commentlist ">
+               <ol class="commentlist2 colonna-messaggi">
                   @foreach($messRic as $m)
                   <!--li class="depth-1"-->
                   <li>
                       <!--div class="avatar2">
                         <img width="50" height="50" src="images/icona_utente.png" alt="">
                      </div-->
-                      <div class="bordo_messaggi center">
-                     <div class="comment-info">
+                      <div class="bordo_messaggi">
+                     <div class="allinea-lato">
                          <img class="avatar2" src="images/icona_utente.png" alt="">
-                         <h3 class="nome_mitt">{{ $m->mitt->nome }} {{ $m->mitt->cognome }}</h3>
+                         <h3>{{ $m->mitt->nome }} {{ $m->mitt->cognome }}</h3>
 
                         <div class="comment-meta">
                            <p class="ricevuto_messagistica">Ricevuto: {{ date('d-m-Y h:m:s', strtotime($m->created_at)) }}</p>
@@ -41,7 +42,7 @@ currNavBar(3);
                      </div>
 
                      <div class="dettagli_cat">
-                         <cite class="nome_alloggio">Nome alloggio: {{ $m->alloggio->nome }}</cite>
+                         <cite class="nome_alloggio column">Nome alloggio: {{ $m->alloggio->nome }}</cite>
                      </div>
                       @if($m->visualizzato)
                       <button class="btn_mess_vis" title ="Messaggio già visualizzato" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
@@ -50,18 +51,20 @@ currNavBar(3);
                       @endif
                        </div>
                       @endforeach
-                     
+                    
                         
-               </ol> <!-- Commentlist End -->
+               </ol> 
+               </center> 
+               <!-- Commentlist End -->
                <!-- Pagination -->
                <center>@include('pagination.paginator', ['paginator' => $messRic])</center>
-
+               
                </div> <!-- Respond End -->
 
             </div>  <!-- Comments End -->
 
-         </div>
-
+      
+        </div>
          </div> <!-- Comments End -->
 
 @endisset

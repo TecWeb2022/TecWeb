@@ -65,7 +65,8 @@ img { border-radius: 3px; }
 #page-content2 {
    padding-top: 54px;
    padding-bottom: 54px;
-   margin: 0 25%;
+   margin-left: 25%;
+   margin-right: 25%;
    width: 100%;
 }
 
@@ -122,7 +123,7 @@ color:white;
     padding: 0 0;
     text-align: center;
     background-color: #00393b;
-    margin-top: -40px;
+    margin-top: 0px;
     margin-bottom: 10px;
     margin-left: 80%;
     font-size:13px}
@@ -134,7 +135,7 @@ color:white;
     padding: 0 0;
     text-align: center;
     background-color: #11abb0;
-    margin-top: -40px;
+    margin-top: 0px;
     margin-bottom: 10px;
     margin-left: 80%;
     font-size:13px}
@@ -151,8 +152,8 @@ color:white;
 /*Fatta da Matteo*/
 .nome_alloggio {
     clear: both;
-    margin: 2px 0 0 10px;
-    padding: 0;
+    margin: 2px 0 0 0;
+    padding: 0 5px 0 0;
     line-height: 24px;
 }
 
@@ -1041,20 +1042,20 @@ ol.commentlist {
 	padding: 0;
    margin-left: 16.66667%;
 }
+
+ol.commentlist2 {
+        border-top: 1px dotted #E1E5E3;
+	margin: 0 0 0 0;
+	padding: 0 10px 0 0;
+        list-style: none;
+}
+
 .commentlist > li {
    position: relative;
 	list-style: none;
 	margin: 0;
 	padding: 18px 0 17px 0;
 	border-bottom: 1px dotted #D9DEDB;
-}
-.commentlist  li .avatar {
-   position: absolute;
-   left: -50px;
-   display: block;
-
-   height: 50px;
-   width: 50px;
 }
 
 /*fatta da Matteo, serve a settare l'icona utente sulla messagistica*/
@@ -1069,19 +1070,21 @@ ol.commentlist {
    border-radius: 100% 100% 100% 100%;
 
 }
+
+.limitatore-row{
+    margin: 0 100px 0 100px;
+}
+
 /*fatta da Matteo, serve a settare riquadro messaggi sulla messagistica*/
 .bordo_messaggi{
+    min-width: 450px;
     border: 2px solid black;
-    margin: 0 150px 0 -10px;
+    margin: 0 0px 0 -10px;
     padding: 10px 0 -50px 10px;
 }
 /*fatta da Matteo, serve allineare la riga ricevuto*/
 .ricevuto_messagistica{
-   margin:0 0 -5px 10px;
-}
-
-.nome_mitt{
-    margin:10px 0 0 9px;
+   margin:0 10px -5px 0;
 }
 
 .commentlist li .avatar img {
@@ -1108,7 +1111,7 @@ ol.commentlist {
    color: #AEB6B7;
 }
 
-/* inserito da Matteo (serve per spostare la parte del nome e del orario inserimento dx)*/
+/* fatto da Matteo (serve per spostare la parte del nome e del orario inserimento dx)*/
 .comment-info{
     margin: 0 0 0 110px;
 }

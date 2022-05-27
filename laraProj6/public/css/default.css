@@ -935,6 +935,22 @@ properly.
 	margin-right: auto !important;
 	text-align: center !important;
 }
+
+.finestra-block{
+    min-width: 1450px;
+}
+
+/*fatta da Matteo, serve a centrare la colonna della lista dei Messaggi*/
+.colonna-messaggi{
+    transform: translate(0,0);
+    width: 520px;
+}
+
+/*fatta da Matteo, serve allineare la riga ricevuto e nome dei Messaggi*/
+.allinea-lato {
+    margin: 10px 80px 0 0;	
+}
+
 .align-center-div {
     display: flex; 
     justify-content: center;
