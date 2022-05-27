@@ -19,7 +19,7 @@
       <div class="flex-box flex-inline add-bottom">
           <div class="column">
                 <div class="div_imgn_visual_casa">
-                        <img  class="imgn_visual_casa" src="{{ $acc->path_foto }}" palt="">
+                        <img  class="imgn_visual_casa" src="{{asset('/storage/' . $acc->path_foto) }}" palt="">
                 </div>
           </div>
           <div class="column">

@@ -34,27 +34,6 @@ class HostController extends Controller {
             ->with('faqs', $faqs->get());
     }
     
-    public function insertAcc(NewAccommodationRequest $request) {
-
-       $acc = new Accomodation;
-       $validatedrequest = $request->validated();
-       
-       $path = $request->file('path_foto')->store('alloggi');
-       
-        foreach($validatedrequest as $key => $value ) {
-            if($validatedrequest[$key] === 'path_foto') {}
-                else {
-                $acc[$key] = $validatedrequest[$key];
-                }
-        }
-       
-        $acc->path_foto = $path;
-        $acc->proprietario = auth()->user()->id;
-        $acc->save();
-      
-        return redirect()->route('gestioneAnn');  
-    }
-    
     
     public function infoAcc($id){
         $cat = new Catalog;
@@ -79,6 +58,26 @@ class HostController extends Controller {
         
         return view('accommodation.modificaHostAcc')
             ->with('acc',$acc);
+    }
+    
+    public function insertAcc(NewAccommodationRequest $request) {
+
+       $acc = new Accomodation;
+       $validatedrequest = $request->validated();
+       
+        foreach($validatedrequest as $key => $value ) {
+            $acc[$key] = $validatedrequest[$key]; 
+        }
+        
+        if($request->hasFile('path_foto')){
+            $path = $request->file('path_foto')->store('public/alloggi');
+            $acc->path_foto = substr($path, 7);
+        }
+       
+        $acc->proprietario = auth()->user()->id;
+        $acc->save();
+      
+        return redirect()->route('gestioneAnn');  
     }
     
     public function modificaAcc(NewAccommodationRequest $request, $id){

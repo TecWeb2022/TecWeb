@@ -30,7 +30,7 @@
                   <li>
 
                      <div class="imgn_casa">
-                        <img class="imgn_casa" src="{{ $acc->path_foto }}" palt="">
+                        <img class="imgn_casa" src="{{asset('/storage/' . $acc->path_foto) }}" palt="">
                      </div>
 
                      <div class="comment-info">
