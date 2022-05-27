@@ -4,9 +4,7 @@
 
 @section('content')
 
-<script type="text/javascript">
-currNavBar(2);
-</script>
+
 
 <!-- Content
    ================================================== -->
@@ -52,7 +50,7 @@ currNavBar(2);
                         
                </ol> <!-- Commentlist End -->
                <!-- Pagination -->
-               <center>@include('pagination.paginator', ['paginator' => $messRic])</center>
+               <center>@include('pagination.paginator', ['paginator' => $opzione])</center>
 
                </div> <!-- Respond End -->
 

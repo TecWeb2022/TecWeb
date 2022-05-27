@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Resources\Accomodation;
+use App\Models\Locatario;
 use App\Models\Resources\Message;
 use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
