@@ -93,7 +93,7 @@ class LocController extends Controller {
             ->with('mess', $mess);
     }
     
-    public function getMessaggio($id_mess) {
+    public function getMessaggioRicevuto($id_mess) {
         //$mess = Message::where('id', '=', $id_mess);
         $mess = Message::find($id_mess);
         $mess->visualizzato = true;
@@ -105,13 +105,26 @@ class LocController extends Controller {
     public function getMessaggiInviati() {
         $ml = new MessageList;
         $mess = $ml->messInviati(auth()->user()->id);
-        return view('messaggistica')
+        return view('messaggiInviati')
+            ->with('mess', $mess);
+    }
+    
+    public function getMessaggioInviato($id_mess) {
+        //$mess = Message::where('id', '=', $id_mess);
+        $mess = Message::find($id_mess);
+        return view('visualizzaMessaggioInviato')
             ->with('mess', $mess);
     }
     
     public function scriviMess($id_mess) {
         $mess = Message::find($id_mess);
         return view('scritturaMessaggio')
+            ->with('mess', $mess);
+    }
+    
+    public function riscriviMess($id_mess) {
+        $mess = Message::find($id_mess);
+        return view('riscritturaMessaggio')
             ->with('mess', $mess);
     }
     

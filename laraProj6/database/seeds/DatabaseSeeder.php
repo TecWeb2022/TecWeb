@@ -86,10 +86,10 @@ class DatabaseSeeder extends Seeder
            ]);
                
        DB::table('messages')->insert([
-           ['id'=>1,'testo'=>'Salve, sono interessato al suo alloggio','visualizzato'=>false,'id_mitt'=>3,'id_dest'=>2,'id_alloggio'=>2, 'created_at'=>'2022-10-10 12:10:04'],
-           ['id'=>2,'testo'=>'Salve, vorrei maggiori informazioni in merito al posto letto','visualizzato'=>true,'id_mitt'=>4,'id_dest'=>2,'id_alloggio'=>2, 'created_at'=>'2022-11-10 13:11:04'],
-           ['id'=>3,'testo'=>'Si, il parcheggio si trova facilmente qui in zona.','visualizzato'=>true,'id_mitt'=>5,'id_dest'=>3,'id_alloggio'=>5, 'created_at'=>'2022-11-05 22:19:00'],
-           ['id'=>4,'testo'=>'Buongiorno, certamente gli animali sono ammessi','visualizzato'=>false,'id_mitt'=>2,'id_dest'=>3,'id_alloggio'=>2, 'created_at'=>'2023-01-01 20:50:20'],
+           ['id'=>1,'testo'=>'Salve, sono interessato al suo alloggio','visualizzato'=>false,'id_mitt'=>3,'id_dest'=>2,'id_alloggio'=>2, 'created_at'=>'2022-10-10 09:10:04'],
+           ['id'=>2,'testo'=>'Salve, vorrei maggiori informazioni in merito al posto letto','visualizzato'=>true,'id_mitt'=>4,'id_dest'=>2,'id_alloggio'=>2, 'created_at'=>'2022-11-10 11:11:04'],
+           ['id'=>3,'testo'=>'Si, il parcheggio si trova facilmente qui in zona.','visualizzato'=>true,'id_mitt'=>5,'id_dest'=>3,'id_alloggio'=>5, 'created_at'=>'2022-11-05 12:19:00'],
+           ['id'=>4,'testo'=>'Buongiorno, certamente gli animali sono ammessi','visualizzato'=>false,'id_mitt'=>2,'id_dest'=>3,'id_alloggio'=>2, 'created_at'=>'2023-01-01 10:50:20'],
            ['id'=>5,'testo'=>'Salve, le confermo che la sede Ingengeria dista meno di 10 minuti a piedi','visualizzato'=>false,'id_mitt'=>2,'id_dest'=>3,'id_alloggio'=>3, 'created_at'=>'2022-09-07 01:15:55'],
            ['id'=>6,'testo'=>'Purtroppo ho già ricevuto molte offerte per cui la aggiornerò in seguito','visualizzato'=>false,'id_mitt'=>5,'id_dest'=>3,'id_alloggio'=>11, 'created_at'=>'2022-12-25 00:00:00']
        ]);

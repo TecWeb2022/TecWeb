@@ -34,24 +34,19 @@ currNavBar(3);
                       <div class="bordo_messaggi">
                      <div class="allinea-lato">
                          <img class="avatar2" src="images/icona_utente.png" alt="">
-                         <h3>{{ $m->mitt->nome }} {{ $m->mitt->cognome }}</h3>
+                         <h3>{{ $m->dest->nome }} {{ $m->dest->cognome }}</h3>
 
                         <div class="comment-meta">
-                           <p class="ricevuto_messagistica">Ricevuto: {{ date('d-m-Y h:m', strtotime($m->created_at)) }}</p>
+                           <p class="ricevuto_messagistica">Inviato: {{ date('d-m-Y h:m', strtotime($m->created_at)) }}</p>
                         </div>
                      </div>
 
                      <div class="dettagli_cat">
                          <cite class="nome_alloggio column">Nome alloggio: {{ $m->alloggio->nome }}</cite>
                      </div>
-                      @if($m->visualizzato)
-                      <button class="btn_mess_vis" title ="Messaggio già visualizzato" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
-                      @else
-                      <button class="btn_mess_nvis" title ="Messaggio non visualizzato" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
-                      @endif
-                       </div>
-                      @endforeach
-                    
+
+                      <button class="btn_mess_vis" title ="Messaggio inviato" onclick="location.href = '{{ route('messaggioInvLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
+                    @endforeach
                         
                </ol> 
                </center> 
