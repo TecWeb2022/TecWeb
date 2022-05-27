@@ -23,9 +23,9 @@ currNavBar(3);
                 <center>
                 <center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Messaggi inviati</a></div></center>
                <!-- commentlist -->
-               @isset($messRic)
+               @isset($mess)
                <ol class="commentlist2 colonna-messaggi">
-                  @foreach($messRic as $m)
+                  @foreach($mess as $m)
                   <!--li class="depth-1"-->
                   <li>
                       <!--div class="avatar2">
@@ -57,7 +57,7 @@ currNavBar(3);
                </center> 
                <!-- Commentlist End -->
                <!-- Pagination -->
-               <center>@include('pagination.paginator', ['paginator' => $messRic])</center>
+               <center>@include('pagination.paginator', ['paginator' => $mess])</center>
                
                </div> <!-- Respond End -->
 
