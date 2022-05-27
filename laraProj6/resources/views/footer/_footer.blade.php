@@ -8,8 +8,8 @@
 			<h5>Indirizzo e Recapiti</h5>
                 	<p class="address">
                             HOUSTUDENT<br>
-                            1600 Amphitheatre Parkway <br>
-                            Mountain View, CA 94043 US<br>
+                            Università Politecnica delle Marche<br>
+                            Ancona, via Brecce Bianche 1, AN<br>
                             <span>(123) 456-7890</span>
                         </p>
                      </div>
