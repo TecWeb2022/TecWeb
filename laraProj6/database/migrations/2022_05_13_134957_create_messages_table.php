@@ -15,8 +15,8 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('testo');
-            $table->boolean('visualizzato');
+            $table->string('testo', 1000);
+            $table->boolean('visualizzato')->default(false);
             $table->string('id_mitt');//->index();
             //$table->foreign('id_mitt')->references('id')->on('users');
             $table->string('id_dest');//->index();

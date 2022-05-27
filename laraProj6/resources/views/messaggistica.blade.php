@@ -20,7 +20,7 @@ currNavBar(3);
             ================================================== -->
             <div id="comments">
 
-                <center><div><a href="{{ route('messaggisticaLoc') }}">Ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Inviati</a></div></center>
+                <center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Messaggi inviati</a></div></center>
                <!-- commentlist -->
                @isset($messRic)
                <ol class="commentlist ">
@@ -36,7 +36,7 @@ currNavBar(3);
                          <h3 class="nome_mitt">{{ $m->mitt->nome }} {{ $m->mitt->cognome }}</h3>
 
                         <div class="comment-meta">
-                           <p class="ricevuto_messagistica">Ricevuto: {{ date('d-m-Y', strtotime($m->created_at)) }}</p>
+                           <p class="ricevuto_messagistica">Ricevuto: {{ date('d-m-Y h:m:s', strtotime($m->created_at)) }}</p>
                         </div>
                      </div>
 
@@ -44,9 +44,9 @@ currNavBar(3);
                          <cite class="nome_alloggio">Nome alloggio: {{ $m->alloggio->nome }}</cite>
                      </div>
                       @if($m->visualizzato)
-                      <button class="btn_mess_vis" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
+                      <button class="btn_mess_vis" title ="Messaggio già visualizzato" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
                       @else
-                      <button class="btn_mess_nvis" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
+                      <button class="btn_mess_nvis" title ="Messaggio non visualizzato" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
                       @endif
                        </div>
                       @endforeach

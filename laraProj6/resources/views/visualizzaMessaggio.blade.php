@@ -12,7 +12,6 @@
 <!-- Content
    ================================================== -->
  <section id="works">
-
           <div class="column">
                <p class="titolo">Mittente: 
                <span class="testo">{{ $mess->mitt->nome }} {{ $mess->mitt->cognome }}</span>
@@ -32,7 +31,7 @@
               <div class="column">
                   <h3>Rispondi</h3>
                   <div class="flex-box">
-                        <!--button onclick="location.href = '{{ route('login') }}';"> Affitta!</button-->
+                        <button onclick="location.href = '{{ route('scritturaMessLoc', [ 'id_mess' => $mess->id ]) }}';">Rispondi</button>
                   </div>
               </div>
          
