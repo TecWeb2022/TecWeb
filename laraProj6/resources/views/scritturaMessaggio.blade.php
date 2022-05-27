@@ -14,18 +14,18 @@ currNavBar(3);
 
       <div id="page-content2" class="row">
 
-         <div id="primary" class="ten columns">
+         <div id="primary" class="twelve columns">
             
              @isset($mess)
-            <div id="comments">
+            <div id="comments2">
                
                <h1>Rispondi a {{ $mess->mitt->nome }} {{ $mess->mitt->cognome }}</h1>
-               <h2>In merito all'alloggio {{ $mess->alloggio->nome }}</h2>
-               <h3>Testo del messaggio ricevuto: "{{ $mess->testo }}"</h3>
+               <h3>In merito all'alloggio:<p>{{ $mess->alloggio->nome }}<p></h3>
+               <h5>Testo del messaggio ricevuto:<cite> "{{ $mess->testo }}"</cite></h5>
                
                {{ Form::open(array('route' => 'inviaMessLoc', 'class' => 'filters-form')) }}
                
-               <div  class="wrap-input">
+               <div class="crick">
                 {{ Form::label('testo', 'Testo del messaggio', ['title' => 'Valore facoltativo']) }}
                 {{ Form::textarea('testo', '', ['id' => 'testo', 'placeholder' => 'Scrivi il tuo messaggio qua']) }}
                 

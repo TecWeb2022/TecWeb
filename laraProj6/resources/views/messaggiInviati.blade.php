@@ -46,7 +46,8 @@ currNavBar(3);
                      </div>
 
                       <button class="btn_mess_vis" title ="Messaggio inviato" onclick="location.href = '{{ route('messaggioInvLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
-                    @endforeach
+                      </div>
+                      @endforeach
                         
                </ol> 
                </center> 

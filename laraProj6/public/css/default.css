@@ -174,6 +174,14 @@ body {
     font-size: 18px; line-height: 20px;
     font-weight: normal;
 }
+/*Fatta da Matteo, serve a settare il testo dell messaggio nella visualMessaggi*/
+.testo_messaggio{
+    font-family: notosans-italic;
+    font-style: italic;
+    color: #313131;
+    font-size: 18px; line-height: 20px;
+    font-weight: normal;
+}
 
 h1, h2, h3, h4, h5, h6 {
    color: #313131;
@@ -945,6 +953,8 @@ properly.
     transform: translate(0,0);
     width: 520px;
 }
+
+
 
 /*fatta da Matteo, serve allineare la riga ricevuto e nome dei Messaggi*/
 .allinea-lato {

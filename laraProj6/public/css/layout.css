@@ -157,6 +157,10 @@ color:white;
     line-height: 24px;
 }
 
+.crick{
+    margin:20px 0 80px 0;
+}
+
 /*Fatta da Matteo*/
 .labelAdd{
           display: inline-block;
@@ -172,6 +176,11 @@ color:white;
   width: calc(50% - 4px);
   margin: 0 auto;
 }
+
+.sposta_btn{
+    transform: translate(75%,0)
+}
+
 
 /* page */
 .page section {
@@ -766,6 +775,13 @@ ul#nav ul li a {
 .bordo_dom{
      border-top: 1px dotted #d8d8d8;
 }
+/*fatta da Matteo*/
+.bordo_testo_messaggio{
+     border-top: 1px dashed #000000;
+     margin: 70px 0 0 0;
+
+}
+
 
 /*fatta da Matteo*/
 .bordo_risultati{
@@ -1082,6 +1098,11 @@ ol.commentlist2 {
     margin: 0 0px 0 -10px;
     padding: 10px 0 -50px 10px;
 }
+
+.textarea_balck {
+  color: #005000;
+    }
+
 /*fatta da Matteo, serve allineare la riga ricevuto*/
 .ricevuto_messagistica{
    margin:0 10px -5px 0;
@@ -1146,6 +1167,15 @@ ol.commentlist2 {
    width: 41.66667%;
    float: right;
 }
+
+#comments2 form label {
+   font: 16px/24px notosans-bold, sans-serif;
+	margin: 12px 0;
+   padding-left: 24px;
+   width: 41.66667%;
+
+}
+
 #comments form div {
    margin: 12px 0 18px 0;
 }
