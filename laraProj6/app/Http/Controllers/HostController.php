@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Resources\Accomodation;
+use App\Models\Locatario;
 use App\Models\Resources\Message;
 use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
@@ -57,6 +58,7 @@ class HostController extends Controller {
         $cat = new Catalog;
         $acc = $cat->getAccById($id);
         
+        //Va controllato che l'id del proprietario corrisponda a quello dell'user
         return view('accommodation.modificaHostAcc')
             ->with('acc',$acc);
     }

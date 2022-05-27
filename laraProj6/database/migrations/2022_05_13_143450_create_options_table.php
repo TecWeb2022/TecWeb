@@ -15,11 +15,10 @@ class CreateOptionsTable extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nota')->nullable();
             $table->dateTime('data_stipula')->nullable();
             $table->bigInteger('id_alloggio')->unsigned();//->index();
             //$table->foreign('id_alloggio')->references('id')->on('accomodations');
-            $table->string('id_locatario');//->index();
+            $table->string('id_locatario')->unisgned();//->index();
             //$table->foreign('id_locatario')->references('id')->on('users');
             $table->timestamps();
         });

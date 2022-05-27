@@ -43,7 +43,7 @@ class CreateAccomodationsTable extends Migration
             $table->boolean('assegnato')->default(false);
             $table->timestamps();
             
-            $table->integer('proprietario');//->index();
+            $table->bigInteger('proprietario')->unsigned();//->index();
             //$table->foreign('proprietario')->references('id')->on('users');
         });
     }

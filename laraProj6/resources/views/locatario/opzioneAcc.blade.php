@@ -30,40 +30,16 @@
               <p class="titolo">Prezzo al mese: <span class="testo">{{ $acc->canone }} €</span></p> 
                
           </div>
-          <div class="column">
+          <div class="column maxw-40">
                {{ Form::open(array('route' => array('opzioneAccPost',$acc->id), 'class' => 'register-form')) }}
                @csrf
+         
             <div  class="wrap-input">
-                <h3>Inserisci i dati per fare richiesta di affitto</h3>
-                {{ Form::label('data_inizio', 'Data inizio soggiorno') }}
-                {{ Form::date('data_inizio', '', ['id' => 'data_inizio']) }}
-                @if ($errors->first('data_inizio'))
+                {{ Form::label('testo', 'Invia un messaggio al proprietario') }}
+                {{ Form::textarea('testo', 'Salve, sono interessato ad affittare il suo alloggio', ['id' => 'testo']) }}
+                @if ($errors->first('testo'))
                 <ul class="errors">
-                    @foreach ($errors->get('data_inizio') as $message)
-                    <li class="errors">{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-               
-            <div  class="wrap-input">
-                {{ Form::label('data_fine', 'Data fine soggiorno') }}
-                {{ Form::date('data_fine', '', ['id' => 'data_fine']) }}
-                @if ($errors->first('data_fine'))
-                <ul class="errors">
-                    @foreach ($errors->get('data_fine') as $message)
-                    <li class="errors">{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-            
-            <div  class="wrap-input">
-                {{ Form::label('nota', 'Nota') }}
-                {{ Form::textarea('nota', '', ['id' => 'nota', 'placeholder' => 'Nota']) }}
-                @if ($errors->first('nota'))
-                <ul class="errors">
-                    @foreach ($errors->get('nota') as $message)
+                    @foreach ($errors->get('testo') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
                 </ul>
@@ -78,15 +54,7 @@
             
           </div>
       </div>
-          <!-- da fare -->
-              <div class="column">
-                  <h3>Chatta col proprietario</h3>
-                  <div class="flex-box">
-                        <button onclick="location.href = '{{ route('catalogo') }}';"> Affitta per {{ $acc->canone}}€ al mese</button> 
-                  </div>
-              </div>
-         
-         </div> <!-- Comments End -->
+      </div> <!-- Comments End -->
  </section>
 @endisset()
 

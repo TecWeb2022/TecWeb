@@ -613,7 +613,7 @@ textarea:disabled {
    background-color: #D3D9D9;
 }
 
-textarea { min-height: 200px; }
+textarea { min-height: 200px;}
 
 label,
 legend {
@@ -964,6 +964,10 @@ properly.
 .align-center-div {
     display: flex; 
     justify-content: center;
+}
+
+.maxw-40{
+    max-width: 40%;
 }
 
 
