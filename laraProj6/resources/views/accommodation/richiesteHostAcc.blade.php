@@ -4,8 +4,6 @@
 
 @section('content')
 
-
-
 <!-- Content
    ================================================== -->
    <div class="content-outer">
@@ -20,9 +18,9 @@
 
                 <center><div><h2>Richieste di opzione ricevute</h2></div></center>
                <!-- commentlist -->
-               @isset($opzione)
+               @isset($dati)
                <ol class="commentlist ">
-                  @foreach($opzione as $m)
+                  @foreach($dati as $d)
                   <!--li class="depth-1"-->
                   <li>
                       <!--div class="avatar2">
@@ -31,27 +29,27 @@
                       <div class="bordo_messaggi center">
                      <div class="comment-info">
                          <img class="avatar2" src="images/icona_utente.png" alt="">
-                         <h3 class="nome_mitt">{{ $m->loc->nome }} {{ $m->loc->cognome }}</h3>
+                         <h3 class="nome_mitt">{{ $d->nome }} {{ $d->cognome }}</h3>
 
                         <div class="comment-meta">
-                           <p class="ricevuto_messagistica">Richiesta di opzione inviata: {{ date('d-m-Y h:m:s', strtotime($m->created_at)) }}</p>
+                           <p class="ricevuto_messagistica">Richiesta di opzione inviata: {{ date('d-m-Y h:m:s', strtotime($d->created_at)) }}</p>
                         </div>
                      </div>
 
                      <div class="dettagli_cat">
-                         <cite class="nome_alloggio">Nome alloggio: {{ $m->alloggio->nome }}</cite>
+                         <cite class="nome_alloggio">Nome alloggio: {{ $d->nome }}</cite>
                      </div>
                       
-                       <button class="btn_mess_nvis" title ="Valutazione richiesta" onclick="location.href = '{{ route('accettaOpz', [ 'id' => $m->id ]) }}';">Accetta prenotazione</button>
+                       <button class="btn_mess_nvis" title ="Valutazione richiesta" onclick="location.href = '{{ route('home', [ 'id' => $d->id ]) }}';">Accetta prenotazione</button>
                       
                        </div>
-                    
-                     
+                  </li>
+                     @endforeach
                         
                </ol> <!-- Commentlist End -->
                <!-- Pagination -->
-               <center>@include('pagination.paginator', ['paginator' => $opzione])</center>
-
+               <center>@include('pagination.paginator', ['paginator' => $dati])</center>
+               @endisset
                </div> <!-- Respond End -->
 
             </div>  <!-- Comments End -->
@@ -60,6 +58,6 @@
 
          </div> <!-- Comments End -->
 
-@endisset
+
 
 @endsection
