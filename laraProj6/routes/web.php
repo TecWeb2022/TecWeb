@@ -98,15 +98,14 @@ Route::post('/insertAcc', 'HostController@insertAcc')
 Route::get('/alloggioHost/{id}', 'HostController@infoAcc')
         ->name('infoAccHost');
 
-//modificaHostAcc da completare col nome della funzione
 Route::get('/modificaHostAcc/{id}', 'HostController@getAccModifica')
         ->name('modificaHostAcc');
 
 Route::post('/modificaHostAcc/{id}','HostController@modificaAcc')
         ->name('modificaHostAccPost');
 
-Route::get('/visualizzaOpzioni','HostController@')
-        ->name('visualizzaOpzioneAcc');
+Route::get('/visualizzaOpzioni','HostController@getAllOptions')
+        ->name('visualizzaTutteOpzioni');
 
 Route::get('/gestioneAnnunci', 'HostController@getAccsHost')
         ->name('gestioneAnn');

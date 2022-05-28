@@ -9,7 +9,9 @@ use App\Models\Resources\Message;
 use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
+use App\Models\OptionList;
 use App\Http\Requests\NewAccommodationRequest;
+use App\Http\Requests\ModifyAccommodationRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File; 
 
@@ -83,7 +85,7 @@ class HostController extends Controller {
         return redirect()->route('gestioneAnn');  
     }
     
-    public function modificaAcc(NewAccommodationRequest $request, $id){
+    public function modificaAcc(ModifyAccommodationRequest $request, $id){
         
        $validatedrequest = $request->validated();
         
@@ -94,8 +96,7 @@ class HostController extends Controller {
               $acc->$key = $value;  
             }
         }
-        
-        
+              
        if($request->hasFile('path_foto')){
            File::delete('/storage/',$acc->path_foto);
             $path = $request->file('path_foto')->store('public/alloggi');
@@ -107,5 +108,18 @@ class HostController extends Controller {
         return redirect()->route('infoAccHost',$id);
                 
     }
+    
+    public function getAllOptions(){
+        $id_user = auth()->user()->id;
+        $optionListModel = new OptionList;
+        $optionList = $optionListModel->getAccsAndOpts($id_user);
+
+        
+        return view('accommodation.richiesteHostAcc')
+                ->with('dati',$optionList);
+        
+    }
+    
+    
 }
 
