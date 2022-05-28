@@ -23,17 +23,18 @@ function filters() {
     }
 }
 
+/* Inutilizzate, da vedere se servono
 function refreshWindow()
 {
     window.location.reload(true);
 }
 
-//Inutilizzata, da vedere se serve
 function forms(id, placeholders, n) {
     for(i=0; i<n; i++){
         document.getElementById(id[i]).placeholder = placeholders[0];
     }
 }
+*/
 
 function getErrorHtml(elemErrors) {
     if ((typeof (elemErrors) === 'undefined') || (elemErrors.length < 1))
@@ -64,8 +65,9 @@ function doElemValidation(id, actionUrl, formId) {
             error: function (data) {
                 if (data.status === 422) {
                     var errMsgs = JSON.parse(data.responseText);
+                    var err = errMsgs['errors'];
                     $("#" + id).parent().find('.errors').html(' ');
-                    $("#" + id).after(getErrorHtml(errMsgs[id]));
+                    $("#" + id).after(getErrorHtml(err[id]));
                 }
             },
             contentType: false,
@@ -103,9 +105,10 @@ function doFormValidation(actionUrl, formId) {
         error: function (data) {
             if (data.status === 422) {
                 var errMsgs = JSON.parse(data.responseText);
-                $.each(errMsgs, function (id) {
+                var err = errMsgs['errors'];
+                $.each(err, function (id) {
                     $("#" + id).parent().find('.errors').html(' ');
-                    $("#" + id).after(getErrorHtml(errMsgs[id]));
+                    $("#" + id).after(getErrorHtml(err[id]));
                 });
             }
         },

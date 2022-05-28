@@ -6,8 +6,12 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/media-queries.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layout.css') }}" >
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/images/favicon.ico')}}" >
         <script type="text/javascript" src="{{ URL::asset('js/functions.js') }}"></script>
-        <title>Studentb&amp;b | @yield('title', 'Home')</title>
+        @section('scripts')
+        
+        @show
+        <title>HouStudent | @yield('title', 'Home')</title>
     </head>
     <body>
         <!-- Header
