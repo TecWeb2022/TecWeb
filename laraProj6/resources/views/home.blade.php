@@ -24,8 +24,8 @@ endguest
 </script>
 
 <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
   crossorigin="anonymous">
 </script>
 
@@ -54,15 +54,15 @@ endguest
                                  </div>
                              
                              <div class="container"><h2>Slider alloggi</h2>
-                                 <div class="slider-outer">
-                                     {{asset('/images/sinistra.jpg') }}
-                                     <img src="{{asset('/images/sinistra.jpg') }}" class="prev" alt="Prev">
+                                 <div class="container">
+                                     
+                                     <img src="{{asset('/images/sinistra.png') }}" class="prev" alt="Prev">
                                      <div class="slider-inner">
                                          <img src="{{asset('/images/casa1.jpg') }}" class="active">
                                          <img src="{{asset('/images/casa2.jpg') }}">
                                          <img src="{{asset('/images/casa3.jpg') }}">
                                      </div>
-                                     <img src="{{asset('/images/destra.jpg') }}" class="next" alt="Next">
+                                     <img src="{{asset('/images/destra.png') }}" class="next" alt="Next">
                                  </div>
                              </div>
                              @endguest
