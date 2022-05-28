@@ -139,6 +139,6 @@ class LocController extends Controller {
         $mess->id_dest = $request->id_dest;
         $mess->id_alloggio = $request->id_alloggio;
         $mess->save();
-        return $this->index();
+        return redirect()->route('messaggisticaLoc');
     }
 }
