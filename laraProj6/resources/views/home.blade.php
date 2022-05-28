@@ -23,6 +23,12 @@ endguest
     currNavBar(0);
 </script>
 
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous">
+</script>
+
 
 <!-- Intro Section
    ================================================== -->
@@ -44,7 +50,21 @@ endguest
                                           <div style="height: 200px; text-align: center;">
                                             <button onclick="location.href = '{{ route('register') }}';">Registrati nel sito</button>
                                           </div>
+                                             
                                  </div>
+                             
+                             <div class="container"><h2>Slider alloggi</h2>
+                                 <div class="slider-outer">
+                                     {{asset('/images/sinistra.jpg') }}
+                                     <img src="{{asset('/images/sinistra.jpg') }}" class="prev" alt="Prev">
+                                     <div class="slider-inner">
+                                         <img src="{{asset('/images/casa1.jpg') }}" class="active">
+                                         <img src="{{asset('/images/casa2.jpg') }}">
+                                         <img src="{{asset('/images/casa3.jpg') }}">
+                                     </div>
+                                     <img src="{{asset('/images/destra.jpg') }}" class="next" alt="Next">
+                                 </div>
+                             </div>
                              @endguest
                              @can('isLoc')
                                 <div class="slider-text">
