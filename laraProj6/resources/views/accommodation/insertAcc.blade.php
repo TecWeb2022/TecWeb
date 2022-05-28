@@ -2,7 +2,32 @@
 
 @section('title', 'Nuovo Alloggio')
 
+@section('scripts')
+@parent
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function () {
+    var actionUrl = "{{ route('insertAccPost') }}";
+    var formId = 'inserimentoAcc';
+    $(":input").on('blur', function (event) {
+        var formElementId = $(this).attr('id');
+        doElemValidation(formElementId, actionUrl, formId);
+    });
+    $("#inserimentoAcc").on('submit', function (event) {
+        event.preventDefault();
+        doFormValidation(actionUrl, formId);
+    });
+});
+</script>
+
+@endsection
+
+
 @section('content')
+<script type="text/javascript">
+    currNavBar(2);
+</script>
+
 <section id="works">
 
       <div class="row">
@@ -17,13 +42,6 @@
                 <div  class="wrap-input">
                     {{ Form::label('nome', 'Nome Alloggio', ['class' => 'titolo']) }}
                     {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
-                    @if ($errors->first('nome'))
-                <ul class="errors">
-                    @foreach ($errors->get('nome') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
                 </div>
 
                 <div  class="wrap-input">
@@ -34,85 +52,36 @@
                 <div  class="wrap-input">
                     {{ Form::label('descr', 'Descrizione', ['class' => 'titolo']) }}
                     {{ Form::textarea('descr', '', ['class' => 'input', 'id' => 'descr', 'rows' => 2]) }}
-                     @if ($errors->first('descr'))
-                <ul class="errors">
-                    @foreach ($errors->get('descr') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
                 </div>
 
                 <div  class="wrap-input">
                     {{ Form::label('sup', 'Superficie(m²)', ['class' => 'titolo']) }}
                     {{ Form::number('sup', '', ['min' => '0','class' => 'input', 'id' => 'sup']) }}
-                     @if ($errors->first('sup'))
-                <ul class="errors">
-                    @foreach ($errors->get('sup') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
                 </div>
 
                 <div  class="wrap-input">
                     {{ Form::label('path_foto', 'Immagine', ['class' => 'titolo']) }}
                     {{ Form::file('path_foto', ['class' => 'input', 'id' => 'path_foto']) }}
-                @if ($errors->first('path_foto'))
-                <ul class="errors">
-                    @foreach ($errors->get('path_foto') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
                 </div>
 
                 <div  class="wrap-input">
                     {{ Form::label('citta', 'Città', ['class' => 'titolo']) }}
                     {{ Form::text('citta', '', ['class' => 'input', 'id' => 'citta']) }}
-                    @if ($errors->first('citta'))
-                <ul class="errors">
-                    @foreach ($errors->get('citta') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
                 </div>
 
                 <div  class="wrap-input">
                     {{ Form::label('prov', 'Provincia', ['class' => 'titolo']) }}
                     {{ Form::text('prov', '', ['class' => 'input', 'id' => 'prov']) }}
-                    @if ($errors->first('prov'))
-                <ul class="errors">
-                    @foreach ($errors->get('prov') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
                 </div>
 
                 <div  class="wrap-input">
                     {{ Form::label('via', 'Via', ['class' => 'titolo']) }}
                     {{ Form::text('via', '', ['class' => 'input', 'id' => 'via']) }}
-                    @if ($errors->first('via'))
-                <ul class="errors">
-                    @foreach ($errors->get('via') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
                 </div>
 
                 <div  class="wrap-input">
                     {{ Form::label('num_civ', 'Numero civico', ['class' => 'titolo']) }}
                     {{ Form::text('num_civ', '', ['class' => 'input','id' => 'num_civ']) }}
-                    @if ($errors->first('num_civ'))
-                <ul class="errors">
-                    @foreach ($errors->get('num_civ') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
                 </div>
                  
              </div>
@@ -132,25 +101,11 @@
             <div  class="wrap-input">
                 {{ Form::label('eta_min', 'Età minima', ['class' => 'titolo']) }}
                 {{ Form::number('eta_min', '', ['min' => '0',',max' => '100','class' => 'input', 'id' => 'eta_min']) }}
-                 @if ($errors->first('eta_min'))
-                <ul class="errors">
-                    @foreach ($errors->get('eta_min') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
             </div>
            
             <div  class="wrap-input">
                 {{ Form::label('eta_max', 'Età massima', ['class' => 'titolo']) }}
                 {{ Form::number('eta_max', '', ['min' => '0','max' => '100','class' => 'input', 'id' => 'eta_max']) }}
-                 @if ($errors->first('eta_max'))
-                <ul class="errors">
-                    @foreach ($errors->get('eta_max') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
             </div>
            
             <div  class="wrap-input">
@@ -162,61 +117,26 @@
             <div  class="wrap-input">
                 {{ Form::label('canone', 'Canone(in €,per mese)', ['class' => 'titolo']) }}
                 {{ Form::number('canone', '', ['min' => '0','class' => 'input', 'id' => 'canone']) }}
-                @if ($errors->first('canone'))
-                <ul class="errors">
-                    @foreach ($errors->get('canone') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
             </div>
            
             <div  class="wrap-input">
                 {{ Form::label('posti_letto_tot', 'Posti letto totali', ['class' => 'titolo']) }}
                 {{ Form::number('posti_letto_tot', '', ['min' => '0','class' => 'input', 'id' => 'posti_letto_tot']) }}
-                 @if ($errors->first('posti_letto_tot'))
-                <ul class="errors">
-                    @foreach ($errors->get('posti_letto_tot') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
             </div>
            
             <div  class="wrap-input">
                 {{ Form::label('letti_camera', 'Posti letto camera', ['class' => 'titolo']) }}
                 {{ Form::number('letti_camera', '', ['min' => '0','class' => 'input', 'id' => 'letti_camera']) }}
-                 @if ($errors->first('letti_camera'))
-                <ul class="errors">
-                    @foreach ($errors->get('letti_camera') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
             </div>
            
             <div  class="wrap-input">
                 {{ Form::label('num_bagni', 'Numero di bagni', ['class' => 'titolo']) }}
                 {{ Form::number('num_bagni', '', ['min' => '0','class' => 'input', 'id' => 'num_bagni']) }}
-                @if ($errors->first('num_bagni'))
-                <ul class="errors">
-                    @foreach ($errors->get('num_bagni') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
             </div>
            
             <div  class="wrap-input">
                 {{ Form::label('num_camere', 'Numero di camere', ['class' => 'titolo']) }}
                 {{ Form::number('num_camere', '', ['min' => '0','class' => 'input', 'id' => 'num_camere']) }}
-                @if ($errors->first('num_camere'))
-                <ul class="errors">
-                    @foreach ($errors->get('num_camere') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
             </div>
            </div>
            </div>

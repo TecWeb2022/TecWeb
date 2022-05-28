@@ -80,7 +80,8 @@ class HostController extends Controller {
         $acc->proprietario = auth()->user()->id;
         $acc->save();
       
-        return redirect()->route('gestioneAnn');  
+        //return redirect()->route('gestioneAnn');
+        return response()->json(['redirect' => route('gestioneAnn')]);
     }
     
     public function modificaAcc(NewAccommodationRequest $request, $id){
