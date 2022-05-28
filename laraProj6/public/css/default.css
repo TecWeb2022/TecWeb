@@ -950,8 +950,7 @@ properly.
 
 /*fatta da Matteo, serve a centrare la colonna della lista dei Messaggi*/
 .colonna-messaggi{
-    transform: translate(0,0);
-    width: 520px;
+    width: 530px;
 }
 
 
