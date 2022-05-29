@@ -19,16 +19,16 @@ endguest
     </script>
 @endisset
 
-<script type="text/javascript">
-    currNavBar(0);
-</script>
-
 <script
   src="https://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-  crossorigin="anonymous">
+  crossorigin="anonymous"> 
 </script>
 
+<script type="text/javascript">
+    currNavBar(0);
+    slider2Home();
+</script>
 
 <!-- Intro Section
    ================================================== -->
@@ -41,30 +41,34 @@ endguest
 			 <div class="twelve columns">
                              @guest
 				 <div class="slider-text">
-					  <h1><span>Alloggi per tutte le esigenze.</span></h1>
+                                     <h1><span>Alloggi per tutte le esigenze.</span></h1>
                                              <p>Le esigenze di ogni studente sono alla base del nostro progetto, a partire
                                                 dal quale è nata la piattaforma web per la ricerca e la prenotazione di alloggi 
                                                 per il mondo studentesco, HouStudent.
                                              </p>
-                                             
-                                          <div style="height: 200px; text-align: center;">
-                                            <button onclick="location.href = '{{ route('register') }}';">Registrati nel sito</button>
-                                          </div>
+                                    <div>
+                                    <div class="container">
+                                    <figure class="imageslide"><img src="{{asset('/images/casa1.jpg')}}"></figure>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa2.jpg') }}"></figure>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa3.jpg') }}"></figure>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa4.jpg') }}"></figure>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa5.jpg') }}"></figure>
+                                    </div>
+                                        <a class="prev">&#10094;</a>
+                                        <a class="next">&#10095;</a>
+                                        <div class="pulsanti" style="text-align: center">
+                                        <span class="dot" data-num='1'></span>
+                                        <span class="dot" data-num='2'></span>
+                                        <span class="dot" data-num='3'></span>
+                                        <span class="dot" data-num='4'></span>
+                                        <span class="dot" data-num='5'></span>
+                                        </div>
+	
+                                    </div>
+                                             				  
                                              
                                  </div>
-                             
-                             <div class="container"><h2>Slider alloggi</h2>
-                                 <div class="container">
-                                     
-                                     <img src="{{asset('/images/sinistra.png') }}" class="prev" alt="Prev">
-                                     <div class="slider-inner">
-                                         <img src="{{asset('/images/casa1.jpg') }}" class="active">
-                                         <img src="{{asset('/images/casa2.jpg') }}">
-                                         <img src="{{asset('/images/casa3.jpg') }}">
-                                     </div>
-                                     <img src="{{asset('/images/destra.png') }}" class="next" alt="Next">
-                                 </div>
-                             </div>
+
                              @endguest
                              @can('isLoc')
                                 <div class="slider-text">

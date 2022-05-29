@@ -20,12 +20,12 @@ currNavBar(3);
             <div id="comments2">
                
                <h1>Rispondi a {{ $mess->mitt->nome }} {{ $mess->mitt->cognome }}</h1>
-               <h2>In merito all'alloggio:<p>{{ $mess->alloggio->nome }}<p></h2>
-               <h5>Testo del messaggio ricevuto:<cite> "{{ $mess->testo }}"</cite></h5>
+               <cite>In merito all'alloggio:{{ $mess->alloggio->nome }}</cite>
+               <h5 class="bordo_normale crick">Testo del messaggio ricevuto:"{{ $mess->testo }}"</h5>
                
                {{ Form::open(array('route' => 'inviaMessLoc', 'class' => 'filters-form')) }}
                
-               <div class="crick">
+               <div class="grande_crick">
                 <div>
                 {{ Form::label('testo', 'Testo del messaggio', ['title' => 'Valore facoltativo']) }}
                 {{ Form::textarea('testo', '', ['id' => 'testo', 'placeholder' => 'Scrivi il tuo messaggio qua']) }}
