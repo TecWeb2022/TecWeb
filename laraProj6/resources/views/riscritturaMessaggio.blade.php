@@ -10,30 +10,36 @@ currNavBar(3);
 
 <!-- Content
    ================================================== -->
-   <div class="content-outer">
+   <section class="info">
 
-      <div id="page-content2" class="row">
+      <div class="row">
 
-         <div id="primary" class="ten columns">
+         <div id="primary" class="twelve columns">
             
              @isset($mess)
-            <div id="comments">
+            <div id="comments2">
                
                <h1>Riscrivi a {{ $mess->dest->nome }} {{ $mess->dest->cognome }}</h1>
-               <h2>In merito all'alloggio {{ $mess->alloggio->nome }}</h2>
+               <cite>In merito all'alloggio {{ $mess->alloggio->nome }}</cite>
                
                {{ Form::open(array('route' => 'inviaMessLoc', 'class' => 'filters-form')) }}
                
-               <div  class="wrap-input">
+               <div  class="grande_crick">
+                   <div>
                 {{ Form::label('testo', 'Testo del messaggio', ['title' => 'Valore facoltativo']) }}
                 {{ Form::textarea('testo', '', ['id' => 'testo', 'placeholder' => 'Scrivi il tuo messaggio qua']) }}
-                
+                  </div>
+                   
+                  <div>
                 {{ Form::hidden('id_dest', $mess->dest->id, ['id' => 'id_dest']) }}
                 {{ Form::hidden('id_alloggio', $mess->alloggio->id, ['id' => 'id_alloggio']) }}
-               
-                <center><div class="container-form-btn">                
+                  </div>
+                   
+                <center>
+                    <div class="container-form-btn">                
                 {{ Form::submit('Invia messaggio', ['class' => 'form-btn1']) }}
-                </div></center>
+                </div>
+                </center>
     
                 {{ Form::close() }}
 
@@ -44,5 +50,5 @@ currNavBar(3);
          </div>
 
          </div> <!-- Comments End -->
-
+ </section>
 @endsection
