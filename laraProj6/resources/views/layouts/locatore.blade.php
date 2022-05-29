@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/default.css') }}" >
@@ -9,7 +9,6 @@
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/images/favicon.ico')}}" >
         <script type="text/javascript" src="{{ URL::asset('js/functions.js') }}"></script>
         @section('scripts')
-        
         @show
         <title>HouStudent | @yield('title', 'Home')</title>
     </head>
@@ -20,7 +19,7 @@
                 <div class="row">
                    <div class="twelve columns">
                       <div class="logo">
-                         <a href="index.html"><img alt="" src="images/logo.png"></a>
+                         <a href="{{ Route('home') }}"><img alt="" src="images/logo.png"></a>
                       </div>
 
                       <nav id="nav-wrap">
