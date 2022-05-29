@@ -14,6 +14,7 @@ use App\Http\Requests\NewAccommodationRequest;
 use App\Http\Requests\ModifyAccommodationRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File; 
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -121,6 +122,35 @@ class HostController extends Controller {
         
     }
     
+    public function accettaOfferta(Request $request) {
+        $opt = Option::find($request->id_opt);
+        $opt->data_stipula = now();
+        $acc = Accomodation::find($opt->id_alloggio);
+        $opts = Option::where('id_alloggio', '=', $opt->id_alloggio)->get(); //Trovo tutte le opzioni relative a quell'alloggio
+        $opt->save();
+        
+        $acc->assegnato = true;
+        $acc->save();
+        
+        //Elimino dal db tutti gli opzionamenti che non sono stati accettati
+        foreach($opts as $op) {
+            if($op['id'] != $opt->id) {
+                $o = Option::find($op->id);
+                $o->delete();
+            }
+        }
+        
+        return redirect()->route('visualizzaTutteOpzioni');
+    }
     
+    public function contratto(Request $request) {
+        $opt = Option::find($request->id_opt);
+        $loc = User::find($opt->id_locatario);
+        $acc = Accomodation::find($opt->id_alloggio);
+        return view('contratto')
+            ->with('acc', $acc)
+            ->with('loc', $loc)
+            ->with('option', $opt);
+    }
 }
 

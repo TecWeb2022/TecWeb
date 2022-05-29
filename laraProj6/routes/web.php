@@ -110,6 +110,12 @@ Route::get('/visualizzaOpzioni','HostController@getAllOptions')
 Route::get('/gestioneAnnunci', 'HostController@getAccsHost')
         ->name('gestioneAnn');
 
+Route::post('/accettaOfferta', 'HostController@accettaOfferta')
+        ->name('accettaOfferta');
+
+Route::post('/contratto', 'HostController@contratto')
+        ->name('contratto');
+
 
 /*******ADMIN*******/
 

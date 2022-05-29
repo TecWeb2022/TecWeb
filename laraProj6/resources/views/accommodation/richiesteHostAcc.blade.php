@@ -41,9 +41,18 @@
                      <div class="dettagli_cat">
                          <cite class="nome_alloggio">Nome alloggio: {{ $d->nome_acc }}</cite>
                      </div>
-                      
-                       <button class="btn_mess_nvis" title ="Valutazione richiesta" onclick="location.href = '{{ route('home', [ 'id' => $d->id_acc ]) }}';">Accetta prenotazione</button>
-                      
+                      @if($d->data_stipula == null)
+                      {{ Form::open(array('route' => 'accettaOfferta', 'class' => 'filters-form')) }}
+                      {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
+                      {{ Form::submit('Accetta', ['class' => 'form-btn1', 'title' => 'Assegnamento alloggio al locatario richiedente']) }}
+                      {{ Form::close() }}
+                      @else
+                      <button disabled title="Hai già assegnato questa offerta a un locatario">Offerta già accettata</button>
+                      {{ Form::open(array('route' => 'contratto', 'class' => 'filters-form')) }}
+                      {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
+                      {{ Form::submit('Visualizza contratto', ['class' => 'form-btn1', 'title' => 'Visualizza il contratto stipulato con il locatario']) }}
+                      {{ Form::close() }}
+                      @endif
                        </div>
                   </li>
                      @endforeach
