@@ -36,12 +36,13 @@ class OptionList
             return $acc_opts;
         }
         else{
+            
             $accs = Accomodation::where('proprietario','=',$id_propr)
                                 ->select('id AS id_acc','nome AS nome_acc','tipologia AS tipologia_acc','canone', 'path_foto','proprietario','created_at AS created_as_acc');
             
             $opts = Option::select('id AS id_opt','data_stipula','id_alloggio','id_locatario','created_at AS created_at_opt');
             
-            $locs = User::select('id AS id_loc','nome AS nome_loc','cognome AS cognome_loc');
+            $locs = User::select('id AS id_loc','nome AS nome_loc','cognome AS cognome_loc','sesso','data_nasc');
             
             $accs_opts = DB::table(DB::raw("({$accs->toSql()}) as accs"))
                                     ->mergeBindings($accs->getQuery())
@@ -56,19 +57,23 @@ class OptionList
                                     })
                                       ->orderByDesc('created_at_opt')
                                       ->paginate(10);
+          
                                     
             /*
-            $accs_opts = Accomodation::join('options','options.id_alloggio','=','accomodations.id')
+            $accs_opts_locs = Accomodation::join('options','options.id_alloggio','=','accomodations.id')
                                 ->join('users','users.id','=','accomodations.proprietario')
                                 
-                                ->select('accomodations.id AS id_acc','accomodations.nome AS nome_acc','accomodations.tipologia AS tipologia_acc', 
-                                     'accomodations.canone', 'accomodations.path_foto','accomodations.proprietario AS proprietario','accomodations.created_at AS created_as_acc','options.id AS id_opt',
+                                ->select('options.id AS id_opt',
                                      'options.data_stipula AS data_stipula','options.id_alloggio','options.id_locatario', 
-                                     'options.created_at AS created_at_opt','users.id AS id_loc','users.nome AS nome_loc','users.cognome AS cognome_loc')
+                                     'options.created_at AS created_at_opt','accomodations.id AS id_acc','accomodations.nome AS nome_acc','accomodations.tipologia AS tipologia_acc', 
+                                     'accomodations.canone', 'accomodations.path_foto','accomodations.proprietario AS proprietario',
+                                     'accomodations.created_at AS created_as_acc','users.id AS id_loc','users.nome AS nome_loc','users.cognome AS cognome_loc')
                                 
                                 ->where('proprietario','=',$id_propr)
-                                ->paginate(2);
-                                 *  * 
+                                ->paginate(4);
+             * 
+             */
+                                
                                 
             
             /*
@@ -80,6 +85,8 @@ class OptionList
                                             });
              * 
              */
+             
+             
             return $accs_opts_locs;
         }
     }

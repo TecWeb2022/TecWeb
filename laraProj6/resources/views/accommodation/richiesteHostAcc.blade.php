@@ -30,9 +30,11 @@
                      <div class="comment-info">
                         
                          <h3 class="nome_mitt">{{ $d->nome_loc }} {{ $d->cognome_loc }}</h3>
+                         <p>Sesso: {{$d->sesso}}<br>
+                         Data di nascita: {{ date('d-m-Y', strtotime($d->data_nasc)) }}</p>
 
                         <div class="comment-meta">
-                           <p class="ricevuto_messagistica">Richiesta di opzione inviata: {{ date('d-m-Y h:m:s', strtotime($d->created_at_opt)) }}</p>
+                           <p class="ricevuto_messagistica">Richiesta di opzione inviata: {{ date('d-m-Y H:i', strtotime($d->created_at_opt)) }}</p>
                         </div>
                      </div>
 
