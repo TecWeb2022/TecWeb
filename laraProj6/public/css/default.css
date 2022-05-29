@@ -825,6 +825,19 @@ input[type="checkbox"] { display: inline; }
     justify-content:center;
 }
 
+.flex-box-filtri{
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 100%;
+
+}
+
+
+.flex-box-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
 .flex-row{
     flex-direction: row;
 }

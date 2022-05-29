@@ -10,16 +10,19 @@
 
 <!-- Se è locatario, allora ha i filtri sul catalogo alloggi -->
 @can('isLoc')
-<section id="works">
+<section id="works" >
+    <div>
     <center><h2>Filtri per il catalogo</h2></center>
     <center><h1>Ricerca l'alloggio in base alle tue esigenze!</h1></center>
 
-    <div class="row flex-box">
-        
-     <div class="column">
+    <div class="row">
+        <div class="flex-box-filtri">
+     <div class="pressa">
+       
         {{ Form::open(array('route' => 'catalogoLoc', 'class' => 'filters-form')) }}
-
+       <div class="flex-box-items">
         <div  class="wrap-input">
+            
             {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore obbligatorio']) }}
             {{ Form::select('tipologia', ['all' => 'Tutti', 'ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'filters()']) }}
         </div>
@@ -37,7 +40,8 @@
         @endif
         
         </div>
-        
+       </div>
+       <div class="flex-box-items">
         <div  class="wrap-input">
         {{ Form::label('posti_letto_tot', 'Numero posti letto tot', ['title' => 'Valore facoltativo']) }}
         
@@ -63,10 +67,11 @@
         </ul>
         @endif        
         </div>
-
+       </div>
      </div>
     
-    <div class="column">
+    <div class="pressa">
+        <div class="flex-box-items">
     <div  class="wrap-input">
         {{ Form::label('prezzo_min', 'Prezzo minimo', ['title' => 'Valore facoltativo']) }}
         
@@ -92,7 +97,8 @@
         </ul>
         @endif
         </div>
-        
+        </div>
+        <div class="flex-box-items">
         <div  class="wrap-input">
         {{ Form::label('letti_camera', 'Letti nella camera', ['title' => 'Valore facoltativo']) }}
         
@@ -118,10 +124,11 @@
         </ul>
         @endif        
         </div>
-        
+        </div>
     </div>
          
-    <div class="column">
+    <div class="pressa">
+        <div class="flex-box-items">
     <div  class="wrap-input">
         {{ Form::label('prezzo_max', 'Prezzo massimo', ['title' => 'Valore facoltativo']) }}
         
@@ -147,10 +154,12 @@
         @endforeach
         </ul>
         @endif
-        
+
         </div>
-        
+        </div>
+        <div class="flex-box-items">
         <div  class="wrap-input">
+            
             <div class="column">
             {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
             {{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio']) }}
@@ -171,7 +180,11 @@
             </div>
         
         </div>
+        </div>
     </div>
+        
+    </div>
+        
     </div>
         
     <center><div class="container-form-btn">                
@@ -182,7 +195,7 @@
     {{ Form::close() }}
 
 
-
+      </div>
 </section>
 @endcan
 

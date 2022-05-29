@@ -37,7 +37,7 @@ currNavBar(3);
                          <h3>{{ $m->mitt->nome }} {{ $m->mitt->cognome }}</h3>
 
                         <div class="comment-meta">
-                           <p class="ricevuto_messagistica">Ricevuto: {{ date('d-m-Y h:m', strtotime($m->created_at)) }}</p>
+                           <p class="ricevuto_messagistica">Ricevuto: {{ date('d-m-Y H:i', strtotime($m->created_at)) }}</p>
                         </div>
                      </div>
 

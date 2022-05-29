@@ -19,7 +19,7 @@
                <p class="titolo">Mittente: 
                <span class="testo">{{ $mess->mitt->nome }} {{ $mess->mitt->cognome }}</span>
                </p>
-               <p class="titolo">Ricevuto: <span class="testo">{{ date('d-m-Y h:m', strtotime($mess->created_at)) }}</span></p> 
+               <p class="titolo">Ricevuto: <span class="testo">{{ date('d-m-Y H:i', strtotime($mess->created_at)) }}</span></p> 
               <p class="titolo">Nome alloggio: <span class="testo">{{ $mess->alloggio->nome }}</span></p> 
                
               <div class="bordo_testo_messaggio"></div>
