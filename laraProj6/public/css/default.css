@@ -713,7 +713,15 @@ input[type="checkbox"] { display: inline; }
 }
 /* fatta da Matteo per risultati stats*/
 
+/* Luca */
+.column_opzione {
+  
+   padding: 20px;
+   margin: 0px;
 
+   min-height: 1px;
+   max-width: 90%;
+}
 
 .columns_bianco {
   

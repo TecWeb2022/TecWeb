@@ -1107,6 +1107,22 @@ padding: 10px;
    text-align: left;
 }
 
+/* OPZIONI Luca*/
+ol.optionlist {
+   border-top: 1px dotted #E1E5E3;
+	margin: 29px 0 54px 0;
+	padding: 0;
+  
+}
+
+.optionlist > li {
+   position: relative;
+	list-style: none;
+	margin: 0;
+	padding: 18px 0 17px 0;
+	border-bottom: 1px dotted #D9DEDB;
+}
+
 /* Comments
 /* ------------------------------------------------------------------ */
 #comments {

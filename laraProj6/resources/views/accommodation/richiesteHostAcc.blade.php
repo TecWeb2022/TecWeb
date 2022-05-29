@@ -6,27 +6,27 @@
 
 <!-- Content
    ================================================== -->
-   <div class="content-outer">
+   <div id="works">
 
-      <div id="page-content2" class="row">
+      <div class="row row-bianco">
 
-         <div id="primary" class="ten columns">
+
 
             <!-- Comments
             ================================================== -->
             <div id="comments">
 
-                <center><div><h2>Richieste di opzione ricevute</h2></div></center>
+                <center><h2>Richieste di opzione ricevute</h2></center>
                <!-- commentlist -->
                @isset($dati)
-               <ol class="commentlist ">
+               <ol class="optionlist ">
                   @foreach($dati as $d)
                   <!--li class="depth-1"-->
                   <li>
                       <!--div class="avatar2">
                         <img width="50" height="50" src="images/icona_utente.png" alt="">
                      </div-->
-                      <div class="bordo_messaggi center">
+                      <div class="center">
                      <div class="comment-info">
                         
                          <h3 class="nome_mitt">{{ $d->nome_loc }} {{ $d->cognome_loc }}</h3>
@@ -52,11 +52,11 @@
                <!-- Pagination -->
                <center>@include('pagination.paginator', ['paginator' => $dati])</center>
                @endisset
-               </div> <!-- Respond End -->
+               </div><!-- Respond End -->
 
             </div>  <!-- Comments End -->
 
-         </div>
+
 
          </div> <!-- Comments End -->
 
