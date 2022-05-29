@@ -11,11 +11,10 @@
 @isset($mess)
 <!-- Content
    ================================================== -->
- <section id="works">
+ <section id="info">
      <div class="row">
-         <div class="column">
-     <div>
-         
+         <div id="primary" class="twelve column">
+     
           <div class="column ">
                <p class="titolo">Mittente: 
                <span class="testo">{{ $mess->mitt->nome }} {{ $mess->mitt->cognome }}</span>
@@ -28,16 +27,16 @@
                 <div class="crick">
                     <h3>Testo del messaggio</h3>
                     <cite class="testo_messaggio">"{{ $mess->testo }}"</cite> 
-                    
-                </div>
-           </div> 
-             </div> 
-                <div class="sposta_btn">
-                  <h3>Rispondi</h3>
+                    <h3 class="zeppa">Rispondi</h3>
                   <div>
                         <button onclick="location.href = '{{ route('scritturaMessLoc', [ 'id_mess' => $mess->id ]) }}';">Rispondi</button>
                   </div>
-              </div>
+                </div>
+           </div> 
+          
+               
+                  
+              
          
           <!-- Comments End -->
          </div>
