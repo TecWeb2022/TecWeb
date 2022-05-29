@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/default.css') }}" >
@@ -7,6 +7,8 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/media-queries.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layout.css') }}" >
         <script type="text/javascript" src="{{ URL::asset('js/functions.js') }}"></script>
+        @section('scripts')
+        @show
         <title>Studentb&amp;b | @yield('title', 'Home')</title>
     </head>
     <body>
@@ -16,7 +18,7 @@
                 <div class="row">
                    <div class="twelve columns">
                       <div class="logo">
-                         <a href="{{ Route('homeLoc') }}"><img alt="" src="/images/logo.png"></a>
+                         <a href="{{ Route('home') }}"><img alt="" src="/images/logo.png"></a>
                       </div>
 
                       <nav id="nav-wrap">

@@ -127,7 +127,8 @@ class AdminController extends Controller
                     $alloggi_tot = Accomodation::all()->where('tipologia', '=', $tip)->count();
                     $alloggi_locati = Accomodation::all()->where('tipologia', '=', $tip)
                             ->where('assegnato', '=', true)->count();
-                    $offerte = Option::all()
+                    $offerte = Option::join('accomodations', 'options.id_alloggio', '=', 'accomodations.id')
+                            ->where('accomodations.tipologia', '=', $tip)
                             ->count();
                 } else if($request['inizio'] != null && $request['fine'] == null) {
                     $alloggi_tot = Accomodation::all()->where('tipologia', '=', $tip)
@@ -137,6 +138,10 @@ class AdminController extends Controller
                             ->where('assegnato', '=', true)
                             ->where('inizio_disp', '>=', $request['inizio'])
                             ->count();
+                    $offerte = Option::join('accomodations', 'options.id_alloggio', '=', 'accomodations.id')
+                            ->where('accomodations.tipologia', '=', $tip)
+                            ->where('options.created_at', '>=', $request['inizio'])
+                            ->count();
                 } else if($request['inizio'] == null && $request['fine'] != null) {
                     $alloggi_tot = Accomodation::all()->where('tipologia', '=', $tip)
                             ->where('fine_disp', '<=', $request['fine'])
@@ -144,6 +149,10 @@ class AdminController extends Controller
                     $alloggi_locati = Accomodation::all()->where('tipologia', '=', $tip)
                             ->where('assegnato', '=', true)
                             ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                    $offerte = Option::join('accomodations', 'options.id_alloggio', '=', 'accomodations.id')
+                            ->where('accomodations.tipologia', '=', $tip)
+                            ->where('options.created_at', '<=', $request['fine'])
                             ->count();
                 } else {
                     $alloggi_tot = Accomodation::all()->where('tipologia', '=', $tip)
@@ -154,6 +163,10 @@ class AdminController extends Controller
                             ->where('assegnato', '=', true)
                             ->where('inizio_disp', '>=', $request['inizio'])
                             ->where('fine_disp', '<=', $request['fine'])
+                            ->count();
+                    $offerte = Option::join('accomodations', 'options.id_alloggio', '=', 'accomodations.id')
+                            ->where('accomodations.tipologia', '=', $tip)
+                            ->whereBetween('options.created_at', [$request['inizio'], $request['fine']])
                             ->count();
                 }
                 break;
