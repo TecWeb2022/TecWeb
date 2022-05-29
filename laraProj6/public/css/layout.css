@@ -94,19 +94,25 @@ img { border-radius: 3px; }
 }
 
 /* fatta da Luca*/ 
-.imgn_visual_casa{
-    
-   max-width:  100%;
-}
-
-.benvenuto_admin{color:whitesmoke;}
-
-/* fatta da Luca*/ 
 .div_imgn_visual_casa{
     position:relative;
    height: 100%;
    width:  100%;
 }
+/* fatta da Luca*/ 
+.imgn_visual_casa{
+    
+   max-width:  100%;
+}
+
+.div_imgn_casa_catalog{
+    position:relative;
+   height: 150px;
+   width:  200px;
+}
+.benvenuto_admin{color:whitesmoke;}
+
+
 /* fatta da Matteo*/ 
 .icona_posizione {
    height: 15px;

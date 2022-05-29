@@ -21,12 +21,19 @@
                @isset($dati)
                <ol class="optionlist ">
                   @foreach($dati as $d)
-                  <!--li class="depth-1"-->
-                  <li>
+                  
+                  <li class="flex-box flex-row">
+                      
                       <!--div class="avatar2">
                         <img width="50" height="50" src="images/icona_utente.png" alt="">
                      </div-->
-                      <div class="center">
+                      
+                      <div class="column">
+                            <div class="div_imgn_casa_catalog">
+                                    <img src="{{asset('/storage/' . $d->path_foto) }}" palt="">
+                            </div>
+                      </div>
+                     <div class="column seven">
                      <div class="comment-info">
                         
                          <h3 class="nome_mitt">{{ $d->nome_loc }} {{ $d->cognome_loc }}</h3>
@@ -41,6 +48,8 @@
                      <div class="dettagli_cat">
                          <cite class="nome_alloggio">Nome alloggio: {{ $d->nome_acc }}</cite>
                      </div>
+                     </div>
+                      <div class="column">
                       @if($d->data_stipula == null)
                       {{ Form::open(array('route' => 'accettaOfferta', 'class' => 'filters-form')) }}
                       {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}

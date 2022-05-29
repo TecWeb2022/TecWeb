@@ -820,6 +820,10 @@ input[type="checkbox"] { display: inline; }
     justify-content:center;
 }
 
+.flex-row{
+    flex-direction: row;
+}
+
 .flex-inline{
     flex-wrap: nowrap;
 }
