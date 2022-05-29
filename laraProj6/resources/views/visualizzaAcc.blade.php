@@ -31,7 +31,7 @@
                     <img class="icona_posizione" src="/images/position-icon.png" alt="">
                     <h5><a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a></h5>
                </div>
-              <p class="titolo">Numero di camere: <span class="testo">{{ $acc->num_camere}}</span></p> 
+               <p class="titolo">Numero di camere: <span class="testo">{{ $acc->num_camere}}</span></p> 
               <p class="titolo">Numero di bagni: <span class="testo">{{ $acc->num_bagni}}</span></p> 
               <p class="titolo">Posti letto totali: <span class="testo">{{ $acc->posti_letto_tot}}</span></p> 
               <p class="titolo">Superficie: <span class="testo">{{ $acc->sup}} m²</span></p> 

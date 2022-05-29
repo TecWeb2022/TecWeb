@@ -56,7 +56,7 @@ class OptionList
                                          $join->on('locs.id_loc','=','accs_opts.id_locatario');
                                     })
                                       ->orderByDesc('created_at_opt')
-                                      ->paginate(10);
+                                      ->paginate(5);
           
                                     
             /*

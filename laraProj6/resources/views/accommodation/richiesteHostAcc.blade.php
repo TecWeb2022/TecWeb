@@ -23,40 +23,44 @@
                   @foreach($dati as $d)
                   
                   <li class="flex-box flex-row">
-                      
-                      <!--div class="avatar2">
-                        <img width="50" height="50" src="images/icona_utente.png" alt="">
-                     </div-->
-                      
-                      <div class="column">
-                            <div class="div_imgn_casa_catalog">
+                     
+                      <div class="div_imgn_casa_catalog">
+                            <div class="flex-box flex-vertical-center">
                                     <img src="{{asset('/storage/' . $d->path_foto) }}" palt="">
                             </div>
                       </div>
+                      
                      <div class="column seven">
                      <div class="comment-info">
                         
-                         <h3 class="nome_mitt">{{ $d->nome_loc }} {{ $d->cognome_loc }}</h3>
-                         <p>Sesso: {{$d->sesso}}<br>
-                         Data di nascita: {{ date('d-m-Y', strtotime($d->data_nasc)) }}</p>
+                         <h3 class="nome_mitt">{{ $d->nome_acc }}</h3>
+                                 <p class="titolo">Richiesto da: 
+                                 <span class="testo">{{ $d->nome_loc }} {{ $d->cognome_loc }}
+                             </span></p>
+                             <p class="titolo">Sesso: 
+                                 <span class="testo">{{$d->sesso}}
+                             </span></p>
+                             <p class="titolo">Data di nascita: 
+                                 <span class="testo">{{ date('d-m-Y', strtotime($d->data_nasc)) }}
+                             </span></p>
 
                         <div class="comment-meta">
-                           <p class="ricevuto_messagistica">Richiesta di opzione inviata: {{ date('d-m-Y H:i', strtotime($d->created_at_opt)) }}</p>
+                           <p class="ricevuto_messagistica">
+                               <p class="titolo">Inviato il: 
+                                 <span class="testo"> {{ date('d-m-Y H:i', strtotime($d->created_at_opt)) }}
+                             </span></p>
+                          </p>
                         </div>
                      </div>
-
-                     <div class="dettagli_cat">
-                         <cite class="nome_alloggio">Nome alloggio: {{ $d->nome_acc }}</cite>
                      </div>
-                     </div>
-                      <div class="column">
+                      
+                      <div class="column two">
                       @if($d->data_stipula == null)
-                      {{ Form::open(array('route' => 'accettaOfferta', 'class' => 'filters-form')) }}
+                      {{ Form::open(array('route' => 'accettaOfferta', 'class' => 'flex-box')) }}
                       {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
-                      {{ Form::submit('Accetta', ['class' => 'form-btn1', 'title' => 'Assegnamento alloggio al locatario richiedente']) }}
+                      {{ Form::submit('Accetta', ['class' => 'submit_button', 'title' => 'Assegnamento alloggio al locatario richiedente']) }}
                       {{ Form::close() }}
                       @else
-                      <button disabled title="Hai già assegnato questa offerta a un locatario">Offerta già accettata</button>
                       {{ Form::open(array('route' => 'contratto', 'class' => 'filters-form')) }}
                       {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
                       {{ Form::submit('Visualizza contratto', ['class' => 'form-btn1', 'title' => 'Visualizza il contratto stipulato con il locatario']) }}

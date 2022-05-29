@@ -169,7 +169,7 @@ body {
 }
 
 .testo{
-    font-family: raleway-bold, sans-serif;
+    font-family: raleway-regular, sans-serif;
     color: #313131;
     font-size: 18px; line-height: 20px;
     font-weight: normal;
@@ -653,6 +653,11 @@ input[type="checkbox"] { display: inline; }
   
 }
 
+.submit_button{
+    width: 100%;
+    min-width: 100%;
+}
+
 
 /* ------------------------------------------------------------------ */
 /* d. Grid
@@ -834,6 +839,10 @@ input[type="checkbox"] { display: inline; }
 
 .flex-space{
     justify-content: space-between;
+}
+
+.flex-vertical-center{
+    align-content: center;
 }
 
 /* block grids
