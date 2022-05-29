@@ -19,15 +19,20 @@ endguest
     </script>
 @endisset
 
-<script type="text/javascript">
-    currNavBar(0);
-</script>
-
 <script
   src="https://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
   crossorigin="anonymous">
 </script>
+
+<script type="text/javascript">
+    currNavBar(0);
+    slider2Home();
+</script>
+
+
+
+
 
 
 <!-- Intro Section
@@ -48,23 +53,27 @@ endguest
                                              </p>
                                              
                                           <div style="height: 200px; text-align: center;">
-                                            <button onclick="location.href = '{{ route('register') }}';">Registrati nel sito</button>
+                                            <button onclick="location.href = '{{ route('register') }}'">Registrati nel sito</button>
                                           </div>
                                              
                                  </div>
                              
-                             <div class="container"><h2>Slider alloggi</h2>
+                             
+                                 
                                  <div class="container">
-                                     
-                                     <img src="{{asset('/images/sinistra.png') }}" class="prev" alt="Prev">
-                                     <div class="slider-inner">
-                                         <img src="{{asset('/images/casa1.jpg') }}" class="active">
-                                         <img src="{{asset('/images/casa2.jpg') }}">
-                                         <img src="{{asset('/images/casa3.jpg') }}">
-                                     </div>
-                                     <img src="{{asset('/images/destra.png') }}" class="next" alt="Next">
-                                 </div>
-                             </div>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa1.jpg')}}"></figure>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa2.jpg') }}"></figure>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa3.jpg') }}"></figure>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa4.jpg') }}"></figure>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa5.jpg') }}"></figure>
+                                    <a class="prev">&#10094;</a>
+                                    <a class="next">&#10095;</a>
+                                </div>
+                                 
+                                 
+                                 
+                                 
+                             
                              @endguest
                              @can('isLoc')
                                 <div class="slider-text">

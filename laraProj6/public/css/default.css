@@ -1002,63 +1002,95 @@ properly.
 
 /* fatta da Alex per slider jquery */
 
+
+
+
+
+/* copiata da Alex per slider jquery */
+
 .container{
 
 width:540px;
-margin:40px auto;
+margin:30px auto;
 overflow:auto
 }
 
-.slider-outer{
-    
-    
+.imageslide{
+	display: none;
 }
 
-.slider-inner{
+figure { margin:0;}
 
-width:500px;
-height:300px;
-position:relative;
-overflow:hidden;
-float:left;
-padding:3px;
-border:#666 solid 1px;
-}
-
-.slider-inner img{
-
-display:none;
-width:500px;
-height:300px;
-}
-
-.slider-inner img.active{
-
-display:inline-block;
+img{
+	width: 100%;
+	height:auto;
 }
 
 .prev, .next {
-    
-float:left;
-margin-top:130px;
-cursor:pointer;
+  cursor: pointer;
+  position: absolute;
+  top: 65%;
+  width: auto;
+  padding: 18px;
+  color: #d2d2d2;
+  font-size: 60px;
+  opacity: 0.7;
 }
-
-.prev {
-    
-position:relative;
-margin-right:-45px;
-z-index:100;
+.prev{
+    left:70px;
 }
-
 .next {
-    
-position:relative;
-margin-right:-45px;
-z-index:100;
+  right: 70px;
 }
 
+.pulsanti{
+	width: 100%;
+	position: absolute;
+	height:20px;
+}
 
+.dot{
+	cursor:pointer;
+	height: 18px;
+	width: 18px;
+	margin: 8px;
+	background-color: #ccc;
+	border-radius: 50%;
+  	display: inline-block;
+}
+.grigio{
+	background-color: #1c1818;
+	opacity: 0.8;
+}
 
+@media (min-width: 768px) and (max-width: 1024px) {
+.prev, .next {
+  top: 20%;
+  width: auto;
+  font-size: 50px;
+}
 
+}
 
+@media (min-width: 481px) and (max-width: 767px) {
+.prev, .next {
+  top: 10%;
+  width: auto;
+  font-size: 40px;
+}
+}
+
+@media (max-width: 480px) {	
+.prev, .next {
+  top: 4%;
+  width: auto;
+  padding: 6px;
+  font-size: 40px;
+}
+
+.dot{
+	height: 12px;
+	width: 12px;
+	margin: 5px;
+}
+}
