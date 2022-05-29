@@ -28,19 +28,19 @@
                      </div-->
                       <div class="bordo_messaggi center">
                      <div class="comment-info">
-                         <img class="avatar2" src="images/icona_utente.png" alt="">
-                         <h3 class="nome_mitt">{{ $d->nome }} {{ $d->cognome }}</h3>
+                        
+                         <h3 class="nome_mitt">{{ $d->nome_loc }} {{ $d->cognome_loc }}</h3>
 
                         <div class="comment-meta">
-                           <p class="ricevuto_messagistica">Richiesta di opzione inviata: {{ date('d-m-Y h:m:s', strtotime($d->created_at)) }}</p>
+                           <p class="ricevuto_messagistica">Richiesta di opzione inviata: {{ date('d-m-Y h:m:s', strtotime($d->created_at_opt)) }}</p>
                         </div>
                      </div>
 
                      <div class="dettagli_cat">
-                         <cite class="nome_alloggio">Nome alloggio: {{ $d->nome }}</cite>
+                         <cite class="nome_alloggio">Nome alloggio: {{ $d->nome_acc }}</cite>
                      </div>
                       
-                       <button class="btn_mess_nvis" title ="Valutazione richiesta" onclick="location.href = '{{ route('home', [ 'id' => $d->id ]) }}';">Accetta prenotazione</button>
+                       <button class="btn_mess_nvis" title ="Valutazione richiesta" onclick="location.href = '{{ route('home', [ 'id' => $d->id_acc ]) }}';">Accetta prenotazione</button>
                       
                        </div>
                   </li>
