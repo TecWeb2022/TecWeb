@@ -104,6 +104,9 @@ Route::get('/modificaHostAcc/{id}', 'HostController@getAccModifica')
 Route::post('/modificaHostAcc/{id}','HostController@modificaAcc')
         ->name('modificaHostAccPost');
 
+Route::post('/eliminaAcc','HostController@eliminaAcc')
+        ->name('eliminaAcc');
+
 Route::get('/visualizzaOpzioni','HostController@getAllOptions')
         ->name('visualizzaTutteOpzioni');
 

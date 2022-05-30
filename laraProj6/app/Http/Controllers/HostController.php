@@ -111,6 +111,13 @@ class HostController extends Controller {
                 
     }
     
+    public function eliminaAcc(Request $request) {
+        $acc = Accomodation::find($request->id_acc);
+        $acc->delete();
+        
+        return redirect()->route('gestioneAcc');
+    }
+    
     public function getAllOptions(){
         $id_user = auth()->user()->id;
         $optionListModel = new OptionList;
