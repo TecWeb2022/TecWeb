@@ -17,8 +17,9 @@
 
     <div class="row">
         <center>
-        <div class="flex-box-filtri">
-     <div class="pressa">
+        <div class="flex-box-filtri pressa">
+          
+            <div>
        
         {{ Form::open(array('route' => 'catalogoLoc', 'class' => 'filters-form')) }}
        <div class="flex-box-items">
@@ -71,7 +72,7 @@
        </div>
      </div>
     
-    <div class="pressa">
+    <div>
         <div class="flex-box-items">
     <div  class="wrap-input">
         {{ Form::label('prezzo_min', 'Prezzo minimo', ['title' => 'Valore facoltativo']) }}
@@ -128,7 +129,7 @@
         </div>
     </div>
          
-    <div class="pressa">
+    <div>
         <div class="flex-box-items">
     <div  class="wrap-input">
         {{ Form::label('prezzo_max', 'Prezzo massimo', ['title' => 'Valore facoltativo']) }}
@@ -162,22 +163,29 @@
         <div  class="wrap-input">
             
             <div class="column">
+                <div class="div-checkbox">
             {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio']) }}
-
+            <span>{{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio']) }}</span>
+               </div>
+                <div class="div-checkbox">
             {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('locale_ricreativo', true, false, ['id' => 'locale_ricreativo']) }}
-            
+            <span>{{ Form::checkbox('locale_ricreativo', true, false, ['id' => 'locale_ricreativo']) }}</span>
+               </div>
+                <div class="div-checkbox">
             {{ Form::label('garage', 'Garage', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('garage', true, false, ['id' => 'garage']) }}
+            <span>{{ Form::checkbox('garage', true, false, ['id' => 'garage']) }}</span>
+               </div>
             </div>
             
             <div class="column">
+                <div class="div-checkbox">
             {{ Form::label('wifi', 'Wi-Fi', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('wifi', true, false, ['id' => 'wifi']) }}
-
+            <span>{{ Form::checkbox('wifi', true, false, ['id' => 'wifi']) }}</span>
+               </div>
+                  <div class="div-checkbox">
             {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo']) }}
-            {{ Form::checkbox('climatizzatore', true, false, ['id' => 'climatizzatore']) }}
+            <span>{{ Form::checkbox('climatizzatore', true, false, ['id' => 'climatizzatore']) }}</span>
+               </div>
             </div>
         
         </div>
@@ -239,7 +247,7 @@
                          <img width="10" height="10" class="icona_posizione" src="/images/position-icon.png" alt="">
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
                          <p>@include('helpers/tipologiaAcc', ['tipologia' => $acc->tipologia])</p>
-                         @include('helpers/descrAcc', ['acc' => $acc])
+                         <p>@include('helpers/descrAcc', ['acc' => $acc])</p>
                           
                        
                        @if($acc->assegnato == false)

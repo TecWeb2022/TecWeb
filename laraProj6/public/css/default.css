@@ -832,21 +832,26 @@ input[type="checkbox"] { display: inline; }
     align-content: center;
     align-items:center; 
     gap: 30px;
-}
+    }
 
 
 .flex-box-filtri{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content:center;
+    gap: 10px;
+ 
 }
 
 
 .flex-box-items{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content:center;
-    gap:10px
+    gap:10px;
+    flex-shrink:inherit;
+
+    
 }
 .flex-row{
     flex-direction: row;
