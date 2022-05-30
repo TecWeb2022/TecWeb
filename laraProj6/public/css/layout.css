@@ -61,14 +61,21 @@ img { border-radius: 3px; }
    width: 91.66667%;
 }
 
-/* fatto da Matteo, serve a centrare il catalogo */
-#page-content2 {
+/* fatto da Matteo, serve a centrare il catalogo questo è il 2*/
+#page-content3 {
    padding-top: 54px;
    padding-bottom: 54px;
    margin-left: 25%;
    margin-right: 25%;
    width: 100%;
 }
+/* fatto da Matteo questo è il 3*/
+#page-content2 {
+   padding-top: 54px;
+   padding-bottom: 54px;
+   width: 100%;
+}
+
 /* fatto da Matteo, serve a centrare il catalogo */
 #page-content_cat{
     padding-top: 54px;
@@ -182,6 +189,10 @@ color:white;
 /*Fatta da Matteo*/
 .piccolo-crick{
     margin: 10px 0 10px 0;
+}
+
+.piccolo-crick-mk2{
+    margin: 20px 0 40px 0;
 }
 
 /*Fatta da Matteo*/
