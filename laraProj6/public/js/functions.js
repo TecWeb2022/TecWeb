@@ -174,3 +174,8 @@ function slider2Home () {
 });
   
 }
+
+
+function mostraMessaggioModifica() {
+window.alert("La modifica è stata effettuata con successo");
+}

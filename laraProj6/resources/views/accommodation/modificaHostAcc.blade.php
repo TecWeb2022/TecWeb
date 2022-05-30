@@ -5,6 +5,10 @@
 
 @section('content')
 
+<script type="text/javascript">
+    
+</script>
+
 @isset($acc)
 <section id="works">
 
@@ -266,7 +270,7 @@
            
                 <div class="row">
                     <div style="text-align:center" class="container-form-btn">
-                    {{ Form::submit('Salva le modifiche', ['class' => 'form-btn1', 'id' => 'sub-btn']) }}
+                    {{ Form::submit('Salva le modifiche', ['class' => 'form-btn1', 'id' => 'sub-btn', 'onclick'=>'mostraMessaggioModifica()']) }}
                     </div>
                     {{ Form::close() }}
                 </div>
