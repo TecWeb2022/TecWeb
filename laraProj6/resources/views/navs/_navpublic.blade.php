@@ -14,7 +14,8 @@
     <li class="noCurrent"><a href="{{ route('gestFaqs') }}" title="Gestione Faqs">Gestione FAQs</a></li>
     @endcan
     @can('isHost')
-    <li class="noCurrent"><a href="{{ route('gestioneAnn') }}" title="Annunci">Gestione Annunci</a></li>
+    <li class="noCurrent"><a href="{{ route('gestioneAcc') }}" title="Annunci">Gestione Alloggi</a></li>
+    <li class="noCurrent"><a href="{{ route('visualizzaTutteOpzioni') }}" title="Opzioni">Visualizza Opzioni</a></li>
     <li class="noCurrent"><a href="{{ route('home') }}" title="Chat">Chat</a></li>
     <li class="noCurrent"><a href="{{ route('home') }}" title="Profilo">Profilo</a></li>
     @endcan

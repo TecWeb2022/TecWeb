@@ -32,7 +32,9 @@
                      <div class="imgn_casa">
                         <img class="imgn_casa" src="{{asset('/storage/' . $acc->path_foto) }}" palt="">
                      </div>
-
+                      
+                      <div class="flex_box flex-row">
+                      <div>
                      <div class="comment-info">
                          <cite>{{ $acc->nome }}</cite>
 
@@ -47,14 +49,21 @@
                          <p class="remove-bottom">@include('helpers/tipologiaAcc', ['tipologia' => $acc->tipologia])</p>
                          @include('helpers/descrAcc', ['acc' => $acc])
                          <p>Prezzo {{ $acc->canone }} €/notte</p>
-                            <div class="flex-box flex-space">
-                                <button onclick="location.href = '{{ route('infoAccHost', [ 'id' => $acc->id ]) }}';">Info</button> 
-                                <button onclick="location.href = '{{ route('modificaHostAcc', [ 'id' => $acc->id ]) }}';">Modifica</button> 
-                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';">Elimina</button> 
-                            </div>
+                            
                          <!-- onclick va messo in un file js -->
                          <!-- Seconda casa in affitto -->
                      </div>
+                      </div>
+                      <div class="flex-box flex-column flex-space">
+                                <button onclick="location.href = '{{ route('infoAccHost', [ 'id' => $acc->id ]) }}';">Info</button> 
+                                {{ Form::open(array('route' => 'visualizzaOpzioniAcc', 'class' => 'flex-box')) }}
+                                {{ Form::hidden('id_acc', $acc->id, ['id' => 'id_acc']) }}
+                                {{ Form::submit('Opzioni', ['class' => 'submit_button', 'title' => 'Visualizza le richieste di opzione']) }}
+                                {{ Form::close() }}
+                                <button onclick="location.href = '{{ route('modificaHostAcc', [ 'id' => $acc->id ]) }}';">Modifica</button> 
+                                <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';">Elimina</button> 
+                            </div>
+                      </div>
                     @endforeach
                      
                         

@@ -107,8 +107,11 @@ Route::post('/modificaHostAcc/{id}','HostController@modificaAcc')
 Route::get('/visualizzaOpzioni','HostController@getAllOptions')
         ->name('visualizzaTutteOpzioni');
 
-Route::get('/gestioneAnnunci', 'HostController@getAccsHost')
-        ->name('gestioneAnn');
+Route::post('/visualizzaOpzioniAcc','HostController@getOptionsAcc')
+        ->name('visualizzaOpzioniAcc');
+
+Route::get('/gestioneAccomodations', 'HostController@getAccsHost')
+        ->name('gestioneAcc');
 
 Route::post('/accettaOfferta', 'HostController@accettaOfferta')
         ->name('accettaOfferta');

@@ -58,6 +58,7 @@
                       @if($d->data_stipula == null)
                       {{ Form::open(array('route' => 'accettaOfferta', 'class' => 'flex-box')) }}
                       {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
+                      {{ Form::hidden('from_bool', true, ['id' => 'from_bool']) }}
                       {{ Form::submit('Accetta', ['class' => 'submit_button', 'title' => 'Assegnamento alloggio al locatario richiedente']) }}
                       {{ Form::close() }}
                       @else

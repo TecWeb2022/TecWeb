@@ -13,9 +13,11 @@
             <!-- Comments
             ================================================== -->
             <div id="comments">
-                @isset($dati)
                 <center><h2>Richieste di opzione ricevute per</h2></center>
-                <center><h2>{{ $dati->->nome_acc }}</h2></center>
+                @isset($dati)
+                @isset($nome_acc)
+                
+                <center><h2>{{ $nome_acc }}</h2></center>
                <!-- commentlist -->
                
                <ol class="optionlist ">
@@ -32,10 +34,8 @@
                      <div class="column seven">
                      <div class="comment-info">
                         
-                         <h3 class="nome_mitt">{{ $d->nome_acc }}</h3>
-                                 <p class="titolo">Richiesto da: 
-                                 <span class="testo">{{ $d->nome_loc }} {{ $d->cognome_loc }}
-                             </span></p>
+                         <h3 class="nome_mitt">{{ $d->nome_loc }} {{ $d->cognome_loc }}</h3>
+                               
                              <p class="titolo">Sesso: 
                                  <span class="testo">{{$d->sesso}}
                              </span></p>
@@ -57,6 +57,7 @@
                       @if($d->data_stipula == null)
                       {{ Form::open(array('route' => 'accettaOfferta', 'class' => 'flex-box')) }}
                       {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
+                      {{ Form::hidden('from_bool', false, ['id' => 'from_bool']) }}
                       {{ Form::submit('Accetta', ['class' => 'submit_button', 'title' => 'Assegnamento alloggio al locatario richiedente']) }}
                       {{ Form::close() }}
                       @else
@@ -72,6 +73,7 @@
                </ol> <!-- Commentlist End -->
                <!-- Pagination -->
                <center>@include('pagination.paginator', ['paginator' => $dati])</center>
+               @endisset
                @endisset
                </div><!-- Respond End -->
 

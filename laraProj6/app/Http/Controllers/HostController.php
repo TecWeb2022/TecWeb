@@ -83,8 +83,8 @@ class HostController extends Controller {
         $acc->proprietario = auth()->user()->id;
         $acc->save();
       
-        //return redirect()->route('gestioneAnn');
-        return response()->json(['redirect' => route('gestioneAnn')]);
+        //return redirect()->route('gestioneAcc');
+        return response()->json(['redirect' => route('gestioneAcc')]);
     }
     
     public function modificaAcc(ModifyAccommodationRequest $request, $id){
@@ -125,10 +125,11 @@ class HostController extends Controller {
     public function getOptionsAcc(Request $request){
         $id_user = auth()->user()->id;
         $optionListModel = new OptionList;
-        $optionList = $optionListModel->getAccsAndOpts($id_user);
-        
-        return view('accommodation.richiesteHostAcc')
-                ->with('dati',$optionList);
+        $optionList = $optionListModel->getAccsAndOptsByAcc($id_user,$request->id_acc);
+        $nome_acc = Accomodation::find($request->id_acc)->nome;
+        return view('accommodation.richiestePerAcc')
+                ->with('dati',$optionList)
+                ->with('nome_acc',$nome_acc);
         
     }
     
@@ -150,8 +151,14 @@ class HostController extends Controller {
             }
         }
         
-        return redirect()->route('visualizzaTutteOpzioni');
+        if($request->from_bool){
+            return redirect()->route('visualizzaTutteOpzioni');
+        }else{
+            return redirect()->route('gestioneAcc');
+        }
     }
+    
+
     
     public function contratto(Request $request) {
         $opt = Option::find($request->id_opt);
