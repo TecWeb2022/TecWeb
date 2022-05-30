@@ -31,9 +31,16 @@
                     <img class="icona_posizione" src="/images/position-icon.png" alt="">
                     <h5><a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a></h5>
                </div>
+               <p class="titolo">Posti letto totali: <span class="testo">{{ $acc->posti_letto_tot}}</span></p> 
+               @if($acc->tipologia == 'ap')
                <p class="titolo">Numero di camere: <span class="testo">{{ $acc->num_camere}}</span></p> 
+               @else
+                     <p class="titolo">Letti nella camera: 
+                         @include('helpers/boolTransAcc', ['value' => $acc->letti_camera])
+                    </p> 
+                    
+               @endif
               <p class="titolo">Numero di bagni: <span class="testo">{{ $acc->num_bagni}}</span></p> 
-              <p class="titolo">Posti letto totali: <span class="testo">{{ $acc->posti_letto_tot}}</span></p> 
               <p class="titolo">Superficie: <span class="testo">{{ $acc->sup}} m²</span></p> 
               <p class="titolo">Descrizione: <span class="testo">{{ $acc->descr}}</span></p> 
               <p class="titolo">Prezzo al mese: <span class="testo">{{ $acc->canone }} €</span></p> 
@@ -43,7 +50,15 @@
           <div class="flex-box flex-space">
                 <div class="column">
                     <h3>Servizi</h3>
-                    <p class="titolo">Cucina:
+                    @if($acc->tipologia == 'cs' || $acc->tipologia == 'cd')
+                          <p class="titolo">Angolo studio:  
+                            @include('helpers/boolTransAcc', ['value' => $acc->angolo_studio])
+                          </p> 
+                          <p class="titolo">Climatizzatore: 
+                            @include('helpers/boolTransAcc', ['value' => $acc->climatizzatore])
+                          </p> 
+                    @else
+                     <p class="titolo">Cucina:
                         @include('helpers/boolTransAcc', ['value' => $acc->cucina])
                     </p> 
                     
@@ -51,21 +66,14 @@
                          @include('helpers/boolTransAcc', ['value' => $acc->locale_ricreativo])
                     </p> 
                     
-                    <p class="titolo">Letti nella camera: 
-                         @include('helpers/boolTransAcc', ['value' => $acc->letti_camera])
-                    </p> 
-                    <p class="titolo">Angolo studio:  
-                         @include('helpers/boolTransAcc', ['value' => $acc->angolo_studio])
-                    </p> 
+                   @endif
                     <p class="titolo">WiFi: 
                          @include('helpers/boolTransAcc', ['value' => $acc->wifi])
                     </p> 
                     <p class="titolo">Garage: 
                          @include('helpers/boolTransAcc', ['value' => $acc->garage])
                     </p> 
-                    <p class="titolo">Climatizzatore: 
-                         @include('helpers/boolTransAcc', ['value' => $acc->climatizzatore])
-                    </p> 
+                    
                 </div>
               <div class="column">
                     <h3>Requisiti da soddisfare per l'affitto</h3>

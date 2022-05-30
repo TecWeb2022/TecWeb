@@ -12,4 +12,4 @@
     }
 
 @endphp
-<p>{{ $descr }}</p>
+{{ $descr }}

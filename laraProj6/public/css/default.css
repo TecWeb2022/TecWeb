@@ -856,6 +856,10 @@ input[type="checkbox"] { display: inline; }
     flex-direction: column;
 }
 
+.flex-top{
+    align-content: flex-start;
+}
+
 .flex-inline{
     flex-wrap: nowrap;
 }

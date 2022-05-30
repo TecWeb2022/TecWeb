@@ -23,6 +23,14 @@ function filters() {
     }
 }
 
+function toggleInfoAcc(id_div){
+    if(document.getElementById(id_div).hidden === false){
+        document.getElementById(id_div).hidden = true;
+    }else{
+        document.getElementById(id_div).hidden = false;
+    } 
+}
+
 /* Inutilizzate, da vedere se servono
 function refreshWindow()
 {

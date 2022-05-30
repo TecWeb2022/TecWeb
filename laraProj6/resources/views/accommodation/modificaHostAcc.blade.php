@@ -14,7 +14,7 @@
 
       <div class="row">
           <h2 class="text-center add-bottom">Modifica la tua offerta</h2>
-          <h3 class="text center add-bottom">Stai modifcando l'offerta: {{$acc->nome}}</h3>
+          <h3 class="text center add-bottom">{{$acc->nome}}</h3>
           
           <div class="flex-box flex-inline add-bottom">
 
