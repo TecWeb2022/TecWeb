@@ -126,6 +126,9 @@ justify-content:center;
 height: 100%;
 color:white;
 }
+
+
+
 /* fatta da Matteo*/ 
 .btn2{
     height: 50px;
@@ -190,6 +193,11 @@ color:white;
 .grande_crick{
     margin:60px 0 60px 0;
 }
+
+.stoppino{
+   margin-bottom: 10px;
+}
+
 /*Fatta da Matteo*/
 .zeppa{
     margin-top: 40px;

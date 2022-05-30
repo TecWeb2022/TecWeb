@@ -16,6 +16,7 @@
     <center><h1>Ricerca l'alloggio in base alle tue esigenze!</h1></center>
 
     <div class="row">
+        <center>
         <div class="flex-box-filtri">
      <div class="pressa">
        
@@ -184,7 +185,7 @@
     </div>
         
     </div>
-        
+        </center>
     </div>
         
     <center><div class="container-form-btn">                
