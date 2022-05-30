@@ -15,4 +15,6 @@ class Accomodation extends Model
     public function propr() {
         return $this->hasOne(User::class, 'id', 'proprietario');
     }
+    
+
 }

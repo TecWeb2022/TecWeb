@@ -10,15 +10,14 @@
 
       <div class="row row-bianco">
 
-
-
             <!-- Comments
             ================================================== -->
             <div id="comments">
-
-                <center><h2>Richieste di opzione ricevute</h2></center>
+                @isset($dati)
+                <center><h2>Richieste di opzione ricevute per</h2></center>
+                <center><h2>{{ $dati->->nome_acc }}</h2></center>
                <!-- commentlist -->
-               @isset($dati)
+               
                <ol class="optionlist ">
                   @foreach($dati as $d)
                   
@@ -54,7 +53,7 @@
                      </div>
                      </div>
                       
-                      <div class="column width-opt-button">
+                      <div class="column two">
                       @if($d->data_stipula == null)
                       {{ Form::open(array('route' => 'accettaOfferta', 'class' => 'flex-box')) }}
                       {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
@@ -63,7 +62,7 @@
                       @else
                       {{ Form::open(array('route' => 'contratto', 'class' => 'flex-box')) }}
                       {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
-                      {{ Form::submit('Contratto', ['class' => 'submit_button', 'title' => 'Visualizza il contratto stipulato con il locatario']) }}
+                      {{ Form::submit('Visualizza contratto', ['class' => 'submit_button', 'title' => 'Visualizza il contratto stipulato con il locatario']) }}
                       {{ Form::close() }}
                       @endif
                        </div>

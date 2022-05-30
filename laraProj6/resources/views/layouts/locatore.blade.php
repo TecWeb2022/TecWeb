@@ -15,7 +15,7 @@
     <body>
         <!-- Header
    ================================================== -->
-            <header>
+             <header>
                 <div class="row">
                    <div class="twelve columns">
                       <div class="logo">
