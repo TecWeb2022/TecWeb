@@ -97,9 +97,9 @@ class LocController extends Controller {
             ->with('mess', $mess);
     }
     
-    public function getMessaggioRicevuto($id_mess) {
+    public function getMessaggioRicevuto(Request $request) {
         //$mess = Message::where('id', '=', $id_mess);
-        $mess = Message::find($id_mess);
+        $mess = Message::find($request->id_mess);
         $mess->visualizzato = true;
         $mess->save();
         return view('visualizzaMessaggio')
@@ -120,8 +120,8 @@ class LocController extends Controller {
             ->with('mess', $mess);
     }
     
-    public function scriviMess($id_mess) {
-        $mess = Message::find($id_mess);
+    public function scriviMess(Request $request) {
+        $mess = Message::find($request->id_mess);
         return view('scritturaMessaggio')
             ->with('mess', $mess);
     }

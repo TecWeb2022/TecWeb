@@ -51,10 +51,10 @@ Route::post('/alloggio/{id}/opzione', 'LocController@invioOpzForm')
 Route::get('/messaggiRicevutiLocatario', 'LocController@getMessaggiRicevuti')
         ->name('messaggisticaLoc');
 
-Route::get('/messaggioLocatario/{id_mess}', 'LocController@getMessaggioRicevuto')
+Route::post('/messaggioLocatario/leggi', 'LocController@getMessaggioRicevuto')
         ->name('messaggioLoc');
 
-Route::get('/messaggioLocatario/{id_mess}/rispondi', 'LocController@scriviMess')
+Route::post('/messaggioLocatario/leggi/rispondi', 'LocController@scriviMess')
         ->name('scritturaMessLoc');
 
 Route::post('/messaggioLocatario/invia', 'LocController@inviaMess')

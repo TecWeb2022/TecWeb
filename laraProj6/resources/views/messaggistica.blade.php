@@ -48,9 +48,15 @@ currNavBar(3);
                      </div>
                          </div>
                       @if($m->visualizzato)
-                      <button class="btn_mess_vis" title ="Messaggio già visualizzato" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
+                      {{ Form::open(array('route' => 'messaggioLoc', 'class' => 'flex-box')) }}
+                      {{ Form::hidden('id_mess', $m->id, ['id' => 'id_mess_leggi']) }}
+                      {{ Form::submit('Leggi', ['class' => 'btn_mess_vis', 'title' => 'Messaggio già letto']) }}
+                      {{ Form::close() }}
                       @else
-                      <button class="btn_mess_nvis" title ="Messaggio non visualizzato" onclick="location.href = '{{ route('messaggioLoc', [ 'id_mess' => $m->id ]) }}';">Leggi</button>
+                      {{ Form::open(array('route' => 'messaggioLoc', 'class' => 'flex-box')) }}
+                      {{ Form::hidden('id_mess', $m->id, ['id' => 'id_mess_legg']) }}
+                      {{ Form::submit('Leggi', ['class' => 'btn_mess_nvis', 'title' => 'Messaggio non letto']) }}
+                      {{ Form::close() }}
                       @endif
                        
                       @endforeach
