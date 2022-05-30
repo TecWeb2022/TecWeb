@@ -120,31 +120,18 @@ function doFormValidation(actionUrl, formId) {
     });
 }
 
-function sliderHome () {
-    $(document).ready(function(){
-        $('.next').on('click', function(){
-            var currentImg = $('.active');
-            var nextImg = currentImg.next();
-            
-            if(nextImg.length) {
-                currentImg.removeClass('active').css('z-index', -10);
-                nextImg.addClass('active').css('z-index', 10);
-            }
-            
-        })
-        
-        $('.prev').on('click', function(){
-            var currentImg = $('.active');
-            var prevImg = currentImg.next();
-            
-            if(prevImg.length) {
-                currentImg.removeClass('active').css('z-index', -10);
-                prevImg.addClass('active').css('z-index', 10);
-            }
-            
-        })
-    })
-    
+function emailContratto() {
+    body = document.getElementsByTagName("body")[0]['innerText'];
+    body = body.replace('Invia email al locatario', '');
+    i = 0;
+    for(i = 0; i < body.length; i++) {
+        if(body[i] === '\n') {
+            body = body.replace(body[i], '%0A');
+        }
+    }
+    a = document.getElementsByTagName("a")[0]['href'];
+    a = a.replace('&body=', '&body=' + body);
+    document.getElementsByTagName("a")[0]['href'] = a;
 }
 
 function slider2Home () {
