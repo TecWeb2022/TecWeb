@@ -16,6 +16,7 @@
     <center><h1>Ricerca l'alloggio in base alle tue esigenze!</h1></center>
 
     <div class="row">
+        <center>
         <div class="flex-box-filtri">
      <div class="pressa">
        
@@ -184,7 +185,7 @@
     </div>
         
     </div>
-        
+        </center>
     </div>
         
     <center><div class="container-form-btn">                
@@ -207,44 +208,46 @@
 
       <div id="page-content2" class="row">
 
-         <div id="primary" class="ten columns">
+         <div id="primary" class="twelve columns">
 
             <!-- Comments
             ================================================== -->
             <div id="comments">
 
-                <center><h3>Catalogo alloggi</h3></center>
+                <center><h2>Catalogo alloggi</h2></center>
                <!-- commentlist -->
-               <ol class="commentlist">
+               <center>
+               <ol class="commentlist2">
                   @foreach($cat as $acc)
                   <!--li class="depth-1"-->
                   <li>
 
-                     <div class="imgn_casa">
-                        <img class="imgn_casa" src="{{asset('/storage/' . $acc->path_foto) }}" palt="">
+                      <div class="bordo_normale piccolo-crick-mk2"></div>
+                         <div>
+                        <img src="{{asset('/storage/' . $acc->path_foto) }}" palt="">
                      </div>
 
-                     <div class="comment-info">
-                         <cite>{{ $acc->nome }}</cite>
+                     <div>
+                         <h2 class="piccolo-crick">{{ $acc->nome }}</h2>
 
-                        <div class="comment-meta">
-                           <p>Disponibilità: {{ date('d-m-Y', strtotime($acc->inizio_disp)) }} / {{ date('d-m-Y', strtotime($acc->fine_disp)) }}</p>
+                        <div>
+                           <h5 class="">Disponibilità: {{ date('d-m-Y', strtotime($acc->inizio_disp)) }} / {{ date('d-m-Y', strtotime($acc->fine_disp)) }}</h5>
                         </div>
                      </div>
 
-                     <div class="dettagli_cat">
+                     <div>
                          <img width="10" height="10" class="icona_posizione" src="/images/position-icon.png" alt="">
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
                          <p>@include('helpers/tipologiaAcc', ['tipologia' => $acc->tipologia])</p>
                          @include('helpers/descrAcc', ['acc' => $acc])
-                     
+                          
                        
                        @if($acc->assegnato == false)
-                         <div class="center">
+                         <div>
                              <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/Mese</button>
                          </div>
                          @else
-                         <div class="center">
+                         <div>
                              <button disabled>Assegnato</button>
                          </div>
                          @endif
@@ -255,6 +258,7 @@
                      
                         
                </ol> <!-- Commentlist End -->
+               </center>
                <!-- Pagination -->
                <center>@include('pagination.paginator', ['paginator' => $cat])</center>
 
