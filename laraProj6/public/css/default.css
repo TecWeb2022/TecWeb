@@ -1013,6 +1013,9 @@ properly.
     max-width: 40%;
 }
 
+.width-opt-button{
+    width: 180px;
+}
 
 .fab {
    width: 70px;

@@ -122,6 +122,16 @@ class HostController extends Controller {
         
     }
     
+    public function getOptionsAcc(Request $request){
+        $id_user = auth()->user()->id;
+        $optionListModel = new OptionList;
+        $optionList = $optionListModel->getAccsAndOpts($id_user);
+        
+        return view('accommodation.richiesteHostAcc')
+                ->with('dati',$optionList);
+        
+    }
+    
     public function accettaOfferta(Request $request) {
         $opt = Option::find($request->id_opt);
         $opt->data_stipula = now();
