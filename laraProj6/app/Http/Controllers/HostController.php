@@ -57,9 +57,9 @@ class HostController extends Controller {
     }
     
 
-    public function getAccModifica($id){
+    public function getAccModifica(Request $request){
         $cat = new Catalog;
-        $acc = $cat->getAccById($id);
+        $acc = $cat->getAccById($request->id_acc);
         
         //Va controllato che l'id del proprietario corrisponda a quello dell'user
         return view('accommodation.modificaHostAcc')
