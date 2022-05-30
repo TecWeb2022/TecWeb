@@ -126,6 +126,9 @@ justify-content:center;
 height: 100%;
 color:white;
 }
+
+
+
 /* fatta da Matteo*/ 
 .btn2{
     height: 50px;
@@ -191,14 +194,26 @@ color:white;
     margin:60px 0 60px 0;
 }
 
+.stoppino{
+   margin-bottom: 10px;
+}
+
+/*Fatta da Matteo*/
 .zeppa{
     margin-top: 40px;
 
 }
+
+.pressa{
+   
+   transform: scale(0.7);
+}
+
+/*Fatta da Matteo*/
 #comments2 cite{
     font-size: 32px;
 }
-
+/*Fatta da Matteo*/
 #txt_mess_ric{
     font-size: 20px;
 }
@@ -211,6 +226,7 @@ color:white;
           text-align: center;
           color: #11abb0;
 }
+
 
 /*Fatta da Matteo,serve per allineare i bottoni Modifica e Elimina nella Gestione faq*/
 .bottone_inline{
@@ -682,6 +698,22 @@ ul#nav ul li a {
    border-top: 1px solid #E3E8E8;
    border-bottom: 1px solid #E3E8E8;
 }
+
+#works2 {
+   /*background: #f5f5f5 url(../images/works-bg.jpg);*/
+   background: #f5f5f5 url(/images/bg02.png);
+   padding-top: 40px;
+   padding-bottom: 10px;
+    
+   border-top: 1px solid #E3E8E8;
+   border-bottom: 1px solid #E3E8E8;
+}
+#works2 h1 {
+   font: 20px/36px raleway-bold, sans-serif;
+   margin-bottom: 36px;
+   color: #A1A8AF;
+}
+
 #works h1 {
    font: 20px/36px raleway-bold, sans-serif;
    margin-bottom: 36px;

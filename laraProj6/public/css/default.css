@@ -825,6 +825,28 @@ input[type="checkbox"] { display: inline; }
     justify-content:center;
 }
 
+.flex-box-mess{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-content: center;
+    align-items:center; 
+    gap: 30px;
+}
+
+
+.flex-box-filtri{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+.flex-box-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap:10px
+}
 .flex-row{
     flex-direction: row;
 }
