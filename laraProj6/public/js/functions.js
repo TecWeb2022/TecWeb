@@ -38,10 +38,11 @@ function filters() {
 function insAcc(tip) {
     switch(tip) {
         case 'ap':
-            $('#angolo_studio').val(false);
+            $('#angolo_studio').val([false]);
             $('#angolo_studio').hide();
             $('label[for="angolo_studio"]').hide();
             $('#letti_camera').val('');
+            y = $('#letti_camera').val();
             $('#letti_camera').hide();
             $('label[for="letti_camera"]').hide();
             
@@ -59,13 +60,13 @@ function insAcc(tip) {
             $('#num_camere').val('');
             $('#num_camere').hide();
             $('label[for="num_camere"]').hide();
-            $('#cucina').val(false);
+            $('#cucina').val([false]);
             $('#cucina').hide();
             $('label[for="cucina"]').hide();
-            $('#locale_ricreativo').val(false);
+            $('#locale_ricreativo').val([false]);
             $('#locale_ricreativo').hide();
             $('label[for="locale_ricreativo"]').hide();
-            $('#garage').val(false);
+            $('#garage').val([false]);
             $('#garage').hide();
             $('label[for="garage"]').hide();
             

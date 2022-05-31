@@ -3,6 +3,19 @@
 
 @section('title', 'Modifica Alloggio')
 
+@section('scripts')
+@parent
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#tipologia").change(function(){
+        insAcc($('#tipologia').val());
+    });
+});
+</script>
+
+@endsection
+
 @section('content')
 
 @isset($acc)
@@ -32,7 +45,7 @@
 
                 <div  class="wrap-input">
                     {{ Form::label('tipologia', 'Tipologia', ['class' => 'titolo']) }}
-                    {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'], ['placeholder'=>$acc->tipologia, 'id' => 'tipologia', 'onclick'=>'']) }}
+                    {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'], ['placeholder'=>$acc->tipologia, 'id' => 'tipologia']) }}
                 </div>
 
                 <div  class="wrap-input">
