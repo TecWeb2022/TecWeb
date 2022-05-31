@@ -5,20 +5,18 @@
 
 @section('content')
 
-
-
 @isset($acc)
 <section id="works">
 
-      <div class="row">
+      <div class="row maxw-acc">
           <h2 class="text-center add-bottom">Modifica la tua offerta</h2>
-          <h3 class="text center add-bottom">{{$acc->nome}}</h3>
+          <h3 class="text-center add-bottom">{{$acc->nome}}</h3>
           
-          <div class="flex-box flex-inline add-bottom">
-
            {{ Form::open(array('route' => array('modificaHostAccPost','id' => $acc->id), 'id' => 'modificaHostAcc', 'files' => true, 'class' => '')) }}
            
-            <div class="column">
+          <div class="flex-box add-bottom">
+           
+            <div class="column width-descr">
                  
                 <div  class="wrap-input">
                     {{ Form::label('nome', 'Nome Alloggio', ['class' => 'titolo']) }}
@@ -72,7 +70,32 @@
                 </ul>
                 @endif
                 </div>
+                
+                <div  class="wrap-input">
+                {{ Form::label('canone', 'Canone(in €,per mese)', ['class' => 'titolo']) }}
+                {{ Form::number('canone', $acc->canone, ['min' => '0','class' => 'input', 'id' => 'canone']) }}
+                @if ($errors->first('canone'))
+                <ul class="errors">
+                    @foreach ($errors->get('canone') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+                </div>
 
+            </div>
+            <div class="column">
+                
+                <div  class="wrap-input">
+                    {{ Form::label('inizio_disp', 'Inizio disponibilità offerta', ['class' => 'titolo']) }}
+                    {{ Form::date('inizio_disp', $acc->inizio_disp, ['class' => 'input', 'id' => 'inizio_disp']) }}
+                </div>
+
+                <div  class="wrap-input">
+                    {{ Form::label('fine_disp', 'Fine disponibilità offerta', ['class' => 'titolo']) }}
+                    {{ Form::date('fine_disp', $acc->fine_disp, ['class' => 'input', 'id' => 'fine_disp']) }}
+                </div>
+                
                 <div  class="wrap-input">
                     {{ Form::label('citta', 'Città', ['class' => 'titolo']) }}
                     {{ Form::text('citta', $acc->citta, ['class' => 'input', 'id' => 'citta']) }}
@@ -85,7 +108,6 @@
                 @endif
                 </div>
                
-
                 <div  class="wrap-input">
                     {{ Form::label('prov', 'Provincia', ['class' => 'titolo']) }}
                     {{ Form::text('prov', $acc->prov, ['class' => 'input', 'id' => 'prov']) }}
@@ -122,22 +144,88 @@
                 </ul>
                 @endif
                 </div>
+                
+                 <center><h3>Servizi</h3></center>
+                 
+                 <div class="div-checkbox">
+                    {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
+                    <span>{{ Form::checkbox('angolo_studio', true, $acc->angolo_studio, ['id' => 'angolo_studio']) }}</span>
+                </div>
+                <div class="div-checkbox">
+                    {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
+                    <span>{{ Form::checkbox('locale_ricreativo', true, $acc->locale_ricreativo, ['id' => 'locale_ricreativo']) }}</span>
+                </div>
+                <div class="div-checkbox">
+                    {{ Form::label('garage', 'Garage', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
+                    <span>{{ Form::checkbox('garage', true, $acc->garage, ['id' => 'garage']) }}</span>
+                </div>
+                
+                 <div class="div-checkbox">
+                    {{ Form::label('wifi', 'Wi-Fi', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
+                    <span>{{ Form::checkbox('wifi', true, $acc->wifi, ['id' => 'wifi']) }}</span>
+                 </div>
+                <div class="div-checkbox">
+                    {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
+                    <span>{{ Form::checkbox('climatizzatore', true, $acc->climatizzatore, ['id' => 'climatizzatore']) }}</span>
+                </div>
+                <div class="div-checkbox">
+                    {{ Form::label('cucina', 'Cucina', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
+                    <span>{{ Form::checkbox('cucina', true, $acc->cucina, ['id' => 'cucina']) }}</span>
+                </div>
                  
              </div>
            <div class="column">
            
             <div  class="wrap-input">
-                {{ Form::label('inizio_disp', 'Inizio disponibilità offerta', ['class' => 'titolo']) }}
-                {{ Form::date('inizio_disp', $acc->inizio_disp, ['class' => 'input', 'id' => 'inizio_disp']) }}
-                
+                {{ Form::label('posti_letto_tot', 'Posti letto totali', ['class' => 'titolo']) }}
+                {{ Form::number('posti_letto_tot', $acc->posti_letto_tot, ['min' => '0','class' => 'input', 'id' => 'posti_letto_tot']) }}
+                @if ($errors->first('posti_letto_tot'))
+                <ul class="errors">
+                    @foreach ($errors->get('posti_letto_tot') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+            
+            <div  class="wrap-input">
+                {{ Form::label('num_bagni', 'Numero di bagni', ['class' => 'titolo']) }}
+                {{ Form::number('num_bagni', $acc->num_bagni, ['min' => '0','class' => 'input', 'id' => 'num_bagni']) }}
+                @if ($errors->first('num_bagni'))
+                <ul class="errors">
+                    @foreach ($errors->get('num_bagni') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+               
+            <div  class="wrap-input">
+                {{ Form::label('letti_camera', 'Posti letto camera', ['class' => 'titolo']) }}
+                {{ Form::number('letti_camera', $acc->letti_camera, ['min' => '0','class' => 'input', 'id' => 'letti_camera']) }}
+                @if ($errors->first('letti_camera'))
+                <ul class="errors">
+                    @foreach ($errors->get('letti_camera') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
             </div>
            
-           <div  class="wrap-input">
-                {{ Form::label('fine_disp', 'Fine disponibilità offerta', ['class' => 'titolo']) }}
-                {{ Form::date('fine_disp', $acc->fine_disp, ['class' => 'input', 'id' => 'fine_disp']) }}
+            <div  class="wrap-input">
+                {{ Form::label('num_camere', 'Numero di camere', ['class' => 'titolo']) }}
+                {{ Form::number('num_camere', $acc->num_camere, ['min' => '0','class' => 'input', 'id' => 'num_camere']) }}
+                @if ($errors->first('num_camere'))
+                <ul class="errors">
+                    @foreach ($errors->get('num_camere') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
             </div>
-           
-           
+            
+            <h3>Requisiti che il locatario <br>deve soddisfare</h3>
+               
             <div  class="wrap-input">
                 {{ Form::label('eta_min', 'Età minima', ['class' => 'titolo']) }}
                 {{ Form::number('eta_min', $acc->eta_min, ['min' => '0',',max' => '100','class' => 'input', 'id' => 'eta_min']) }}
@@ -166,114 +254,18 @@
                 {{ Form::label('sesso', 'Sesso(M/F)', ['class' => 'titolo']) }}
                 {{ Form::select('sesso',  ['' => 'Non specificato','M' => 'Uomo', 'F' => 'Donna'], ['placeholder'=>$acc->sesso,'id' => 'sesso'] ) }}
             </div>
-           
-            <div  class="wrap-input">
-                {{ Form::label('canone', 'Canone(in €,per mese)', ['class' => 'titolo']) }}
-                {{ Form::number('canone', $acc->canone, ['min' => '0','class' => 'input', 'id' => 'canone']) }}
-                @if ($errors->first('canone'))
-                <ul class="errors">
-                    @foreach ($errors->get('canone') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-               
-           
-            <div  class="wrap-input">
-                {{ Form::label('posti_letto_tot', 'Posti letto totali', ['class' => 'titolo']) }}
-                {{ Form::number('posti_letto_tot', $acc->posti_letto_tot, ['min' => '0','class' => 'input', 'id' => 'posti_letto_tot']) }}
-                @if ($errors->first('posti_letto_tot'))
-                <ul class="errors">
-                    @foreach ($errors->get('posti_letto_tot') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-           
-            <div  class="wrap-input">
-                {{ Form::label('letti_camera', 'Posti letto camera', ['class' => 'titolo']) }}
-                {{ Form::number('letti_camera', $acc->letti_camera, ['min' => '0','class' => 'input', 'id' => 'letti_camera']) }}
-                @if ($errors->first('letti_camera'))
-                <ul class="errors">
-                    @foreach ($errors->get('letti_camera') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-           
-            <div  class="wrap-input">
-                {{ Form::label('num_bagni', 'Numero di bagni', ['class' => 'titolo']) }}
-                {{ Form::number('num_bagni', $acc->num_bagni, ['min' => '0','class' => 'input', 'id' => 'num_bagni']) }}
-                @if ($errors->first('num_bagni'))
-                <ul class="errors">
-                    @foreach ($errors->get('num_bagni') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-           
-            <div  class="wrap-input">
-                {{ Form::label('num_camere', 'Numero di camere', ['class' => 'titolo']) }}
-                {{ Form::number('num_camere', $acc->num_camere, ['min' => '0','class' => 'input', 'id' => 'num_camere']) }}
-                @if ($errors->first('num_camere'))
-                <ul class="errors">
-                    @foreach ($errors->get('num_camere') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
            </div>
            </div>
-          
-           <div class="flex-box flex-inline add-bottom">
            
-            <div class="column">
-                <div class="div-checkbox">
-            {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
-            <span>{{ Form::checkbox('angolo_studio', true, $acc->angolo_studio, ['id' => 'angolo_studio']) }}</span>
-                </div>
-                <div class="div-checkbox">
-            {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
-            <span>{{ Form::checkbox('locale_ricreativo', true, $acc->locale_ricreativo, ['id' => 'locale_ricreativo']) }}</span>
-                </div>
-                <div class="div-checkbox">
-            {{ Form::label('garage', 'Garage', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
-            <span>{{ Form::checkbox('garage', true, $acc->garage, ['id' => 'garage']) }}</span>
-            </div>
-            </div>
-            
-            <div class="column">
-                 <div class="div-checkbox">
-                {{ Form::label('wifi', 'Wi-Fi', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
-                <span>{{ Form::checkbox('wifi', true, $acc->wifi, ['id' => 'wifi']) }}</span>
-                 </div>
-                <div class="div-checkbox">
-            {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
-            <span>{{ Form::checkbox('climatizzatore', true, $acc->climatizzatore, ['id' => 'climatizzatore']) }}</span>
-                </div>
-                <div class="div-checkbox">
-            {{ Form::label('cucina', 'Cucina', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
-            <span>{{ Form::checkbox('cucina', true, $acc->cucina, ['id' => 'cucina']) }}</span>
-                </div>
-            </div>
-        
-        </div>
-        </div>
-            
            
-                <div class="row">
-                    <div style="text-align:center" class="container-form-btn">
-                    {{ Form::submit('Salva le modifiche', ['class' => 'form-btn1', 'id' => 'sub-btn', 'onclick'=>'mostraMessaggio("La modifica è stata effettuata con successo")']) }}
-                    </div>
-                    {{ Form::close() }}
+            <div class="row">
+                <div style="text-align:center" class="container-form-btn">
+                {{ Form::submit('Salva le modifiche', ['class' => 'form-btn1', 'id' => 'sub-btn', 'onclick'=>'mostraMessaggio("La modifica è stata effettuata con successo")']) }}
                 </div>
+                {{ Form::close() }}
+            </div>
     </div> 
-
+</section>
 @endisset
 @endsection
  

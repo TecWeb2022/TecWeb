@@ -21,7 +21,7 @@ class CreateAccomodationsTable extends Migration
             $table->string('citta');
             $table->string('prov');
             $table->string('via');
-            $table->integer('num_civ')->unsigned();
+            $table->string('num_civ');
             $table->bigInteger('sup');
             $table->date('inizio_disp');
             $table->date('fine_disp');

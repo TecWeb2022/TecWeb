@@ -37,7 +37,7 @@ class NewAccommodationRequest extends FormRequest {
             'citta' => 'required|max:50',
             'prov' => 'required|max:2',
             'via' => 'required|max:50',
-            'num_civ' =>'required|numeric|min:0',
+            'num_civ' =>'required|min:0',
             'sup' =>'required|numeric|min:0|max:1000|',
             'inizio_disp' =>'required',
             'fine_disp' =>'required',
