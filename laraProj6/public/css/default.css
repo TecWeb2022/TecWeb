@@ -491,13 +491,12 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
    font: 16px/30px notosans-bold, sans-serif;
-   background: #11ABB0;
    display: inline-block;
+   background-color: #11ABB0;
 	text-decoration: none;
    letter-spacing: 0;
    color: #fff;
 	padding: 12px 24px;
-	margin-bottom: 18px;
    border: none;
    cursor: pointer;
    height: auto;
@@ -559,7 +558,7 @@ input::-moz-focus-inner {
 
 /*  7. Forms  --------------------------------------------------------- */
 
-form { margin-bottom: 24px; }
+
 fieldset { margin-bottom: 24px; }
 
 input[type="text"],
@@ -831,14 +830,15 @@ input[type="checkbox"] { display: inline; }
     justify-content:flex-start;
 }
 
-.flex-box-mess{
+.flex-box-mess {
     display: flex;
-    flex-wrap: wrap;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-content: center;
-    align-items:center; 
-    gap: 30px;
-    }
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
 
 
 .flex-box-filtri{
@@ -1034,19 +1034,10 @@ properly.
     max-width: 40%;
 }
 
-.maxw-acc{
-    max-width: 1200px;
-}
 .width-opt-button{
     width: 180px;
 }
-.width-descr{
-    width: 300px;
-}
 
-.maxw-300{
-    max-width: 300px;
-}
 .fab {
    width: 70px;
    height: 70px;

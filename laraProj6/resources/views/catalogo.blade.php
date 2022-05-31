@@ -10,10 +10,10 @@
 
 <!-- Se è locatario, allora ha i filtri sul catalogo alloggi -->
 @can('isLoc')
-<section id="works" >
+<section id="works-filtri" >
     <div>
     <center><h2>Filtri per il catalogo</h2></center>
-    <center><h1>Ricerca l'alloggio in base alle tue esigenze!</h1></center>
+    <center><h1 >Ricerca l'alloggio in base alle tue esigenze!</h1></center>
 
     <div class="row">
         <center>

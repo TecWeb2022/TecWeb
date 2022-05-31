@@ -42,21 +42,26 @@
                          
 
                      <div class="dettagli_cat">
-                         <cite class="nome_alloggio column">Nome alloggio: {{ $m->alloggio->nome }}</cite>
+                         <cite class="nome_alloggio">Nome alloggio: {{ $m->alloggio->nome }}</cite>
                      </div>
                          </div>
+                      
                       @if($m->visualizzato)
+                      
                       {{ Form::open(array('route' => 'messaggioLoc', 'class' => 'flex-box')) }}
                       {{ Form::hidden('id_mess', $m->id, ['id' => 'id_mess_leggi']) }}
-                      {{ Form::submit('Leggi', ['class' => 'btn_mess_vis', 'title' => 'Messaggio già letto']) }}
+                      {{ Form::submit('Letto', ['title' => 'Messaggio già letto','class' => 'btn_mess_nvis']) }}
                       {{ Form::close() }}
+                      
                       @else
+                      
                       {{ Form::open(array('route' => 'messaggioLoc', 'class' => 'flex-box')) }}
                       {{ Form::hidden('id_mess', $m->id, ['id' => 'id_mess_legg']) }}
-                      {{ Form::submit('Leggi', ['class' => 'btn_mess_nvis', 'title' => 'Messaggio non letto']) }}
+                      {{ Form::submit('Leggi', ['title' => 'Messaggio non letto','class' => 'btn_mess_nvis']) }}
                       {{ Form::close() }}
+                      
                       @endif
-                       
+                      
                       @endforeach
                     
                         

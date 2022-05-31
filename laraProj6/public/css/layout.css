@@ -146,24 +146,26 @@ color:white;
     margin-left: 47.5%;
 }
 /*fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
-.btn_mess_vis{ 
+.btn_mess_vis{
     height: 30px;
     width: 50px;
-    padding: 0 0;
+    padding: 0 0 !important;
     text-align: center;
     background-color: #00393b;
     margin-top: 0px;
     margin-bottom: 10px;
     margin-left: 80%;
-    font-size:13px}
+    font-size:13px;
+    color: #00393b ;
+}
 
 /* fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
-.btn_mess_nvis{
+.btn_mess_nvis {
     height: 30px;
     width: 50px;
-    padding: 0 0;
+    padding: 0 0 !important;
     text-align: center;
-    background-color: #11abb0;
+    background-color: #11abb0 ;
     margin-top: 0px;
     margin-bottom: 10px;
     margin-left: 80%;
@@ -204,6 +206,17 @@ color:white;
 .grande_crick{
     margin:60px 0 60px 0;
 }
+.font_mittente div{
+    font-size: 20px;
+}
+
+.font_mittente cite{
+    font-size: 18px;
+}
+
+.font_ricevuto p{
+    font-size: 20px;
+}
 
 .stoppino{
    margin-bottom: 10px;
@@ -222,6 +235,8 @@ color:white;
 .pressa{
    transform: scale(0.8);
 }
+.colora{background: #11ABB0;}
+
 
 /*Fatta da Matteo*/
 #comments2 cite{
@@ -1325,9 +1340,9 @@ ol.commentlist2 {
 
 
 /* comment form */
-#comments form {
-   margin-top: 36px;
-}
+/*#comments form {
+   margin-top: 36px;}*/
+
 #comments form label {
    font: 16px/24px notosans-bold, sans-serif;
 	margin: 12px 0;
