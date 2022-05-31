@@ -156,7 +156,7 @@ $(document).ready(function(){
             </div>
            
             <div  class="wrap-input">
-                {{ Form::label('letti_camera', 'Posti letto camera', ['class' => 'titolo', 'style' => 'display:none']) }}
+                {{ Form::label('letti_camera', 'Letti nella camera', ['class' => 'titolo', 'style' => 'display:none']) }}
                 {{ Form::number('letti_camera', '', ['min' => '0','class' => 'input', 'id' => 'letti_camera','style' => 'display:none']) }}
             </div>
            
