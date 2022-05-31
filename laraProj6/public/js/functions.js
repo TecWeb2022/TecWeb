@@ -35,6 +35,50 @@ function filters() {
     }
 }
 
+function insAcc(tip) {
+    switch(tip) {
+        case 'ap':
+            $('#angolo_studio').val(false);
+            $('#angolo_studio').hide();
+            $('label[for="angolo_studio"]').hide();
+            $('#letti_camera').val('');
+            $('#letti_camera').hide();
+            $('label[for="letti_camera"]').hide();
+            
+            $('#num_camere').show();
+            $('label[for="num_camere"]').show();
+            $('#cucina').show();
+            $('label[for="cucina"]').show();
+            $('#locale_ricreativo').show();
+            $('label[for="locale_ricreativo"]').show();
+            $('#garage').show();
+            $('label[for="garage"]').show();
+            break;
+        case 'cs':
+        case 'cd':
+            $('#num_camere').val('');
+            $('#num_camere').hide();
+            $('label[for="num_camere"]').hide();
+            $('#cucina').val(false);
+            $('#cucina').hide();
+            $('label[for="cucina"]').hide();
+            $('#locale_ricreativo').val(false);
+            $('#locale_ricreativo').hide();
+            $('label[for="locale_ricreativo"]').hide();
+            $('#garage').val(false);
+            $('#garage').hide();
+            $('label[for="garage"]').hide();
+            
+            $('#angolo_studio').show();
+             $('label[for="angolo_studio"]').show();
+            $('#letti_camera').show();
+             $('label[for="letti_camera"]').show();
+            break;
+        default:
+            break;
+    }
+}
+
 function toggleInfoAcc(id_div){
     if(document.getElementById(id_div).hidden === false){
         document.getElementById(id_div).hidden = true;

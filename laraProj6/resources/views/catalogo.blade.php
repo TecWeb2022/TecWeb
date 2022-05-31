@@ -86,7 +86,7 @@
 
             <div  class="wrap-input">
                 {{ Form::label('prezzo_max', 'Prezzo massimo', ['title' => 'Valore facoltativo']) }}
-                {{ Form::number('prezzo_max', '', ['min' => '0','id' => 'prezzo_max', 'placeholder' => 'Prezzo massimo']) }}
+                {{ Form::number('prezzo_max', '', ['min' => '0','step' => '0.1','id' => 'prezzo_max', 'placeholder' => 'Prezzo massimo']) }}
                 @if ($errors->first('prezzo_max'))
                 <ul class="errors">
                 @foreach ($errors->get('prezzo_max') as $message)

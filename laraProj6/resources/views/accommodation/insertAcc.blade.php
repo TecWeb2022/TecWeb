@@ -20,6 +20,14 @@ $(function () {
 });
 </script>
 
+<script>
+$(document).ready(function(){
+    $("#tipologia").change(function(){
+        insAcc($('#tipologia').val());
+    });
+});
+</script>
+
 @endsection
 
 
@@ -41,7 +49,7 @@ $(function () {
                  
                 <div  class="wrap-input">
                     {{ Form::label('nome', 'Nome Alloggio', ['class' => 'titolo']) }}
-                    {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
+                    {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'autofocus']) }}
                 </div>
 
                 <div  class="wrap-input">
@@ -125,8 +133,8 @@ $(function () {
             </div>
            
             <div  class="wrap-input">
-                {{ Form::label('letti_camera', 'Posti letto camera', ['class' => 'titolo']) }}
-                {{ Form::number('letti_camera', '', ['min' => '0','class' => 'input', 'id' => 'letti_camera']) }}
+                {{ Form::label('letti_camera', 'Posti letto camera', ['class' => 'titolo', 'style' => 'display:none']) }}
+                {{ Form::number('letti_camera', '', ['min' => '0','class' => 'input', 'id' => 'letti_camera','style' => 'display:none']) }}
             </div>
            
             <div  class="wrap-input">
@@ -145,9 +153,10 @@ $(function () {
            
             <div class="column">
                 <div class="div-checkbox">
-            {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
-            <span>{{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio']) }}</span>
+            {{ Form::label('cucina', 'Cucina', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
+            <span>{{ Form::checkbox('cucina', true, false, ['id' => 'cucina']) }}</span>
                 </div>
+                
                 <div class="div-checkbox">
             {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
             <span>{{ Form::checkbox('locale_ricreativo', true, false, ['id' => 'locale_ricreativo']) }}</span>
@@ -168,8 +177,8 @@ $(function () {
             <span>{{ Form::checkbox('climatizzatore', true, false, ['id' => 'climatizzatore']) }}</span>
                 </div>
                 <div class="div-checkbox">
-            {{ Form::label('cucina', 'Cucina', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
-            <span>{{ Form::checkbox('cucina', true, false, ['id' => 'cucina']) }}</span>
+            {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo','class' => 'titolo', 'style' => 'display:none']) }}
+            <span>{{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio', 'style' => 'display:none']) }}</span>
                 </div>
             </div>
         
