@@ -176,6 +176,30 @@ function slider2Home () {
 }
 
 
-function mostraMessaggioModifica() {
-window.alert("La modifica è stata effettuata con successo");
+function mostraMessaggio(string) {
+window.alert(string);
 }
+
+function myConfirm(dialogTitle, dialogText, myform, mysubmitname, mysubmitvalue) {
+$('<div class="ui-dialog" title="'+ dialogTitle +'">' + dialogText + '</div>').dialog({
+draggable: false,
+modal: true,
+resizable: false,
+height: 200,
+width: 400,
+buttons: {
+OK: function () {
+$('<input type="hidden" name="'+mysubmitname+'" value="'+mysubmitvalue+'"></input>').appendTo($('#'+myform));
+document.forms[myform].submit();
+},
+Annulla: function () {
+$(this).dialog('destroy');
+}
+}
+});
+}
+
+
+
+
+
