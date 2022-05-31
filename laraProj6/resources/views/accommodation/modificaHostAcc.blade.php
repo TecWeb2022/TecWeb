@@ -48,7 +48,7 @@
                 </div>
 
                 <div  class="wrap-input">
-                    {{ Form::label('sup', 'Superficie(m^2)', ['class' => 'titolo']) }}
+                    {{ Form::label('sup', 'Superficie(m²)', ['class' => 'titolo']) }}
                     {{ Form::number('sup', $acc->sup, ['min' => '0','class' => 'input', 'id' => 'sup']) }}
                     @if ($errors->first('sup'))
                 <ul class="errors">

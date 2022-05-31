@@ -37,18 +37,24 @@ class NewAccommodationRequest extends FormRequest {
             'citta' => 'required|max:50',
             'prov' => 'required|max:2',
             'via' => 'required|max:50',
-            'num_civ' =>'required|numeric|min:0',
+            'num_civ' =>'required',
             'sup' =>'required|numeric|min:0|max:1000|',
             'inizio_disp' =>'required',
             'fine_disp' =>'required',
-            'eta_min' =>'integer|min:0|max:100|nullable',
-            'eta_max' =>'integer|min:0|max:100|nullable',
+            'eta_min' =>'integer|min:0|max:150|nullable',
+            'eta_max' =>'integer|min:0|max:150|nullable',
             'sesso' =>'max:1|nullable',
             'canone' => 'required|numeric|min:0',
-            'posti_letto_tot' =>'integer|min:0|max:1000|nullable',
+            'posti_letto_tot' =>'required|integer|min:0|max:1000',
             'letti_camera' =>'integer|min:0|max:100|nullable',
             'num_bagni' =>'integer|min:0|max:100|nullable',
-            'num_camere' =>'integer|min:0|max:500|nullable'
+            'num_camere' =>'integer|min:0|max:500|nullable',
+            'wifi' => 'boolean',
+            'angolo_studio' => 'boolean',
+            'climatizzatore' => 'boolean',
+            'cucina' => 'boolean',
+            'locale_ricreativo' => 'boolean',
+            'garage' => 'boolean'
         ];
     }
 }
