@@ -48,7 +48,7 @@
                 {{ Form::hidden('id', $faq->id, ['id' => 'id']) }}
                 
                 <!--input type="submit" value="Inserisci"-->
-                {{ Form::submit('Salva', ['class' => 'form-btn1']) }}
+                {{ Form::submit('Salva', ['class' => 'form-btn1', 'onclick'=>'mostraMessaggio("La modifica è stata effettuata con successo!")']) }}
                
             {{ Form::close() }}
             @endisset
