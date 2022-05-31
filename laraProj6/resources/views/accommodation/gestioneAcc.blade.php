@@ -59,8 +59,6 @@
                               </p> 
                               @else
                               <p class="titolo">Numero di camere: <span class="testo"> {{ $acc->num_camere }}</span></p>
-                              @endif
-                              
                               <p class="titolo">Locale ricreativo: 
                                     @include('helpers/boolTransAcc', ['value' => $acc->locale_ricreativo])
                               </p> 
@@ -68,12 +66,16 @@
                                <p class="titolo">Cucina:  
                                     @include('helpers/boolTransAcc', ['value' => $acc->cucina])
                                </p> 
+                                <p class="titolo">Garage: 
+                                    @include('helpers/boolTransAcc', ['value' => $acc->garage])
+                               </p> 
+                              @endif
+                              
+                            
                                <p class="titolo">WiFi: 
                                     @include('helpers/boolTransAcc', ['value' => $acc->wifi])
                                </p> 
-                               <p class="titolo">Garage: 
-                                    @include('helpers/boolTransAcc', ['value' => $acc->garage])
-                               </p> 
+                              
                                <p class="titolo">Climatizzatore: 
                                     @include('helpers/boolTransAcc', ['value' => $acc->climatizzatore])
                                </p> 
