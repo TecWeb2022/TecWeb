@@ -100,7 +100,7 @@ $(function () {
            
             <div  class="wrap-input">
                 {{ Form::label('eta_min', 'Età minima', ['class' => 'titolo']) }}
-                {{ Form::number('eta_min', '', ['min' => '0',',max' => '100','class' => 'input', 'id' => 'eta_min']) }}
+                {{ Form::number('eta_min', '', ['min' => '0','max' => '100','class' => 'input', 'id' => 'eta_min']) }}
             </div>
            
             <div  class="wrap-input">

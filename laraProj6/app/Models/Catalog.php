@@ -21,10 +21,10 @@ class Catalog
     }
     
     public function getCatByFilters($filtri) {
-        $cat = Accomodation::where('id', '<', (2^64)-1);
+        $cat = Accomodation::where('id', '<', pow(2, 64) - 1);
         //$cat = Accomodation::all()->all();
         foreach($filtri as $key => $value) {
-            if($value != '' && $value != null) {
+            if($value != '' && $value != null && $value != false) {
                 $segno = '=';
                 switch($key) {
                     case 'sup':

@@ -9,18 +9,38 @@ function filters() {
         document.getElementById("letti_camera").value = '';
         document.getElementById("angolo_studio").disabled = true;
         document.getElementById("angolo_studio").checked = false;
+        document.getElementById("cucina").disabled = false;
+        document.getElementById("locale_ricreativo").disabled = false;
+        document.getElementById("garage").disabled = false;
     }
     if(document.getElementById("tipologia").value === 'cs' || document.getElementById("tipologia").value === 'cd') {
         document.getElementById("num_camere").disabled = true;
         document.getElementById("num_camere").value = '';
         document.getElementById("letti_camera").disabled = false;
         document.getElementById("angolo_studio").disabled = false;
+        document.getElementById("cucina").checked = false;
+        document.getElementById("cucina").disabled = true;
+        document.getElementById("locale_ricreativo").checked = false;
+        document.getElementById("locale_ricreativo").disabled = true;
+        document.getElementById("garage").disabled = true;
+        document.getElementById("garage").checked = false;
     }
     if(document.getElementById("tipologia").value === 'all') {
         document.getElementById("letti_camera").disabled = false;
         document.getElementById("angolo_studio").disabled = false;
         document.getElementById("num_camere").disabled = false;
+        document.getElementById("cucina").disabled = false;
+        document.getElementById("locale_ricreativo").disabled = false;
+        document.getElementById("garage").disabled = false;
     }
+}
+
+function toggleInfoAcc(id_div){
+    if(document.getElementById(id_div).hidden === false){
+        document.getElementById(id_div).hidden = true;
+    }else{
+        document.getElementById(id_div).hidden = false;
+    } 
 }
 
 /* Inutilizzate, da vedere se servono

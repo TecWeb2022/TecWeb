@@ -63,7 +63,7 @@
                       @else
                       {{ Form::open(array('route' => 'contratto', 'class' => 'flex-box')) }}
                       {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
-                      {{ Form::submit('Visualizza contratto', ['class' => 'submit_button', 'title' => 'Visualizza il contratto stipulato con il locatario']) }}
+                      {{ Form::submit('Contratto', ['class' => 'submit_button', 'title' => 'Visualizza il contratto stipulato con il locatario']) }}
                       {{ Form::close() }}
                       @endif
                        </div>

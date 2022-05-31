@@ -29,14 +29,13 @@
                     <cite class="testo_messaggio">"{{ $mess->testo }}"</cite> 
                     <h3 class="zeppa">Rispondi</h3>
                   <div>
-                        <button onclick="location.href = '{{ route('scritturaMessLoc', [ 'id_mess' => $mess->id ]) }}';">Rispondi</button>
+                      {{ Form::open(array('route' => 'scritturaMessLoc', 'class' => 'flex-box')) }}
+                      {{ Form::hidden('id_mess', $mess->id, ['id' => 'id_mess']) }}
+                      {{ Form::submit('Rispondi', ['title' => 'Rispondi']) }}
+                      {{ Form::close() }}
                   </div>
                 </div>
-           </div> 
-          
-               
-                  
-              
+           </div>
          
           <!-- Comments End -->
          </div>
