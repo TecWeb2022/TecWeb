@@ -8,6 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
+    insAcc($('#tipologia').val());
     $("#tipologia").change(function(){
         insAcc($('#tipologia').val());
     });
@@ -45,7 +46,7 @@ $(document).ready(function(){
 
                 <div  class="wrap-input">
                     {{ Form::label('tipologia', 'Tipologia', ['class' => 'titolo']) }}
-                    {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'], ['placeholder'=>$acc->tipologia, 'id' => 'tipologia']) }}
+                    {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Posto letto in camera singola', 'cd' => 'Posto letto in camera doppia'], ['placeholder'=>$acc->tipologia, 'id' => 'tipologia']) }}
                 </div>
 
                 <div  class="wrap-input">

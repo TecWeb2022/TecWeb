@@ -6,7 +6,6 @@
 
 <script type="text/javascript">
     currNavBar(2);
-    name(Auth::user()->nome);
 </script>
 
 <!-- Works Section
@@ -52,7 +51,7 @@
             
                 <div>
                 {{ Form::label('username', 'Username', ['title' => 'Username utente']) }}
-                {{ Form::text('username', Auth::user()->username, ['id' => 'username']) }}
+                {{ Form::text('username', '', ['id' => 'username', 'placeholder' => '{{ Auth::user()->username }}']) }}
                 @if ($errors->first('username'))
                 <ul class="errors">
                     @foreach ($errors->get('username') as $message)

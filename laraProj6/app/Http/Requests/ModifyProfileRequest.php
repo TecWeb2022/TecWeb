@@ -34,7 +34,8 @@ class ModifyProfileRequest extends FormRequest {
             'nome' => 'required|max:255',
             'cognome' => 'required|max:255',
             'data_nasc' =>'required|date',
-            'password' => 'string|min:8|confirmed'
+            'password' => 'string|min:8|confirmed|nullable',
+            'username' => 'string|unique|nullable'
         ];
     }
 

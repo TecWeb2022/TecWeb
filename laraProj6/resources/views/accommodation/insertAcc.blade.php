@@ -22,6 +22,7 @@ $(function () {
 
 <script>
 $(document).ready(function(){
+    insAcc($('#tipologia').val());
     $("#tipologia").change(function(){
         insAcc($('#tipologia').val());
     });
@@ -137,8 +138,8 @@ $(document).ready(function(){
                 <span>{{ Form::checkbox('climatizzatore', true, false, ['id' => 'climatizzatore']) }}</span>
             </div>
             <div class="div-checkbox">
-                {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo','class' => 'titolo', 'style' => 'display:none']) }}
-                <span>{{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio', 'style' => 'display:none']) }}</span>
+                {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo','class' => 'titolo']) }}
+                <span>{{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio']) }}</span>
             </div>
           
            </div>
@@ -156,8 +157,8 @@ $(document).ready(function(){
             </div>
            
             <div  class="wrap-input">
-                {{ Form::label('letti_camera', 'Letti nella camera', ['class' => 'titolo', 'style' => 'display:none']) }}
-                {{ Form::number('letti_camera', '', ['min' => '0','class' => 'input', 'id' => 'letti_camera','style' => 'display:none']) }}
+                {{ Form::label('letti_camera', 'Letti nella camera', ['class' => 'titolo']) }}
+                {{ Form::number('letti_camera', '', ['min' => '0','class' => 'input', 'id' => 'letti_camera']) }}
             </div>
            
             <div  class="wrap-input">
