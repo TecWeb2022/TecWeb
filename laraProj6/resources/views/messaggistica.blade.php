@@ -4,9 +4,7 @@
 
 @section('content')
 
-<script type="text/javascript">
-currNavBar(3);
-</script>
+
 
 <!-- Content
    ================================================== -->
@@ -77,5 +75,7 @@ currNavBar(3);
          </div> <!-- Comments End -->
 
 @endisset
-
+<script type="text/javascript">
+currNavBar(3);
+</script>
 @endsection

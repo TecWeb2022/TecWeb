@@ -186,6 +186,10 @@
             {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo']) }}
             <span>{{ Form::checkbox('climatizzatore', true, false, ['id' => 'climatizzatore']) }}</span>
                </div>
+                <div class="div-checkbox">
+            {{ Form::label('cucina', 'Cucina', ['title' => 'Valore facoltativo']) }}
+            <span>{{ Form::checkbox('cucina', true, false, ['id' => 'cucina']) }}</span>
+               </div>
             </div>
         
         </div>
