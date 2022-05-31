@@ -843,22 +843,24 @@ input[type="checkbox"] { display: inline; }
 
 .flex-box-filtri{
     display: flex;
-    flex-wrap: nowrap;
-    justify-content:center;
-    gap: 10px;
- 
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-direction: row;
 }
 
 
 .flex-box-items{
     display: flex;
-    flex-wrap: nowrap;
-    justify-content:center;
-    gap:10px;
-    flex-shrink:inherit;
-
-    
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-shrink: inherit;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
 }
+
+
 .flex-row{
     flex-direction: row;
 }
