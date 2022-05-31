@@ -148,7 +148,7 @@ color:white;
 /*fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
 .btn_mess_vis{ 
     height: 30px;
-    width: 80px;
+    width: 50px;
     padding: 0 0;
     text-align: center;
     background-color: #00393b;
@@ -160,7 +160,7 @@ color:white;
 /* fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
 .btn_mess_nvis{
     height: 30px;
-    width: 80px;
+    width: 50px;
     padding: 0 0;
     text-align: center;
     background-color: #11abb0;

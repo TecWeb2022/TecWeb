@@ -825,6 +825,12 @@ input[type="checkbox"] { display: inline; }
     justify-content:center;
 }
 
+.flex-box-btnsx{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
 .flex-box-mess{
     display: flex;
     flex-wrap: wrap;
