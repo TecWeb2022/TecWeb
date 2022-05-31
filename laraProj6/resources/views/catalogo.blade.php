@@ -25,12 +25,12 @@
        <div class="flex-box-items">
             <div  class="wrap-input">
                 {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore obbligatorio']) }}
-                {{ Form::select('tipologia', ['all' => 'Tutti', 'ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'filters()']) }}
+                {{ Form::select('tipologia', ['all' => 'Tutti', 'ap' => 'Appartamento', 'cs' => 'Posto letto in camera singola', 'cd' => 'Posto letto in camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'filters()']) }}
             </div>
 
             <div  class="wrap-input">
                 {{ Form::label('prov', 'Provincia', ['title' => 'Valore facoltativo']) }}
-                {{ Form::text('prov', '', ['id' => 'prov', 'placeholder' => 'Provincia']) }}
+                {{ Form::text('prov', '', ['maxlength' => '2','id' => 'prov', 'placeholder' => 'Provincia']) }}
                 @if ($errors->first('prov'))
                 <ul class="errors">
                 @foreach ($errors->get('prov') as $message)
@@ -74,7 +74,7 @@
         <div class="flex-box-items">
             <div  class="wrap-input">
                 {{ Form::label('prezzo_min', 'Prezzo minimo', ['title' => 'Valore facoltativo']) }}
-                {{ Form::number('prezzo_min', '', ['min' => '0','id' => 'prezzo_min', 'placeholder' => 'Prezzo minimo']) }}
+                {{ Form::number('prezzo_min', '', ['min' => '0','step' => '0.1','id' => 'prezzo_min', 'placeholder' => 'Prezzo minimo']) }}
                 @if ($errors->first('prezzo_min'))
                 <ul class="errors">
                 @foreach ($errors->get('prezzo_min') as $message)
@@ -142,7 +142,7 @@
 
             <div  class="wrap-input">
                 {{ Form::label('letti_camera', 'Letti nella camera', ['title' => 'Valore facoltativo']) }}
-                {{ Form::text('letti_camera', '', ['min' => '0','id' => 'letti_camera', 'placeholder' => 'Letti nella camera']) }}
+                {{ Form::number('letti_camera', '', ['min' => '0','id' => 'letti_camera', 'placeholder' => 'Letti nella camera']) }}
                 @if ($errors->first('letti_camera'))
                 <ul class="errors">
                 @foreach ($errors->get('letti_camera') as $message)

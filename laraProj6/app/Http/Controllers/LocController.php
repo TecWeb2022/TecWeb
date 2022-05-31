@@ -11,7 +11,6 @@ use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use App\Http\Requests\ModifyProfileRequest;
 use Carbon\Carbon;
-use App\Http\Requests\FilterRequest;
 
 //use App\Http\Requests\NewProductRequest;
 
@@ -55,11 +54,9 @@ class LocController extends Controller {
             ->with('cat', $cat);
     }
     
-    public function filters(FilterRequest $request)
+    public function filters(Request $request)
     {
-        $filt = $request->validated();
-        
-        return $this->getCatPag($filt, 5);
+        return $this->getCatPag($request->all(), 5);
     }
     
     public function opzioneForm($id_acc){

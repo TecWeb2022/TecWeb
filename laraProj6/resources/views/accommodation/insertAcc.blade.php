@@ -46,10 +46,10 @@ $(function () {
 
                 <div  class="wrap-input">
                     {{ Form::label('tipologia', 'Tipologia', ['class' => 'titolo']) }}
-                    {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Camera singola', 'cd' => 'Camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'']) }}
+                    {{ Form::select('tipologia', ['ap' => 'Appartamento', 'cs' => 'Posto letto in camera singola', 'cd' => 'Posto letto in camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'']) }}
                 </div>
 
-                <div  class="wrap-input">
+                <div  class="wrap-input" style="width: 300px">
                     {{ Form::label('descr', 'Descrizione', ['class' => 'titolo']) }}
                     {{ Form::textarea('descr', '', ['class' => 'input', 'id' => 'descr', 'rows' => 2]) }}
                 </div>
