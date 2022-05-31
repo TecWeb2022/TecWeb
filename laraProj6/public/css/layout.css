@@ -215,8 +215,12 @@ color:white;
 
 }
 
+.azzera-margine{
+    margin-bottom: -36px;
+}
+
 .pressa{
-   transform: scale(0.7);
+   transform: scale(0.8);
 }
 
 /*Fatta da Matteo*/
@@ -721,6 +725,20 @@ ul#nav ul li a {
 #works2 h1 {
    font: 20px/36px raleway-bold, sans-serif;
    margin-bottom: 36px;
+   color: #A1A8AF;
+}
+
+#works-filtri {
+   
+   background: #f5f5f5 url(/images/bg02.png);
+   padding-top: 40px;
+   padding-bottom: 10px;
+   border-top: 1px solid #E3E8E8;
+   border-bottom: 1px solid #E3E8E8;
+}
+#works-filtri h1 {
+   font: 20px/36px raleway-bold, sans-serif;
+   margin-bottom: 5px;
    color: #A1A8AF;
 }
 
