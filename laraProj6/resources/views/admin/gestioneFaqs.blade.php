@@ -11,12 +11,16 @@
     </script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
-    <script>
-    confirmation();
-    </script>
    
-    
+    <script>
+$(document).ready(function($){
+     $('#eliminaF').on('onsubmit',function(e){
+        if(!confirm("Sei sicuro di volerlo eliminare?")){
+              e.preventDefault();
+        }
+      });
+});
+    </script>
 
 @endsection
 
@@ -72,7 +76,7 @@
                </div>
             
             <div class="column">
-               {{ Form::open(array('route' => 'eliminaFaq', 'id'=>'eliminaForm', 'class' => 'register-form')) }}
+               {{ Form::open(array('route' => 'eliminaFaq', 'id'=>'eliminaForm', 'class' => 'register-form','onsubmit' => 'return ConfirmDelete()')) }}
                
                {{ Form::hidden('id', $faq->id, ['id' => 'id']) }}
               

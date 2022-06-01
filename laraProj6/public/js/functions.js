@@ -290,7 +290,10 @@ function confirmation() {
     });
 }
 
-
+ function ConfirmDelete()
+  {
+    return confirm("Sei sicuro di volerlo eliminare?");
+  }
 
 
 
