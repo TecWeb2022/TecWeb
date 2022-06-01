@@ -33,18 +33,22 @@ class ModifyProfileRequest extends FormRequest {
         return [
             'nome' => 'required|max:255',
             'cognome' => 'required|max:255',
-            'data_nasc' =>'required|date',
-            'password' => 'string|min:8|confirmed|nullable',
-            'username' => 'string|unique|nullable'
+            'sesso' => 'required',
+            'data_nasc' =>'required|date|before:tomorrow',
+            'password' => 'string|min:8|nullable',
+            'username' => 'string|unique:users|nullable'
         ];
     }
 
     /**
      * Override: response in formato JSON
     */
+    /*
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
+     * 
+     */
 
 }

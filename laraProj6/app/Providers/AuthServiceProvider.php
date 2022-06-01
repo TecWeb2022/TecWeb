@@ -40,5 +40,9 @@ class AuthServiceProvider extends ServiceProvider
         return $user->hasRole('host');
     });
     
+    Gate::define('isLocHost', function ($user) {
+        return $user->hasRole(['host', 'loc']);
+    });
+    
     }
 }

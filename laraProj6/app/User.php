@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 
 class User extends Authenticatable
@@ -45,5 +46,19 @@ class User extends Authenticatable
     public function getEta(){
         $eta = (now()->diff($this->data_nasc))->y;
         return $eta;
+    }
+    
+    public function modificaDati($id, $dati = array()) {
+        $user = User::find($id);
+        foreach($dati as $key => $value) {
+            if($value != '' && $value != null) {
+                if($key != 'password') {
+                    $user->$key = $value;
+                } else {
+                    $user->$key = Hash::make($value);
+                }
+            }
+        }
+        $user->save();
     }
 }

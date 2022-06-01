@@ -9,7 +9,7 @@
         <script type="text/javascript" src="{{ URL::asset('js/functions.js') }}"></script>
         @section('scripts')
         @show
-        <title>Studentb&amp;b | @yield('title', 'Home')</title>
+        <title>HouStudent | @yield('title', 'Home')</title>
     </head>
     <body>
         <!-- Header

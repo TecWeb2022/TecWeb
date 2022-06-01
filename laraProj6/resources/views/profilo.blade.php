@@ -1,4 +1,4 @@
-@extends('layouts.locatario')
+@extends('layouts.public')
 
 @section('title', 'Profilo utente')
 
@@ -19,7 +19,7 @@
               <div class="crick"><h1>Profilo utente</h1></div>
               
                      <div>
-                         <img class="avatar_profilo" src="images/icona_utente.png" alt="">
+                         <img class="avatar_profilo" src="/images/icona_utente.png" alt="">
                     </div>
                   
                   
@@ -33,7 +33,7 @@
             <p class="titolo piccolo-crick ">Username: <span class="testo">{{ auth()->user()->username }}</span></p>
             </div>
                 
-            <button class="crick" onclick="location.href = '{{ route('profiloLocModifica') }}';">Modifica i tuoi dati</button>
+            <button class="crick" onclick="location.href = '{{ route('modificaProfilo') }}';">Modifica i tuoi dati</button>
              </center>
           </div>
        </div>

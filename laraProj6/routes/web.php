@@ -27,14 +27,16 @@ Route::get('/alloggio/{id}', 'PublicController@infoAcc')
 Route::get('/homeLocatario', 'LocController@index')
         ->name('homeLoc');
 
-Route::view('/profiloLocatario', 'profiloLocatario')
-        ->name('profiloLoc');
+Route::view('/home/profilo', 'profilo')
+        ->name('profilo')
+        ->middleware('can:isLocHost');
 
-Route::view('/profiloLocatario/modifica', 'modificaLocatario')
-        ->name('profiloLocModifica');
+Route::view('/home/profilo/modifica', 'modificaProfilo')
+        ->name('modificaProfilo')
+        ->middleware('can:isLocHost');
 
-Route::post('/profiloLocatario/modifica', 'LocController@modificaLoc')
-        ->name('modificaLoc');
+Route::post('/home/profilo/modifica', 'LocHostController@modificaProfilo')
+        ->name('modificaProfiloPost');
 
 Route::get('/catalogo/filtri', 'LocController@getCatPag')
         ->name('catalogoLoc');

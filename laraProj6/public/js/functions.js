@@ -42,7 +42,7 @@ function insAcc(tip) {
             $('#angolo_studio').hide();
             $('label[for="angolo_studio"]').hide();
             $('#letti_camera').val('');
-            y = $('#letti_camera').val();
+            $('#letti_camera').val();
             $('#letti_camera').hide();
             $('label[for="letti_camera"]').hide();
             
@@ -71,13 +71,22 @@ function insAcc(tip) {
             $('label[for="garage"]').hide();
             
             $('#angolo_studio').show();
-             $('label[for="angolo_studio"]').show();
+            $('label[for="angolo_studio"]').show();
             $('#letti_camera').show();
-             $('label[for="letti_camera"]').show();
+            $('label[for="letti_camera"]').show();
             break;
         default:
             break;
     }
+}
+
+function usernamePlaceholder() {
+    /*old_user = $('#old_username').val();
+    $('form').find('input[type=text]').last(function(){
+        $(this).attr("placeholder", old_user);
+    });*/
+    old_user = $('#old_username').val();
+    $('#username').attr("placeholder", old_user);
 }
 
 function toggleInfoAcc(id_div){
