@@ -15,10 +15,9 @@
 
       <div class="row">
           <h1 class="center2">Statistiche</h1>
-          <p>Da qui si possono effettuare statistiche riguardo:
-                offerte di alloggio presenti nel sito, offerte di locazione fatte dai potenziali locatari, alloggi locati. </p>
+          
           <div class="column">
-              <h2 class="center2">Filtri</h2>
+              <h3 class="center2  bordo_risultati">Filtri</h3>
                 <p>
         {{ Form::open(array('route' => 'statisticheFiltrate', 'class' => 'register-form')) }}
                     

@@ -46,8 +46,10 @@
                 @foreach($faqs as $faq)
             <div class="entry-header">
 
-               <div class="ten columns entry-title pull-right">
-                  <h3>{{ $faq->domanda }}</h3>
+               <div class="ten columns entry-title pull-right piccolo-crick">
+                  <div class="bordo_normale_g1 piccolo-crick"> </div>
+                   <h3>{{ $faq->domanda }}</h3>
+                  
                </div>
 
                 <!--div class="two columns post-meta end">
@@ -57,7 +59,7 @@
                     </div-->
             </div>
                 
-            <div class="ten columns offset-2 post-content">
+            <div class="ten columns offset-2 post-content piccolo-crick">
                 <p>{{ $faq->risposta }}
                </p>
                <div class="row bottone_inline">
