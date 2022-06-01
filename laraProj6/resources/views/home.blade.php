@@ -41,27 +41,27 @@ endguest
 			 <div class="twelve columns">
                              @guest
 				 <div class="slider-text">
-                                     <h1><span>Alloggi per tutte le esigenze.</span></h1>
-                                             <p>Le esigenze di ogni studente sono alla base del nostro progetto, a partire
+                                     <h1><span id="traccia-font-tit">Alloggi per tutte le esigenze.</span></h1>
+                                     <h2 id="traccia-font-p">Le esigenze di ogni studente sono alla base del nostro progetto, a partire
                                                 dal quale è nata la piattaforma web per la ricerca e la prenotazione di alloggi 
                                                 per il mondo studentesco, HouStudent.
-                                             </p>
-                                    <div>
-                                    <div class="container">
+                                             </h2>
+                                    <div class="pressa" >
+                                    <div class="container slide">
                                     <figure class="imageslide"><img src="{{asset('/images/casa1.jpg')}}"></figure>
                                     <figure class="imageslide"><img src="{{asset('/images/casa2.jpg') }}"></figure>
                                     <figure class="imageslide"><img src="{{asset('/images/casa3.jpg') }}"></figure>
                                     <figure class="imageslide"><img src="{{asset('/images/casa4.jpg') }}"></figure>
-                                    <figure class="imageslide"><img src="{{asset('/images/casa5.jpg') }}"></figure>
+                                    <figure class="imageslide"><img src="{{asset('/images/casa5.jpeg') }}"></figure>
                                     </div>
                                         <a class="prev">&#10094;</a>
                                         <a class="next">&#10095;</a>
                                         <div class="pulsanti" style="text-align: center">
-                                        <span class="dot" data-num='1'></span>
-                                        <span class="dot" data-num='2'></span>
-                                        <span class="dot" data-num='3'></span>
-                                        <span class="dot" data-num='4'></span>
-                                        <span class="dot" data-num='5'></span>
+                                        <span class="dot pressa" data-num='1'></span>
+                                        <span class="dot pressa" data-num='2'></span>
+                                        <span class="dot pressa" data-num='3'></span>
+                                        <span class="dot pressa" data-num='4'></span>
+                                        <span class="dot pressa" data-num='5'></span>
                                         </div>
 	
                                     </div>

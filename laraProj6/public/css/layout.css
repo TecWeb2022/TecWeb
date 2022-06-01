@@ -76,6 +76,16 @@ img { border-radius: 3px; }
    width: 100%;
 }
 
+#traccia-font-tit{
+    -webkit-text-stroke: 1px black;
+}
+
+#traccia-font-p{
+    font-size: 24px;
+    color:#ffffff;
+    -webkit-text-stroke: 1px black;
+}
+
 /* fatto da Matteo, serve a centrare il catalogo */
 #page-content_cat{
     padding-top: 54px;
@@ -112,21 +122,11 @@ img { border-radius: 3px; }
    max-width:  100%;
 }
 
-
-
 .div_imgn_casa_catalog{
     position:relative;
    height: 200px;
-   max-height: 200px;
    width:  250px;
 }
-
-.imgn_visual_casa_catalog{
-    
-   max-width:  100%;
-   max-height: 100%
-}
-
 .benvenuto_admin{color:whitesmoke;}
 
 
@@ -228,6 +228,8 @@ color:white;
 .grande_crick{
     margin:60px 0 60px 0;
 }
+
+
 .font_mittente div{
     font-size: 20px;
 }
