@@ -27,9 +27,23 @@
             
         {{ Form::label('inizio', 'Data inizio periodo') }}
         {{ Form::date('inizio', '', ['id' => 'inizio']) }}
+        @if ($errors->first('inizio'))
+        <ul class="errors">
+        @foreach ($errors->get('inizio') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
        
         {{ Form::label('fine', 'Data fine periodo') }}
         {{ Form::date('fine', '',['id' => 'fine']) }}
+        @if ($errors->first('fine'))
+        <ul class="errors">
+        @foreach ($errors->get('fine') as $message)
+        <li>{{ $message }}</li>
+        @endforeach
+        </ul>
+        @endif
         
         {{ Form::submit('Filtra', ['class' => 'btn']) }}
 

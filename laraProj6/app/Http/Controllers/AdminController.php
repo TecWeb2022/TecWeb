@@ -8,6 +8,7 @@ use App\Http\Requests\NewFaqRequest;
 use App\Models\Resources\Faq;
 use App\Models\Resources\Accomodation;
 use App\Models\Resources\Option;
+use App\Http\Requests\StatsAdminRequest;
 
 class AdminController extends Controller
 {
@@ -43,6 +44,17 @@ class AdminController extends Controller
             ->with('faq', $faq);
     }
     
+    public function nuovaFaq(NewFaqRequest $request)
+    {
+        $faq = new Faq;
+        $dati = $request->validated();
+        $faq->domanda = $dati['domanda'];
+        $faq->risposta = $dati['risposta'];
+        $faq->save();
+ 
+        return redirect()->route('gestFaqs');
+    }
+    
     public function modificaFaq(NewFaqRequest $request) {
         $id_faq = $request['id'];
         $dati = $request->validated();
@@ -60,31 +72,13 @@ class AdminController extends Controller
         $faq->delete();
         return redirect()->route('gestFaqs');
     }
-
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'domanda' => ['required', 'string', 'max:255'],
-            'risposta' => ['required', 'string', 'max:255']
-        ]);
-    }
-
-     protected function nuovaFaq(NewFaqRequest $request)
-    {
-        $faq = new Faq;
-        $dati = $request->validated();
-        $faq->domanda = $dati['domanda'];
-        $faq->risposta = $dati['risposta'];
-        $faq->save();
- 
-        return redirect()->route('gestFaqs');
-    }
     
-    public function stats(Request $request) {
+    public function stats(StatsAdminRequest $request) {
         $alloggi_tot = 0;
         $alloggi_locati = 0;
         $offerte = 0;
         
+        $request->validated();
         $tip = $request['tipologia'];
         switch($tip) {
             case 'all':
