@@ -575,7 +575,7 @@ ul#nav ul li a {
 /* c. Intro Section - Main Page
 /* ------------------------------------------------------------------ */
 
-#intro { background: #383232 url(../images/sfondo2.jpg);
+#intro { background: #383232 url(/images/sfondo2.jpg); 
 }
 
 /* Flex Slider
