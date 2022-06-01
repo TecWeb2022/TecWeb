@@ -82,7 +82,7 @@
                                
                                <center><h3>Requisiti da soddisfare</h3></center>
                                <p class="titolo">Sesso: 
-                                   @include('helpers/boolTransAcc', ['value' => $acc->sesso])
+                                   <span class="testo">@include('helpers/sessoUser', ['sesso' => $acc->sesso])</span>
                                </p>
                                <p class="titolo">Età minima: 
                                    @include('helpers/boolTransAcc', ['value' => $acc->eta_min])

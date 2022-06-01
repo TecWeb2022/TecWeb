@@ -78,7 +78,7 @@
               <div class="column">
                     <h3>Requisiti da soddisfare per l'affitto</h3>
                     <p class="titolo">Sesso: 
-                        @include('helpers/boolTransAcc', ['value' => $acc->sesso])
+                        <span class="testo">@include('helpers/sessoUser', ['sesso' => $acc->sesso])</span>
                     </p>
                     <p class="titolo">Età minima: 
                         @include('helpers/boolTransAcc', ['value' => $acc->eta_min])

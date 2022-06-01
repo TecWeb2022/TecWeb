@@ -38,7 +38,7 @@
                                  <span class="testo">{{ $d->nome_loc }} {{ $d->cognome_loc }}
                              </span></p>
                              <p class="titolo">Sesso: 
-                                 <span class="testo">{{$d->sesso}}
+                                 <span class="testo">@include('helpers/sessoUser', ['sesso' => $d->sesso])
                              </span></p>
                              <p class="titolo">Data di nascita: 
                                  <span class="testo">{{ date('d-m-Y', strtotime($d->data_nasc)) }}

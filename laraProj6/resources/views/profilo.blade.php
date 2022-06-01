@@ -28,7 +28,7 @@
             <p class="titolo piccolo-crick">Nome: <span class="testo">{{ auth()->user()->nome }}</span></p>
             <p class="titolo piccolo-crick">Cognome: <span class="testo">{{ auth()->user()->cognome }}</span></p>
             <p class="bordo_normale piccolo-crick"></p>
-            <p class="titolo piccolo-crick ">Sesso: <span class="testo">{{ auth()->user()->sesso }}</span></p>
+            <p class="titolo piccolo-crick ">Sesso: <span class="testo">@include('helpers/sessoUser', ['sesso' =>  auth()->user()->sesso])</span></p>
             <p class="titolo piccolo-crick ">Data di nascita: <span class="testo">{{ date('d-m-Y', strtotime(auth()->user()->data_nasc)) }}</span></p>
             <p class="titolo piccolo-crick ">Username: <span class="testo">{{ auth()->user()->username }}</span></p>
             </div>
