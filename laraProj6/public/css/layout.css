@@ -112,11 +112,21 @@ img { border-radius: 3px; }
    max-width:  100%;
 }
 
+
+
 .div_imgn_casa_catalog{
     position:relative;
    height: 200px;
+   max-height: 200px;
    width:  250px;
 }
+
+.imgn_visual_casa_catalog{
+    
+   max-width:  100%;
+   max-height: 100%
+}
+
 .benvenuto_admin{color:whitesmoke;}
 
 
