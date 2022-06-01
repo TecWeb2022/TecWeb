@@ -274,7 +274,7 @@ $(document).ready(function(){
            
             <div class="row">
                 <div style="text-align:center" class="container-form-btn">
-                {{ Form::submit('Salva le modifiche', ['class' => 'form-btn1', 'id' => 'sub-btn', 'onclick'=>'mostraMessaggio("La modifica è stata effettuata con successo")']) }}
+                {{ Form::submit('Salva le modifiche', ['class' => 'form-btn1', 'id' => 'sub-btn']) }}
                 </div>
                 {{ Form::close() }}
             </div>
