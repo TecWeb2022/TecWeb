@@ -47,7 +47,7 @@
                 </p>
                
                     <!--input type="submit" value="Inserisci"-->
-                    {{ Form::submit('Inserisci', ['class' => 'form-btn1', 'onclick'=>'mostraMessaggio("L inserimento è stato effettuato con successo!")']) }}
+                    {{ Form::submit('Inserisci', ['class' => 'form-btn1']) }}
                
             {{ Form::close() }}
         </div>

@@ -4,8 +4,17 @@
 
 @section('scripts')
 @parent
-
+    <script
+        src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"> 
+    </script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <script>
+    confirmation();
+    </script>
    
     
 
@@ -13,15 +22,11 @@
 
 @section('content')
 
-<script
-  src="https://code.jquery.com/jquery-3.1.1.js"
-  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-  crossorigin="anonymous"> 
-</script>
+
 
 <script type="text/javascript">
     currNavBar(3);
-    myConfirm("Conferma eliminazione elemento", "Vuoi eliminare questa Faq?", "eliminaForm", "op", "Elimina");return false;
+    
 </script>
                                 
    <!-- Journal Section
@@ -71,10 +76,11 @@
                
                {{ Form::hidden('id', $faq->id, ['id' => 'id']) }}
               
-               {{ Form::submit('Elimina', ['class' => 'btn', 'name'=>'op', 'value' =>'Elimina', 'onclick'=>'myConfirm("Conferma eliminazione elemento", "Vuoi eliminare questa Faq?", "eliminaForm", "op", "Elimina")']) }} 
+               {{ Form::submit('Elimina', ['class' => 'btn']) }} 
                <!--'elimina'=submit value--> 
                {{ Form::close() }}
                
+                                       
                <!--button class='btn' type="button" >Modifica</button> <button class='btn' type="button" >Elimina</i></button--> 
             </div>
                  </div>  

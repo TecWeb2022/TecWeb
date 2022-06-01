@@ -273,6 +273,23 @@ $(this).dialog('destroy');
 });
 }
 
+function confirmation() {
+    $('#eliminaForm').submit(function(e) {
+    e.preventDefault();
+
+    var elimina_form = $(this);   
+    
+    confirm("Sei sicuro di voler eliminare questo elemento?", function(result) {
+        if (result===true) {
+            elimina_form.submit();
+        }
+        else {
+            $(this).dialog('destroy');
+        }
+        });
+    });
+}
+
 
 
 
