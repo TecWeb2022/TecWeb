@@ -13,7 +13,7 @@
       <div class="row">
           
           <div class="column">
-            <h1>Registrazione</h1>
+            <h2>Registrazione</h2>
             {{ Form::open(array('route' => 'register', 'class' => 'register-form')) }}
             
             <div  class="wrap-input">

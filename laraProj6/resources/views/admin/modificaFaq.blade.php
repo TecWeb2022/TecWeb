@@ -5,7 +5,7 @@
 @section('content')
 
 <script type="text/javascript">
-    currNavBar(2);
+    currNavBar(3);
 </script>
 
 <!-- Works Section
@@ -13,9 +13,10 @@
    <section id="works">
 
       <div class="row">
-          
           <div class="column">
-            <h1>Modifica FAQ</h1>
+              
+            <h2>Modifica FAQ</h2>
+            
             @isset($faq)
             <!--form name="domanda_faq" action="" method="post"--> 
             {{Form::open(array('route' => 'faqModificata', 'class' => 'contact-form'))}}

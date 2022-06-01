@@ -99,21 +99,21 @@
                       
                       <div class="width-opt-button">
                    
-                                <button onclick="toggleInfoAcc({{$acc->id}});">Info</button> 
+                                <button class="btn_gestione_acc" onclick="toggleInfoAcc({{$acc->id}});">Info</button> 
                                 
                                 {{ Form::open(array('route' => 'visualizzaOpzioniAcc', 'class' => '')) }}
                                 {{ Form::hidden('id_acc', $acc->id, ['id' => 'id_acc']) }}
-                                {{ Form::submit('Opzioni', ['class' => 'submit_button', 'title' => 'Visualizza le richieste di opzione']) }}
+                                {{ Form::submit('Opzioni', ['class' => 'btn_gestione_acc', 'title' => 'Visualizza le richieste di opzione']) }}
                                 {{ Form::close() }}
                                 
                                 {{ Form::open(array('route' => 'modificaHostAcc', 'class' => '')) }}
                                 {{ Form::hidden('id_acc', $acc->id, ['id' => 'modifica_acc']) }}
-                                {{ Form::submit('Modifica', ['class' => 'submit_button', 'title' => 'Modifica alloggio']) }}
+                                {{ Form::submit('Modifica', ['class' => 'btn_gestione_acc', 'title' => 'Modifica alloggio']) }}
                                 {{ Form::close() }}
                                
                                 {{ Form::open(array('route' => 'eliminaAcc', 'class' => '')) }}
                                 {{ Form::hidden('id_acc', $acc->id, ['id' => 'elimina_acc']) }}
-                                {{ Form::submit('Elimina', ['class' => 'submit_button', 'title' => 'Elimina alloggio']) }}
+                                {{ Form::submit('Elimina', ['class' => 'btn_gestione_acc', 'title' => 'Elimina alloggio']) }}
                                 {{ Form::close() }}
                            
                        </div>

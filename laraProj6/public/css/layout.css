@@ -171,6 +171,18 @@ color:white;
     margin-left: 80%;
     font-size:13px}
 
+/* fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
+.btn_gestione_acc {
+    height: 30px;
+    width: 50px;
+    padding: 0 0 !important;
+    text-align: center;
+    background-color: #11abb0 ;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left:0%;
+    font-size:13px}
+
 
 
 

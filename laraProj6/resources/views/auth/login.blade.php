@@ -13,7 +13,7 @@
       <div class="row">
           
           <div class="column">
-            <h1>Login</h1>
+            <h2>Login</h2>
             {{ Form::open(array('route' => 'login', 'class' => 'contact-form')) }}
                        
              <div  class="wrap-input">
