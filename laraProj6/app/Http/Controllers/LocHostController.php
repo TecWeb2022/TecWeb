@@ -52,6 +52,12 @@ class LocHostController extends Controller {
             ->with('mess', $mess);
     }
     
+    public function getMessaggiInviatiAjax() {
+        $ml = new MessageList;
+        $mess = $ml->messInviati(auth()->user()->id);
+        
+        return json_encode(array('data'=>$mess));
+    }
     public function getMessaggioInviato($id_mess) {
         //$mess = Message::where('id', '=', $id_mess);
         $mess = Message::find($id_mess);

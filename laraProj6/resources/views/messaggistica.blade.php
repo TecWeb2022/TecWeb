@@ -2,9 +2,35 @@
 
 @section('title', 'Messaggistica')
 
+@section('scripts')
+@parent
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function () {
+    var actionUrl = "{{ route('insertAccPost') }}";
+    var formId = 'inserimentoAcc';
+    $(":input").on('blur', function (event) {
+        var formElementId = $(this).attr('id');
+        doElemValidation(formElementId, actionUrl, formId);
+    });
+    $("#inserimentoAcc").on('submit', function (event) {
+        event.preventDefault();
+        doFormValidation(actionUrl, formId);
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#mess-inviati").click(function(){
+        $.get()
+    })
+});
+</script>
+
+@endsection
+
 @section('content')
-
-
 
 <!-- Content
    ================================================== -->
@@ -19,8 +45,8 @@
             
             <div id="comments" >
                 <center>
-                    <center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Messaggi inviati</a></div></center>
-               <!-- commentlist -->
+                    <center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a id="mess-inviati">Messaggi inviati</a></div></center>
+                    <!--<center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Messaggi inviati</a></div></center> -->               <!-- commentlist -->
                @isset($mess)
                <ol class="commentlist2">
                   @foreach($mess as $m)

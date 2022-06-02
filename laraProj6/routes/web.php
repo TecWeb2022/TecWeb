@@ -71,6 +71,8 @@ Route::get('/messaggioInviatoLocatario/{id_mess}', 'LocController@getMessaggioIn
 Route::get('/messaggioInviatoLocatario/{id_mess}/riscrivi', 'LocController@riscriviMess')
         ->name('riscritturaMessLoc');
 
+Route::get('/messAjax', 'LocHostController@getMessaggiInviatiAjax')
+        ->name('messAjax');
 /*          REGISTRAZIONE           */
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')
