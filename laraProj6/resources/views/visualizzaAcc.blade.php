@@ -95,10 +95,15 @@
                         @endguest
                         
                         @can('isLoc')
-                        @if(($acc->sesso == null || $acc->sesso == Auth::user()->sesso) &&
+                        
+                        @if(isset($opt) && $opt->locatario->id == Auth::user()->id)
+                            <button title="Hai già opzionato questo alloggio" disabled>Già opzionato</button>
+                        
+                        @elseif(($acc->sesso == null || $acc->sesso == Auth::user()->sesso) &&
                         ($acc->eta_min == null || $acc->eta_min <= Auth::user()->getEta() ) &&
                         ($acc->eta_max == null || $acc->eta_max >= Auth::user()->getEta() ))
                             <button onclick="location.href = '{{ route('opzioneAcc', [ 'id' => $acc->id ])}}';">Affitta!</button>
+                            
                         @else
                             <button title="Purtroppo non rispetti i vincoli imposti dal locatore" disabled>Non puoi affittare</button>
                         @endif

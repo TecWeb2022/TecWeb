@@ -3,6 +3,7 @@
 namespace App\Models\Resources;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Option extends Model
 {

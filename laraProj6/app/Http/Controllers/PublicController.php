@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
+use App\Models\Resources\Option;
 
 class PublicController extends Controller
 {
@@ -41,7 +42,20 @@ class PublicController extends Controller
     
     public function infoAcc($id){
         $acc = $this->_catalogModel->getAccById($id);
-        
+        if(auth()->user() != null && auth()->user()->tipologia == 'loc') {
+            //$condizioni = ['id_alloggio' => $id, 'id_locatario' => auth()->user()->id];
+            //$opt = Option::where($condizioni)->get();
+            $opt = Option::where('id_alloggio', '=', $id)
+                    ->where('id_locatario', '=', auth()->user()->id)
+                    ->first();
+            if($opt != null) {
+                //$id_opt = $opt->get('id');
+                //$op = Option::find($id_opt);
+                return view('visualizzaAcc')
+                ->with('acc', $acc)
+                ->with('opt', $opt);
+            }
+        }
         return view('visualizzaAcc')
                 ->with('acc',$acc);
     }

@@ -10,6 +10,7 @@ use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use App\Http\Requests\ModifyProfileRequest;
+use app\Http\Requests\CatalogFiltersRequest;
 use Carbon\Carbon;
 
 //use App\Http\Requests\NewProductRequest;
@@ -53,8 +54,9 @@ class LocController extends Controller {
             ->with('cat', $cat);
     }
     
-    public function filters(Request $request)
+    public function filters(CatalogFiltersRequest $request)
     {
+        $request->validated();
         return $this->getCatPag($request->all(), 5);
     }
     

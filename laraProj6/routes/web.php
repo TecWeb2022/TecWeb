@@ -152,5 +152,5 @@ Route::post('/nuovaFaq', 'AdminController@nuovaFaq')
 Route::view('/statistiche', 'admin.statistiche')
         ->name('statistiche');
 
-Route::post('/statisticheFiltrate', 'AdminController@stats')
-        ->name('statisticheFiltrate'); 
+Route::post('/statistiche', 'AdminController@stats')
+        ->name('statisticheFiltrate');
