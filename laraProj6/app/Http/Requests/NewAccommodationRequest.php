@@ -40,7 +40,7 @@ class NewAccommodationRequest extends FormRequest {
             'num_civ' =>'required',
             'sup' =>'required|numeric|min:0|max:1000|',
             'inizio_disp' =>'required',
-            'fine_disp' =>'required',
+            'fine_disp' =>'required|after:inizio_disp',
             'eta_min' =>'integer|min:0|max:150|nullable',
             'eta_max' =>'integer|min:0|max:150|nullable',
             'sesso' =>'max:1|nullable',

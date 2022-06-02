@@ -10,7 +10,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
-class NewAccommodationRequest extends FormRequest {
+class ModifyAccommodationRequest extends FormRequest {
 
     /**
      * Determine if the user is authorized to make this request.
@@ -40,7 +40,7 @@ class NewAccommodationRequest extends FormRequest {
             'num_civ' =>'required',
             'sup' =>'required|numeric|min:0|max:1000',
             'inizio_disp' =>'required',
-            'fine_disp' =>'required|after:inizio_disp',
+            'fine_disp' =>'required',
             'eta_min' =>'integer|min:0|max:150|nullable',
             'eta_max' =>'integer|min:0|max:150|nullable',
             'sesso' =>'max:1|nullable',
@@ -54,7 +54,8 @@ class NewAccommodationRequest extends FormRequest {
             'climatizzatore' => 'boolean',
             'cucina' => 'boolean',
             'locale_ricreativo' => 'boolean',
-            'garage' => 'boolean'
+            'garage' => 'boolean',
+            'id_acc' => 'integer'
         ];
     }
 }

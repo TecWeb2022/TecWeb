@@ -89,7 +89,7 @@
               </div>
               
               <div class="column">
-                  <button onclick="location.href = '{{ route('visualizzaOpzioneAcc', [ 'id' => $acc->id ])}}';">Vedi richieste ricevute</button>
+                  <button onclick="location.href = '{{ route('visualizzaOpzioniAcc', [ 'id' => $acc->id ])}}';">Vedi richieste ricevute</button>
               </div>
               
               

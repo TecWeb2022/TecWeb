@@ -10,7 +10,7 @@ use App\Models\Resources\Option;
 use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use App\Http\Requests\ModifyProfileRequest;
-use app\Http\Requests\CatalogFiltersRequest;
+use App\Http\Requests\CatalogFiltersRequest;
 use Carbon\Carbon;
 
 //use App\Http\Requests\NewProductRequest;

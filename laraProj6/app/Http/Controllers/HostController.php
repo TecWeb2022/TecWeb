@@ -61,7 +61,6 @@ class HostController extends Controller {
         $cat = new Catalog;
         $acc = $cat->getAccById($request->id_acc);
         
-        //Va controllato che l'id del proprietario corrisponda a quello dell'user
         return view('accommodation.modificaHostAcc')
             ->with('acc',$acc);
     }
@@ -87,15 +86,15 @@ class HostController extends Controller {
         return response()->json(['redirect' => route('gestioneAcc')]);
     }
     
-    public function modificaAcc(ModifyAccommodationRequest $request, $id){
+    public function modificaAcc(ModifyAccommodationRequest $request){
         
        $validatedrequest = $request->validated();
         
-       $acc = Accomodation::find($id);
+       $acc = Accomodation::find($validatedrequest['id_acc']);
         //eliminare la foto su acc
         foreach($validatedrequest as $key => $value) {
-            if($key != 'path_foto'){
-              $acc->$key = $value;  
+            if($key != 'path_foto' && $key != 'id_acc'){
+              $acc->$key = $value;
             }
         }
               
@@ -107,13 +106,18 @@ class HostController extends Controller {
       
         $acc->save();
         
-        return redirect()->route('infoAccHost',$id);
+        return redirect()->route('gestioneAcc');
                 
     }
     
     public function eliminaAcc(Request $request) {
         $acc = Accomodation::find($request->id_acc);
         $acc->delete();
+        
+        $opts = Option::where('id_alloggio', '=', $request->id_acc);
+        foreach($opts as $opt) {
+            $opt->delete();
+        }
         
         return redirect()->route('gestioneAcc');
     }

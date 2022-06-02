@@ -26,7 +26,7 @@ $(document).ready(function(){
           <h2 class="text-center add-bottom">Modifica la tua offerta</h2>
           <h3 class="text-center add-bottom">{{$acc->nome}}</h3>
           
-           {{ Form::open(array('route' => array('modificaHostAccPost','id' => $acc->id), 'id' => 'modificaHostAcc', 'files' => true, 'class' => '')) }}
+           {{ Form::open(array('route' => array('modificaHostAccPost'), 'id' => 'modificaHostAcc', 'files' => true, 'class' => '')) }}
            
           <div class="flex-box add-bottom">
            
@@ -43,6 +43,8 @@ $(document).ready(function(){
                 </ul>
                 @endif
                 </div>
+                
+                {{ Form::hidden('id_acc', $acc->id) }}
 
                 <div  class="wrap-input">
                     {{ Form::label('tipologia', 'Tipologia', ['class' => 'titolo']) }}
@@ -103,11 +105,25 @@ $(document).ready(function(){
                 <div  class="wrap-input">
                     {{ Form::label('inizio_disp', 'Inizio disponibilità offerta', ['class' => 'titolo']) }}
                     {{ Form::date('inizio_disp', $acc->inizio_disp, ['class' => 'input', 'id' => 'inizio_disp']) }}
+                    @if ($errors->first('inizio_disp'))
+                <ul class="errors">
+                    @foreach ($errors->get('inizio_disp') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
                 </div>
 
                 <div  class="wrap-input">
                     {{ Form::label('fine_disp', 'Fine disponibilità offerta', ['class' => 'titolo']) }}
                     {{ Form::date('fine_disp', $acc->fine_disp, ['class' => 'input', 'id' => 'fine_disp']) }}
+                    @if ($errors->first('fine_disp'))
+                <ul class="errors">
+                    @foreach ($errors->get('fine_disp') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
                 </div>
                 
                 <div  class="wrap-input">
@@ -124,7 +140,7 @@ $(document).ready(function(){
                
                 <div  class="wrap-input">
                     {{ Form::label('prov', 'Provincia', ['class' => 'titolo']) }}
-                    {{ Form::text('prov', $acc->prov, ['class' => 'input', 'id' => 'prov']) }}
+                    {{ Form::text('prov', $acc->prov, ['class' => 'input', 'id' => 'prov', 'maxlength' => '2']) }}
                     @if ($errors->first('prov'))
                 <ul class="errors">
                     @foreach ($errors->get('prov') as $message)
@@ -242,7 +258,7 @@ $(document).ready(function(){
                
             <div  class="wrap-input">
                 {{ Form::label('eta_min', 'Età minima', ['class' => 'titolo']) }}
-                {{ Form::number('eta_min', $acc->eta_min, ['min' => '0',',max' => '100','class' => 'input', 'id' => 'eta_min']) }}
+                {{ Form::number('eta_min', $acc->eta_min, ['min' => '0',',max' => '150','class' => 'input', 'id' => 'eta_min']) }}
                 @if ($errors->first('eta_min'))
                 <ul class="errors">
                     @foreach ($errors->get('eta_min') as $message)
@@ -254,7 +270,7 @@ $(document).ready(function(){
            
             <div  class="wrap-input">
                 {{ Form::label('eta_max', 'Età massima', ['class' => 'titolo']) }}
-                {{ Form::number('eta_max', $acc->eta_max, ['min' => '0','max' => '100','class' => 'input', 'id' => 'eta_max']) }}
+                {{ Form::number('eta_max', $acc->eta_max, ['min' => '0','max' => '150','class' => 'input', 'id' => 'eta_max']) }}
                 @if ($errors->first('eta_max'))
                 <ul class="errors">
                     @foreach ($errors->get('eta_max') as $message)

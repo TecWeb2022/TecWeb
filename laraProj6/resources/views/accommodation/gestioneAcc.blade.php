@@ -16,7 +16,7 @@
             ================================================== -->
             <div id="comments">
 
-                <center><h2>Gestione Alloggi</h2></center>
+                <center><h2>Gestione Offerte</h2></center>
                <!-- commentlist -->
                @isset($catHost)
                <ol class="optionlist ">

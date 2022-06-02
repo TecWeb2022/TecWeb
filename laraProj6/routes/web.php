@@ -93,31 +93,31 @@ Route::post('logout', 'Auth\LoginController@logout')
 Route::get('/homeHost', 'HostController@index')
         ->name('homeHost');
 
-Route::view('/insertAcc', 'accommodation.insertAcc')
+Route::view('/inserimentoOfferta', 'accommodation.insertAcc')
         ->name('insertAcc');
 
-Route::post('/insertAcc', 'HostController@insertAcc')
+Route::post('/inserimentoOfferta', 'HostController@insertAcc')
         ->name('insertAccPost');
 
 Route::get('/alloggioHost/{id}', 'HostController@infoAcc')
         ->name('infoAccHost');
 
-Route::post('/modificaHostAcc', 'HostController@getAccModifica')
+Route::post('/modificaOfferta', 'HostController@getAccModifica')
         ->name('modificaHostAcc');
 
-Route::post('/modificaHostAcc/{id}','HostController@modificaAcc')
+Route::post('/modificaOffertaAlloggio','HostController@modificaAcc')
         ->name('modificaHostAccPost');
 
-Route::post('/eliminaAcc','HostController@eliminaAcc')
+Route::post('/eliminaOfferta','HostController@eliminaAcc')
         ->name('eliminaAcc');
 
 Route::get('/visualizzaOpzioni','HostController@getAllOptions')
         ->name('visualizzaTutteOpzioni');
 
-Route::post('/visualizzaOpzioniAcc','HostController@getOptionsAcc')
+Route::post('/visualizzaOpzioni','HostController@getOptionsAcc')
         ->name('visualizzaOpzioniAcc');
 
-Route::get('/gestioneAccomodations', 'HostController@getAccsHost')
+Route::get('/gestioneOfferte', 'HostController@getAccsHost')
         ->name('gestioneAcc');
 
 Route::post('/accettaOfferta', 'HostController@accettaOfferta')
