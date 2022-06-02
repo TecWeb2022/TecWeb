@@ -170,12 +170,12 @@ $(document).ready(function(){
             
             <div  class="wrap-input">
                 {{ Form::label('eta_min', 'Età minima', ['class' => 'titolo']) }}
-                {{ Form::number('eta_min', '', ['min' => '0','max' => '100','class' => 'input', 'id' => 'eta_min']) }}
+                {{ Form::number('eta_min', '', ['min' => '0','max' => '150','class' => 'input', 'id' => 'eta_min']) }}
             </div>
            
             <div  class="wrap-input">
                 {{ Form::label('eta_max', 'Età massima', ['class' => 'titolo']) }}
-                {{ Form::number('eta_max', '', ['min' => '0','max' => '100','class' => 'input', 'id' => 'eta_max']) }}
+                {{ Form::number('eta_max', '', ['min' => '0','max' => '150','class' => 'input', 'id' => 'eta_max']) }}
             </div>
            
             <div  class="wrap-input">

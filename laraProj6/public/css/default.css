@@ -1038,6 +1038,18 @@ properly.
     width: 180px;
 }
 
+.width-descr{
+    width: 300px;
+}
+
+.maxw-300{
+    max-width: 300px;
+}
+
+.maxw-acc{
+    max-width: 1200px;
+}
+
 .fab {
    width: 70px;
    height: 70px;
