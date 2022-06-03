@@ -11,22 +11,6 @@ endguest
 
 @section('title', 'Home')
 
-@section('scripts')
-@parent
-<script
-  src="https://code.jquery.com/jquery-3.1.1.js"
-  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-  crossorigin="anonymous"> 
-</script>
-
-<script type="text/javascript">
-    $(document).ready( function() {
-        currNavBar(0);
-        slider2Home();
-    });
-</script>
-@endsection
-
 @section('content')
 
 @isset($profilo)
@@ -34,6 +18,17 @@ endguest
         alert("Profilo modificato con successo!");
     </script>
 @endisset
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"> 
+</script>
+
+<script type="text/javascript">
+    currNavBar(0);
+    slider2Home();
+</script>
 
 <!-- Intro Section
    ================================================== -->
@@ -52,15 +47,22 @@ endguest
                                                 per il mondo studentesco, HouStudent.
                                              </h2>
                                     <div class="pressa" >
+                                        <div class="flex-box-slider">
+                                            
+                                    <a class="prev">&#10094;</a>
+                                    
                                     <div class="container slide">
+                                        
                                     <figure class="imageslide"><img src="{{asset('/images/casa1.jpg')}}"></figure>
                                     <figure class="imageslide"><img src="{{asset('/images/casa2.jpg') }}"></figure>
                                     <figure class="imageslide"><img src="{{asset('/images/casa3.jpg') }}"></figure>
                                     <figure class="imageslide"><img src="{{asset('/images/casa4.jpg') }}"></figure>
                                     <figure class="imageslide"><img src="{{asset('/images/casa5.jpeg') }}"></figure>
+                                    
                                     </div>
-                                        <a class="prev">&#10094;</a>
-                                        <a class="next">&#10095;</a>
+                                    <a class="next">&#10095;</a>
+                                    </div>
+                                        
                                         <div class="pulsanti" style="text-align: center">
                                         <span class="dot pressa" data-num='1'></span>
                                         <span class="dot pressa" data-num='2'></span>

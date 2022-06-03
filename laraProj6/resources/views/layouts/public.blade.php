@@ -8,7 +8,6 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layout.css') }}" >
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/images/favicon.ico')}}" >
         <script type="text/javascript" src="{{ URL::asset('js/functions.js') }}"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         @section('scripts')
         @show
         <title>HouStudent | @yield('title', 'Home')</title>
@@ -24,6 +23,8 @@
                       </div>
 
                       <nav id="nav-wrap">
+                         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+                         <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
                         @include('navs/_navpublic')
                       </nav>
                        <!-- end #nav-wrap -->

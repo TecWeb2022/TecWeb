@@ -471,7 +471,7 @@ dd { margin: 0 0 0 20px; }
    background-color: #E6E8EB;
 	color: #A9ADB2;
 }
-.pagination .prev, .pagination .next {}
+
 
 /*  5. Images  --------------------------------------------------------- */
 
@@ -830,6 +830,15 @@ input[type="checkbox"] { display: inline; }
     justify-content:flex-start;
 }
 
+.flex-box-slider{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
 .flex-box-mess {
     display: flex;
     justify-content: flex-start;
@@ -1115,7 +1124,8 @@ img{
   padding: 18px;
   color: #d2d2d2;
   font-size: 60px;
-  opacity: 0.7;
+  -webkit-text-stroke: 1px black;
+
 }
 .prev{
     float: left;
