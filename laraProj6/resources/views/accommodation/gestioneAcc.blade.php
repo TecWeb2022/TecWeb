@@ -114,7 +114,7 @@
                                 {{ Form::submit('Modifica', ['class' => 'btn_gestione_acc', 'title' => 'Modifica alloggio']) }}
                                 {{ Form::close() }}
                                
-                                {{ Form::open(array('route' => 'eliminaAcc', 'class' => '')) }}
+                                {{ Form::open(array('route' => 'eliminaAcc', 'class' => '', 'onsubmit' => 'return ConfirmDelete()')) }}
                                 {{ Form::hidden('id_acc', $acc->id, ['id' => 'elimina_acc']) }}
                                 {{ Form::submit('Elimina', ['class' => 'btn_gestione_acc', 'title' => 'Elimina alloggio']) }}
                                 {{ Form::close() }}
