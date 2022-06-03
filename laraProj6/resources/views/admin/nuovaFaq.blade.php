@@ -20,7 +20,7 @@
       <div class="row">
                 
           <div class="column">
-              <h1 class="center2">Aggiungi una nuova FAQ</h1>
+              <h2>Aggiungi una nuova FAQ</h2>
 
             <!--form name="domanda_faq" action="" method="post"--> 
             {{Form::open(array('route' => 'inserimentoFaq', 'class' => 'contact-form'))}}
