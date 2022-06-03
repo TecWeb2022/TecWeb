@@ -70,12 +70,16 @@ class LocController extends Controller {
     public function invioOpzForm(Request $request,$id)
     {
         //manca il validator
+        $validatedData = $request->validate([
+            'testo' => 'required|max:1000',
+        ]);
         $opzione = new Option;
         $opzione->id_alloggio = $id; 
         $opzione->id_locatario = auth()->user()->id;
         
+        
         $mess = new Message;
-        $mess->testo = $request->testo;
+        $mess->testo = $validatedData["testo"];
         $mess->id_mitt = auth()->user()->id;
         $acc = new Accomodation;
         $mess->id_dest = $acc->find($id)->propr->id;

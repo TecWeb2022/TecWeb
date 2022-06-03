@@ -4,21 +4,23 @@
 
 @section('scripts')
 @parent
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
 <script>
  $(document).ready(function() {
-     sendMessaggiAjax("{{route('messAjaxx')}}",true);
+     sendMessaggiAjax("{{route('messAjaxx')}}","{{route('messaggioLoc')}}",true);
     });
 </script>
 
 <script>
 $(document).ready(function(){
     $("#mess-inviati").click(function(){
-            sendMessaggiAjax("{{route('messAjax')}}",false);
+            sendMessaggiAjax("{{route('messAjax')}}","{{route('messaggioLoc')}}",false);
+            
     });
     
     $("#mess-ricevuti").click(function(){
-            sendMessaggiAjax("{{route('messAjaxx')}}",true);
+            sendMessaggiAjax("{{route('messAjaxx')}}","{{route('messaggioLoc')}}",true);
     });
 });
 </script>

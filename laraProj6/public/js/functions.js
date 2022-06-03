@@ -296,7 +296,7 @@ function confirmation() {
   }
 
 //flagRic è un bool -> true per i mess ricevuti, false per quelli inviati
-function sendMessaggiAjax(actionUrl, flagRic){
+function sendMessaggiAjax(actionUrl, leggiUrl,flagRic){
     
      $.ajax({
             url: actionUrl,
@@ -308,12 +308,41 @@ function sendMessaggiAjax(actionUrl, flagRic){
                 var resultData = dataResult.data;
                 var mess = resultData.data;
                 var bodyData = '';
+                
                 $.each(mess,function(index,row){
-
+                    var date = '';
                     bodyData+="<li>";
                     bodyData+="<div class='bordo_normale piccolo-crick flex-box-mess'>";
-                    bodyData+="<h3 class='stoppino'>"+row.testo+"</h3>";
+                    bodyData+="<h3 class='stoppino'>"+row.nome + row.cognome+"</h3>";
+                    bodyData+="<div class='comment-meta'>";
+                    bodyData+="<p class='ricevuto_messagistica'>";
+                    if(flagRic){
+                        bodyData+="Ricevuto: ";
+                    }
+                    else{
+                        bodyData+="Inviato: ";
+                    }
+                    date = dateFormat(row.created_at);
+                    bodyData+= date;
+                    bodyData+="</p></div>";
                     
+                    bodyData+="<div class='dettagli_cat'>";
+                    bodyData+="<cite class='nome_alloggio'>" + "Nome alloggio: " + row.nome_acc +"</cite>";
+                    bodyData+="</div></div>";
+                    
+                      /*
+                      {{ Form::open(array('route' => 'messaggioLoc', 'class' => 'flex-box')) }}
+                      {{ Form::hidden('id_mess', $m->id, ['id' => 'id_mess_leggi']) }}
+                      {{ Form::submit('Letto', ['title' => 'Messaggio già letto','class' => 'btn_mess_nvis']) }}
+                      {{ Form::close() }}
+                      */
+                      //COME INSERIRE IL TOKEN Corretto
+                      bodyData+="<form method='POST' action=" + leggiUrl + " accept-charset='UTF-8' class='flex-box'>";
+                      bodyData+="<input name='_token' type='hidden' value='PklVcW5J7PnVCddIzHVe5LDKL3TGO6IvaEQMvxmS'>";
+                      bodyData+="<input id='id_mess_leggi' name='id_mess' type='hidden' value=" + row.id + ">";
+                      bodyData+="<input title='Messaggio non letto' class='btn_mess_nvis' type='submit' value='Leggi'>";
+                      bodyData+="</form>";
+                  
                 });
                 $(".commentlist2").empty();
                 $(".commentlist2").append(bodyData);
@@ -321,3 +350,15 @@ function sendMessaggiAjax(actionUrl, flagRic){
         });
 }
 
+function dateFormat(data){
+    
+    date = data.split(" ");
+    giorno = date[0];
+    ora = date[1];
+    
+    arrGiorno = giorno.split("-");
+    arrOra = ora.split(":");
+    
+    data = arrGiorno[2] + "/" + arrGiorno[1] + "/" + arrGiorno[0] + " " + arrOra[0] + ":" + arrOra[1];
+    return data;
+}

@@ -32,7 +32,6 @@
           </div>
           <div class="column maxw-40">
                {{ Form::open(array('route' => array('opzioneAccPost',$acc->id), 'class' => 'register-form')) }}
-               @csrf
          
             <div  class="wrap-input">
                 {{ Form::label('testo', 'Invia un messaggio al proprietario') }}

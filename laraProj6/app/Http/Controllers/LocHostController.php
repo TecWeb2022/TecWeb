@@ -54,16 +54,16 @@ class LocHostController extends Controller {
     
         public function getMessaggiRicevutiAjax() {
         $ml = new MessageList;
-        $mess = $ml->messRicevuti(auth()->user()->id);
+        $mess = $ml->messRicevuti_Utenti(auth()->user()->id);
         //$messRic = $messRic->paginate(5);
-        return response()->json(['data'=>$mess,'redirect' => route('messaggisticaLoc')]);
+        return response()->json(['data'=>$mess]);
     }
     
     public function getMessaggiInviatiAjax() {
         $ml = new MessageList;
-        $mess = $ml->messInviati(auth()->user()->id);
+        $mess = $ml->messInviati_Utenti(auth()->user()->id);
         
-        return response()->json(['data'=>$mess,'redirect' => route('messaggisticaLoc')]); 
+        return response()->json(['data'=>$mess]); 
         //json_encode(array('data'=>$mess));
     }
     public function getMessaggioInviato($id_mess) {
