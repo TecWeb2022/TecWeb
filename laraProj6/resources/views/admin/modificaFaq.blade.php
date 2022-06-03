@@ -2,11 +2,16 @@
 
 @section('title', 'modificaFaq')
 
-@section('content')
-
-<script type="text/javascript">
-    currNavBar(3);
+@section('scripts')
+@parent
+<script>
+    $(document).ready( function() {
+        currNavBar(3);
+    });
 </script>
+@endsection
+
+@section('content')
 
 <!-- Works Section
    ================================================== -->
@@ -19,7 +24,7 @@
             
             @isset($faq)
             <!--form name="domanda_faq" action="" method="post"--> 
-            {{Form::open(array('route' => 'faqModificata', 'class' => 'contact-form'))}}
+            {{Form::open(array('route' => array('faqModificata', 'id' => $faq->id), 'class' => 'contact-form'))}}
                 <p>
                     <!--input id="domanda" size="40" type="text" placeholder="Domanda" autofocus-->
                 {{ Form::label('domanda', 'Modifica domanda ') }}
@@ -45,8 +50,6 @@
                 </ul>
                 @endif
                 </p>
-               
-                {{ Form::hidden('id', $faq->id, ['id' => 'id']) }}
                 
                 <!--input type="submit" value="Inserisci"-->
                 {{ Form::submit('Salva', ['class' => 'form-btn1']) }}

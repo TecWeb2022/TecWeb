@@ -2,11 +2,16 @@
 
 @section('title', 'Profilo utente')
 
-@section('content')
-
-<script type="text/javascript">
-    currNavBar(2);
+@section('scripts')
+@parent
+<script>
+    $(document).ready( function() {
+        currNavBar(2);
+    });
 </script>
+@endsection
+
+@section('content')
 
 <!-- Works Section
    ================================================== -->

@@ -24,25 +24,21 @@ Route::get('/alloggio/{id}', 'PublicController@infoAcc')
 
 /*           LOCATARIO           */
 
-Route::get('/homeLocatario', 'LocController@index')
-        ->name('homeLoc');
-
-Route::view('/home/profilo', 'profilo')
+Route::view('/profilo', 'profilo')
         ->name('profilo')
         ->middleware('can:isLocHost');
 
-Route::view('/home/profilo/modifica', 'modificaProfilo')
+Route::view('/profilo/modifica', 'modificaProfilo')
         ->name('modificaProfilo')
         ->middleware('can:isLocHost');
 
-Route::post('/home/profilo/modifica', 'LocHostController@modificaProfilo')
+Route::post('/profilo/modifica', 'LocHostController@modificaProfilo')
         ->name('modificaProfiloPost');
 
 Route::get('/catalogo/filtri', 'LocController@getCatPag')
         ->name('catalogoLoc');
 
 Route::post('/catalogo/filtri', 'LocController@filters');
-
 
 Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
         ->name('opzioneAcc');
@@ -79,6 +75,7 @@ Route::get('/messAjaxRicevuti', 'LocHostController@getMessaggiRicevutiAjax')
 
 Route::view('/messAjaxxxxx', 'messaggisticaAjax')
         ->name('messAjaxxx');
+
 /*          REGISTRAZIONE           */
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')
@@ -96,19 +93,13 @@ Route::post('logout', 'Auth\LoginController@logout')
 
 /* * * * * * *LOCATORE * * * * * * * * * * * */
 
-Route::get('/homeHost', 'HostController@index')
-        ->name('homeHost');
-
-Route::view('/inserimentoOfferta', 'accommodation.insertAcc')
+Route::view('/gestioneOfferte/inserimentoOfferta', 'accommodation.insertAcc')
         ->name('insertAcc');
 
-Route::post('/inserimentoOfferta', 'HostController@insertAcc')
+Route::post('/gestioneOfferte/inserimentoOfferta', 'HostController@insertAcc')
         ->name('insertAccPost');
 
-Route::get('/alloggioHost/{id}', 'HostController@infoAcc')
-        ->name('infoAccHost');
-
-Route::post('/modificaOfferta', 'HostController@getAccModifica')
+Route::post('/gestioneOfferte/modificaOfferta', 'HostController@getAccModifica')
         ->name('modificaHostAcc');
 
 Route::post('/modificaOffertaAlloggio','HostController@modificaAcc')
@@ -120,7 +111,7 @@ Route::post('/eliminaOfferta','HostController@eliminaAcc')
 Route::get('/visualizzaOpzioni','HostController@getAllOptions')
         ->name('visualizzaTutteOpzioni');
 
-Route::post('/visualizzaOpzioni','HostController@getOptionsAcc')
+Route::post('/gestioneOfferte/visualizzaOpzioni','HostController@getOptionsAcc')
         ->name('visualizzaOpzioniAcc');
 
 Route::get('/gestioneOfferte', 'HostController@getAccsHost')
@@ -135,26 +126,22 @@ Route::post('/contratto', 'HostController@contratto')
 
 /*******ADMIN*******/
 
-
-Route::get('/homeAdmin', 'AdminController@getFaqs')
-        ->name('homeAdmin');
-
-Route::get('/gestFaqs', 'AdminController@getFaqs2')
+Route::get('/gestioneFaqs', 'AdminController@getFaqs')
         ->name('gestFaqs');
 
-Route::post('/modificaFaq/{id}', 'AdminController@getPageWithFaq')
+Route::get('/gestioneFaqs/modificaFaq/{id}', 'AdminController@getPageWithFaq')
         ->name('modifyFaq');
 
-Route::post('/modificaFaq', 'AdminController@modificaFaq')
+Route::post('/gestioneFaqs/modificaFaq/{id}', 'AdminController@modificaFaq')
         ->name('faqModificata');
 
 Route::post('/eliminaFaq', 'AdminController@eliminaFaq')
         ->name('eliminaFaq');
 
-Route::get('/nuovaFaq', 'AdminController@showNuovaFaq')
+Route::get('/gestioneFaqs/nuovaFaq', 'AdminController@showNuovaFaq')
         ->name('nuovaFaq');
 
-Route::post('/nuovaFaq', 'AdminController@nuovaFaq')
+Route::post('/gestioneFaqs/nuovaFaq', 'AdminController@nuovaFaq')
         ->name('inserimentoFaq');
 
 Route::view('/statistiche', 'admin.statistiche')

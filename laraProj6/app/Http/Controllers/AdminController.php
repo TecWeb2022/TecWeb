@@ -21,13 +21,7 @@ class AdminController extends Controller
         $this->_faqModel = new Faq;
     }
     
-
     public function getFaqs() {
-        $faqs = $this->_faqModel->get();
-        return view('home')
-            ->with('faqs', $faqs);
-    }
-    public function getFaqs2() {
         $faqs = $this->_faqModel->get();
         return view('admin.gestioneFaqs')
             ->with('faqs', $faqs);
@@ -37,9 +31,8 @@ class AdminController extends Controller
         return view('admin.nuovaFaq');
     }
     
-    public function getPageWithFaq(Request $request) {
-        $id_faq = $request['id'];
-        $faq = Faq::find($id_faq);
+    public function getPageWithFaq($id) {
+        $faq = Faq::find($id);
         return view('admin.modificaFaq')
             ->with('faq', $faq);
     }
@@ -55,8 +48,8 @@ class AdminController extends Controller
         return redirect()->route('gestFaqs');
     }
     
-    public function modificaFaq(NewFaqRequest $request) {
-        $id_faq = $request['id'];
+    public function modificaFaq(NewFaqRequest $request, $id) {
+        $id_faq = $id;
         $dati = $request->validated();
         $faq = Faq::find($id_faq);
         $faq->domanda = $dati['domanda'];

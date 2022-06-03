@@ -1,5 +1,5 @@
 <ul id="nav">
-    <li class="noCurrent"><a href="{{ route('homeLoc') }}" title="Home Locatario">Home</a></li>
+    <li class="noCurrent"><a href="{{ route('home') }}" title="Home Locatario">Home</a></li>
     <li class="noCurrent"><a href="{{ route('catalogoLoc') }}" title="Catalogo alloggi">Catalogo</a></li>
     <li class="noCurrent"><a href="{{ route('profilo') }}" title="Profilo locatario">Profilo</a></li>
     <li class="noCurrent"><a href="{{ route('messaggisticaLoc') }}" title="Messaggistica locatario">Messaggistica</a></li>

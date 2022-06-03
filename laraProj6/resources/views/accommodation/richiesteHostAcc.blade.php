@@ -2,6 +2,15 @@
 
 @section('title', 'Richieste di opzione')
 
+@section('scripts')
+@parent
+<script>
+    $(document).ready( function() {
+        currNavBar(5);
+    });
+</script>
+@endsection
+
 @section('content')
 
 <!-- Content

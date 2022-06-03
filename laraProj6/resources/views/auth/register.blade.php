@@ -2,11 +2,16 @@
 
 @section('title', 'Registrazione')
 
-@section('content')
-
-<script type="text/javascript">
-    currNavBar(3);
+@section('scripts')
+@parent
+<script>
+    $(document).ready( function() {
+        currNavBar(3);
+    });
 </script>
+@endsection
+
+@section('content')
     
    <section id="works">
 

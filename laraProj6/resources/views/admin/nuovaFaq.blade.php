@@ -2,12 +2,16 @@
 
 @section('title', 'nuovaFaq')
 
-@section('content')
-
-<script type="text/javascript">
-    currNavBar(2);
-    
+@section('scripts')
+@parent
+<script>
+    $(document).ready( function() {
+        currNavBar(3);
+    });
 </script>
+@endsection
+
+@section('content')
 
 <!-- Works Section
    ================================================== -->
@@ -35,7 +39,7 @@
                 </p>
                 <p>
                     <!--textarea class="" id="risposta" name="Risposta" rows="5" cols="51" placeholder="Risposta(max 255 caratteri)"></textarea-->
-                    {{ Form::label('risposta', 'Risposta (max 255 caratteri)') }}
+                    {{ Form::label('risposta', 'Risposta') }}
                 {{ Form::textarea('risposta', '', ['id' => 'risposta']) }}
                  @if ($errors->first('risposta'))
                 <ul class="errors">

@@ -39,15 +39,6 @@ class HostController extends Controller {
             ->with('faqs', $faqs->get());
     }
     
-    
-    public function infoAcc($id){
-        $cat = new Catalog;
-        $acc = $cat->getAccById($id);
-        
-        return view('accommodation.descrHostAcc')
-                ->with('acc',$acc);
-    }
-    
     public function getAccsHost(){
         $cat = new Catalog;
         $catHost = $cat->getAllAcc()->where('proprietario', '=', auth()->user()->id);

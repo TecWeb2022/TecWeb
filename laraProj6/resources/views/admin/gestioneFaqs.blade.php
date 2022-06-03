@@ -4,34 +4,23 @@
 
 @section('scripts')
 @parent
-    <script
-        src="https://code.jquery.com/jquery-3.1.1.js"
-        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-        crossorigin="anonymous"> 
-    </script>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-   
-    <script>
-$(document).ready(function($){
-     $('#eliminaF').on('onsubmit',function(e){
-        if(!confirm("Sei sicuro di volerlo eliminare?")){
-              e.preventDefault();
-        }
-      });
-});
-    </script>
-
+<script>
+    $(document).ready(function($){
+         $('#eliminaF').on('onsubmit',function(e){
+            if(!confirm("Sei sicuro di volerlo eliminare?")){
+                  e.preventDefault();
+            }
+          });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        currNavBar(3);
+    });
+</script>
 @endsection
 
 @section('content')
-
-
-
-<script type="text/javascript">
-    currNavBar(3);
-    
-</script>
                                 
    <!-- Journal Section
    ================================================== -->
@@ -68,13 +57,9 @@ $(document).ready(function($){
                </p>
                <div class="row bottone_inline">
                <div class="column">
-               {{ Form::open(array('route' => array('modifyFaq', $faq->id), 'class' => 'register-form')) }}
-               
-               {{ Form::hidden('id', $faq->id, ['id' => 'id']) }}
-               
-               {{ Form::submit('Modifica', ['class' => 'btn']) }}
-
-               {{ Form::close() }}
+                <button class="btn" onclick="location.href='{{ route('modifyFaq', ['id' => $faq->id]) }}';">
+                    Modifica
+                </button>
                </div>
             
             <div class="column">
@@ -102,7 +87,7 @@ $(document).ready(function($){
                 
                 <center><label class='labelAdd'>Aggiungi una nuova FAQ</label></center>
                 
-                 <button class="btn2 iconbutton2 " onclick="location.href='nuovaFaq'">
+                 <button class="btn2 iconbutton2 " onclick="location.href='gestioneFaqs/nuovaFaq'">
                      +
                     <!--i class="fa fa-plus"></i--> 
                  </button> 

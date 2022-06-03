@@ -32,6 +32,8 @@ use AuthenticatesUsers;
      * @var string
      */
     protected function redirectTo() {
+        return '/';
+        /*
         $role = auth()->user()->tipologia;
         switch ($role) {
             case 'admin': return '/homeAdmin';
@@ -42,6 +44,7 @@ use AuthenticatesUsers;
                 break;  
             default: return '/';
         };
+        */
     }
 
     /**

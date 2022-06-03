@@ -5,9 +5,9 @@
 
 @section('scripts')
 @parent
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
+    currNavBar(4);
     insAcc($('#tipologia').val());
     $("#tipologia").change(function(){
         insAcc($('#tipologia').val());

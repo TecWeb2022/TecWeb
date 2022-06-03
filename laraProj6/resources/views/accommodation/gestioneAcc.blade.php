@@ -2,11 +2,16 @@
 
 @section('title', 'Gestione alloggi')
 
-@section('content')
-
-<script type="text/javascript">
-    currNavBar(2);
+@section('scripts')
+@parent
+<script>
+    $(document).ready( function() {
+        currNavBar(4);
+    });
 </script>
+@endsection
+
+@section('content')
 
   <div id="works">
 

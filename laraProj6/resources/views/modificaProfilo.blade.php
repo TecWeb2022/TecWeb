@@ -4,19 +4,15 @@
 
 @section('scripts')
 @parent
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    x=usernamePlaceholder();
+    currNavBar(2);
+    usernamePlaceholder();
 });
 </script>
 @endsection
 
 @section('content')
-
-<script type="text/javascript">
-    currNavBar(2);
-</script>
 
 <!-- Works Section
    ================================================== -->

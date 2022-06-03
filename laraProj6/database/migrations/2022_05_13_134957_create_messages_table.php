@@ -17,9 +17,9 @@ class CreateMessagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('testo', 1000);
             $table->boolean('visualizzato')->default(false);
-            $table->string('id_mitt');//->index();
+            $table->bigInteger('id_mitt')->unsigned();;//->index();
             //$table->foreign('id_mitt')->references('id')->on('users');
-            $table->string('id_dest');//->index();
+            $table->bigInteger('id_dest')->unsigned();;//->index();
             //$table->foreign('id_dest')->references('id')->on('users');
             $table->bigInteger('id_alloggio')->unsigned();//->index();
             //$table->foreign('id_alloggio')->references('id')->on('accomodations');

@@ -2,11 +2,16 @@
 
 @section('title', 'Catalogo')
 
-@section('content')
-
-<script type="text/javascript">
-    currNavBar(1);
+@section('scripts')
+@parent
+<script>
+    $(document).ready( function() {
+        currNavBar(1);
+    });
 </script>
+@endsection
+
+@section('content')
 
 <!-- Se è locatario, allora ha i filtri sul catalogo alloggi -->
 @can('isLoc')
