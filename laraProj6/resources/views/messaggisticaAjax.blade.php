@@ -7,55 +7,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
  $(document).ready(function() {
-       
-        $.ajax({
-            url: "{{route('messAjax')}}",
-            type: "GET",
-            cache: false,
-            dataType: 'json',
-            success: function(dataResult){
-                console.log(dataResult);
-                var resultData = dataResult.data;
-                var mess = resultData.data;
-                var bodyData = '';
-                $.each(mess,function(index,row){
-
-                    bodyData+="<li>";
-                    bodyData+="<div class='bordo_normale piccolo-crick flex-box-mess'>";
-                    bodyData+="<h3 class='stoppino'>"+row.testo+"</h3>";
-                    
-                });
-                $(".commentlist2").empty();
-                $(".commentlist2").append(bodyData);
-            }
-        });
+     sendMessaggiAjax("{{route('messAjaxx')}}",true);
     });
 </script>
 
 <script>
 $(document).ready(function(){
     $("#mess-inviati").click(function(){
-                $.ajax({
-            url: "{{route('messAjaxx')}}",
-            type: "GET",
-            cache: false,
-            dataType: 'json',
-            success: function(dataResult){
-                console.log(dataResult);
-                var resultData = dataResult.data;
-                var mess = resultData.data;
-                var bodyData = '';
-                $.each(mess,function(index,row){
-
-                    bodyData+="<li>";
-                    bodyData+="<div class='bordo_normale piccolo-crick flex-box-mess'>";
-                    bodyData+="<h3 class='stoppino'>"+row.testo+"</h3>";
-                    
-                });
-                $(".commentlist2").empty();
-                $(".commentlist2").append(bodyData);
-            }
-        });
+            sendMessaggiAjax("{{route('messAjax')}}",false);
+    });
+    
+    $("#mess-ricevuti").click(function(){
+            sendMessaggiAjax("{{route('messAjaxx')}}",true);
     });
 });
 </script>
@@ -77,7 +40,7 @@ $(document).ready(function(){
             
             <div id="comments" >
                 <center>
-                    <center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a id="mess-inviati">Messaggi inviati</a></div></center>
+                    <center><div><a id="mess-ricevuti">Messaggi ricevuti</a> | <a id="mess-inviati">Messaggi inviati</a></div></center>
                     <!--<center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Messaggi inviati</a></div></center> -->               <!-- commentlist -->
               
                <ol class="commentlist2">

@@ -295,5 +295,29 @@ function confirmation() {
     return confirm("Sei sicuro di volerlo eliminare?");
   }
 
+//flagRic è un bool -> true per i mess ricevuti, false per quelli inviati
+function sendMessaggiAjax(actionUrl, flagRic){
+    
+     $.ajax({
+            url: actionUrl,
+            type: "GET",
+            cache: false,
+            dataType: 'json',
+            success: function(dataResult){
+                console.log(dataResult);
+                var resultData = dataResult.data;
+                var mess = resultData.data;
+                var bodyData = '';
+                $.each(mess,function(index,row){
 
+                    bodyData+="<li>";
+                    bodyData+="<div class='bordo_normale piccolo-crick flex-box-mess'>";
+                    bodyData+="<h3 class='stoppino'>"+row.testo+"</h3>";
+                    
+                });
+                $(".commentlist2").empty();
+                $(".commentlist2").append(bodyData);
+            }
+        });
+}
 
