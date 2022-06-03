@@ -4,11 +4,14 @@
 
 @section('scripts')
 @parent
+
 <script>
     $(document).ready( function() {
         currNavBar(2);
     });
 </script>
+
+<script src="Chart.js"></script>
 @endsection
 
 @section('content')
@@ -98,11 +101,21 @@
            <!--/div-->
           </div>
         </div>
-        @endisset
-          
-          
+        
+      @endisset    
+      
           
       </div>
+       
+      <div class="row">
+         
+     <canvas id="myCanvas"></canvas>
+     <legend for="myCanvas"></legend>
+    <script type="text/javascript" src="{{ URL::asset('js/chart.js') }}"></script>
+          
+      </div>    
+      
+      
     </section> <!-- Works Section End-->
 
 @endsection
