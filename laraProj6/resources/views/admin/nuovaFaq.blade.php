@@ -18,9 +18,9 @@
    <section id="works">
 
       <div class="row">
-          
+                
           <div class="column">
-            <h1>Aggiungi una nuova FAQ</h1>
+              <h1 class="center2">Aggiungi una nuova FAQ</h1>
 
             <!--form name="domanda_faq" action="" method="post"--> 
             {{Form::open(array('route' => 'inserimentoFaq', 'class' => 'contact-form'))}}

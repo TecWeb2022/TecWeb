@@ -11,24 +11,25 @@ endguest
 
 @section('title', 'Home')
 
-@section('content')
-
-@isset($profilo)
-    <script type="text/javascript">
-        alert("Profilo modificato con successo!");
-    </script>
-@endisset
-
+@section('scripts')
+@parent
 <script
-  src="https://code.jquery.com/jquery-3.1.1.js"
-  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-  crossorigin="anonymous"> 
+    src="https://code.jquery.com/jquery-3.1.1.js"
+    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+    crossorigin="anonymous">
 </script>
+
+
 
 <script type="text/javascript">
+    $(document).ready( function() {
     currNavBar(0);
     slider2Home();
+    });
 </script>
+@endsection
+
+@section('content')
 
 <!-- Intro Section
    ================================================== -->
