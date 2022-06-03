@@ -4,7 +4,7 @@
     <li class="noCurrent"><a href="{{ route('gestioneAcc') }}" title="Annunci">Gestione Alloggi</a></li>
     <li class="noCurrent"><a href="{{ route('visualizzaTutteOpzioni') }}" title="Opzioni">Visualizza Opzioni</a></li>
     <li class="noCurrent"><a href="{{ route('profilo') }}" title="Profilo locatore">Profilo</a></li>
-    <li class="noCurrent"><a href="{{ route('home') }}" title="Messaggistica locatore">Messaggistica</a></li>
+    <li class="noCurrent"><a href="{{ route('messAjaxxx') }}" title="Messaggistica locatore">Messaggistica</a></li>
 
     @auth
         <li><a href="" class="highlight" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>

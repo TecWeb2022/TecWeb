@@ -52,11 +52,19 @@ class LocHostController extends Controller {
             ->with('mess', $mess);
     }
     
+        public function getMessaggiRicevutiAjax() {
+        $ml = new MessageList;
+        $mess = $ml->messRicevuti(auth()->user()->id);
+        //$messRic = $messRic->paginate(5);
+        return response()->json(['data'=>$mess,'redirect' => route('messaggisticaLoc')]);
+    }
+    
     public function getMessaggiInviatiAjax() {
         $ml = new MessageList;
         $mess = $ml->messInviati(auth()->user()->id);
         
-        return json_encode(array('data'=>$mess));
+        return response()->json(['data'=>$mess,'redirect' => route('messaggisticaLoc')]); 
+        //json_encode(array('data'=>$mess));
     }
     public function getMessaggioInviato($id_mess) {
         //$mess = Message::where('id', '=', $id_mess);

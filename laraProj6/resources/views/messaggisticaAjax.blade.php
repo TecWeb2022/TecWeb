@@ -16,24 +16,47 @@
             success: function(dataResult){
                 console.log(dataResult);
                 var resultData = dataResult.data;
+                var mess = resultData.data;
                 var bodyData = '';
-                var i=1;
-                $.each(resultData,function(index,row){
+                $.each(mess,function(index,row){
 
-                    bodyData+="<li>"             
-                    bodyData+="<div class='bordo_normale piccolo-crick flex-box-mess'>"
-                    bodyData+="<h3 class='stoppino'>"+row.mitt.nome + row.mitt.cognome +"</h3>";
+                    bodyData+="<li>";
+                    bodyData+="<div class='bordo_normale piccolo-crick flex-box-mess'>";
+                    bodyData+="<h3 class='stoppino'>"+row.testo+"</h3>";
                     
-                })
+                });
+                $(".commentlist2").empty();
                 $(".commentlist2").append(bodyData);
             }
         });
+    });
 </script>
 
 <script>
 $(document).ready(function(){
     $("#mess-inviati").click(function(){
-    })
+                $.ajax({
+            url: "{{route('messAjaxx')}}",
+            type: "GET",
+            cache: false,
+            dataType: 'json',
+            success: function(dataResult){
+                console.log(dataResult);
+                var resultData = dataResult.data;
+                var mess = resultData.data;
+                var bodyData = '';
+                $.each(mess,function(index,row){
+
+                    bodyData+="<li>";
+                    bodyData+="<div class='bordo_normale piccolo-crick flex-box-mess'>";
+                    bodyData+="<h3 class='stoppino'>"+row.testo+"</h3>";
+                    
+                });
+                $(".commentlist2").empty();
+                $(".commentlist2").append(bodyData);
+            }
+        });
+    });
 });
 </script>
 
@@ -67,7 +90,7 @@ $(document).ready(function(){
                </center> 
                <!-- Commentlist End -->
                <!-- Pagination -->
-               <center>@include('pagination.paginator', ['paginator' => $mess])</center>
+               <center></center>
                
                </div> <!-- Respond End -->
 
@@ -77,7 +100,7 @@ $(document).ready(function(){
         </div>
          </div> <!-- Comments End -->
 
-@endisset
+
 <script type="text/javascript">
 currNavBar(3);
 </script>
