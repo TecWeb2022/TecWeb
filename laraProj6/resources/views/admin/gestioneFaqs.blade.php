@@ -5,15 +5,6 @@
 @section('scripts')
 @parent
 <script>
-    $(document).ready(function($){
-         $('#eliminaF').on('onsubmit',function(e){
-            if(!confirm("Sei sicuro di volerlo eliminare?")){
-                  e.preventDefault();
-            }
-          });
-    });
-</script>
-<script>
     $(document).ready(function() {
         currNavBar(3);
     });

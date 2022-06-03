@@ -7,7 +7,7 @@
     @endguest
     @can('isLoc')
     <li class="noCurrent"><a href="{{ route('profilo') }}" title="Profilo locatario">Profilo</a></li>
-    <li class="noCurrent"><a href="{{ route('messaggisticaLoc') }}" title="Messaggistica locatario">Messaggistica</a></li>
+    <li class="noCurrent"><a href="{{ route('messaggisticaAjax') }}" title="Messaggistica locatario">Messaggistica</a></li>
     @endcan
     @can('isAdmin')
     <li class="noCurrent"><a href="{{ route('statistiche') }}" title="Statistiche">Statistiche</a></li>
@@ -15,7 +15,7 @@
     @endcan
     @can('isHost')
     <li class="noCurrent"><a href="{{ route('profilo') }}" title="Profilo locatore">Profilo</a></li>
-    <li class="noCurrent"><a href="{{ route('messAjaxxx') }}" title="Messaggistica locatore">Messaggistica</a></li>
+    <li class="noCurrent"><a href="{{ route('messaggisticaAjax') }}" title="Messaggistica locatore">Messaggistica</a></li>
     <li class="noCurrent"><a href="{{ route('gestioneAcc') }}" title="Offerte locatore">Gestione Offerte</a></li>
     <li class="noCurrent"><a href="{{ route('visualizzaTutteOpzioni') }}" title="Opzioni offerte">Visualizza Opzioni</a></li>
     @endcan

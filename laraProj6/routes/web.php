@@ -11,71 +11,6 @@
 |
 */
 
-/*           PUBBLICO           */
-Route::get('/', 'PublicController@getFaqs')
-        ->name('home');
-
-Route::get('/catalogo', 'PublicController@getCatalogo')
-        ->name('catalogo');
-
-Route::get('/alloggio/{id}', 'PublicController@infoAcc')
-        ->name('visualizzaAcc');
-
-
-/*           LOCATARIO           */
-
-Route::view('/profilo', 'profilo')
-        ->name('profilo')
-        ->middleware('can:isLocHost');
-
-Route::view('/profilo/modifica', 'modificaProfilo')
-        ->name('modificaProfilo')
-        ->middleware('can:isLocHost');
-
-Route::post('/profilo/modifica', 'LocHostController@modificaProfilo')
-        ->name('modificaProfiloPost');
-
-Route::get('/catalogo/filtri', 'LocController@getCatPag')
-        ->name('catalogoLoc');
-
-Route::post('/catalogo/filtri', 'LocController@filters');
-
-Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
-        ->name('opzioneAcc');
-
-Route::post('/alloggio/{id}/opzione', 'LocController@invioOpzForm')
-        ->name('opzioneAccPost');
-
-Route::get('/messaggiRicevutiLocatario', 'LocController@getMessaggiRicevuti')
-        ->name('messaggisticaLoc');
-
-Route::post('/messaggioLocatario/leggi', 'LocController@getMessaggioRicevuto')
-        ->name('messaggioLoc');
-
-Route::post('/messaggioLocatario/leggi/rispondi', 'LocController@scriviMess')
-        ->name('scritturaMessLoc');
-
-Route::post('/messaggioLocatario/invia', 'LocController@inviaMess')
-        ->name('inviaMessLoc');
-
-Route::get('/messaggiInviatiLocatario', 'LocController@getMessaggiInviati')
-        ->name('messaggiInvLoc');
-
-Route::get('/messaggioInviatoLocatario/{id_mess}', 'LocController@getMessaggioInviato')
-        ->name('messaggioInvLoc');
-
-Route::get('/messaggioInviatoLocatario/{id_mess}/riscrivi', 'LocController@riscriviMess')
-        ->name('riscritturaMessLoc');
-
-Route::get('/messAjaxInviati', 'LocHostController@getMessaggiInviatiAjax')
-        ->name('messAjax');
-
-Route::get('/messAjaxRicevuti', 'LocHostController@getMessaggiRicevutiAjax')
-        ->name('messAjaxx');
-
-Route::view('/messAjaxxxxx', 'messaggisticaAjax')
-        ->name('messAjaxxx');
-
 /*          REGISTRAZIONE           */
 
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')
@@ -90,6 +25,33 @@ Route::post('login', 'Auth\LoginController@login');
 
 Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
+
+/*           PUBBLICO           */
+Route::get('/', 'PublicController@getFaqs')
+        ->name('home');
+
+Route::get('/catalogo', 'PublicController@getCatalogo')
+        ->name('catalogo');
+
+Route::get('/alloggio/{id}', 'PublicController@infoAcc')
+        ->name('visualizzaAcc');
+
+
+/*           LOCATARIO           */
+
+Route::post('/profilo/modifica', 'LocHostController@modificaProfilo')
+        ->name('modificaProfiloPost');
+
+Route::get('/catalogo/filtri', 'LocController@getCatPag')
+        ->name('catalogoLoc');
+
+Route::post('/catalogo/filtri', 'LocController@filters');
+
+Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
+        ->name('opzioneAcc');
+
+Route::post('/alloggio/{id}/opzione', 'LocController@invioOpzForm')
+        ->name('opzioneAccPost');
 
 /* * * * * * *LOCATORE * * * * * * * * * * * */
 
@@ -123,6 +85,37 @@ Route::post('/accettaOfferta', 'HostController@accettaOfferta')
 Route::post('/contratto', 'HostController@contratto')
         ->name('contratto');
 
+/* LOCATARIO E LOCATORE*/
+
+/* Profilo*/
+
+Route::view('/profilo', 'profilo')
+        ->name('profilo')
+        ->middleware('can:isLocHost');
+
+Route::view('/profilo/modifica', 'modificaProfilo')
+        ->name('modificaProfilo')
+        ->middleware('can:isLocHost');
+
+/* - Messaggistica -*/
+
+Route::view('/messaggistica', 'messaggisticaAjax')
+        ->name('messaggisticaAjax');
+
+Route::get('/messInviatiAjax', 'LocHostController@getMessaggiInviatiAjax')
+        ->name('messInvAjax');
+
+Route::get('/messRicevutiAjax', 'LocHostController@getMessaggiRicevutiAjax')
+        ->name('messRicAjax');
+
+Route::get('/messaggistica/leggi/{id}', 'LocHostController@getMessaggio')
+        ->name('infoMessaggio');
+
+Route::post('/messaggistica/leggi/rispondi', 'LocHostController@scriviMess')
+        ->name('scritturaMess');
+
+Route::post('/messaggistica/invia', 'LocHostController@inviaMess')
+        ->name('inviaMess');
 
 /*******ADMIN*******/
 

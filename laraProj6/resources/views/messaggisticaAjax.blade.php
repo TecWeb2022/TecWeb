@@ -5,22 +5,27 @@
 @section('scripts')
 @parent
 
+<script>
+    $(document).ready( function() {
+        currNavBar(3);
+    });
+</script>
 
 <script>
  $(document).ready(function() {
-     sendMessaggiAjax("{{route('messAjaxx')}}","{{route('messaggioLoc')}}",true);
+     sendMessaggiAjax("{{route('messRicAjax')}}","{{route('infoMessaggio', ['id' => ''])}}",true);
     });
 </script>
 
 <script>
 $(document).ready(function(){
     $("#mess-inviati").click(function(){
-            sendMessaggiAjax("{{route('messAjax')}}","{{route('messaggioLoc')}}",false);
+            sendMessaggiAjax("{{route('messInvAjax')}}","{{route('infoMessaggio', ['id' => ''])}}",false);
             
     });
     
     $("#mess-ricevuti").click(function(){
-            sendMessaggiAjax("{{route('messAjaxx')}}","{{route('messaggioLoc')}}",true);
+            sendMessaggiAjax("{{route('messRicAjax')}}","{{route('infoMessaggio', ['id' => ''])}}",true);
     });
 });
 </script>
@@ -43,15 +48,14 @@ $(document).ready(function(){
             <div id="comments" >
                 <center>
                     <center><div><a id="mess-ricevuti">Messaggi ricevuti</a> | <a id="mess-inviati">Messaggi inviati</a></div></center>
-                    <!--<center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Messaggi inviati</a></div></center> -->               <!-- commentlist -->
+                           
               
                <ol class="commentlist2">
-                  
-                  <!--li class="depth-1"-->
-                  
-                    
+                   
                         
                </ol> 
+                    
+                    <div id="provaReturn"> </div>
                </center> 
                <!-- Commentlist End -->
                <!-- Pagination -->
@@ -66,7 +70,4 @@ $(document).ready(function(){
          </div> <!-- Comments End -->
 
 
-<script type="text/javascript">
-currNavBar(3);
-</script>
 @endsection

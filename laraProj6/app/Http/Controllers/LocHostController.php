@@ -28,6 +28,7 @@ class LocHostController extends Controller {
         return redirect()->route('profilo');
     }
 
+    /*
     public function getMessaggiRicevuti() {
         $ml = new MessageList;
         $mess = $ml->messRicevuti(auth()->user()->id);
@@ -36,23 +37,27 @@ class LocHostController extends Controller {
             ->with('mess', $mess);
     }
     
-    public function getMessaggioRicevuto(Request $request) {
-        //$mess = Message::where('id', '=', $id_mess);
-        $mess = Message::find($request->id_mess);
+        public function getMessaggiInviati() {
+        $ml = new MessageList;
+        $mess = $ml->messInviati(auth()->user()->id);
+        return view('messaggiInviati')
+            ->with('mess', $mess);
+    }
+     * 
+     */
+    
+    
+    public function getMessaggio($id) {
+        $mess = Message::find($id);
         $mess->visualizzato = true;
         $mess->save();
         return view('visualizzaMessaggio')
             ->with('mess', $mess);
     }
     
-    public function getMessaggiInviati() {
-        $ml = new MessageList;
-        $mess = $ml->messInviati(auth()->user()->id);
-        return view('messaggiInviati')
-            ->with('mess', $mess);
-    }
+
     
-        public function getMessaggiRicevutiAjax() {
+    public function getMessaggiRicevutiAjax() {
         $ml = new MessageList;
         $mess = $ml->messRicevuti_Utenti(auth()->user()->id);
         //$messRic = $messRic->paginate(5);
@@ -66,12 +71,7 @@ class LocHostController extends Controller {
         return response()->json(['data'=>$mess]); 
         //json_encode(array('data'=>$mess));
     }
-    public function getMessaggioInviato($id_mess) {
-        //$mess = Message::where('id', '=', $id_mess);
-        $mess = Message::find($id_mess);
-        return view('visualizzaMessaggioInviato')
-            ->with('mess', $mess);
-    }
+
     
     public function scriviMess(Request $request) {
         $mess = Message::find($request->id_mess);
@@ -79,19 +79,20 @@ class LocHostController extends Controller {
             ->with('mess', $mess);
     }
     
-    public function riscriviMess($id_mess) {
-        $mess = Message::find($id_mess);
-        return view('riscritturaMessaggio')
-            ->with('mess', $mess);
-    }
-    
     public function inviaMess(Request $request) {
+        
+        $validatedData = $request->validate([
+            'testo' => 'required',
+            'id_dest' => 'required',
+            'id_alloggio' =>'required',
+            'created_at' => 'reqiured'
+        ]);
         $mess = new Message;
-        $mess->testo = $request->testo;
+        $mess->testo = $validatedData["testo"];
         $mess->id_mitt = auth()->user()->id;
-        $mess->id_dest = $request->id_dest;
-        $mess->id_alloggio = $request->id_alloggio;
+        $mess->id_dest = $validatedData["id_dest"];
+        $mess->id_alloggio = $validatedData["id_alloggio"];
         $mess->save();
-        return redirect()->route('messaggisticaLoc');
+        return redirect()->route('messaggisticaAjax');
     }
 }

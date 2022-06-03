@@ -461,6 +461,7 @@ header .logo a {
    float: right;
    margin-top: 26px;
    margin-right: 20px;
+
    z-index: 99999;
 }
 
@@ -1268,9 +1269,15 @@ ol.commentlist {
 	padding: 0;
         margin-left: 16.66667%;
 }
-
+/*fatta da Matteo*/
 ol.commentlist2 {
         border-top: 1px dotted #E1E5E3;
+	margin: 0 0 0 0;
+	padding: 0 10px 0 0;
+        list-style: none;
+}
+
+ol.commentlist-messaggi {
 	margin: 0 0 0 0;
 	padding: 0 10px 0 0;
         list-style: none;
