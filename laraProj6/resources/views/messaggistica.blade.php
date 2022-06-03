@@ -48,7 +48,7 @@ $(document).ready(function(){
                     <center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a id="mess-inviati">Messaggi inviati</a></div></center>
                     <!--<center><div><a href="{{ route('messaggisticaLoc') }}">Messaggi ricevuti</a> | <a href="{{ route('messaggiInvLoc') }}">Messaggi inviati</a></div></center> -->               <!-- commentlist -->
                @isset($mess)
-               <ol class="commentlist2">
+               <ol class="commentlist-messaggi">
                   @foreach($mess as $m)
                   <!--li class="depth-1"-->
                   <li>
