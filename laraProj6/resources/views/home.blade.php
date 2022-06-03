@@ -80,21 +80,21 @@ endguest
                              @endguest
                              @can('isLoc')
                                 <div class="slider-text">
-                                    <h1><span>Area Locatario</span></h1>
+                                    <h1><span id="traccia-font-tit">Area Locatario</span></h1>
                                     <p>Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }}
                                     </p>
                                 </div>
                              @endcan
                              @can('isAdmin')
                              <div class="slider-text">
-                                    <h1><span>Area Admin</span></h1>
+                                 <h1><span id="traccia-font-tit">Area Admin</span></h1>
                                     <h2 class='benvenuto_admin'>Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }}
                                     </h2>
                              </div>
                              @endcan
                              @can('isHost')
                              <div class="slider-text">
-                                    <h1><span>Area Locatore</span></h1>
+                                    <h1><span id="traccia-font-tit">Area Locatore</span></h1>
                                     <p>Benvenuto {{ Auth::user()->nome }} {{ Auth::user()->cognome }}
                                     </p>
                                 </div>
