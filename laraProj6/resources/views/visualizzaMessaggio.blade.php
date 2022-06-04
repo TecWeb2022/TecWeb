@@ -45,18 +45,12 @@
                 @if($mess->dest->id == Auth::user()->id)
                      <h3 class="zeppa">Rispondi</h3>
                   <div>
-                      {{ Form::open(array('route' => 'scritturaMess', 'class' => 'flex-box-btnsx')) }}
-                      {{ Form::hidden('id_mess', $mess->id, ['id' => 'id_mess']) }}
-                      {{ Form::submit('Rispondi', ['title' => 'Rispondi']) }}
-                      {{ Form::close() }}
+                      <button onclick="location.href = '{{ route('scritturaMess', [ 'id' => $mess->id ]) }}';">Rispondi</button>
                   </div>
                 @else
                   <h3 class="zeppa">Riscrivi</h3>
                   <div>
-                      {{ Form::open(array('route' => 'scritturaMess', 'class' => 'flex-box-btnsx')) }}
-                      {{ Form::hidden('id_mess', $mess->id, ['id' => 'id_mess']) }}
-                      {{ Form::submit('Riscrivi', ['title' => 'Riscrivi']) }}
-                      {{ Form::close() }}
+                      <button onclick="location.href = '{{ route('scritturaMess', [ 'id' => $mess->id ]) }}';">Riscrivi</button>
                   </div>
                 @endif
                    

@@ -4,14 +4,11 @@
 
 @section('scripts')
 @parent
-
 <script>
     $(document).ready( function() {
         currNavBar(2);
     });
 </script>
-
-<script src="Chart.js"></script>
 @endsection
 
 @section('content')
@@ -102,20 +99,22 @@
           </div>
         </div>
         
-      @endisset    
+        <div class="columns_bianco colonna_risultati">
+            <h2 class="align-center">Istogramma per i filtri:</h2>
+         
+        <canvas id="myCanvas"></canvas>
+        <legend for="myCanvas"></legend>
+        <script>
+           istogrammaStats({{ $stats['alloggi_tot'] }}, {{ $stats['offerte'] }}, {{ $stats['alloggi_locati'] }});
+        </script>
+          
+        </div>
+          
+      @endisset
       
           
       </div>
-       
-      <div class="row">
-         
-     <canvas id="myCanvas"></canvas>
-     <legend for="myCanvas"></legend>
-    <script type="text/javascript" src="{{ URL::asset('js/chart.js') }}"></script>
-          
-      </div>    
-      
-      
+
     </section> <!-- Works Section End-->
 
 @endsection

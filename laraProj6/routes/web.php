@@ -111,7 +111,7 @@ Route::get('/messRicevutiAjax', 'LocHostController@getMessaggiRicevutiAjax')
 Route::get('/messaggistica/leggi/{id}', 'LocHostController@getMessaggio')
         ->name('infoMessaggio');
 
-Route::post('/messaggistica/leggi/rispondi', 'LocHostController@scriviMess')
+Route::get('/messaggistica/leggi/{id}/rispondi', 'LocHostController@scriviMess')
         ->name('scritturaMess');
 
 Route::post('/messaggistica/invia', 'LocHostController@inviaMess')

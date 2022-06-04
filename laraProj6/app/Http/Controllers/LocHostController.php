@@ -8,8 +8,6 @@ use App\Models\Resources\Message;
 use App\Models\MessageList;
 use App\Http\Requests\ModifyProfileRequest;
 
-//use App\Http\Requests\NewProductRequest;
-
 use Illuminate\Http\Request;
 
 class LocHostController extends Controller {
@@ -27,25 +25,6 @@ class LocHostController extends Controller {
         $this->user->modificaDati($id, $dati);
         return redirect()->route('profilo');
     }
-
-    /*
-    public function getMessaggiRicevuti() {
-        $ml = new MessageList;
-        $mess = $ml->messRicevuti(auth()->user()->id);
-        //$messRic = $messRic->paginate(5);
-        return view('messaggistica')
-            ->with('mess', $mess);
-    }
-    
-        public function getMessaggiInviati() {
-        $ml = new MessageList;
-        $mess = $ml->messInviati(auth()->user()->id);
-        return view('messaggiInviati')
-            ->with('mess', $mess);
-    }
-     * 
-     */
-    
     
     public function getMessaggio($id) {
         $mess = Message::find($id);
@@ -54,8 +33,6 @@ class LocHostController extends Controller {
         return view('visualizzaMessaggio')
             ->with('mess', $mess);
     }
-    
-
     
     public function getMessaggiRicevutiAjax() {
         $ml = new MessageList;
@@ -69,12 +46,11 @@ class LocHostController extends Controller {
         $mess = $ml->messInviati_Utenti(auth()->user()->id);
         
         return response()->json(['data'=>$mess]); 
-        //json_encode(array('data'=>$mess));
     }
 
     
-    public function scriviMess(Request $request) {
-        $mess = Message::find($request->id_mess);
+    public function scriviMess($id) {
+        $mess = Message::find($id);
         return view('scritturaMessaggio')
             ->with('mess', $mess);
     }
@@ -82,10 +58,9 @@ class LocHostController extends Controller {
     public function inviaMess(Request $request) {
         
         $validatedData = $request->validate([
-            'testo' => 'required',
+            'testo' => 'required|max:1000',
             'id_dest' => 'required',
-            'id_alloggio' =>'required',
-            'created_at' => 'reqiured'
+            'id_alloggio' =>'required'
         ]);
         $mess = new Message;
         $mess->testo = $validatedData["testo"];
