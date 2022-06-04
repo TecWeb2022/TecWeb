@@ -54,10 +54,30 @@ class LocController extends Controller {
             ->with('cat', $cat);
     }
     
-    public function filters(CatalogFiltersRequest $request)
+    public function filters(Request $request)
     {
-        $request->validated();
-        return $this->getCatPag($request->all(), 5);
+        if($request->prezzo_min == null) {
+           $request['prezzo_min'] = 0;
+        }
+        $validatedRequest = $request->validate([
+            'tipologia' => 'required',
+            'prov' => 'nullable|max:2',
+            'inizio_dip' => 'nullable',
+            'fine_disp' => 'after:inizio_disp|nullable',
+            'prezzo_min' => 'nullable|numeric|min:0',
+            'prezzo_max' => 'nullable|numeric|min:0|gte:prezzo_min',
+            'num_camere' => 'integer|min:0|nullable',
+            'posti_letto_tot' => 'nullable|integer|min:0',
+            'sup' =>'nullable|numeric|min:0|',
+            'letti_camera' =>'integer|min:0|nullable',
+            'wifi' => 'nullable|boolean',
+            'angolo_studio' => 'nullable|boolean',
+            'climatizzatore' => 'nullable|boolean',
+            'cucina' => 'nullable|boolean',
+            'locale_ricreativo' => 'nullable|boolean',
+            'garage' => 'nullable|boolean'
+        ]);
+        return $this->getCatPag($validatedRequest, 5);
     }
     
     public function opzioneForm($id_acc){
