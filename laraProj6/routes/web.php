@@ -61,7 +61,7 @@ Route::view('/gestioneOfferte/inserimentoOfferta', 'accommodation.insertAcc')
 Route::post('/gestioneOfferte/inserimentoOfferta', 'HostController@insertAcc')
         ->name('insertAccPost');
 
-Route::post('/gestioneOfferte/modificaOfferta', 'HostController@getAccModifica')
+Route::get('/gestioneOfferte/modificaOfferta/{id}', 'HostController@getAccModifica')
         ->name('modificaHostAcc');
 
 Route::post('/modificaOffertaAlloggio','HostController@modificaAcc')

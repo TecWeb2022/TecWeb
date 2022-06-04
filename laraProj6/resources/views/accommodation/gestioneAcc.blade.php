@@ -109,10 +109,7 @@
                                 {{ Form::submit('Opzioni', ['class' => 'btn_gestione_acc', 'title' => 'Visualizza le richieste di opzione']) }}
                                 {{ Form::close() }}
                                 
-                                {{ Form::open(array('route' => 'modificaHostAcc', 'class' => '')) }}
-                                {{ Form::hidden('id_acc', $acc->id, ['id' => 'modifica_acc']) }}
-                                {{ Form::submit('Modifica', ['class' => 'btn_gestione_acc', 'title' => 'Modifica alloggio']) }}
-                                {{ Form::close() }}
+                                <button onclick="location.href = '{{ route('modificaHostAcc', [ 'id' => $acc->id ]) }}';">Modifica</button>
                                
                                 {{ Form::open(array('route' => 'eliminaAcc', 'class' => '', 'onsubmit' => 'return ConfirmDelete()')) }}
                                 {{ Form::hidden('id_acc', $acc->id, ['id' => 'elimina_acc']) }}

@@ -11,7 +11,6 @@ use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use App\Models\OptionList;
 use App\Http\Requests\NewAccommodationRequest;
-use App\Http\Requests\ModifyAccommodationRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File; 
 use App\User;
@@ -48,21 +47,60 @@ class HostController extends Controller {
     }
     
 
-    public function getAccModifica(Request $request){
+    public function getAccModifica($id){
         $cat = new Catalog;
-        $acc = $cat->getAccById($request->id_acc);
+        $acc = $cat->getAccById($id);
         
         return view('accommodation.modificaHostAcc')
             ->with('acc',$acc);
     }
     
-    public function insertAcc(NewAccommodationRequest $request) {
+    public function insertAcc(Request $request) {
 
-       $acc = new Accomodation;
-       $validatedrequest = $request->validated();
+       if($request->eta_min == null) {
+           $request['eta_min'] = 0;
+       }
+       if($request->eta_max == null) {
+           $request['eta_max'] = 150;
+       }
+       $validatedrequest = $request->validate([
+            'nome' => 'required|string|max:100',            
+            'descr' => 'required|string|max:500',
+            'path_foto' => 'required|file|mimes:jpeg,png,jpg|max:1024',
+            'tipologia' => 'required|max:2',
+            'citta' => 'required|max:50',
+            'prov' => 'required|max:2',
+            'via' => 'required|max:50',
+            'num_civ' =>'required',
+            'sup' =>'required|numeric|min:0|max:1000|',
+            'inizio_disp' =>'required',
+            'fine_disp' =>'required|after:inizio_disp',
+            'eta_min' =>'integer|min:0|max:150|nullable',
+            'eta_max' =>'integer|min:0|max:150|nullable|gte:eta_min',
+            'sesso' =>'max:1|nullable',
+            'canone' => 'required|numeric|min:0',
+            'posti_letto_tot' =>'required|integer|min:0|max:1000',
+            'letti_camera' =>'integer|min:0|max:100|nullable',
+            'num_bagni' =>'integer|min:0|max:100|nullable',
+            'num_camere' =>'integer|min:0|max:500|nullable',
+            'wifi' => 'boolean',
+            'angolo_studio' => 'boolean',
+            'climatizzatore' => 'boolean',
+            'cucina' => 'boolean',
+            'locale_ricreativo' => 'boolean',
+            'garage' => 'boolean'
+        ]);
+       
+        $acc = new Accomodation;
        
         foreach($validatedrequest as $key => $value ) {
-            $acc[$key] = $validatedrequest[$key]; 
+            if($key == 'eta_min' && $value == 0) {
+                $acc->$key = null;
+            } elseif($key == 'eta_max' && $value == 150) {
+                $acc->$key = null;
+            } else{
+                $acc->$key = $value;
+            }
         }
         
         if($request->hasFile('path_foto')){
@@ -77,15 +115,54 @@ class HostController extends Controller {
         return response()->json(['redirect' => route('gestioneAcc')]);
     }
     
-    public function modificaAcc(ModifyAccommodationRequest $request){
+    public function modificaAcc(Request $request){
         
-       $validatedrequest = $request->validated();
+       if($request->eta_min == null) {
+           $request['eta_min'] = 0;
+       }
+       if($request->eta_max == null) {
+           $request['eta_max'] = 150;
+       }
+       $validatedrequest = $request->validate([
+            'nome' => 'required|string|max:100',            
+            'descr' => 'required|string|max:500',
+            'path_foto' => 'file|mimes:jpeg,png,jpg|max:1024',
+            'tipologia' => 'required|max:2',
+            'citta' => 'required|max:50',
+            'prov' => 'required|max:2',
+            'via' => 'required|max:50',
+            'num_civ' =>'required',
+            'sup' =>'required|numeric|min:0|max:1000',
+            'inizio_disp' =>'required',
+            'fine_disp' =>'required|after:inizio_disp',
+            'eta_min' =>'integer|min:0|max:150|nullable',
+            'eta_max' =>'integer|min:0|max:150|nullable|gte:eta_min',
+            'sesso' =>'max:1|nullable',
+            'canone' => 'required|numeric|min:0',
+            'posti_letto_tot' =>'required|integer|min:0|max:1000',
+            'letti_camera' =>'integer|min:0|max:100|nullable',
+            'num_bagni' =>'integer|min:0|max:100|nullable',
+            'num_camere' =>'integer|min:0|max:500|nullable',
+            'wifi' => 'boolean',
+            'angolo_studio' => 'boolean',
+            'climatizzatore' => 'boolean',
+            'cucina' => 'boolean',
+            'locale_ricreativo' => 'boolean',
+            'garage' => 'boolean',
+            'id_acc' => 'integer'
+        ]);
         
        $acc = Accomodation::find($validatedrequest['id_acc']);
         //eliminare la foto su acc
         foreach($validatedrequest as $key => $value) {
             if($key != 'path_foto' && $key != 'id_acc'){
-              $acc->$key = $value;
+                if($key == 'eta_min' && $value == 0) {
+                    $acc->$key = null;
+                } elseif($key == 'eta_max' && $value == 150) {
+                    $acc->$key = null;
+                } else{
+                    $acc->$key = $value;
+                }
             }
         }
               

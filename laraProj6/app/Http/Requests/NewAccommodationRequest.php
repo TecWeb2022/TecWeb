@@ -42,7 +42,7 @@ class NewAccommodationRequest extends FormRequest {
             'inizio_disp' =>'required',
             'fine_disp' =>'required|after:inizio_disp',
             'eta_min' =>'integer|min:0|max:150|nullable',
-            'eta_max' =>'integer|min:0|max:150|nullable',
+            'eta_max' =>'integer|min:0|max:150|nullable|gte:eta_min',
             'sesso' =>'max:1|nullable',
             'canone' => 'required|numeric|min:0',
             'posti_letto_tot' =>'required|integer|min:0|max:1000',
