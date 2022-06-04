@@ -187,8 +187,8 @@ color:white;
     margin-left: 80%;
     font-size:13px}
 
-/* fatta da Matteo serve per il pulsante Modifica nella sezione Gestione alloggi, perche rimane button e non Form*/ 
-.btn_modifica_acc {
+/* fatta da Matteo serve per il pulsante Modifica nella sezione Gestione offerte, perche rimane button e non Form*/ 
+.btn_modifica_off {
     height: 30px;
     width: 105px;
     padding: 0 10px;
