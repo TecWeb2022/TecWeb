@@ -201,6 +201,7 @@ color:white;
 
 
 
+/*Fatta da Matteo*/
 
 .dettagli_cat {
     clear: both;
@@ -221,6 +222,7 @@ color:white;
     margin: 10px 0 10px 0;
 }
 
+/*Fatta da Matteo*/
 .piccolo-crick-mk2{
     margin: 20px 0 40px 0;
 }
@@ -235,19 +237,19 @@ color:white;
     margin:60px 0 60px 0;
 }
 
-
+/*Fatta da Matteo*/
 .font_mittente div{
     font-size: 20px;
 }
-
+/*Fatta da Matteo*/
 .font_mittente cite{
     font-size: 18px;
 }
-
+/*Fatta da Matteo*/
 .font_ricevuto p{
     font-size: 20px;
 }
-
+/*Fatta da Matteo*/
 .stoppino{
    margin-bottom: 10px;
 }
@@ -257,11 +259,11 @@ color:white;
     margin-top: 40px;
 
 }
-
+/*Fatta da Matteo*/
 .azzera-margine{
     margin-bottom: -36px;
 }
-
+/*Fatta da Matteo*/
 .pressa{
    transform: scale(0.8);
 }
@@ -294,6 +296,7 @@ color:white;
   margin: 0 auto;
 }
 
+/*Fatta da Matteo*/
 .sposta_btn{
     transform: translate(75%,0)
 }
@@ -989,7 +992,7 @@ padding: 10px;
   padding: 10px 15px 0 15px;
   margin: 5px 350px 0 0;
 }
-/*fatta da Matteo*/
+/*fatta da Matteo  DA ELIMINARE*/ 
 .prova1{
     margin-right: 130px;
 }
@@ -1084,6 +1087,7 @@ padding: 10px;
 /* g. Tweets Section - Main Page
 /* ------------------------------------------------------------------ */
 
+/*TUTTA LA ROBA DI TWITTER DOVREBBE ESSERE DA ELIMINARE*/
 #tweets {
    background: #f5f5f5 url(../images/tweets-bg.jpg);
    padding-top: 60px;
@@ -1292,7 +1296,7 @@ ol.commentlist-messaggi {
 	border-bottom: 1px dotted #D9DEDB;
 }
 
-/*fatta da Matteo, serve a settare l'icona utente sulla messagistica*/
+/*fatta da Matteo, serve a settare l'icona utente sulla messagistica, DA ELIMINARE*/
 .avatar2  {
    position: absolute;
    left: 250px;
@@ -1303,6 +1307,7 @@ ol.commentlist-messaggi {
 
 }
 
+/*fatta da Matteo, serve a settare l'icona utente sulla sezione profilo*/
 .avatar_profilo  {
 
    position: relative;
@@ -1313,11 +1318,12 @@ ol.commentlist-messaggi {
    border-radius: 100% 100% 100% 100%;
 }
 
+/*fatta da Matteo, DA ELIMINARE*/
 .limitatore-row{
     margin: 0 100px 0 100px;
 }
 
-/*fatta da Matteo, serve a settare riquadro messaggi sulla messagistica*/
+/*fatta da Matteo, serve a settare riquadro messaggi sulla messagistica, DA ELIMINARE*/
 .bordo_messaggi{
     min-width: 450px;
     border: 2px solid black;
@@ -1325,9 +1331,6 @@ ol.commentlist-messaggi {
     padding: 10px 0 -50px 10px;
 }
 
-.textarea_balck {
-  color: #005000;
-    }
 
 /*fatta da Matteo, serve allineare la riga ricevuto*/
 .ricevuto_messagistica{
@@ -1335,11 +1338,10 @@ ol.commentlist-messaggi {
 }
 
 .commentlist li .avatar img {
-   margin-top: 6px;
-   height: 50px;
-   width: 50px;
-
-  	border-radius: 100% 100% 100% 100%;
+    margin-top: 6px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100% 100% 100% 100%;
 }
 .commentlist li .comment-info cite {
    font: 16px/30px notosans-bold, sans-serif;

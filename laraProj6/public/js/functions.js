@@ -480,9 +480,9 @@ function istogrammaStats(alloggi_tot = 0, offerte = 0, alloggi_locati = 0) {
         {
             canvas:myCanvas,
             seriesName:"Statistiche",
-            padding:20,
+            padding:25,
             gridScale:5,
-            gridColor:"#eeeeee",
+            gridColor:"#0a0909",
             data:Stats,
             colors:["#a55ca5","#67b6c7", "#bccd7a"]
         }
