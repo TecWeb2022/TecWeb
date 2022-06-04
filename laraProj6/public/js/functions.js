@@ -330,10 +330,15 @@ function sendMessaggiAjax(actionUrl, leggiUrl,flagRic){
                     bodyData+="<cite class='nome_alloggio'>" + "Nome alloggio: " + row.nome_acc +"</cite>";
                     bodyData+="</div></div>";
                     
-                    if(row.visualizzato) {
-                        bodyData+= "<button class='btn_mess_vis' title='Già letto' onclick=\"location.href =";
-                    } else {
-                        bodyData+= "<button class='btn_mess_nvis' title='Non letto' onclick=\"location.href =";
+                    if(!flagRic){
+                        bodyData+= "<button class='btn_mess_nvis' title='' onclick=\"location.href =";
+                    }
+                    else{
+                        if(row.visualizzato) {
+                            bodyData+= "<button class='btn_mess_vis' title='Già letto' onclick=\"location.href =";
+                        } else {
+                            bodyData+= "<button class='btn_mess_nvis' title='Non letto' onclick=\"location.href =";
+                        }
                     }
                     bodyData+= "\'"  + leggiUrl + "/" + row.id + "\';\"";
                     bodyData+= ">Leggi</button>";

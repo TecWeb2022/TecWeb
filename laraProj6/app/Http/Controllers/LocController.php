@@ -19,13 +19,11 @@ use Illuminate\Http\Request;
 
 class LocController extends Controller {
 
-    protected $_locModel;
     protected $_faqModel;
     protected $_catalogModel;
 
     public function __construct() {
         $this->middleware('can:isLoc');
-        $this->_locModel = new Locatario;
         $this->_faqModel = new Faq;
         $this->_catalogModel = new Catalog;
     }
@@ -36,20 +34,9 @@ class LocController extends Controller {
             ->with('faqs', $faqs);
     }
     
-    public function profilo() {
-        return view('profiloLocatario');
-    }
-
-    public function modificaLoc(ModifyProfileRequest $request) {
-        $dati = $request->validated();
-        $id = auth()->user()->id;
-        $this->_locModel->modificaDati($id, $dati);
-        return redirect()->route('profiloLoc');
-    }
-    
     public function getCatPag($filtri = array(), $paged = 5) {
-        $cat = $this->_locModel->getCatFiltered($filtri);
-        $cat = $cat->paginate($paged);
+        $cat = $this->_catalogModel->getCatByFilters($filtri)->paginate($paged);
+
         return view('catalogo')
             ->with('cat', $cat);
     }

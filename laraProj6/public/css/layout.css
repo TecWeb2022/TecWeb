@@ -1732,3 +1732,7 @@ padding: 10px 0;
     border-radius: 4px;
     margin: 20px;
 }
+
+.pointable{
+    cursor: pointer;
+}

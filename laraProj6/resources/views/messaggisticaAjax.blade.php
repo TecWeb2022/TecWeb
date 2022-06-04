@@ -14,6 +14,7 @@
 <script>
  $(document).ready(function() {
      sendMessaggiAjax("{{route('messRicAjax')}}","{{route('infoMessaggio', ['id' => ''])}}",true);
+     $("#mess-ricevuti").toggleClass("titolo");
     });
 </script>
 
@@ -21,11 +22,14 @@
 $(document).ready(function(){
     $("#mess-inviati").click(function(){
             sendMessaggiAjax("{{route('messInvAjax')}}","{{route('infoMessaggio', ['id' => ''])}}",false);
-            
+            $(this).toggleClass("titolo");
+            $("#mess-ricevuti").toggleClass("titolo");
     });
     
     $("#mess-ricevuti").click(function(){
             sendMessaggiAjax("{{route('messRicAjax')}}","{{route('infoMessaggio', ['id' => ''])}}",true);
+            $(this).toggleClass("titolo");
+            $("#mess-inviati").toggleClass("titolo");
     });
 });
 </script>
@@ -47,7 +51,7 @@ $(document).ready(function(){
             
             <div id="comments" >
                 <center>
-                    <center><div><a id="mess-ricevuti">Messaggi ricevuti</a> | <a id="mess-inviati">Messaggi inviati</a></div></center>
+                    <center><div><a class="pointable" id="mess-ricevuti">Messaggi ricevuti</a> | <a class="pointable" id="mess-inviati">Messaggi inviati</a></div></center>
                            
               
                <ol class="commentlist2">
