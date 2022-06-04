@@ -28,7 +28,9 @@ class LocHostController extends Controller {
     
     public function getMessaggio($id) {
         $mess = Message::find($id);
-        $mess->visualizzato = true;
+        if($mess->mitt->id != auth()->user()->id) {
+            $mess->visualizzato = true;
+        }
         $mess->save();
         return view('visualizzaMessaggio')
             ->with('mess', $mess);
