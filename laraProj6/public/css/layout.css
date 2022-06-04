@@ -187,7 +187,18 @@ color:white;
     margin-left: 80%;
     font-size:13px}
 
-/* fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
+/* fatta da Matteo serve per il pulsante Modifica nella sezione Gestione alloggi, perche rimane button e non Form*/ 
+.btn_modifica_acc {
+    height: 30px;
+    width: 105px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #11abb0 ;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size:16px}
+
+/* fatta da Matteo*/ 
 .btn_gestione_acc {
     height: 30px;
     width: 50px;
