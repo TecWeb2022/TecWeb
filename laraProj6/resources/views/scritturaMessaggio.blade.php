@@ -42,6 +42,13 @@
                 <div>
                 {{ Form::label('testo', 'Testo del messaggio') }}
                 {{ Form::textarea('testo', '', ['id' => 'testo', 'placeholder' => 'Scrivi il tuo messaggio']) }}
+                @if ($errors->first('testo'))
+                    <ul class="errors">
+                @foreach ($errors->get('testo') as $message)
+                    <li>{{ $message }}</li>
+                @endforeach
+                    </ul>
+                @endif
                </div>
                <div>
                 @if($mess->dest->id == Auth::user()->id)
