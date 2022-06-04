@@ -163,22 +163,23 @@ color:white;
 /*fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
 .btn_mess_vis{
     height: 30px;
-    width: 50px;
-    padding: 0 0 !important;
+    width: 100px;
+    padding: 0 0;
     text-align: center;
+    color:white;
     background-color: #00393b;
     margin-top: 0px;
     margin-bottom: 10px;
     margin-left: 80%;
     font-size:13px;
-    color: #00393b ;
+    
 }
 
 /* fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
 .btn_mess_nvis {
     height: 30px;
-    width: 50px;
-    padding: 0 0 !important;
+    width: 100px;
+    padding: 0 0;
     text-align: center;
     background-color: #11abb0 ;
     margin-top: 0px;
