@@ -102,7 +102,7 @@
         <div class="columns_bianco colonna_risultati">
             <h2 class="align-center">Istogramma per i filtri:</h2>
          
-        <canvas id="myCanvas"></canvas>
+        <canvas id="myCanvas" style="background: white;"></canvas>
         <legend for="myCanvas"></legend>
         <script>
            istogrammaStats({{ $stats['alloggi_tot'] }}, {{ $stats['offerte'] }}, {{ $stats['alloggi_locati'] }});
