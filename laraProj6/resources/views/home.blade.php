@@ -147,9 +147,9 @@ endguest
            <div class="columns_bianco">
               <h2>Vedi nel dettaglio ogni alloggio</h2>
 
-              <p>Una volta che hai scelto l'alloggio più compatibile con le tue esigenze è possibile inviare una
-                  richiesta di prenotazione per il periodo disponibile, in attesa della conferma della prenotazione
-                  da parte del suo locatore.
+              <p>Se intendi registrarti come locatario, oltre alla possibilità condivisa con gli altri utenti di aprire il catalogo,
+                  hai la funzione di filtraggio degli alloggi secondo i tuoi parametri di ricerca preferiti e la possibilità
+                  di visualizzare i dettagli di ogni singolo alloggio. 
               </p>
            </div>
 
