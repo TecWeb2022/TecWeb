@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Resources\Accomodation;
-use App\Models\Locatario;
 use App\Models\Resources\Message;
 use App\Models\Resources\Option;
-use App\Models\Resources\Faq;
 use App\Models\Catalog;
 use App\Models\OptionList;
 use App\Http\Requests\NewAccommodationRequest;
@@ -20,22 +18,11 @@ use Illuminate\Http\Request;
 
 class HostController extends Controller {
     
-    protected $_hostModel;
-    protected $_faqModel;
     protected $_catalogModel;
 
     public function _construct() {
         $this->middleware('can:isHost');
-        $this->_faqModel= new Faq;
-        $this->_hostModel = new Host;
         $this->_catalogModel = new Catalog;
-    }
-    
-    public function index() {
-        //$faqs = $this->_faqModel->get();
-        $faqs = new Faq;
-        return view('home')
-            ->with('faqs', $faqs->get());
     }
     
     public function getAccsHost(){
@@ -73,7 +60,7 @@ class HostController extends Controller {
             'via' => 'required|max:50',
             'num_civ' =>'required',
             'sup' =>'required|numeric|min:0|max:1000|',
-            'inizio_disp' =>'required',
+            'inizio_disp' =>'required|after:now',
             'fine_disp' =>'required|after:inizio_disp',
             'eta_min' =>'integer|min:0|max:150|nullable',
             'eta_max' =>'integer|min:0|max:150|nullable|gte:eta_min',

@@ -16,13 +16,13 @@
 </script>
 
 <script>
-        $(document).ready( function() {
-        $('#reset').click(function(){
-            $('.wrap-input > :input').val('');
-            $('#tipologia').val('all');
-            $('.div-checkbox > span > :input').prop('checked', false);
-            filters();
-        });
+$(document).ready( function() {
+     $('#reset').click(function(){
+        $('.wrap-input > :input').val('');
+        $('#tipologia').val('all');
+        $('.div-checkbox > span > :input').prop('checked', false);
+        filters();
+    });
 });
 </script>
 @endsection
@@ -366,13 +366,17 @@
                          <p>@include('helpers/descrAcc', ['acc' => $acc])</p>
                           
                        
-                       @if($acc->assegnato == false)
+                       @if($acc->assegnato == true)
                          <div>
-                             <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/Mese</button>
+                             <button disabled>Assegnata</button>
+                         </div>
+                         @elseif($acc->fine_disp <= date('Y-m-d'))
+                         <div>
+                             <button disabled>Scaduta</button>
                          </div>
                          @else
                          <div>
-                             <button disabled>Assegnato</button>
+                             <button onclick="location.href = '{{ route('visualizzaAcc', [ 'id' => $acc->id ]) }}';"> {{ $acc->canone }} €/Mese</button>
                          </div>
                          @endif
                          <!-- onclick va messo in un file js -->

@@ -97,19 +97,6 @@ function toggleInfoAcc(id_div){
     } 
 }
 
-/* Inutilizzate, da vedere se servono
-function refreshWindow()
-{
-    window.location.reload(true);
-}
-
-function forms(id, placeholders, n) {
-    for(i=0; i<n; i++){
-        document.getElementById(id[i]).placeholder = placeholders[0];
-    }
-}
-*/
-
 function getErrorHtml(elemErrors) {
     if ((typeof (elemErrors) === 'undefined') || (elemErrors.length < 1))
         return;

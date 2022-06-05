@@ -34,11 +34,16 @@
                       </div>
                       
                      <div class="column seven">
-                     
                         
-                         <h3 class="nome_mitt">{{ $acc->nome }}</h3>
+                        <h3 class="nome_mitt">{{ $acc->nome }}
+                        <span>
+                        @if($acc->assegnato || $acc->fine_disp <= now())
+                            <img class="icona_posizione" src="images/red-icon.png" title="Offerta assegnata o scaduta" alt="">
+                        @endif
+                        </span>
+                            </h3>
                                  <p class="titolo">Disponibilità: 
-                                 <span class="testo"> {{ $acc->inizio_disp }} / {{ $acc->fine_disp }}
+                                 <span class="testo"> {{ date('d-m-Y', strtotime($acc->inizio_disp)) }} / {{ date('d-m-Y', strtotime($acc->fine_disp)) }}
                              </span></p>
                      
                          <img width="10" height="10" class="icona_posizione" src="images/position-icon.png" alt="">
@@ -109,12 +114,14 @@
                                 {{ Form::submit('Opzioni', ['class' => 'btn_gestione_acc', 'title' => 'Visualizza le richieste di opzione']) }}
                                 {{ Form::close() }}
                                 
-                                <button class="btn_modifica_off" onclick="location.href = '{{ route('modificaHostAcc', [ 'id' => $acc->id ]) }}';">Modifica</button>
-                               
-                                {{ Form::open(array('route' => 'eliminaAcc', 'class' => '', 'onsubmit' => 'return ConfirmDelete()')) }}
-                                {{ Form::hidden('id_acc', $acc->id, ['id' => 'elimina_acc']) }}
-                                {{ Form::submit('Elimina', ['class' => 'btn_gestione_acc', 'title' => 'Elimina alloggio']) }}
-                                {{ Form::close() }}
+                                @if(!$acc->assegnato && $acc->fine_disp >= now())
+                                    <button class="btn_modifica_off" onclick="location.href = '{{ route('modificaHostAcc', [ 'id' => $acc->id ]) }}';">Modifica</button>
+
+                                    {{ Form::open(array('route' => 'eliminaAcc', 'class' => '', 'onsubmit' => 'return ConfirmDelete()')) }}
+                                    {{ Form::hidden('id_acc', $acc->id, ['id' => 'elimina_acc']) }}
+                                    {{ Form::submit('Elimina', ['class' => 'btn_gestione_acc', 'title' => 'Elimina alloggio']) }}
+                                    {{ Form::close() }}
+                                @endif
                            
                        </div>
                   </li>
