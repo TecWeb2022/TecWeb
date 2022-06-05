@@ -53,7 +53,7 @@ class DatabaseSeeder extends Seeder
                'eta_min'=>20,'eta_max'=>null,'sesso'=>"F",'canone'=>113.00,'posti_letto_tot'=>3,'cucina'=>true,'num_bagni'=>1,'num_camere'=>2,'locale_ricreativo'=>true,'angolo_studio'=>false,
                'path_foto'=>'alloggi/appCupra.jpeg', 'assegnato'=>false, 'proprietario' => 2, 'letti_camera' => null],
            
-           ['id'=>8,'nome'=>'Appartamento vicino all UNIMC','descr'=> 'Abitazione con la possibilità di accolgiere 4 persone massimo, vicino all università degli studi di Macerata',
+           ['id'=>8,'nome'=>'Appartamento vicino all\'UNIMC','descr'=> 'Abitazione con la possibilità di accogliere 4 persone massimo, vicino all\'università degli studi di Macerata',
                'tipologia'=>'ap','citta'=>'Macerata','prov'=>'MC','via'=>'Via Ettore Ricci','num_civ'=>2,'sup'=>86,'inizio_disp'=>'2022-07-18','fine_disp'=>'2023-08-29',
                'eta_min'=>19,'eta_max'=>30,'sesso'=>"M",'canone'=>146.00,'posti_letto_tot'=>4,'cucina'=>true,'num_bagni'=>2,'num_camere'=>3,'locale_ricreativo'=>false,'angolo_studio'=>false,
                'path_foto'=>'alloggi/appMac.jpg', 'assegnato'=>true, 'proprietario' => 5, 'letti_camera' => null],
@@ -68,10 +68,20 @@ class DatabaseSeeder extends Seeder
                'eta_min'=>20,'eta_max'=>null,'sesso'=>"F",'canone'=>113.00,'posti_letto_tot'=>1,'cucina'=>false,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>false,
                'path_foto'=>'alloggi/csTE.jpg', 'assegnato'=>true, 'proprietario' => 5, 'letti_camera' => 1],
            
-           ['id'=>11,'nome'=>'Camera doppia nella frazione di Brecciarolo','descr'=> 'Camera doppia nella frazione di Brecciarolo.Affittabile a studentesse, a qualche minuto di mezzo dall università UNIVPM di Ascoli Piceno ',
+           ['id'=>11,'nome'=>'Camera doppia nella frazione di Brecciarolo','descr'=> 'Camera doppia nella frazione di Brecciarolo. Affittabile a studentesse, a qualche minuto di mezzo dall università UNIVPM di Ascoli Piceno ',
                'tipologia'=>'cd','citta'=>'Ascoli Piceno','prov'=>'AP','via'=>'Via delle Fresie','num_civ'=>18,'sup'=>25,'inizio_disp'=>'2022-09-25','fine_disp'=>'2023-04-30',
                'eta_min'=>20,'eta_max'=>null,'sesso'=>"F",'canone'=>113.00,'posti_letto_tot'=>2,'cucina'=>false,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
                'path_foto'=>'alloggi/cdAP.jpg', 'assegnato'=>false, 'proprietario' => 5, 'letti_camera' => 2],
+           
+           ['id'=>12,'nome'=>'Camera doppia ad Ancona','descr'=> 'Camera doppia ad Ancona, vicino all\'Univpm. Affittabile a studenti.',
+               'tipologia'=>'cd','citta'=>'Ascoli Piceno','prov'=>'AN','via'=>'Via delle Albicocche','num_civ'=>22,'sup'=>35,'inizio_disp'=>'2021-09-25','fine_disp'=>'2022-04-30',
+               'eta_min'=>20,'eta_max'=>null,'sesso'=>"M",'canone'=>125.00,'posti_letto_tot'=>2,'cucina'=>false,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
+               'path_foto'=>'alloggi/cdAnconaUnivpm.jpg', 'assegnato'=>false, 'proprietario' => 2, 'letti_camera' => 2],
+           
+           ['id'=>13,'nome'=>'Appartamento vicino Milano','descr'=> 'Abitazione limitrofa all\'università Bocconi',
+               'tipologia'=>'ap','citta'=>'Macerata','prov'=>'MI','via'=>'Via Ettore Ricci','num_civ'=>2,'sup'=>100,'inizio_disp'=>'2021-07-18','fine_disp'=>'2021-08-29',
+               'eta_min'=>19,'eta_max'=>30,'sesso'=>"M",'canone'=>200.00,'posti_letto_tot'=>4,'cucina'=>true,'num_bagni'=>2,'num_camere'=>3,'locale_ricreativo'=>false,'angolo_studio'=>false,
+               'path_foto'=>'alloggi/bocconi.jpg', 'assegnato'=>true, 'proprietario' => 2, 'letti_camera' => null]
            
        ]);
                
