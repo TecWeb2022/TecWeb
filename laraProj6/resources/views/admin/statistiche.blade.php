@@ -19,7 +19,7 @@
 
       <div class="row">
           <h1 class="center2">Statistiche</h1>
-          
+         <div class="flex-box-stats"> 
           <div class="column">
               <h3 class="center2  bordo_risultati">Filtri</h3>
                 <p>
@@ -99,7 +99,7 @@
           </div>
         </div>
         
-        <div class="columns_bianco colonna_risultati">
+        <div class="columns">
             <h2 class="align-center">Istogramma per i filtri:</h2>
          
         <canvas id="myCanvas" style="background: white;"></canvas>
@@ -111,7 +111,7 @@
         </div>
           
       @endisset
-      
+      </div>
           
       </div>
 
