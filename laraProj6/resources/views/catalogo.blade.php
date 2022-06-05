@@ -26,7 +26,7 @@
           
     <div>
        
-        {{ Form::open(array('route' => 'catalogoLoc', 'class' => 'filters-form')) }}
+        {{ Form::open(array('route' => 'catalogoLocPost', 'class' => 'filters-form')) }}
        <div class="flex-box-items">
             <div  class="wrap-input">
                 {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore obbligatorio']) }}
@@ -279,6 +279,6 @@
 
          </div> <!-- Comments End -->
 
-@endisset()
+@endisset
 
 @endsection

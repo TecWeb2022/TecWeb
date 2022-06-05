@@ -34,7 +34,7 @@ class LocController extends Controller {
             ->with('faqs', $faqs);
     }
     
-    public function getCatPag($filtri = array(), $paged = 5) {
+    public function getCatPag($filtri, $paged = 5) {
         $cat = $this->_catalogModel->getCatByFilters($filtri)->paginate($paged);
 
         return view('catalogo')
@@ -76,7 +76,6 @@ class LocController extends Controller {
 
     public function invioOpzForm(Request $request,$id)
     {
-        //manca il validator
         $validatedData = $request->validate([
             'testo' => 'required|max:1000',
         ]);

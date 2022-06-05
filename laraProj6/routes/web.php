@@ -45,7 +45,8 @@ Route::post('/profilo/modifica', 'LocHostController@modificaProfilo')
 Route::get('/catalogo/filtri', 'LocController@getCatPag')
         ->name('catalogoLoc');
 
-Route::post('/catalogo/filtri', 'LocController@filters');
+Route::post('/catalogo/filtri', 'LocController@filters')
+        ->name('catalogoLocPost');
 
 Route::get('/alloggio/{id}/opzione', 'LocController@opzioneForm')
         ->name('opzioneAcc');
