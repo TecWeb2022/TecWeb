@@ -23,6 +23,9 @@ class Catalog
     public function getCatByFilters($filtri) {
         $cat = Accomodation::where('id', '<', pow(2, 64) - 1);
         //$cat = Accomodation::all()->all();
+        info('entrato nei filtri: ');
+        info($filtri);
+        if($filtri != null){
         foreach($filtri as $key => $value) {
             if($value != '' && $value != null && $value != false) {
                 $segno = '=';
@@ -43,14 +46,26 @@ class Catalog
                         $segno = '=';
                         break;
                 }
-                if($key != '_token' && $key != 'prezzo_min' && $key != 'prezzo_max' && $value != 'all') {
-                    $cat = $cat->where($key, $segno, $value);
-                }
+               
+                    if($key != '_token' && $key != 'prezzo_min' && $key != 'prezzo_max' && $value != 'all' && $key != 'inizio_disp' && $key != 'fine_disp') {
+                        $cat = $cat->where($key, $segno, $value);
+                    }
+
+                    if($key == 'prezzo_min' || $key == 'prezzo_max') {
+                        $cat = $cat->where('canone', $segno, $value);
+                    }
                 
-                if($key == 'prezzo_min' || $key == 'prezzo_max') {
-                    $cat = $cat->where('canone', $segno, $value);
-                }
+                    if($key == 'inizio_disp'){
+                       $cat = $cat->where('fine_disp', $segno, $value);
+                    }
+                    
+                    if($key == 'fine_disp'){
+                       $cat = $cat->where('inizio_disp', $segno, $value);
+                    }
+                    
+                
             }
+        }
         }
         return $cat;
     }

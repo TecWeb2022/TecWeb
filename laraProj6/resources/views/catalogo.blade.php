@@ -7,7 +7,23 @@
 <script>
     $(document).ready( function() {
         currNavBar(1);
-    });
+        filters();
+        
+        $("#tipologia").change(function(){
+            filters();
+        });
+});
+</script>
+
+<script>
+        $(document).ready( function() {
+        $('#reset').click(function(){
+            $('.wrap-input > :input').val('');
+            $('#tipologia').val('all');
+            $('.div-checkbox > span > :input').prop('checked', false);
+            filters();
+        });
+});
 </script>
 @endsection
 
@@ -26,16 +42,31 @@
           
     <div>
        
-        {{ Form::open(array('route' => 'catalogoLocPost', 'class' => 'filters-form')) }}
+        {{ Form::open(array('route' => 'catalogoLocPost', 'id' => 'filterForm','class' => 'filters-form')) }}
        <div class="flex-box-items">
+           
+           @if(!empty($oldFilters))
             <div  class="wrap-input">
                 {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore obbligatorio']) }}
-                {{ Form::select('tipologia', ['all' => 'Tutti', 'ap' => 'Appartamento', 'cs' => 'Posto letto in camera singola', 'cd' => 'Posto letto in camera doppia'],'', ['id' => 'tipologia', 'onclick'=>'filters()']) }}
+                {{ Form::select('tipologia', ['all' => 'Tutti', 'ap' => 'Appartamento', 'cs' => 'Posto letto in camera singola', 'cd' => 'Posto letto in camera doppia'], ['id' => 'tipologia','placeholder' => $oldFilters['tipologia']]) }}
             </div>
+           @else
+           <div  class="wrap-input">
+                {{ Form::label('tipologia', 'Tipologia', ['title' => 'Valore obbligatorio']) }}
+                {{ Form::select('tipologia', ['all' => 'Tutti', 'ap' => 'Appartamento', 'cs' => 'Posto letto in camera singola', 'cd' => 'Posto letto in camera doppia'],'', ['id' => 'tipologia']) }}
+            </div>
+           @endif
+           
 
             <div  class="wrap-input">
+                 @if(!empty($oldFilters))
+                {{ Form::label('prov', 'Provincia', ['title' => 'Valore facoltativo']) }}
+                {{ Form::text('prov', $oldFilters['prov'], ['maxlength' => '2','id' => 'prov', 'placeholder' => 'Provincia']) }}
+                @else
                 {{ Form::label('prov', 'Provincia', ['title' => 'Valore facoltativo']) }}
                 {{ Form::text('prov', '', ['maxlength' => '2','id' => 'prov', 'placeholder' => 'Provincia']) }}
+                @endif
+                
                 @if ($errors->first('prov'))
                 <ul class="errors">
                 @foreach ($errors->get('prov') as $message)
@@ -48,9 +79,14 @@
         
        <div class="flex-box-items">
            <div  class="wrap-input">
-                {{ Form::label('inizio_disp', 'Inizio disponibilità', ['title' => 'Valore facoltativo']) }}
+                @if(!empty($oldFilters))
+                    {{ Form::label('inizio_disp', 'Inizio disponibilità', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::date('inizio_disp', $oldFilters['inizio_disp'], ['id' => 'inizio_disp']) }}
+                @else
+                    {{ Form::label('inizio_disp', 'Inizio disponibilità', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::date('inizio_disp', '', ['id' => 'inizio_disp']) }}
+                @endif
 
-                {{ Form::date('inizio_disp', '', ['id' => 'inizio_disp']) }}
                 @if ($errors->first('inizio_disp'))
                 <ul class="errors">
                 @foreach ($errors->get('inizio_disp') as $message)
@@ -61,9 +97,14 @@
             </div>
            
            <div  class="wrap-input">
-                {{ Form::label('fine_disp', 'Fine disponibilità', ['title' => 'Valore facoltativo']) }}
-
-                {{ Form::date('fine_disp', '', ['id' => 'fine_disp']) }}
+                @if(!empty($oldFilters))
+                    {{ Form::label('fine_disp', 'Fine disponibilità', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::date('fine_disp', $oldFilters['fine_disp'], ['id' => 'fine_disp']) }}
+                @else
+                    {{ Form::label('fine_disp', 'Fine disponibilità', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::date('fine_disp', '', ['id' => 'fine_disp']) }}
+                @endif
+                
                 @if ($errors->first('fine_disp'))
                 <ul class="errors">
                 @foreach ($errors->get('fine_disp') as $message)
@@ -78,8 +119,14 @@
     <div>
         <div class="flex-box-items">
             <div  class="wrap-input">
-                {{ Form::label('prezzo_min', 'Prezzo minimo', ['title' => 'Valore facoltativo']) }}
-                {{ Form::number('prezzo_min', '', ['min' => '0','step' => '0.1','id' => 'prezzo_min', 'placeholder' => 'Prezzo minimo']) }}
+                @if(!empty($oldFilters) && $oldFilters['prezzo_min'] != 0)
+                    {{ Form::label('prezzo_min', 'Prezzo minimo', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('prezzo_min', $oldFilters['prezzo_min'], ['min' => '0','step' => '0.1','id' => 'prezzo_min', 'placeholder' => 'Prezzo minimo']) }}
+                @else
+                    {{ Form::label('prezzo_min', 'Prezzo minimo', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('prezzo_min', '', ['min' => '0','step' => '0.1','id' => 'prezzo_min', 'placeholder' => 'Prezzo minimo']) }}
+                @endif
+                
                 @if ($errors->first('prezzo_min'))
                 <ul class="errors">
                 @foreach ($errors->get('prezzo_min') as $message)
@@ -90,8 +137,13 @@
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('prezzo_max', 'Prezzo massimo', ['title' => 'Valore facoltativo']) }}
-                {{ Form::number('prezzo_max', '', ['min' => '0','step' => '0.1','id' => 'prezzo_max', 'placeholder' => 'Prezzo massimo']) }}
+                @if(!empty($oldFilters))
+                    {{ Form::label('prezzo_max', 'Prezzo massimo', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('prezzo_max', $oldFilters['prezzo_max'], ['min' => '0','step' => '0.1','id' => 'prezzo_max', 'placeholder' => 'Prezzo massimo']) }}
+                @else
+                    {{ Form::label('prezzo_max', 'Prezzo massimo', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('prezzo_max', '', ['min' => '0','step' => '0.1','id' => 'prezzo_max', 'placeholder' => 'Prezzo massimo']) }}
+                @endif
                 @if ($errors->first('prezzo_max'))
                 <ul class="errors">
                 @foreach ($errors->get('prezzo_max') as $message)
@@ -105,8 +157,14 @@
         <div class="flex-box-items">
         
             <div  class="wrap-input">
-                {{ Form::label('num_camere', 'Numero minimo camere', ['title' => 'Valore facoltativo']) }}
-                {{ Form::number('num_camere', '', ['min' => '0','id' => 'num_camere', 'placeholder' => 'Numero minimo camere']) }}
+                @if(!empty($oldFilters) && array_key_exists('num_camere', $oldFilters))
+                    {{ Form::label('num_camere', 'Numero minimo camere', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('num_camere', $oldFilters['num_camere'], ['min' => '0','id' => 'num_camere', 'placeholder' => 'Numero minimo camere']) }}
+                @else
+                    {{ Form::label('num_camere', 'Numero minimo camere', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('num_camere', '', ['min' => '0','id' => 'num_camere', 'placeholder' => 'Numero minimo camere']) }}
+                @endif
+               
                 @if ($errors->first('num_camere'))
                 <ul class="errors">
                 @foreach ($errors->get('num_camere') as $message)
@@ -117,8 +175,14 @@
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('posti_letto_tot', 'Numero posti letto tot', ['title' => 'Valore facoltativo']) }}
-                {{ Form::number('posti_letto_tot', '', ['min' => '0','id' => 'posti_letto_tot', 'placeholder' => 'Numero posti letto tot']) }}
+                @if(!empty($oldFilters))
+                    {{ Form::label('posti_letto_tot', 'Numero posti letto tot', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('posti_letto_tot', $oldFilters['posti_letto_tot'], ['min' => '0','id' => 'posti_letto_tot', 'placeholder' => 'Numero posti letto tot']) }}
+                @else
+                    {{ Form::label('posti_letto_tot', 'Numero posti letto tot', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('posti_letto_tot', '', ['min' => '0','id' => 'posti_letto_tot', 'placeholder' => 'Numero posti letto tot']) }}
+                @endif
+                
                 @if ($errors->first('nome'))
                 <ul class="errors">
                 @foreach ($errors->get('nome') as $message)
@@ -134,8 +198,14 @@
         <div class="flex-box-items">
    
             <div  class="wrap-input">
-                {{ Form::label('sup', 'Superficie minima', ['title' => 'Valore facoltativo']) }}
-                {{ Form::number('sup', '', ['min' => '0','id' => 'sup', 'placeholder' => 'Superficie']) }}
+                 @if(!empty($oldFilters))
+                    {{ Form::label('sup', 'Superficie minima', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('sup', $oldFilters['sup'], ['min' => '0','id' => 'sup', 'placeholder' => 'Superficie']) }}
+                @else
+                    {{ Form::label('sup', 'Superficie minima', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('sup', '', ['min' => '0','id' => 'sup', 'placeholder' => 'Superficie']) }}
+                @endif
+                
                 @if ($errors->first('sup'))
                 <ul class="errors">
                 @foreach ($errors->get('sup') as $message)
@@ -146,8 +216,14 @@
             </div>
 
             <div  class="wrap-input">
-                {{ Form::label('letti_camera', 'Letti nella camera', ['title' => 'Valore facoltativo']) }}
-                {{ Form::number('letti_camera', '', ['min' => '0','id' => 'letti_camera', 'placeholder' => 'Letti nella camera']) }}
+                 @if(!empty($oldFilters)  && array_key_exists('letti_camera', $oldFilters))
+                    {{ Form::label('letti_camera', 'Letti nella camera', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('letti_camera', $oldFilters['letti_camera'], ['min' => '0','id' => 'letti_camera', 'placeholder' => 'Letti nella camera']) }}
+                @else
+                    {{ Form::label('letti_camera', 'Letti nella camera', ['title' => 'Valore facoltativo']) }}
+                    {{ Form::number('letti_camera', '', ['min' => '0','id' => 'letti_camera', 'placeholder' => 'Letti nella camera']) }}
+                @endif
+                
                 @if ($errors->first('letti_camera'))
                 <ul class="errors">
                 @foreach ($errors->get('letti_camera') as $message)
@@ -162,31 +238,67 @@
             <div  class="wrap-input">
                 <div class="column">
                     <div class="div-checkbox">
-                    {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
-                    <span>{{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio']) }}</span>
+                        @if(!empty($oldFilters) && array_key_exists('angolo_studio', $oldFilters))
+                        {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
+                        <span>{{ Form::checkbox('angolo_studio', true, $oldFilters['angolo_studio'], ['id' => 'angolo_studio']) }}</span>
+                        @else
+                        {{ Form::label('angolo_studio', 'Angolo studio', ['title' => 'Valore facoltativo']) }}
+                        <span>{{ Form::checkbox('angolo_studio', true, false, ['id' => 'angolo_studio']) }}</span>
+                        @endif
+                    
                     </div>
                     <div class="div-checkbox">
-                    {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo']) }}
-                    <span>{{ Form::checkbox('locale_ricreativo', true, false, ['id' => 'locale_ricreativo']) }}</span>
+                         @if(!empty($oldFilters) && array_key_exists('locale_ricreativo', $oldFilters))
+                            {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo']) }}
+                           <span>{{ Form::checkbox('locale_ricreativo', true, $oldFilters['locale_ricreativo'], ['id' => 'locale_ricreativo']) }}</span>
+                        @else
+                            {{ Form::label('locale_ricreativo', 'Locale ricreativo', ['title' => 'Valore facoltativo']) }}
+                            <span>{{ Form::checkbox('locale_ricreativo', true, false, ['id' => 'locale_ricreativo']) }}</span>
+                        @endif
+                    
                     </div>
                     <div class="div-checkbox">
-                    {{ Form::label('garage', 'Garage', ['title' => 'Valore facoltativo']) }}
-                    <span>{{ Form::checkbox('garage', true, false, ['id' => 'garage']) }}</span>
+                         @if(!empty($oldFilters) && array_key_exists('garage', $oldFilters))
+                            {{ Form::label('garage', 'Garage', ['title' => 'Valore facoltativo']) }}
+                            <span>{{ Form::checkbox('garage', true, $oldFilters['garage'], ['id' => 'garage']) }}</span>
+                        @else
+                            {{ Form::label('garage', 'Garage', ['title' => 'Valore facoltativo']) }}
+                            <span>{{ Form::checkbox('garage', true, false, ['id' => 'garage']) }}</span>
+                        @endif
+                    
                     </div>
                 </div>
 
                 <div class="column">
                     <div class="div-checkbox">
-                    {{ Form::label('wifi', 'Wi-Fi', ['title' => 'Valore facoltativo']) }}
-                    <span>{{ Form::checkbox('wifi', true, false, ['id' => 'wifi']) }}</span>
+                        @if(!empty($oldFilters) && array_key_exists('wifi', $oldFilters))
+                            {{ Form::label('wifi', 'Wi-Fi', ['title' => 'Valore facoltativo']) }}
+                            <span>{{ Form::checkbox('wifi', true, $oldFilters['wifi'], ['id' => 'wifi']) }}</span>
+                        @else
+                            {{ Form::label('wifi', 'Wi-Fi', ['title' => 'Valore facoltativo']) }}
+                            <span>{{ Form::checkbox('wifi', true, false, ['id' => 'wifi']) }}</span>
+                        @endif
+                    
                     </div>
                     <div class="div-checkbox">
-                    {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo']) }}
-                    <span>{{ Form::checkbox('climatizzatore', true, false, ['id' => 'climatizzatore']) }}</span>
+                        @if(!empty($oldFilters) && array_key_exists('climatizzatore', $oldFilters))
+                            {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo']) }}
+                            <span>{{ Form::checkbox('climatizzatore', true, $oldFilters['climatizzatore'], ['id' => 'climatizzatore']) }}</span>
+                        @else
+                            {{ Form::label('climatizzatore', 'Climatizzatore', ['title' => 'Valore facoltativo']) }}
+                            <span>{{ Form::checkbox('climatizzatore', true, false, ['id' => 'climatizzatore']) }}</span>
+                        @endif
+                    
                     </div>
                     <div class="div-checkbox">
-                    {{ Form::label('cucina', 'Cucina', ['title' => 'Valore facoltativo']) }}
-                    <span>{{ Form::checkbox('cucina', true, false, ['id' => 'cucina']) }}</span>
+                        @if(!empty($oldFilters) && array_key_exists('cucina', $oldFilters))
+                            {{ Form::label('cucina', 'Cucina', ['title' => 'Valore facoltativo']) }}
+                            <span>{{ Form::checkbox('cucina', true, $oldFilters['cucina'], ['id' => 'cucina']) }}</span>
+                        @else
+                            {{ Form::label('cucina', 'Cucina', ['title' => 'Valore facoltativo']) }}
+                            <span>{{ Form::checkbox('cucina', true, false, ['id' => 'cucina']) }}</span>
+                        @endif
+                    
                     </div>
                 </div>
             </div>
@@ -197,16 +309,19 @@
         </center>
     </div>
         
-    <center><div class="container-form-btn">                
+    <center><div class="container-form-btn">
             {{ Form::submit('Filtra', ['class' => 'form-btn1']) }}
+                {{ Form::close() }}
+            <button id='reset'>Azzera</button>
     </div></center>
     
     
-    {{ Form::close() }}
+
 
 
       </div>
 </section>
+
 @endcan
 
 

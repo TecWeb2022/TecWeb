@@ -21,11 +21,13 @@ class LocController extends Controller {
 
     protected $_faqModel;
     protected $_catalogModel;
+    protected $filters;
 
     public function __construct() {
         $this->middleware('can:isLoc');
         $this->_faqModel = new Faq;
         $this->_catalogModel = new Catalog;
+        $this->filters = array();
     }
 
     public function index() {
@@ -34,11 +36,13 @@ class LocController extends Controller {
             ->with('faqs', $faqs);
     }
     
-    public function getCatPag($filtri, $paged = 5) {
-        $cat = $this->_catalogModel->getCatByFilters($filtri)->paginate($paged);
-
+    public function getCatPag($paged = 5){
+         $cat = $this->_catalogModel->getCatByFilters(
+                 session()->get('filters',''))->paginate(5);
+        
         return view('catalogo')
-            ->with('cat', $cat);
+            ->with('cat', $cat)
+            ->with('oldFilters',session()->get('filters'));
     }
     
     public function filters(Request $request)
@@ -49,7 +53,7 @@ class LocController extends Controller {
         $validatedRequest = $request->validate([
             'tipologia' => 'required',
             'prov' => 'nullable|max:2',
-            'inizio_dip' => 'nullable',
+            'inizio_disp' => 'nullable',
             'fine_disp' => 'after:inizio_disp|nullable',
             'prezzo_min' => 'nullable|numeric|min:0',
             'prezzo_max' => 'nullable|numeric|min:0|gte:prezzo_min',
@@ -64,7 +68,18 @@ class LocController extends Controller {
             'locale_ricreativo' => 'nullable|boolean',
             'garage' => 'nullable|boolean'
         ]);
-        return $this->getCatPag($validatedRequest, 5);
+        info('Validazione dei filtri');
+        info($validatedRequest);
+        session(['filters' => $validatedRequest]);
+       
+        info('I FILTRI GLOBALI: ');
+        info(session()->get('filters'));
+        /*
+        return view('catalogo')
+            ->with('oldFilters',$validatedRequest)
+            ->with('cat', $cat);
+         */
+         return redirect()->route('catalogoLoc');
     }
     
     public function opzioneForm($id_acc){
