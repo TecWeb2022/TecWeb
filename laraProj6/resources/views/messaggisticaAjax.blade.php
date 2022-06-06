@@ -22,14 +22,14 @@
     $(document).ready(function () {
         $("#mess-inviati").click(function () {
             sendMessaggiAjax("{{route('messInvAjax')}}", "{{route('infoMessaggio', ['id' => ''])}}", false);
-            $(this).toggleClass("titolo");
-            $("#mess-ricevuti").toggleClass("titolo");
+            $(this).addClass("titolo");
+            $("#mess-ricevuti").removeClass("titolo");
         });
 
         $("#mess-ricevuti").click(function () {
             sendMessaggiAjax("{{route('messRicAjax')}}", "{{route('infoMessaggio', ['id' => ''])}}", true);
-            $(this).toggleClass("titolo");
-            $("#mess-inviati").toggleClass("titolo");
+            $(this).addClass("titolo");
+            $("#mess-inviati").removeClass("titolo");
         });
     });
 </script>

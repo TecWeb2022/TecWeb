@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
            ['id'=>5,'nome'=>'Camera singola per studentessa','descr'=> 'Camera singola affittabile a studentessa di medicina, non solo. Vicina a ospedale Torrette di Ancona',
                'tipologia'=>'cs','citta'=>'Ancona','prov'=>'AN','via'=>'Via Foglia','num_civ'=>2,'sup'=>10,'inizio_disp'=>'2022-06-04','fine_disp'=>'2023-09-01',
                'eta_min'=>19,'eta_max'=>25,'sesso'=>"F",'canone'=>120.00,'posti_letto_tot'=>1,'cucina'=>false,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
-               'path_foto'=>'alloggi/cameraSTorrette.jpg', 'assegnato'=>true, 'proprietario' => 5, 'letti_camera' => 1],
+               'path_foto'=>'alloggi/cameraSTorrette.jpg', 'assegnato'=>false, 'proprietario' => 5, 'letti_camera' => 1],
            
            ['id'=>6,'nome'=>'Camera doppia per studenti','descr'=> 'Affittabile per qualsiasi tipo di età, solo ad univeristari e studenti.',
                'tipologia'=>'cd','citta'=>'Ancona','prov'=>'AN','via'=>'Via Foglia','num_civ'=>2,'sup'=>13,'inizio_disp'=>'2022-06-04','fine_disp'=>'2023-09-01',
@@ -55,8 +55,8 @@ class DatabaseSeeder extends Seeder
            
            ['id'=>8,'nome'=>'Appartamento vicino all\'UNIMC','descr'=> 'Abitazione con la possibilità di accogliere 4 persone massimo, vicino all\'università degli studi di Macerata',
                'tipologia'=>'ap','citta'=>'Macerata','prov'=>'MC','via'=>'Via Ettore Ricci','num_civ'=>2,'sup'=>86,'inizio_disp'=>'2022-07-18','fine_disp'=>'2023-08-29',
-               'eta_min'=>19,'eta_max'=>30,'sesso'=>"M",'canone'=>450.00,'posti_letto_tot'=>4,'cucina'=>true,'num_bagni'=>2,'num_camere'=>3,'locale_ricreativo'=>false,'angolo_studio'=>false,
-               'path_foto'=>'alloggi/appMac.jpg', 'assegnato'=>true, 'proprietario' => 2, 'letti_camera' => null],
+               'eta_min'=>null,'eta_max'=>30,'sesso'=>"M",'canone'=>450.00,'posti_letto_tot'=>4,'cucina'=>true,'num_bagni'=>2,'num_camere'=>3,'locale_ricreativo'=>false,'angolo_studio'=>false,
+               'path_foto'=>'alloggi/appMac.jpg', 'assegnato'=>false, 'proprietario' => 2, 'letti_camera' => null],
            
            ['id'=>9,'nome'=>'Camera singola vicino alla stazione di Urbisaglia Sforzacosta','descr'=> 'Quuesto alloggio è situato nelle vicinanze della stazione Urbisaglia Sforzacosta, agevolnado lo spostatmento degli studneti.',
                'tipologia'=>'cs','citta'=>'Sforzacosta','prov'=>'MC','via'=>'Borgo Sforzacosta','num_civ'=>83,'sup'=>23,'inizio_disp'=>'2021-10-01','fine_disp'=>'2022-04-01',
@@ -66,7 +66,7 @@ class DatabaseSeeder extends Seeder
            ['id'=>10,'nome'=>'Camera singola in zona UNITE','descr'=> 'Stanza singola vicina la zona dell UNITE. Comoda per ogni studente che vuole raggiungere con facilità l università. ',
                'tipologia'=>'cs','citta'=>'Teramo','prov'=>'TE','via'=>'Via Francesco Marcacci','num_civ'=>4,'sup'=>15,'inizio_disp'=>'2022-09-01','fine_disp'=>'2023-05-29',
                'eta_min'=>20,'eta_max'=>null,'sesso'=>"F",'canone'=>85.00,'posti_letto_tot'=>1,'cucina'=>false,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>false,
-               'path_foto'=>'alloggi/csTE.jpg', 'assegnato'=>true, 'proprietario' => 5, 'letti_camera' => 1],
+               'path_foto'=>'alloggi/csTE.jpg', 'assegnato'=>false, 'proprietario' => 5, 'letti_camera' => 1],
            
            ['id'=>11,'nome'=>'Camera doppia nella frazione di Brecciarolo','descr'=> 'Camera doppia nella frazione di Brecciarolo. Affittabile a studentesse, a qualche minuto di mezzo dall università UNIVPM di Ascoli Piceno ',
                'tipologia'=>'cd','citta'=>'Ascoli Piceno','prov'=>'AP','via'=>'Via delle Fresie','num_civ'=>18,'sup'=>25,'inizio_disp'=>'2022-09-25','fine_disp'=>'2023-04-30',
@@ -79,8 +79,8 @@ class DatabaseSeeder extends Seeder
                'path_foto'=>'alloggi/cdAnconaUnivpm.jpg', 'assegnato'=>false, 'proprietario' => 2, 'letti_camera' => 2],
            
            ['id'=>13,'nome'=>'Appartamento vicino Milano','descr'=> 'Abitazione limitrofa all\'università Bocconi',
-               'tipologia'=>'ap','citta'=>'Milano','prov'=>'MI','via'=>'Via Ettore Ricci','num_civ'=>2,'sup'=>100,'inizio_disp'=>'2021-07-18','fine_disp'=>'2021-08-29',
-               'eta_min'=>19,'eta_max'=>30,'sesso'=>"M",'canone'=>200.00,'posti_letto_tot'=>4,'cucina'=>true,'num_bagni'=>2,'num_camere'=>3,'locale_ricreativo'=>false,'angolo_studio'=>false,
+               'tipologia'=>'ap','citta'=>'Milano','prov'=>'MI','via'=>'Via Francesco Sforza','num_civ'=>2,'sup'=>100,'inizio_disp'=>'2021-07-18','fine_disp'=>'2021-08-29',
+               'eta_min'=>null,'eta_max'=>30,'sesso'=>"M",'canone'=>200.00,'posti_letto_tot'=>4,'cucina'=>true,'num_bagni'=>2,'num_camere'=>3,'locale_ricreativo'=>false,'angolo_studio'=>false,
                'path_foto'=>'alloggi/bocconi.jpg', 'assegnato'=>true, 'proprietario' => 2, 'letti_camera' => null]
            
        ]);
