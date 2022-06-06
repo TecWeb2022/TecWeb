@@ -10,7 +10,8 @@ use App\Models\Catalog;
 use App\Models\OptionList;
 use App\Http\Requests\NewAccommodationRequest;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\File; 
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use App\User;
 
 use Illuminate\Http\Request;
@@ -154,7 +155,8 @@ class HostController extends Controller {
         }
               
        if($request->hasFile('path_foto')){
-           File::delete('/storage/',$acc->path_foto);
+            File::delete('/storage/',$acc->path_foto);
+            //Storage::delete('$acc->path_foto');
             $path = $request->file('path_foto')->store('public/alloggi');
             $acc->path_foto = substr($path, 7);
         }
@@ -167,6 +169,7 @@ class HostController extends Controller {
     
     public function eliminaAcc(Request $request) {
         $acc = Accomodation::find($request->id_acc);
+        File::delete('/storage/',$acc->path_foto);
         $acc->delete();
         
         $opts = Option::where('id_alloggio', '=', $request->id_acc);

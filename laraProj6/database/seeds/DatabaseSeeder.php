@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
                'tipologia'=>'ap','citta'=>'Brescia','prov'=>'BS','via'=>'Via T.Tasso','num_civ'=>80,'sup'=>100,'inizio_disp'=>'2022-05-16','fine_disp'=>'2022-07-19','eta_min'=>18,'eta_max'=>70,'sesso'=>'M','canone'=>156.00,'posti_letto_tot'=>6,'cucina'=>true,'num_bagni'=>3,'num_camere'=>4,'locale_ricreativo'=>true,'angolo_studio'=>false,
                'path_foto'=>'alloggi/AppartamentoLagoGarda.jpg', 'assegnato'=>false, 'proprietario' => 2, 'letti_camera' => null],
            
-           ['id'=>2,'nome'=>'Posto letto su casa di mare','descr'=> 'Camera per studenti. Situata nei pressi di Ancona est, vicinissima al mare. Vicino a punti di snodo per raggiungere le universtià di tutta la città.',
+           ['id'=>2,'nome'=>'Posto letto su casa di mare','descr'=> 'Camera per studenti. Situata nei pressi di Ancona est, vicinissima al mare. Vicino a punti di snodo per raggiungere le università di tutta la città.',
                'tipologia'=>'cs','citta'=>'Ancona','prov'=>'AN','via'=>'Via San Tommaso','num_civ'=>2,'sup'=>23,'inizio_disp'=>'2022-10-12','fine_disp'=>'2022-10-19',
                'eta_min'=>18,'eta_max'=>27,'sesso'=>"F",'canone'=>15.00,'posti_letto_tot'=>1,'cucina'=>false,'num_bagni'=>1,'num_camere'=>1,'locale_ricreativo'=>false,'angolo_studio'=>true,
                'path_foto'=>'alloggi/CameraSingolaProva.jpg', 'assegnato'=>true, 'proprietario' => 2, 'letti_camera' => 1],
@@ -105,11 +105,12 @@ class DatabaseSeeder extends Seeder
        ]);
        
        DB::table('options')->insert([
-           ['id'=>1,'data_stipula'=>null,'created_at' => '2022-05-24 15:26:40','id_alloggio'=>2,'id_locatario'=>3],
-           ['id'=>2,'data_stipula'=>null,'created_at' => '2022-10-24 20:30:00','id_alloggio'=>1,'id_locatario'=>4],
-           ['id'=>3,'data_stipula'=>null,'created_at' => '2022-10-25 17:30:00','id_alloggio'=>1,'id_locatario'=>6],
-           ['id'=>4,'data_stipula'=>null,'created_at' => '2022-10-25 22:30:00','id_alloggio'=>1,'id_locatario'=>3],
-           ['id'=>5,'data_stipula'=>null,'created_at' => '2022-12-20 10:00:00','id_alloggio'=>3,'id_locatario'=>4]
+           ['id'=>1,'data_stipula'=>'2021-07-21','created_at' => '2021-07-20 09:25:00','id_alloggio'=>13,'id_locatario'=>3],
+           ['id'=>2,'data_stipula'=>'2021-10-15','created_at' => '2021-10-14 08:00:00','id_alloggio'=>2,'id_locatario'=>3],
+           ['id'=>3,'data_stipula'=>null,'created_at' => '2022-10-24 20:30:00','id_alloggio'=>1,'id_locatario'=>4],
+           ['id'=>4,'data_stipula'=>null,'created_at' => '2022-10-25 17:30:00','id_alloggio'=>1,'id_locatario'=>6],
+           ['id'=>5,'data_stipula'=>null,'created_at' => '2022-10-25 22:30:00','id_alloggio'=>1,'id_locatario'=>3],
+           ['id'=>6,'data_stipula'=>null,'created_at' => '2022-12-20 10:00:00','id_alloggio'=>3,'id_locatario'=>4]
        ]);
     }
 }
