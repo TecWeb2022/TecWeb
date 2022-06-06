@@ -195,7 +195,7 @@ function emailContratto() {
     document.getElementsByTagName("a")[0]['href'] = a;
 }
 
-function slider2Home () {
+function sliderHome () {
     
    $(document).ready(function(){
 	$('.imageslide:first').show();
@@ -234,47 +234,6 @@ function slider2Home () {
 
 });
   
-}
-
-
-function mostraMessaggio(string) {
-window.alert(string);
-}
-
-function myConfirm(dialogTitle, dialogText, myform, mysubmitname, mysubmitvalue) {
-$('<div class="ui-dialog" title="'+ dialogTitle +'">' + dialogText + '</div>').dialog({
-draggable: false,
-modal: true,
-resizable: false,
-height: 200,
-width: 400,
-buttons: {
-OK: function () {
-$('<input type="hidden" name="'+mysubmitname+'" value="'+mysubmitvalue+'"></input>').appendTo($('#'+myform));
-document.forms[myform].submit();
-},
-Annulla: function () {
-$(this).dialog('destroy');
-}
-}
-});
-}
-
-function confirmation() {
-    $('#eliminaForm').submit(function(e) {
-    e.preventDefault();
-
-    var elimina_form = $(this);   
-    
-    confirm("Sei sicuro di voler eliminare questo elemento?", function(result) {
-        if (result===true) {
-            elimina_form.submit();
-        }
-        else {
-            $(this).dialog('destroy');
-        }
-        });
-    });
 }
 
  function ConfirmDelete()

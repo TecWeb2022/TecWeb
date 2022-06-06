@@ -24,7 +24,7 @@ endguest
 <script type="text/javascript">
     $(document).ready(function () {
         currNavBar(0);
-        slider2Home();
+        sliderHome();
     });
 </script>
 @endsection
