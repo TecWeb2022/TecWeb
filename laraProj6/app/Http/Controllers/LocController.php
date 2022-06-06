@@ -36,7 +36,7 @@ class LocController extends Controller {
             ->with('faqs', $faqs);
     }
     
-    public function getCatPag($paged = 5){
+    public function getCatPag(){
          $cat = $this->_catalogModel->getCatByFilters(
                  session()->get('filters',''))->paginate(5);
         

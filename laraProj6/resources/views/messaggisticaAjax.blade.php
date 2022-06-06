@@ -62,8 +62,6 @@ $(document).ready(function(){
                     <div id="provaReturn"> </div>
                 </center> 
                 <!-- Commentlist End -->
-                <!-- Pagination -->
-                <center></center>
 
             </div> <!-- Respond End -->
 
