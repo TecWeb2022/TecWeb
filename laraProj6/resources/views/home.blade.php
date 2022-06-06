@@ -105,17 +105,20 @@ endguest
 
 </section> 
 
-<!-- ci va la missione -->
+
 <section class="mission">
 
     <div class="row">
+        
         <div class="twelve columns align-center">
+             <p> <a href="{{asset('/Gruppo 08.pdf')}}" download> PDF TESINA DEL PROGETTO</a></p>
             <h2>OBIETTIVO</h2>
         </div>
     </div>
 
     <div class="row">
         <div class="twelve columns align-center">
+           
             <p>
                 La nostra azienda 'Airdrop', nasce con lo scopo di agevolare la vita degli studenti, 
                 in particolare l'obiettivo principale corrisponde a rendere fruibile un'ampia gamma di offerte
