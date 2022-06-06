@@ -34,9 +34,7 @@
                   <li class="flex-box flex-row">
                      
                       <div class="div_imgn_casa_catalog">
-                            <div class="flex-box flex-vertical-center">
-                                    <img src="{{asset('/storage/' . $d->path_foto) }}" palt="">
-                            </div>
+                           <img class="imgn_visual_casa_catalog" src="{{asset('/storage/' . $d->path_foto) }}" palt="">
                       </div>
                       
                      <div class="column seven">
