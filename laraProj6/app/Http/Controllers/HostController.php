@@ -155,10 +155,16 @@ class HostController extends Controller {
         }
               
        if($request->hasFile('path_foto')){
-            File::delete('/storage/',$acc->path_foto);
-            //Storage::delete('$acc->path_foto');
+
+           $file_path = public_path('storage/' . $acc->path_foto);
+           
+           if(File::exists($file_path)) {
+               info($file_path);
+                File::delete($file_path);
+           }
             $path = $request->file('path_foto')->store('public/alloggi');
             $acc->path_foto = substr($path, 7);
+            info($acc->path_foto);
         }
       
         $acc->save();
@@ -169,7 +175,11 @@ class HostController extends Controller {
     
     public function eliminaAcc(Request $request) {
         $acc = Accomodation::find($request->id_acc);
-        File::delete('/storage/',$acc->path_foto);
+        
+        $file_path = public_path('storage/' . $acc->path_foto);
+        if(File::exists($file_path)) {
+                File::delete($file_path);
+           }
         $acc->delete();
         
         $opts = Option::where('id_alloggio', '=', $request->id_acc);

@@ -35,7 +35,7 @@
          
             <div  class="wrap-input">
                 {{ Form::label('testo', 'Invia un messaggio al proprietario') }}
-                {{ Form::textarea('testo', 'Salve, sono interessato ad affittare il suo alloggio', ['id' => 'testo']) }}
+                {{ Form::textarea('testo', 'Salve, sono interessato ad affittare il suo alloggio', ['class' => 'grigio-chiaro','id' => 'testo']) }}
                 @if ($errors->first('testo'))
                 <ul class="errors">
                     @foreach ($errors->get('testo') as $message)

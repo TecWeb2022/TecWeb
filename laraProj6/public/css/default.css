@@ -842,6 +842,11 @@ img{
 	opacity: 0.8;
 }
 
+.grigio-chiaro{
+	background-color: #dddddd;
+	opacity: 0.8;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
 .prev, .next {
   top: 20%;
