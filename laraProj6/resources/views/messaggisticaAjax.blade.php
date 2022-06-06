@@ -40,38 +40,38 @@ $(document).ready(function(){
 
 <!-- Content
    ================================================== -->
-   <div class="content-outer">
-      <div class="row">
-      
+<div class="content-outer">
+    <div class="row">
 
-         <div id="primary" class="twelve columns">
+
+        <div id="primary" class="twelve columns">
 
             <!-- Comments
             ================================================== -->
-            
+
             <div id="comments" >
                 <center>
                     <center><div><a class="pointable" id="mess-ricevuti">Messaggi ricevuti</a> | <a class="pointable" id="mess-inviati">Messaggi inviati</a></div></center>
-                           
-              
-               <ol class="commentlist2">
-                   
-                        
-               </ol> 
-                    
+
+
+                    <ol class="commentlist2">
+
+
+                    </ol> 
+
                     <div id="provaReturn"> </div>
-               </center> 
-               <!-- Commentlist End -->
-               <!-- Pagination -->
-               <center></center>
-               
-               </div> <!-- Respond End -->
+                </center> 
+                <!-- Commentlist End -->
+                <!-- Pagination -->
+                <center></center>
 
-            </div>  <!-- Comments End -->
+            </div> <!-- Respond End -->
 
-      
-        </div>
-         </div> <!-- Comments End -->
+        </div>  <!-- Comments End -->
+
+
+    </div>
+</div> <!-- Comments End -->
 
 
 @endsection
