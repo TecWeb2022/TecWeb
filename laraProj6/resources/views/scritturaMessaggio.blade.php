@@ -13,8 +13,6 @@
 
 @section('content')
 
-<!-- Content
-   ================================================== -->
    <section id="info">
 
       <div class="row">

@@ -5,7 +5,7 @@
         <title>HouStudent | Contratto</title>
         <script type="text/javascript" src="{{ URL::asset('js/functions.js') }}"></script>
     </head>
-    
+
     <body>
         <h1>Contratto di locazione</h1>
         <h2>Oggetto del contratto</h2>
@@ -30,10 +30,10 @@
             Data di nascita: {{ date('d-m-Y', strtotime($loc->data_nasc)) }}
         </p>
         <a href= "mailto:{{ $loc->nome }}.{{ $loc->cognome }}@info.com?subject=Contratto di locazione per {{ $loc->nome }} {{ $loc->cognome }}&body=">Invia email al locatario</a>
-        
+
         <script type="text/javascript">
-            emailContratto();
+emailContratto();
         </script>
     </body>
-    
+
 </html>
