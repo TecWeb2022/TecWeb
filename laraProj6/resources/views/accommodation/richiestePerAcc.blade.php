@@ -61,17 +61,19 @@
                      </div>
                       
                       <div class="column two">
-                      @if($d->data_stipula == null)
-                      {{ Form::open(array('route' => 'accettaOfferta', 'class' => 'flex-box')) }}
-                      {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
-                      {{ Form::hidden('from_bool', false, ['id' => 'from_bool']) }}
-                      {{ Form::submit('Accetta', ['class' => 'submit_button', 'title' => 'Assegnamento alloggio al locatario richiedente']) }}
-                      {{ Form::close() }}
+                      @if($d->data_stipula == null && $d->fine_disp >= now())
+                            {{ Form::open(array('route' => 'accettaOfferta', 'class' => 'flex-box')) }}
+                            {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
+                            {{ Form::hidden('from_bool', false, ['id' => 'from_bool']) }}
+                            {{ Form::submit('Accetta', ['class' => 'submit_button', 'title' => 'Assegnamento alloggio al locatario richiedente']) }}
+                            {{ Form::close() }}
+                      @elseif($d->fine_disp < now() && $d->data_stipula == null)
+                            <button disabled>Scaduta</button>
                       @else
-                      {{ Form::open(array('route' => 'contratto', 'class' => 'flex-box')) }}
-                      {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
-                      {{ Form::submit('Contratto', ['class' => 'submit_button', 'title' => 'Visualizza il contratto stipulato con il locatario']) }}
-                      {{ Form::close() }}
+                            {{ Form::open(array('route' => 'contratto', 'class' => 'flex-box')) }}
+                            {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
+                            {{ Form::submit('Contratto', ['class' => 'submit_button', 'title' => 'Visualizza il contratto stipulato con il locatario']) }}
+                            {{ Form::close() }}
                       @endif
                        </div>
                   </li>

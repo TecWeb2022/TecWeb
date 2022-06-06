@@ -37,8 +37,10 @@
                         
                         <h3 class="nome_mitt">{{ $acc->nome }}
                         <span>
-                        @if($acc->assegnato || $acc->fine_disp <= now())
-                            <img class="icona_posizione" src="images/red-icon.png" title="Offerta assegnata o scaduta" alt="">
+                        @if($acc->assegnato)
+                            <img class="icona_posizione" src="/images/blue-icon.png" title="Offerta assegnata" alt="">
+                        @elseif($acc->fine_disp <= now())
+                            <img class="icona_posizione" src="/images/red-icon.png" title="Offerta scaduta" alt="">
                         @endif
                         </span>
                             </h3>
@@ -46,7 +48,7 @@
                                  <span class="testo"> {{ date('d-m-Y', strtotime($acc->inizio_disp)) }} / {{ date('d-m-Y', strtotime($acc->fine_disp)) }}
                              </span></p>
                      
-                         <img width="10" height="10" class="icona_posizione" src="images/position-icon.png" alt="">
+                         <img width="10" height="10" class="icona_posizione" src="/images/position-icon.png" alt="">
                          <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
                          <p class="titolo" class="remove-bottom">Tipologia: <span class="testo">@include('helpers/tipologiaAcc', ['tipologia' => $acc->tipologia])</span></p>
                          <p class="titolo">Info: <span class="testo">@include('helpers/descrAcc', ['acc' => $acc])</span></p>

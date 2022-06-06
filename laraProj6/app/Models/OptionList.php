@@ -33,7 +33,7 @@ class OptionList
     public function getAccsAndOpts($id_propr){
             
         $accs = Accomodation::where('proprietario','=',$id_propr)
-                                ->select('id AS id_acc','nome AS nome_acc','tipologia AS tipologia_acc','canone', 'path_foto','proprietario','created_at AS created_as_acc','assegnato');
+                                ->select('id AS id_acc','nome AS nome_acc','tipologia AS tipologia_acc','canone', 'path_foto','proprietario','created_at AS created_as_acc','assegnato','inizio_disp','fine_disp');
             
         $opts = Option::select('id AS id_opt','data_stipula','id_alloggio','id_locatario','created_at AS created_at_opt');
             
@@ -52,44 +52,16 @@ class OptionList
                                 })
                                   ->orderBy('created_at_opt','DESC')
                                   ->paginate(5);
-          
-                                    
-            /*
-            $accs_opts_locs = Accomodation::join('options','options.id_alloggio','=','accomodations.id')
-                                ->join('users','users.id','=','accomodations.proprietario')
-                                
-                                ->select('options.id AS id_opt',
-                                     'options.data_stipula AS data_stipula','options.id_alloggio','options.id_locatario', 
-                                     'options.created_at AS created_at_opt','accomodations.id AS id_acc','accomodations.nome AS nome_acc','accomodations.tipologia AS tipologia_acc', 
-                                     'accomodations.canone', 'accomodations.path_foto','accomodations.proprietario AS proprietario',
-                                     'accomodations.created_at AS created_as_acc','users.id AS id_loc','users.nome AS nome_loc','users.cognome AS cognome_loc')
-                                
-                                ->where('proprietario','=',$id_propr)
-                                ->paginate(4);
-             * 
-             */
-                                
-                                
-            
-            /*
-            $opt_renamed = Option::select('id AS id_opt','data_stipula','id_alloggio','id_locatario','created_at AS created_at_opt');
-            
-            $acc_opts = $acc_renamed->joinSub($opt_renamed,'opt_renamed',function($join){
-                                            $join->on('id_acc','=','opt_renamed.id_alloggio');
-                    
-                                            });
-             * 
-             */
              
-             
-            return $accs_opts_locs;
-        }
+        return $accs_opts_locs;
+    }
         
-        public function getAccsAndOptsByAcc($id_propr,$id_acc){
+        
+    public function getAccsAndOptsByAcc($id_propr,$id_acc){
             
         $accs = Accomodation::where('proprietario','=',$id_propr)
                                 ->where('id','=',$id_acc)
-                                ->select('id AS id_acc','nome AS nome_acc','tipologia AS tipologia_acc','canone', 'path_foto','proprietario','created_at AS created_as_acc','assegnato');
+                                ->select('id AS id_acc','nome AS nome_acc','tipologia AS tipologia_acc','canone', 'path_foto','proprietario','created_at AS created_as_acc','assegnato','inizio_disp','fine_disp');
             
         $opts = Option::select('id AS id_opt','data_stipula','id_alloggio','id_locatario','created_at AS created_at_opt');
             
@@ -110,6 +82,6 @@ class OptionList
                                   ->paginate(5);
           
              
-            return $accs_opts_locs;
-        }
+        return $accs_opts_locs;
+    }
 }
