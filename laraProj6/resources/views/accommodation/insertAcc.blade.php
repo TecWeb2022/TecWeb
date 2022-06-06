@@ -44,7 +44,7 @@ $(document).ready(function(){
           <div class="flex-box add-bottom">
 
            
-            <div class="column width-descr">
+            <div class="column width-descr maxw-300">
                  
                 <div  class="wrap-input">
                     {{ Form::label('nome', 'Nome Alloggio', ['class' => 'titolo']) }}
@@ -58,7 +58,7 @@ $(document).ready(function(){
 
                 <div  class="wrap-input">
                     {{ Form::label('descr', 'Descrizione', ['class' => 'titolo']) }}
-                    {{ Form::textarea('descr', '', ['class' => 'input', 'id' => 'descr', 'rows' => 2]) }}
+                    {{ Form::textarea('descr', '', ['class' => 'input maxw-100', 'id' => 'descr', 'rows' => 2]) }}
                 </div>
 
                 <div  class="wrap-input">
