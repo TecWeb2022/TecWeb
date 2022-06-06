@@ -159,12 +159,10 @@ class HostController extends Controller {
            $file_path = public_path('storage/' . $acc->path_foto);
            
            if(File::exists($file_path)) {
-               info($file_path);
                 File::delete($file_path);
            }
             $path = $request->file('path_foto')->store('public/alloggi');
             $acc->path_foto = substr($path, 7);
-            info($acc->path_foto);
         }
       
         $acc->save();
