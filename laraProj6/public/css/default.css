@@ -578,7 +578,7 @@ input[type="checkbox"] { display: inline; }
 .flex-box-filtri{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-around;
     gap: 20px;
     flex-direction: row;
 }

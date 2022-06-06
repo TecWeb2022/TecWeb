@@ -342,9 +342,9 @@ $(document).ready( function() {
                 <center><h2>Catalogo alloggi</h2></center>
                <!-- commentlist -->
                <center>
-               <ol class="commentlist2">
+               <ol class="commentlist_cat">
                   @foreach($cat as $acc)
-                  <!--li class="depth-1"-->
+                  
                   <li>
 
                       <div class="bordo_normale piccolo-crick-mk2"></div>

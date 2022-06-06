@@ -1,8 +1,5 @@
 /*
-=====================================================================
-*   Sparrow v1.0 Layout Stylesheet
-*   url: styleshout.com
-*   02-08-2014
+
 =====================================================================
 
    TOC:
@@ -28,30 +25,8 @@
 body { background: #D2D8D8 url(../images/bg.jpg); }
 img { border-radius: 3px; }
 .content-outer { background: #fff }
+.colora{background: #11ABB0;}
 
-
-/* page title */
-#page-title {
-   background: #383232 url(../images/header-bg.jpg);
-   padding-top: 42px;
-   padding-bottom: 54px;
-}
-#page-title h1 {
-   font: 50px/60px raleway-bold, sans-serif;
-   color: #fff;
-   padding: 0;
-   margin: 0 0 18px 0;
-   text-shadow: 0px 1px 5px rgba(0, 0, 0, .3);
-}
-#page-title h1 span,
-#page-title a { color: #11ABB0; }
-#page-title p {
-   font: 17px/36px notosans-regular, sans-serif;
-   padding: 0;
-   margin: 12px 5% 0;
-   color: #b4a9a9;
-   text-shadow: 0px 1px 2px rgba(0, 0, 0, .3);
-}
 
 /* page content */
 #page-content {
@@ -61,14 +36,6 @@ img { border-radius: 3px; }
    width: 91.66667%;
 }
 
-/* fatto da Matteo, serve a centrare il catalogo questo è il 2*/
-#page-content3 {
-   padding-top: 54px;
-   padding-bottom: 54px;
-   margin-left: 25%;
-   margin-right: 25%;
-   width: 100%;
-}
 /* fatto da Matteo questo è il 3*/
 #page-content2 {
    padding-top: 54px;
@@ -76,6 +43,8 @@ img { border-radius: 3px; }
    width: 100%;
 }
 
+
+/* tracce dei font */
 #traccia-font-tit{
     -webkit-text-stroke: 1px black;
 }
@@ -86,21 +55,8 @@ img { border-radius: 3px; }
     -webkit-text-stroke: 1px black;
 }
 
-/* fatto da Matteo, serve a centrare il catalogo */
-#page-content_cat{
-    padding-top: 54px;
-   padding-bottom: 54px;
-   
-   width: 100%; 
-}
+/* Immagini  */
 
-#page-content3 {
-   padding-top: 54px;
-   padding-bottom: 54px;
-   width: 100%;
-}
-
-/* fatta da Matteo*/ 
 .imgn_casa{
    position: absolute;
    left: -50px;
@@ -110,19 +66,19 @@ img { border-radius: 3px; }
    width: 200px;
 }
 
-/* fatta da Luca*/ 
+
 .div_imgn_visual_casa{
     position:relative;
    height: 100%;
    width:  100%;
 }
-/* fatta da Luca*/ 
+ 
 .imgn_visual_casa{    
    max-width:  100%;
 }
 
 .div_imgn_casa_catalog{
-    position:relative;
+   position:relative;
    height: 200px;
    width:  250px;
 }
@@ -134,7 +90,7 @@ img { border-radius: 3px; }
 .benvenuto_admin{color:whitesmoke;}
 
 
-/* fatta da Matteo*/ 
+/* icone*/ 
 .icona_posizione {
    height: 15px;
    width: 15px; 
@@ -150,7 +106,7 @@ color:white;
 
 
 
-/* fatta da Matteo*/ 
+/* bottoni*/ 
 .btn2{
     height: 50px;
     width: 50px;
@@ -159,7 +115,7 @@ color:white;
     background-color: #11abb0;
     margin-left: 47.5%;
 }
-/*fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
+
 .btn_mess_vis{
     height: 30px;
     width: 100px;
@@ -174,7 +130,7 @@ color:white;
     
 }
 
-/* fatta da Matteo setta il bottone delle Lettura Messaggi*/ 
+
 .btn_mess_nvis {
     height: 30px;
     width: 100px;
@@ -186,7 +142,6 @@ color:white;
     margin-left: 80%;
     font-size:13px}
 
-/* fatta da Matteo serve per il pulsante Modifica nella sezione Gestione offerte, perche rimane button e non Form*/ 
 .btn_modifica_off {
     height: 30px;
     width: 105px;
@@ -197,7 +152,7 @@ color:white;
     margin-bottom: 10px;
     font-size:16px}
 
-/* fatta da Matteo*/ 
+
 .btn_gestione_acc {
     height: 30px;
     width: 105px;
@@ -209,17 +164,13 @@ color:white;
     margin-left:0%;
     font-size:13px}
 
-
-
-/*Fatta da Matteo*/
-
 .dettagli_cat {
     clear: both;
     margin: 2px 0 0 110px;
     padding: 0;
     line-height: 24px;
 }
-/*Fatta da Matteo*/
+
 .nome_alloggio {
     clear: both;
     margin: 2px 0 0 0;
@@ -227,57 +178,57 @@ color:white;
     line-height: 24px;
 }
 
-/*Fatta da Matteo*/
+
+/*Spaziatori*/
 .piccolo-crick{
     margin: 10px 0 10px 0;
 }
 
-/*Fatta da Matteo*/
 .piccolo-crick-mk2{
     margin: 20px 0 40px 0;
 }
 
-/*Fatta da Matteo*/
 .crick{
     margin:20px 0 80px 0;
 }
 
-/*Fatta da Matteo*/
 .grande_crick{
     margin:60px 0 60px 0;
 }
-
-/*Fatta da Matteo*/
-.font_mittente div{
-    font-size: 20px;
-}
-/*Fatta da Matteo*/
-.font_mittente cite{
-    font-size: 18px;
-}
-/*Fatta da Matteo*/
-.font_ricevuto p{
-    font-size: 20px;
-}
-/*Fatta da Matteo*/
 .stoppino{
    margin-bottom: 10px;
 }
 
-/*Fatta da Matteo*/
+
 .zeppa{
     margin-top: 40px;
 
 }
-/*Fatta da Matteo*/
+
 .azzera-margine{
     margin-bottom: -36px;
 }
-/*Fatta da Matteo*/
+
+
+/*modifica ai font*/
+.font_mittente div{
+    font-size: 20px;
+}
+
+.font_mittente cite{
+    font-size: 18px;
+}
+
+.font_ricevuto p{
+    font-size: 20px;
+}
+
+
+
 .pressa{
    transform: scale(0.8);
 }
-.colora{background: #11ABB0;}
+
 
 
 /*Fatta da Matteo*/
@@ -320,115 +271,6 @@ color:white;
 .page h1, .title-heading {
    font: 39px/48px raleway-semibold, sans-serif;
    margin-bottom: 18px;
-}
-
-/* sidebar */
-#sidebar {
-   padding-top: 42px;
-   padding-left: 18px;
-}
-#sidebar h5 {
-   font: 18px/30px notosans-bold, sans-serif;
-   font-weight: normal;
-   margin-bottom: 6px;
-}
-#sidebar .widget { margin-bottom: 24px; }
-
-/* Link list */
-#sidebar .link-list {
-   margin: 12px 0 18px 0;
-   padding: 0;
-}
-#sidebar .link-list li {
-   line-height: 24px;
-}
-#sidebar .link-list li a {
-   border: none;
-   color: #838C95;
-}
-#sidebar .link-list li a:hover {
-   color: #313131;
-}
-
-/* tag cloud */
-#sidebar .tagcloud {
-   margin: 18px 0 18px -12px;
-   padding: 0;
-}
-#sidebar .tagcloud a {
-   font: bold 12px/24px notosans-regular , sans-serif !important;
-   display: inline-block;
-   float: left;
-   margin: 0 0 12px 12px;
-   padding: 6px 10px;
-   position: relative;
-   text-transform: uppercase;
-   background: #D3D9D9;
-	text-decoration: none;
-   letter-spacing: 1px;
-   color: #6D7E7E;
-
-   -webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
-
-   border-radius: 3px;
-}
-#sidebar .tagcloud a:hover {
-    color: #fff;
-    background: #11ABB0;
-}
-
-/* Photostream */
-#sidebar .photostream {
-   list-style: none;
-   margin: 18px 0 24px -15px;
-   padding: 0;
-   overflow: hidden;
-}
-#sidebar .photostream li {
-   float: left;
-   display: inline-block;
-   margin: 0 0 15px 15px;
-   padding: 0;
-}
-#sidebar .photostream li a { }
-#sidebar .photostream li a img {
-   border-radius: 3px;
-   height: 54px;
-   width: 54px;
-   vertical-align: bottom;
-}
-
-/* search */
-#sidebar .widget_search form {
-   /*position: relative; */
-   margin: 24px 0 36px 0;
-}
-#sidebar .widget .text-search {
-	padding-right: 40px;
-	border:none;
-   width: 100%;
-   min-width: 150px;
-
-   border-radius: 3px;
-}
-#sidebar .widget .submit-search {
-	background:url(../images/search-icon.png) no-repeat;
-	border:none;
-	cursor:pointer;
-	width:18px;
-	height:18px;
-   margin: 0;
-   padding: 0;
-
-   float: right;
-   position: relative;
-   top: -60px;
-   right: 18px;
-   /*display: none !important;*/
 }
 
 #primary { }
@@ -559,15 +401,6 @@ ul#nav ul {
 	transition: opacity .25s ease .1s;
 }
 
-/* Third level sub menu
-ul#nav ul ul {
-	position: absolute;
-	top: 0;
-	left: 100%;
-
-	border-radius: 0 3px 3px 3px;
-}
-*/
 
 ul#nav ul li {
    padding: 0;
@@ -604,7 +437,7 @@ ul#nav ul li a {
 
 
 /* ------------------------------------------------------------------ */
-/* c. Intro Section - Main Page
+/* c. Intro Section 
 /* ------------------------------------------------------------------ */
 
 #intro { background: #383232 url(/images/sfondo2.jpg);
@@ -774,21 +607,6 @@ ul#nav ul li a {
    border-bottom: 1px solid #E3E8E8;
 }
 
-#works2 {
-   /*background: #f5f5f5 url(../images/works-bg.jpg);*/
-   background: #f5f5f5 url(/images/bg02.png);
-   padding-top: 40px;
-   padding-bottom: 10px;
-    
-   border-top: 1px solid #E3E8E8;
-   border-bottom: 1px solid #E3E8E8;
-}
-#works2 h1 {
-   font: 20px/36px raleway-bold, sans-serif;
-   margin-bottom: 36px;
-   color: #A1A8AF;
-}
-
 #works-filtri {
    
    background: #f5f5f5 url(/images/bg02.png);
@@ -826,106 +644,6 @@ ul#nav ul li a {
 }
 
 
-/* Portfolio Content */
-#portfolio-wrapper { margin-top: 36px; }
-#portfolio-wrapper .columns { margin-bottom: 36px; }
-
-.portfolio-item .item-wrap {
-   background: #fff;
-   overflow: hidden;
-   border-radius: 3px;
-
-   -webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.1);
-   -moz-box-shadow:    0px 1px 1px rgba(50, 50, 50, 0.1);
-   box-shadow:         0px 1px 1px rgba(50, 50, 50, 0.1);
-
-   -webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-.portfolio-item .item-wrap a {
-   position: relative;
-   display: block;
-}
-
-/* overlay */
-.portfolio-item .item-wrap .overlay {
-   position: absolute;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-
-	opacity: 0;
-	-moz-opacity: 0;
-	filter:alpha(opacity=0);
-
-   -webkit-transition: opacity 0.3s ease-in-out;
-	-moz-transition: opacity 0.3s ease-in-out;
-	-o-transition: opacity 0.3s ease-in-out;
-	transition: opacity 0.3s ease-in-out;
-
-   border-radius: 3px 3px 0 0;
-   background: url(../images/overlay.png) repeat;
-}
-.portfolio-item .item-wrap .link-icon {
-   display: block;
-   color: #fff;
-   font-size: 40px;
-   line-height: 40px;
-   text-align: center;
-
-   opacity: 0;
-	-moz-opacity: 0;
-	filter:alpha(opacity=0);
-
-   -webkit-transition: opacity 0.3s ease-in-out;
-	-moz-transition: opacity 0.3s ease-in-out;
-	-o-transition: opacity 0.3s ease-in-out;
-	transition: opacity 0.3s ease-in-out;
-
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   margin-left: -18.5px;
-   margin-top: -20px;
-}
-
-.portfolio-item .item-wrap img {
-   vertical-align: bottom;
-   border-radius: 3px 3px 0 0;
-}
-
-.portfolio-item .portfolio-item-meta { padding: 18px 0; }
-.portfolio-item .portfolio-item-meta h5 a {
-   font: 14px/18px notosans-bold, sans-serif;
-   color: #11ABB0;
-   margin-left: 7%;
-}
-.portfolio-item .portfolio-item-meta p {
-   font: 12px/18px notosans-regular, sans-serif;
-   color: #c6c7c7;
-   margin-bottom: 0;
-   margin-left: 7%;
-}
-
-/* on hover */
-.portfolio-item:hover .item-wrap { background-color: #3A3434; }
-.portfolio-item:hover h5 a { color: #fff !important; }
-.portfolio-item:hover .overlay {
-	opacity: 1;
-	-moz-opacity: 1;
-	filter:alpha(opacity=100);
-}
-.portfolio-item:hover .link-icon {
-   opacity: 1;
-	-moz-opacity: 1;
-	filter:alpha(opacity=100);
-}
-
-
 /* ------------------------------------------------------------------ */
 /* f. Journal Section - Main Page
 /* ------------------------------------------------------------------ */
@@ -951,71 +669,6 @@ ul#nav ul li a {
 }
 
 
-/*fatta da Matteo*/
-.bordo_dom{
-     border-top: 1px dotted #d8d8d8;
-}
-/*fatta da Matteo*/
-.bordo_testo_messaggio{
-     border-top: 1px dashed #000000;
-     margin: 70px 0 0 0;
-
-}
-
-
-/*fatta da Matteo*/
-.bordo_risultati{
-     border-top: 1px dotted #d8d8d8;
-}
-
-.bordo_normale_g1{
-     border-top: 1px solid #000000;
- 
-}
-.bordo_normale{
-     border-top: 2px solid #000000;
-}
-
-.bordo_tratto{
-    border-top: 2px dashed #000000;
-}
-
-#box-profilo{
-  width:350px ;
-  height:250px;
-  margin:auto;
-  background: white;
-  border-radius: 15px 15px 15px 15px;
-  text-align: center;
-  color: black;
-  padding: 10px;
-}
-
-.center_content{
-margin: auto;
-transform: translate(50%, 0);
-padding: 10px;
-}
-
-/*fatta da Matteo*/
-.colonna_risultati{
-  padding: 10px 15px 0 15px;
-  margin: 5px 0px 0 0;
-}
-/*fatta da Matteo  DA ELIMINARE*/ 
-.prova1{
-    margin-right: 130px;
-}
-/*fatta da Matteo, serve a diminuire il margine della sezione tipologia, data inizio, data fine nella colonna risultati dei filtri*/
-.min_marg{
-    margin-bottom: 0px;
-}
-
-/*fatta da Matteo*/
-#alloggi_locati{
-    padding-right:40px;
-    margin-bottom: -30px;
-}
 
 #journal .blog-entries article.entry:first-child {
    border-top: none;
@@ -1094,43 +747,70 @@ padding: 10px;
 }
 
 /* ------------------------------------------------------------------ */
-/* g. Tweets Section - Main Page
+/* 
 /* ------------------------------------------------------------------ */
 
-/*TUTTA LA ROBA DI TWITTER DOVREBBE ESSERE DA ELIMINARE*/
-#tweets {
-   background: #f5f5f5 url(../images/tweets-bg.jpg);
-   padding-top: 60px;
-   padding-bottom: 30px;
-   border-top: 1px solid #E3E8E8;
-   border-bottom: 1px solid #C1CDCD;
+/*Bordi e linee*/
+.bordo_dom{
+     border-top: 1px dotted #d8d8d8;
 }
-.tweeter-icon { font-size: 54px; }
 
-/* Twitter Feed */
-#tweets #twitter {
-   margin: 24px auto;
-   padding: 0;
-   width: 90%;
+.bordo_testo_messaggio{
+     border-top: 1px dashed #000000;
+     margin: 70px 0 0 0;
+
 }
-#tweets #twitter li {
-   margin: 6px 0px 18px 0;
-   line-height: 24px;
+
+.bordo_risultati{
+     border-top: 1px dotted #d8d8d8;
 }
-#tweets #twitter li span {
-   display: block;
-   font: 24px/48px raleway-semibold, Sans-serif;
-   margin-bottom: 12px;
-   color: #99A0A8;
+
+.bordo_normale_g1{
+     border-top: 1px solid #000000;
+ 
 }
-#tweets #twitter li b a {
-   font: 18px/36px notosans-regular, Sans-serif;
-   color: #A4ABB2;
-   border: none;
+.bordo_normale{
+     border-top: 2px solid #000000;
 }
-#tweets .button {
-   padding: 6px 24px;
+
+.bordo_tratto{
+    border-top: 2px dashed #000000;
 }
+
+#box-profilo{
+  width:350px ;
+  height:250px;
+  margin:auto;
+  background: white;
+  border-radius: 15px 15px 15px 15px;
+  text-align: center;
+  color: black;
+  padding: 10px;
+}
+
+.center_content{
+margin: auto;
+transform: translate(50%, 0);
+padding: 10px;
+}
+
+
+.colonna_risultati{
+  padding: 10px 15px 0 15px;
+  margin: 5px 0px 0 0;
+}
+
+
+.min_marg{
+    margin-bottom: 0px;
+}
+
+/*fatta da Matteo*/
+#alloggi_locati{
+    padding-right:40px;
+    margin-bottom: -30px;
+}
+
 
 /* ------------------------------------------------------------------ */
 /* h. Blog
@@ -1284,9 +964,15 @@ ol.commentlist {
 	padding: 0;
         margin-left: 16.66667%;
 }
-/*fatta da Matteo*/
+
 ol.commentlist2 {
         border-top: 1px dotted #E1E5E3;
+	margin: 0 0 0 0;
+	padding: 0 10px 0 0;
+        list-style: none;
+}
+
+ol.commentlist_cat {
 	margin: 0 0 0 0;
 	padding: 0 10px 0 0;
         list-style: none;
@@ -1304,47 +990,6 @@ ol.commentlist-messaggi {
 	margin: 0;
 	padding: 18px 0 17px 0;
 	border-bottom: 1px dotted #D9DEDB;
-}
-
-/*fatta da Matteo, serve a settare l'icona utente sulla messagistica, DA ELIMINARE*/
-.avatar2  {
-   position: absolute;
-   left: 250px;
-   margin-top: 6px;
-   height: 90px;
-   width: 90px;
-   border-radius: 100% 100% 100% 100%;
-
-}
-
-/*fatta da Matteo, serve a settare l'icona utente sulla sezione profilo*/
-.avatar_profilo  {
-
-   position: relative;
-   margin-bottom: 0px;
-   float: top;
-   height: 200px;
-   width: 200px;
-   border-radius: 100% 100% 100% 100%;
-}
-
-/*fatta da Matteo, DA ELIMINARE*/
-.limitatore-row{
-    margin: 0 100px 0 100px;
-}
-
-/*fatta da Matteo, serve a settare riquadro messaggi sulla messagistica, DA ELIMINARE*/
-.bordo_messaggi{
-    min-width: 450px;
-    border: 2px solid black;
-    margin: 0 0px 0 -10px;
-    padding: 10px 0 -50px 10px;
-}
-
-
-/*fatta da Matteo, serve allineare la riga ricevuto*/
-.ricevuto_messagistica{
-   margin:0 10px -5px 0;
 }
 
 .commentlist li .avatar img {
@@ -1442,85 +1087,23 @@ ol.commentlist-messaggi {
 .pagination { margin: 0 auto 42px auto; }
 
 /* ------------------------------------------------------------------ */
-/* i. Porfolio
-/* ------------------------------------------------------------------ */
-
-.portfolio section {
-   padding-top: 24px;
-   padding-bottom: 30px;
-}
-.portfolio .entry-media img {
-   margin-bottom: 24px;
-}
-.portfolio .entry-details {
-   font-size: 15px;
-   margin-bottom: 24px;
-   padding-right: 30px;
-}
-.portfolio .entry-excerpt {
-   font: 20px/36px raleway-regular, sans-serif;
-   color: #9FA5AD;
-}
-.portfolio .entry-details h1 {
-   font: 30px/42px raleway-semibold, sans-serif;
-   margin-bottom: 18px;
-}
-.portfolio .portfolio-meta-list li {
-   line-height: 30px;
-   margin-bottom: 12px;
-}
-.portfolio .portfolio-meta-list li span {
-   font-family: notosans-bold, sans-serif;
-   display: block;
-   color: #313131;
-}
-.portfolio .post-nav {
-   margin-left: 18px;
-   margin-right: 18px;
-}
-
-.portfolio #portfolio-wrapper {
-   margin-top: 6px;
-}
 
 /* ------------------------------------------------------------------ */
-/* j. About
-/* ------------------------------------------------------------------ */
 
-/* Team Members */
-#team-wrapper { }
+.avatar_profilo  {
 
-#team-wrapper .member {
-   margin-bottom: 24px;
-   margin-top: 12px;
-}
-#team-wrapper img {
-	margin-bottom: 12px;
-}
-#team-wrapper h5 {
-   font: 16px/24px notosans-bold, sans-serif;
-}
-#team-wrapper span {
    position: relative;
-   top: -6px;
-   font-size: 13px;
-   line-height: 18px;
-   color: #969696;
+   margin-bottom: 0px;
+   float: top;
+   height: 200px;
+   width: 200px;
+   border-radius: 100% 100% 100% 100%;
 }
-#team-wrapper .member-social {
-   font-size: 20px;
-   font-weight: normal;
-   line-height: 18px;
-   color: #969696;
-   margin: -12px 0 0 0;
-   padding: 0;
+
+
+.ricevuto_messagistica{
+   margin:0 10px -5px 0;
 }
-#team-wrapper .member-social li {
-   display: inline-block;
-   margin-right: 15px;
-}
-#team-wrapper .member-social li a { color: #424242; }
-#team-wrapper .member-social li a:hover { color: #11ABB0; }
 
 /* ------------------------------------------------------------------ */
 /* k. Contact
@@ -1684,15 +1267,6 @@ footer .copyright  li:first-child:before {
 }
 #go-top a:hover { background-color: #0F9095; }
 
-
-.card-content {
-display: flex;
-display: -webkit-flex;
-flex-direction: column;
--webkit-flex-direction: column;
-padding: 10px 0;
-}
-.mgtop-auto {margin-top: auto;}
 
 /* ------------------------------------------------------------------ */
 /* g. mission (fatta da noi)

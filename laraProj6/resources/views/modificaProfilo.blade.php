@@ -21,7 +21,7 @@ $(document).ready(function(){
       <div class="row">
           
           <div class="column">
-            <h1>Modifica profilo utente</h1>
+            <h2>Modifica profilo utente</h2>
             
             <div class="row flex-box">
             {{ Form::open(array('route' => 'modificaProfiloPost', 'class' => 'filters-form')) }}
