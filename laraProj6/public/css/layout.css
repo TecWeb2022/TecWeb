@@ -1,12 +1,9 @@
+/*========================================================== */
+/*Css del layout */
+/*========================================================== */
 
-/*=====================================================================
 
-===================================================================== */
-
-/* ------------------------------------------------------------------ */
-/* a. Common Styles
-/* ------------------------------------------------------------------ */
-
+/*Css di base */
 body {
     background: #D2D8D8 url(../images/bg.jpg);
 }
@@ -21,7 +18,7 @@ img {
 }
 
 
-/* page content */
+/* Contenuto delle Pagine */
 #page-content {
     padding-top: 54px;
     padding-bottom: 54px;
@@ -29,7 +26,6 @@ img {
     width: 91.66667%;
 }
 
-/* fatto da Matteo questo è il 3*/
 #page-content2 {
     padding-top: 54px;
     padding-bottom: 54px;
@@ -37,7 +33,7 @@ img {
 }
 
 
-/* tracce dei font */
+/* Tracce dei font */
 #traccia-font-tit{
     -webkit-text-stroke: 1px black;
 }
@@ -85,12 +81,12 @@ img {
 }
 
 
-/* icone*/
+/* Icone*/
 .icona_posizione {
     height: 15px;
     width: 15px;
 }
-/* fatta da Matteo*/
+
 .iconbutton2{
     display:flex;
     align-items:center;
@@ -101,7 +97,7 @@ img {
 
 
 
-/* bottoni*/
+/* Bottoni*/
 .btn2{
     height: 50px;
     width: 50px;
@@ -176,6 +172,10 @@ img {
     line-height: 24px;
 }
 
+.sposta_btn{
+    transform: translate(75%,0)
+}
+
 
 /*Spaziatori*/
 .piccolo-crick{
@@ -206,9 +206,30 @@ img {
 .azzera-margine{
     margin-bottom: -36px;
 }
+.center_content{
+    margin: auto;
+    transform: translate(50%, 0);
+    padding: 10px;
+}
+
+.colonna_risultati{
+    padding: 10px 15px 0 15px;
+    margin: 5px 0px 0 0;
+}
 
 
-/*modifica ai font*/
+.min_marg{
+    margin-bottom: 0px;
+}
+
+
+#alloggi_locati{
+    padding-right:40px;
+    margin-bottom: -30px;
+}
+
+
+/*Modifiche Font*/
 .font_mittente div{
     font-size: 20px;
 }
@@ -221,24 +242,18 @@ img {
     font-size: 20px;
 }
 
-
-
 .pressa{
     transform: scale(0.8);
 }
 
-
-
-/*Fatta da Matteo*/
 #comments2 cite{
     font-size: 32px;
 }
-/*Fatta da Matteo*/
+
 #txt_mess_ric{
     font-size: 20px;
 }
 
-/*Fatta da Matteo*/
 .labelAdd{
     display: inline-block;
     vertical-align: middle;
@@ -248,20 +263,13 @@ img {
 }
 
 
-/*Fatta da Matteo,serve per allineare i bottoni Modifica e Elimina nella Gestione faq*/
 .bottone_inline{
     display: inline-block;
     width: calc(50% - 4px);
     margin: 0 auto;
 }
 
-/*Fatta da Matteo*/
-.sposta_btn{
-    transform: translate(75%,0)
-}
-
-
-/* page */
+/* Page */
 .page section {
     padding-top: 24px;
     padding-bottom: 12px;
@@ -274,9 +282,8 @@ img {
 #primary {
 }
 
-/* ------------------------------------------------------------------ */
-/* b. Header Styles
-/* ------------------------------------------------------------------ */
+
+/*Header Styles*/
 
 header {
     height: 96px;
@@ -300,8 +307,7 @@ header .logo a {
     height: 36px;
 }
 
-/* primary navigation
---------------------------------------------------------------------- */
+/* Primary navigation*/
 #nav-wrap ul, #nav-wrap li, #nav-wrap a {
     margin: 0;
     padding: 0;
@@ -309,14 +315,13 @@ header .logo a {
     outline: none;
 }
 
-/* nav-wrap */
+/* Nav-wrap */
 #nav-wrap {
     position: relative;
     font: 14px raleway-bold, sans-serif;
     float: right;
     margin-top: 26px;
     margin-right: 20px;
-
     z-index: 99999;
 }
 
@@ -329,8 +334,6 @@ header .logo a {
 ul#nav {
     min-height: 48px;
     width: auto;
-
-    /* left align the menu */
     text-align: left;
 }
 ul#nav li {
@@ -342,8 +345,6 @@ ul#nav li {
 
 /* Links */
 ul#nav li a {
-
-    /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
 
     display: inline-block;
     padding: 8px 11px;
@@ -383,8 +384,8 @@ ul#nav span:after {
     right: 5px;
 }
 
-/* Sub Menu
------------------------------------------------------ */
+/* Sub Menu*/
+
 ul#nav ul {
     position: absolute;
     top: 100%;
@@ -445,9 +446,7 @@ ul#nav ul li a {
 }
 
 
-/* ------------------------------------------------------------------ */
-/* c. Intro Section 
-/* ------------------------------------------------------------------ */
+/*  Intro Section */
 
 #intro {
     background: #383232 url(/images/sfondo2.jpg);
@@ -455,10 +454,8 @@ ul#nav ul li a {
     background-size: cover;
 }
 
-/* Flex Slider
-/* ------------------------------------------------------------------ */
+/* Flex Slider */
 
-/* Reset */
 .flexslider a:active,
 .flexslider a:focus  {
     outline: none;
@@ -511,8 +508,7 @@ ul#nav ul li a {
 }
 
 /* No JavaScript Fallback */
-/* If you are not using another script, such as Modernizr, make sure you
- * include js that eliminates this class on page load */
+
 .no-js .slides > li:first-child {
     display: block;
 }
@@ -524,7 +520,7 @@ ul#nav ul li a {
     position: relative;
 }
 .slider-text {
-    /*color: #b4a9a9;*/
+
     color: #ffffff;
     width: 90%;
     text-align: center;
@@ -556,8 +552,7 @@ ul#nav ul li a {
     display: block;
 }
 
-/* Direction Navigation
---------------------------------------------------------------- */
+/* Direction Navigation */
 .flex-direction-nav a {
     display: block;
     width: 40px;
@@ -611,12 +606,10 @@ ul#nav ul li a {
 }
 
 
-/* ------------------------------------------------------------------ */
-/* d. Info Section - Main Page
-/* ------------------------------------------------------------------ */
+/* Info Section*/
 
 #info {
-    /*background: #fff url(../images/content-bg.jpg);*/
+
     background: #fff url(../images/bg02.png);
     padding-top: 60px;
     padding-bottom: 42px;
@@ -631,12 +624,10 @@ ul#nav ul li a {
     line-height: 30px
 }
 
-/* ------------------------------------------------------------------ */
-/* e. Works Section - Main Page
-/* ------------------------------------------------------------------ */
+/*Works Section*/
 
 #works {
-    /*background: #f5f5f5 url(../images/works-bg.jpg);*/
+
     background: #f5f5f5 url(../images/bg02.png);
     padding-top: 48px;
     padding-bottom: 36px;
@@ -665,7 +656,7 @@ ul#nav ul li a {
 }
 
 #works_profilo{
-    /*background: #f5f5f5 url(../images/works-bg.jpg);*/
+
     background: #f5f5f5 url(../images/bg02.png);
     padding-top: 48px;
     padding-bottom: 36px;
@@ -681,9 +672,7 @@ ul#nav ul li a {
 }
 
 
-/* ------------------------------------------------------------------ */
-/* f. Journal Section - Main Page
-/* ------------------------------------------------------------------ */
+/*Journal Section  */
 
 #journal {
     background: #fff url(../images/content-bg.jpg);
@@ -710,8 +699,6 @@ ul#nav ul li a {
     border-top: 1px dotted #d8d8d8;
     padding-top: 36px;
 }
-
-
 
 #journal .blog-entries article.entry:first-child {
     border-top: none;
@@ -796,10 +783,6 @@ ul#nav ul li a {
     font-size: 14px;
 }
 
-/* ------------------------------------------------------------------ */
-/* 
-/* ------------------------------------------------------------------ */
-
 /*Bordi e linee*/
 .bordo_dom{
     border-top: 1px dotted #d8d8d8;
@@ -838,33 +821,8 @@ ul#nav ul li a {
     padding: 10px;
 }
 
-.center_content{
-    margin: auto;
-    transform: translate(50%, 0);
-    padding: 10px;
-}
 
-
-.colonna_risultati{
-    padding: 10px 15px 0 15px;
-    margin: 5px 0px 0 0;
-}
-
-
-.min_marg{
-    margin-bottom: 0px;
-}
-
-/*fatta da Matteo*/
-#alloggi_locati{
-    padding-right:40px;
-    margin-bottom: -30px;
-}
-
-
-/* ------------------------------------------------------------------ */
-/* h. Blog
-/* ------------------------------------------------------------------ */
+/* Sezione Post */
 
 .post {
     padding-top: 24px;
@@ -996,7 +954,7 @@ ul#nav ul li a {
     text-align: left;
 }
 
-/* OPZIONI Luca*/
+/* Opzioni*/
 ol.optionlist {
     border-top: 1px dotted #E1E5E3;
     margin: 29px 0 54px 0;
@@ -1012,8 +970,7 @@ ol.optionlist {
     border-bottom: 1px dotted #D9DEDB;
 }
 
-/* Comments
-/* ------------------------------------------------------------------ */
+/* Commenti */
 #comments {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -1081,7 +1038,6 @@ ol.commentlist-messaggi {
     color: #AEB6B7;
 }
 
-/* fatto da Matteo (serve per spostare la parte del nome e del orario inserimento dx)*/
 .comment-info{
     margin: 0 0 0 110px;
 }
@@ -1093,7 +1049,6 @@ ol.commentlist-messaggi {
     line-height: 24px;
 }
 
-/* children */
 .commentlist li ul.children {
     margin: 0;
     padding: 18px 0 0 0;
@@ -1104,10 +1059,6 @@ ol.commentlist-messaggi {
     border-top: 1px dotted #D9DEDB;
 }
 
-
-/* comment form */
-/*#comments form {
-   margin-top: 36px;}*/
 
 #comments form label {
     font: 16px/24px notosans-bold, sans-serif;
@@ -1154,9 +1105,6 @@ ol.commentlist-messaggi {
     margin: 0 auto 42px auto;
 }
 
-/* ------------------------------------------------------------------ */
-
-/* ------------------------------------------------------------------ */
 
 .avatar_profilo  {
 
@@ -1173,9 +1121,7 @@ ol.commentlist-messaggi {
     margin:0 10px -5px 0;
 }
 
-/* ------------------------------------------------------------------ */
-/* k. Contact
-/* ------------------------------------------------------------------ */
+/* Contatti */
 
 /* contact form */
 #contact-form form {
@@ -1236,9 +1182,7 @@ ol.commentlist-messaggi {
     top: 12px;
 }
 
-/* ------------------------------------------------------------------ */
-/* l. footer
-/* ------------------------------------------------------------------ */
+/* Footer */
 
 footer {
     margin-top: 66px;
@@ -1271,7 +1215,7 @@ footer .footer-nav a:hover {
     color: #313131;
 }
 
-/* social links */
+
 footer .footer-social {
     margin: 36px 0 24px 0;
     padding: 0;
@@ -1293,7 +1237,6 @@ footer .footer-social li a:hover {
     color: #313131;
 }
 
-/* copyright */
 footer .copyright {
     margin: 0;
     padding: 12px 0 0 0;
@@ -1354,12 +1297,10 @@ footer .copyright  li:first-child:before {
 }
 
 
-/* ------------------------------------------------------------------ */
-/* g. mission (fatta da noi)
-/* ------------------------------------------------------------------ */
+/* Missione */
 
 .mission {
-    /*background: #fff url(../images/content-bg.jpg);*/
+
     background: #fff ;
     padding-top: 60px;
     padding-bottom: 42px;
@@ -1374,9 +1315,8 @@ footer .copyright  li:first-child:before {
     line-height: 30px
 }
 
-/* ------------------------------------------------------------------ */
-/* g. Regolamento d'uso (fatta da noi)
-/* ------------------------------------------------------------------ */
+/* Regolamento d'uso*/
+
 .regolamento {
     background: #fff url(../images/bg02.png);
     /*background: #fff ;*/

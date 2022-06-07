@@ -1,127 +1,92 @@
+/*========================================================== */
+/*Css dei default */
+/*========================================================== */
 
-/* 
-TOC:
-a. Webfonts and Icon fonts
-b. Reset
-c. Default Styles
-   1. Basic
-   2. Typography
-   3. Links
-   4. Images
-   5. Buttons
-   6. Forms
-d. Grid
-e. Others
-   1. Clearing
-   2. Misc
 
-=====================================================================  */
-
-/* ------------------------------------------------------------------ */
-/* a. Webfonts and Icon fonts
- ------------------------------------------------------------------ */
-
+/*Css di base */
 @import url("fonts.css");
 @import url("font-awesome/css/font-awesome.min.css");
 
-/* ------------------------------------------------------------------
-/* b. Reset
-     
-/* ------------------------------------------------------------------ */
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, pre, address, cite,
+del, dfn, em, img,
 b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
 hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-   margin: 0;
-   padding: 0;
-   border: 0;
-   outline: 0;
-   font-size: 100%;
-   vertical-align: baseline;
-   background: transparent;
+time {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 footer, header{
-   margin: 0;
-   padding: 0;
-   border: 0;
-   outline: 0;
-   font-size: 100%;
-   vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
 }
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
-   display: block;
+    display: block;
 }
 
 
 canvas{
-   display: inline-block;
+    display: inline-block;
 }
 
-[hidden] { display: none; }
+[hidden] {
+    display: none;
+}
 
 
 pre {
-   white-space: pre;
-   white-space: pre-wrap;
-   word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
-/*blockquote, q { quotes: &#8220 &#8220; }*/
 
-
-
-
-
-
-
-
-
-
-/* ------------------------------------------------------------------ */
-/* c. Default and Basic Styles
-/* ------------------------------------------------------------------ */
-
-/*  1. Basic  ------------------------------------------------------- */
+/* Stile di default e di base*/
 
 *,
 *:before,
 *:after {
-   -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-html { font-size: 62.5%; }
+html {
+    font-size: 62.5%;
+}
 
 body {
-   background: #fff;
-   font-family: notosans-regular, sans-serif;
-   font-size: 15px;
-   line-height: 30px;
-	color: #838C95;
+    background: #fff;
+    font-family: notosans-regular, sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+    color: #838C95;
 
-   -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-	-webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+    -webkit-text-size-adjust: 100%;
 }
 
-/*  2. Typography
-       Vertical rhythm with leading derived from 6
---------------------------------------------------------------------- */
 
 .titolo{
     font-family: raleway-bold, sans-serif;
-    font-size: 18px; line-height: 30px;
+    font-size: 18px;
+    line-height: 30px;
     font-weight: bold;
     color: #000;
     margin: 0;
@@ -130,137 +95,205 @@ body {
 .testo{
     font-family: raleway-regular, sans-serif;
     color: #313131;
-    font-size: 18px; line-height: 20px;
+    font-size: 18px;
+    line-height: 20px;
     font-weight: normal;
 }
-/*Fatta da Matteo, serve a settare il testo dell messaggio nella visualMessaggi*/
+
 .testo_messaggio{
     font-family: notosans-italic;
     font-style: italic;
     color: #313131;
-    font-size: 18px; line-height: 20px;
+    font-size: 18px;
+    line-height: 20px;
     font-weight: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-   color: #313131;
-	font-family: raleway-bold, sans-serif;
+    color: #313131;
+    font-family: raleway-bold, sans-serif;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
-h1 { font-size: 42px; line-height: 48px; margin-bottom: 12px;}
-h2 { font-size: 30px; line-height: 42px; margin-bottom: 6px; }
-h3 { font-size: 24px; line-height: 30px; margin-bottom: 12px; }
-h4 { font-size: 21px; line-height: 30px; margin-bottom: 6px; }
-h5 { font-size: 18px; line-height: 30px; }
-h6 { font-size: 14px; line-height: 30px; }
-.subheader { }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font-weight: inherit;
+}
+h1 {
+    font-size: 42px;
+    line-height: 48px;
+    margin-bottom: 12px;
+}
+h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 6px;
+}
+h3 {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 12px;
+}
+h4 {
+    font-size: 21px;
+    line-height: 30px;
+    margin-bottom: 6px;
+}
+h5 {
+    font-size: 18px;
+    line-height: 30px;
+}
+h6 {
+    font-size: 14px;
+    line-height: 30px;
+}
+.subheader {
+}
 
-p { margin: 0 0 30px 0; }
-p img { margin: 0; }
+p {
+    margin: 0 0 30px 0;
+}
+p img {
+    margin: 0;
+}
 p.lead {
-   font: 20px/36px raleway-regular, sans-serif;
-   margin-bottom: 18px;
-   color: #9FA5AD;
+    font: 20px/36px raleway-regular, sans-serif;
+    margin-bottom: 18px;
+    color: #9FA5AD;
 }
 
-/* for 'em' and 'strong' tags, font-size and line-height should be same with
-the body tag due to rendering problems in some browsers */
-em { font: 15px/30px notosans-italic, sans-serif; }
-strong, b { font: 15px/30px notosans-bold, sans-serif; }
-small { font-size: 11px; line-height: inherit; }
+em {
+    font: 15px/30px notosans-italic, sans-serif;
+}
+strong, b {
+    font: 15px/30px notosans-bold, sans-serif;
+}
+small {
+    font-size: 11px;
+    line-height: inherit;
+}
 
 
-/*  3. Links  ------------------------------------------------------- */
+/*Ancore*/
 
 a, a:visited {
-   text-decoration: none;
-   outline: 0;
-   color: #11ABB0;
+    text-decoration: none;
+    outline: 0;
+    color: #11ABB0;
 
-   -webkit-transition: color .3s ease-in-out;
-   -moz-transition: color .3s ease-in-out;
-   -o-transition: color .3s ease-in-out;
-   transition: color .3s ease-in-out;
+    -webkit-transition: color .3s ease-in-out;
+    -moz-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
 }
-a:hover, a:focus { color: #313131; }
-p a, p a:visited { line-height: inherit; }
+a:hover, a:focus {
+    color: #313131;
+}
+p a, p a:visited {
+    line-height: inherit;
+}
 
 
-/*  4. List  --------------------------------------------------------- */
+/*Liste*/
 
-ul, ol { margin-bottom: 24px; margin-top: 12px; }
-ul { list-style: none outside; }
-ol { list-style: decimal; }
-ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
-ul.square { list-style: square outside; }
-ul.circle { list-style: circle outside; }
-ul.disc { list-style: disc outside; }
+ul, ol {
+    margin-bottom: 24px;
+    margin-top: 12px;
+}
+ul {
+    list-style: none outside;
+}
+ol {
+    list-style: decimal;
+}
+ol, ul.square, ul.circle, ul.disc {
+    margin-left: 30px;
+}
+ul.square {
+    list-style: square outside;
+}
+ul.circle {
+    list-style: circle outside;
+}
+ul.disc {
+    list-style: disc outside;
+}
 ul ul, ul ol,
-ol ol, ol ul { margin: 6px 0 6px 30px; }
+ol ol, ol ul {
+    margin: 6px 0 6px 30px;
+}
 ul ul li, ul ol li,
-ol ol li, ol ul li { margin-bottom: 6px; }
-li { line-height: 18px; margin-bottom: 12px; }
-ul.large li { }
-li p { }
+ol ol li, ol ul li {
+    margin-bottom: 6px;
+}
+li {
+    line-height: 18px;
+    margin-bottom: 12px;
+}
+ul.large li {
+}
+li p {
+}
 
-/* --------------------------------------------------------------------- */
+
 
 /* Pagination */
 .pagination {
-   margin: 36px auto;
-   text-align: center;
+    margin: 36px auto;
+    text-align: center;
 }
 .pagination ul li {
-   display: inline-block;
-   margin: 0;
-   padding: 0;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
 }
 .pagination .page-numbers {
-   font: 15px/18px notosans-bold, sans-serif;
-   display: inline-block;
-   padding: 6px 10px;
-   margin-right: 3px;
-   margin-bottom: 6px;
-	color: #6E757C;
-	background-color: #E6E8EB;
+    font: 15px/18px notosans-bold, sans-serif;
+    display: inline-block;
+    padding: 6px 10px;
+    margin-right: 3px;
+    margin-bottom: 6px;
+    color: #6E757C;
+    background-color: #E6E8EB;
 
-	-webkit-transition: all 200ms ease-in-out;
-	-moz-transition: all 200ms ease-in-out;
-	-o-transition: all 200ms ease-in-out;
-	-ms-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
 
-   -moz-border-radius: 3px;
-   -webkit-border-radius: 3px;
-   -khtml-border-radius: 3px;
-	border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
 }
 .pagination .page-numbers:hover {
-   background: #838A91;
-   color: #fff;
+    background: #838A91;
+    color: #fff;
 }
 .pagination .current,
 .pagination .current:hover {
-   background-color: #11ABB0;
-   color: #fff;
+    background-color: #11ABB0;
+    color: #fff;
 }
 .pagination .inactive,
 .pagination .inactive:hover {
-   background-color: #E6E8EB;
-	color: #A9ADB2;
+    background-color: #E6E8EB;
+    color: #A9ADB2;
 }
 
 
-/*  5. Images  --------------------------------------------------------- */
+/* Immagini */
 
 img {
-   max-width: 100%;
-   height: auto;
+    max-width: 100%;
+    height: auto;
 }
-img.pull-right { margin: 12px 0px 0px 18px; }
-img.pull-left { margin: 12px 18px 0px 0px; }
+img.pull-right {
+    margin: 12px 0px 0px 18px;
+}
+img.pull-left {
+    margin: 12px 18px 0px 0px;
+}
 
-/*  6. Buttons  --------------------------------------------------------- */
+/* Bottoni */
 
 .button,
 .button:visited,
@@ -268,27 +301,27 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-   font: 16px/30px notosans-bold, sans-serif;
-   display: inline-block;
-   background-color: #11ABB0;
-	text-decoration: none;
-   letter-spacing: 0;
-   color: #fff;
-	padding: 12px 24px;
-   border: none;
-   cursor: pointer;
-   height: auto;
+    font: 16px/30px notosans-bold, sans-serif;
+    display: inline-block;
+    background-color: #11ABB0;
+    text-decoration: none;
+    letter-spacing: 0;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    height: auto;
 
-   -webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 
-   -moz-border-radius: 3px;
-   -webkit-border-radius: 3px;
-   -khtml-border-radius: 3px;
-   border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
 }
 
 .button:hover,
@@ -296,8 +329,8 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-   background: #3d4145;
-   color: #fff;
+    background: #3d4145;
+    color: #fff;
 }
 
 .button:active,
@@ -305,14 +338,14 @@ button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
-   background: #3d4145;
-   color: #fff;
+    background: #3d4145;
+    color: #fff;
 }
 
 button:disabled {
-   background: #a7afb6;
-   color: red;
-   cursor: not-allowed;
+    background: #a7afb6;
+    color: red;
+    cursor: not-allowed;
 }
 
 .button.full-width,
@@ -320,10 +353,10 @@ button.full-width,
 input[type="submit"].full-width,
 input[type="reset"].full-width,
 input[type="button"].full-width {
-	width: 100%;
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-	text-align: center;
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center;
 }
 
 /* Fix for odd Mozilla border & padding issues */
@@ -334,10 +367,12 @@ input::-moz-focus-inner {
 }
 
 
-/*  7. Forms  --------------------------------------------------------- */
+/*Forms*/
 
 
-fieldset { margin-bottom: 24px; }
+fieldset {
+    margin-bottom: 24px;
+}
 
 input[type="text"],
 input[type="password"],
@@ -346,28 +381,25 @@ input[type="number"],
 input[type="date"],
 textarea,
 select {
-   display: block;
-   padding: 18px 15px;
-   margin: 0 0 24px 0;
-   border: 0;
-   outline: none;
-   vertical-align: middle;
-   min-width: 260px;
-	max-width: 100%;
-   font-size: 15px;
-   line-height: 24px;
-	color: #647373;
-	background: #ffffff;
+    display: block;
+    padding: 18px 15px;
+    margin: 0 0 24px 0;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+    min-width: 260px;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+    color: #647373;
+    background: #ffffff;
 
-   -moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
 }
 
-/* select { padding: 0;
-   width: 220px;
-   } */
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -376,33 +408,35 @@ input[type="number"]:focus,
 input[type="date"]:focus,
 select:focus,
 textarea:focus {
-   color: #B3B7BC;
-	background-color: #3d4145;
+    color: #B3B7BC;
+    background-color: #3d4145;
 }
 
-/*Fatto da Chris */
+
 input[type="text"]:disabled,
 input[type="password"]:disabled,
 input[type="email"]:disabled,
 input[type="number"]:disabled,
 input[type="date"]:disabled,
 textarea:disabled {
-   background-color: #D3D9D9;
+    background-color: #D3D9D9;
 }
 
-textarea { min-height: 200px;}
+textarea {
+    min-height: 200px;
+}
 
 label,
 legend {
-   font: 16px/24px notosans-bold, sans-serif;
-	margin: 12px 0;
-   color: #3d4145;
-   display: block;
+    font: 16px/24px notosans-bold, sans-serif;
+    margin: 12px 0;
+    color: #3d4145;
+    display: block;
 }
 label span,
 legend span {
-	color: #8B9798;
-   font: 14px/24px notosans-regular, sans-serif;
+    color: #8B9798;
+    font: 14px/24px notosans-regular, sans-serif;
 }
 
 input[type="checkbox"],
@@ -411,7 +445,9 @@ input[type="radio"] {
     color: #737373;
 }
 
-input[type="checkbox"] { display: inline; }
+input[type="checkbox"] {
+    display: inline;
+}
 
 .div-checkbox{
     display: flex;
@@ -421,13 +457,13 @@ input[type="checkbox"] { display: inline; }
 .div-checkbox span{
     margin-left: 5px;
 }
-/*FORM Laravel collective by Luca*/
+
 .errors{
     color: #ff0000;
 }
 
 .register-form{
-  
+
 }
 
 .submit_button{
@@ -436,24 +472,18 @@ input[type="checkbox"] { display: inline; }
 }
 
 
-/* ------------------------------------------------------------------ */
-/* d. Grid
----------------------------------------------------------------------
-   gutter = 40px.
-/* ------------------------------------------------------------------ */
+/* Grid */
 
-/* default
---------------------------------------------------------------- */
 .row {
-   width: 96%;
-   max-width: 1020px;
-   margin: 0 auto;
+    width: 96%;
+    max-width: 1020px;
+    margin: 0 auto;
 }
-/*fatta da Matteo*/
+
 .row2 {
-   width: 96%;
-   max-width: 1020px;
-   margin: 0 0 ;
+    width: 96%;
+    max-width: 1020px;
+    margin: 0 0 ;
 }
 
 .row-bianco{
@@ -463,14 +493,22 @@ input[type="checkbox"] { display: inline; }
     max-width: 90%;
 }
 
-/* fixed width for IE8 */
-.ie .row { width: 1000px ; }
 
-.narrow .row { max-width: 980px; }
+.ie .row {
+    width: 1000px ;
+}
 
-.row .row { width: auto; max-width: none; margin: 0 -20px; }
+.narrow .row {
+    max-width: 980px;
+}
 
-/* row clearing */
+.row .row {
+    width: auto;
+    max-width: none;
+    margin: 0 -20px;
+}
+
+
 .row:before,
 .row:after {
     content: " ";
@@ -481,39 +519,38 @@ input[type="checkbox"] { display: inline; }
 }
 
 .column, .columns {
-   position: relative;
-   padding: 0 20px;
-   min-height: 1px;
-   float: left;
+    position: relative;
+    padding: 0 20px;
+    min-height: 1px;
+    float: left;
 }
 
-/* fatta da Matteo*/
+
 .column2, .columns2 {
-   position: relative;
-   padding: 0 0;
-   min-height: 1px;
-   float: left;
+    position: relative;
+    padding: 0 0;
+    min-height: 1px;
+    float: left;
 }
-/* fatta da Matteo per risultati stats*/
 
-/* Luca */
+
 .column_opzione {
-  
-   padding: 20px;
-   margin: 0px;
 
-   min-height: 1px;
-   max-width: 90%;
+    padding: 20px;
+    margin: 0px;
+
+    min-height: 1px;
+    max-width: 90%;
 }
 
 .columns_bianco {
-  
-   padding: 0 20px;
-   margin: 5px;
-   background-color: #ffffff;
-   border-radius: 3px;
-   min-height: 1px;
-   max-width: 215px;
+
+    padding: 0 20px;
+    margin: 5px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    min-height: 1px;
+    max-width: 215px;
 }
 
 .columns_bianco h2{
@@ -528,19 +565,36 @@ input[type="checkbox"] { display: inline; }
 
 .row.collapsed > .column,
 .row.collapsed > .columns,
-.column.collapsed, .columns.collapsed  { padding: 0; }
+.column.collapsed, .columns.collapsed  {
+    padding: 0;
+}
 
-[class*="column"] + [class*="column"]:last-child { float: right; }
-[class*="column"] + [class*="column"].end { float: right; }
+[class*="column"] + [class*="column"]:last-child {
+    float: right;
+}
+[class*="column"] + [class*="column"].end {
+    float: right;
+}
 
-/* column widths */
-.row .two         { width: 16.66667%; }
-.row .seven       { width: 58.33333%; }
-.row .ten         { width: 83.33333%; }
-.row .twelve      { width: 100%; }
 
-/* Offsets */
-.row .offset-2    { margin-left: 16.66667%; }
+.row .two         {
+    width: 16.66667%;
+}
+.row .seven       {
+    width: 58.33333%;
+}
+.row .ten         {
+    width: 83.33333%;
+}
+.row .twelve      {
+    width: 100%;
+}
+
+
+.row .offset-2    {
+    margin-left: 16.66667%;
+}
+
 
 /* Flex-boxes */
 .flex-box{
@@ -630,101 +684,127 @@ input[type="checkbox"] { display: inline; }
     align-content: center;
 }
 
-/* block grids
---------------------------------------------------------------------- */
-.bgrid-quarters [class*="column"] { width: 25%; }
-.bgrid-halves [class*="column"]   { width: 50%; }
+/*Blocks Grid*/
 
-[class*="bgrid"] [class*="column"] + [class*="column"]:last-child { float: left; }
+.bgrid-quarters [class*="column"] {
+    width: 25%;
+}
+.bgrid-halves [class*="column"]   {
+    width: 50%;
+}
+
+[class*="bgrid"] [class*="column"] + [class*="column"]:last-child {
+    float: left;
+}
 
 
 
-/* smaller screens
---------------------------------------------------------------- */
+/* Smaller Screens  */
 @media only screen and (max-width: 900px) {
 
-   /* block grids on small screens */
-   .s-bgrid-halves [class*="column"]   { width: 50%; }
+
+    .s-bgrid-halves [class*="column"]   {
+        width: 50%;
+    }
 
 
 }
 
-/* mobile wide/smaller tablets
---------------------------------------------------------------- */
+/* Mobile wide/smaller Tablets */
+
 @media only screen and (max-width: 767px) {
 
-   .row {
-	   width: 480px;
-	   margin: 0 auto;
-      padding: 0;
-	}
-   .column, .columns {
-	   width: auto !important;
-	   float: none;
-	   margin-left: 0;
-	   margin-right: 0;
-      padding: 0 30px;
-   }
-   .row .row { width: auto; max-width: none; margin: 0 -30px; }
+    .row {
+        width: 480px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .column, .columns {
+        width: auto !important;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 30px;
+    }
+    .row .row {
+        width: auto;
+        max-width: none;
+        margin: 0 -30px;
+    }
 
-   [class*="column"] + [class*="column"]:last-child { float: none; }
-   [class*="bgrid"] [class*="column"] + [class*="column"]:last-child { float: none; }
+    [class*="column"] + [class*="column"]:last-child {
+        float: none;
+    }
+    [class*="bgrid"] [class*="column"] + [class*="column"]:last-child {
+        float: none;
+    }
 
-   /* Offsets */
-   .row .offset-2    { margin-left: 0%; }
+    /* Offsets */
+    .row .offset-2    {
+        margin-left: 0%;
+    }
 
 }
 
-/* mobile narrow
---------------------------------------------------------------- */
+/* Mobile narrow */
 @media only screen and (max-width: 480px) {
 
-   .row { width: auto; }
+    .row {
+        width: auto;
+    }
 
 }
 
-/* larger screens
---------------------------------------------------------------- */
+/* Larger Screens */
 @media screen and (min-width: 1200px) {
 
-   .wide .row { max-width: 1180px; }
+    .wide .row {
+        max-width: 1180px;
+    }
 
 }
 
-/* ------------------------------------------------------------------ */
-/* e. Others
-/* ------------------------------------------------------------------ */
+/*Altro*/
+
+.remove-bottom {
+    margin-bottom: 0 !important;
+}
+.add-bottom {
+    margin-bottom: 24px !important;
+}
 
 
-/*  2. Misc -------------------------------------------------------- */
-
-.remove-bottom { margin-bottom: 0 !important; }
-.add-bottom { margin-bottom: 24px !important; }
-
-
-.text-center  { text-align: center !important; }
-.text-left    { text-align: left !important; }
-.text-right   { text-align: right !important; }
-.pull-left    { float: left !important; }
-.pull-right   { float: right !important; }
+.text-center  {
+    text-align: center !important;
+}
+.text-left    {
+    text-align: left !important;
+}
+.text-right   {
+    text-align: right !important;
+}
+.pull-left    {
+    float: left !important;
+}
+.pull-right   {
+    float: right !important;
+}
 .align-center {
-	margin-left: auto !important;
-	margin-right: auto !important;
-	text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
 }
 
-/*fatta da Matteo, serve a centrare la colonna della lista dei Messaggi*/
 .colonna-messaggi{
     width: 530px;
 }
 
-/*fatta da Matteo, serve allineare la riga ricevuto e nome dei Messaggi*/
 .allinea-lato {
-    margin: 10px 80px 0 0;	
+    margin: 10px 80px 0 0;
 }
 
 .align-center-div {
-    display: flex; 
+    display: flex;
     justify-content: center;
 }
 
@@ -753,71 +833,68 @@ input[type="checkbox"] { display: inline; }
 }
 
 .fab {
-   width: 70px;
-   height: 70px;
-   background-color: #11ABB0;
-   border-radius: 50%;
-   box-shadow: 0 6px 10px 0 #666;
-   transition: all 0.1s ease-in-out;
- 
-   font-size: 50px;
-   color: #fff;
-   text-align: center;
-   line-height: 70px;
- 
-   position: fixed;
-   right: 50px;
-   bottom: 50px;
+    width: 70px;
+    height: 70px;
+    background-color: #11ABB0;
+    border-radius: 50%;
+    box-shadow: 0 6px 10px 0 #666;
+    transition: all 0.1s ease-in-out;
+
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
 }
- 
+
 .fab:hover {
-   box-shadow: 0 6px 14px 0 #666;
-   transform: scale(1.05);
+    box-shadow: 0 6px 14px 0 #666;
+    transform: scale(1.05);
 }
 
 .fab a{
     font-size: 50px;
-   color: #fff;
-   text-align: center;
-   line-height: 70px;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
 }
 
-/* fatta da Alex per slider jquery */
 
-
-
-
-
-/* copiata da Alex per slider jquery */
+/*Slider Home*/
 
 .container{
 
-width:75%;
-margin:30px auto;
-overflow:auto
+    width:75%;
+    margin:30px auto;
+    overflow:auto
 }
 
 
 .imageslide{
-	display: none;
+    display: none;
 }
 
-figure { margin:0;}
+figure {
+    margin:0;
+}
 
 img{
-	width: 100%;
-	height:auto;
+    width: 100%;
+    height:auto;
 }
 
 .prev, .next {
-  cursor: pointer;
-  position: relative;
-  top: 50%;
-  width: auto;
-  padding: 18px;
-  color: #d2d2d2;
-  font-size: 60px;
-  -webkit-text-stroke: 1px black;
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    width: auto;
+    padding: 18px;
+    color: #d2d2d2;
+    font-size: 60px;
+    -webkit-text-stroke: 1px black;
 
 }
 .prev{
@@ -828,57 +905,57 @@ img{
 }
 
 .pulsanti{
-	width: 100%;
-	height:20px;
+    width: 100%;
+    height:20px;
 }
 
 .dot{
-	cursor:pointer;
-	height: 18px;
-	width: 18px;
-	margin: 8px;
-	background-color: #ccc;
-	border-radius: 50%;
-  	display: inline-block;
+    cursor:pointer;
+    height: 18px;
+    width: 18px;
+    margin: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
 }
 .grigio{
-	background-color: #1c1818;
-	opacity: 0.8;
+    background-color: #1c1818;
+    opacity: 0.8;
 }
 
 .grigio-chiaro{
-	background-color: #dddddd;
-	opacity: 0.8;
+    background-color: #dddddd;
+    opacity: 0.8;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-.prev, .next {
-  top: 20%;
-  width: auto;
-  font-size: 50px;
-}
+    .prev, .next {
+        top: 20%;
+        width: auto;
+        font-size: 50px;
+    }
 
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-.prev, .next {
-  top: 10%;
-  width: auto;
-  font-size: 40px;
-}
-}
-
-@media (max-width: 480px) {	
-.prev, .next {
-  top: 4%;
-  width: auto;
-  padding: 6px;
-  font-size: 40px;
+    .prev, .next {
+        top: 10%;
+        width: auto;
+        font-size: 40px;
+    }
 }
 
-.dot{
-	height: 12px;
-	width: 12px;
-	margin: 5px;
-}
+@media (max-width: 480px) {
+    .prev, .next {
+        top: 4%;
+        width: auto;
+        padding: 6px;
+        font-size: 40px;
+    }
+
+    .dot{
+        height: 12px;
+        width: 12px;
+        margin: 5px;
+    }
 }

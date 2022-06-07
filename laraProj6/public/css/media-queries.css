@@ -1,16 +1,14 @@
-/* ================================================================== */
-/*  Media Queries
-/* ================================================================== */
+/*========================================================== */
+/*Css media-queries */
+/*========================================================== */
 
 
-/* small screens
---------------------------------------------------------------------- */
+/* small screens*/
 @media only screen and (max-width: 900px) {
 
    header .logo  { left: 36px; }
 
-   /* page title
-   -------------------------------------------------------------------- */
+   /* page title */
    #page-title h1 { font: 46px/60px raleway-bold, sans-serif; }
 
    #page-content { width: 80%; }
@@ -20,8 +18,7 @@
       width: 100%;
    }
  
-   /* journal section - main page
-   -------------------------------------------------------------------- */
+   /* Journal section */
    #journal .entry-header .permalink { display: none; }
    #journal .entry-header .entry-title,
    #journal .entry .post-content {
@@ -31,19 +28,15 @@
    #journal .entry .post-content { margin-left: 25%; }
    #journal .entry .post-meta { width: 25%; }
 
-   /* blog
-   -------------------------------------------------------------------- */
    .post .entry-header { text-align: center; }
 
 }
 
-/* mobile wide/smaller tablets
----------------------------------------------------------------------- */
+/* mobile wide/smaller tablets */
 
 @media only screen and (max-width: 990px) {
 
-   /* mobile navigation
-   -------------------------------------------------------------------- */
+   /* mobile navigation */
    #nav-wrap {
       width: auto;
       margin: 0;
@@ -66,8 +59,6 @@
       text-shadow: none;
       color: transparent;
 
-      
-     
    }
 
 	#nav-wrap > a:before,
@@ -127,7 +118,7 @@
       padding: 0;
       font-size: 14px;
       margin: 12px 0;
-      line-height: 14px; /* reset line-height from 48px */
+      line-height: 14px;
       border: none;
    }
    ul#nav span:after {
@@ -171,16 +162,14 @@
       line-height: 30px; /* should be the same with li's height */
    }
 
-   /* page content
-   -------------------------------------------------------------------- */
+   /* page content */
    #page-content {
       width: 480px;
       padding-top: 30px;
    }
 
  
-   /* intro section - main page
-   -------------------------------------------------------------------- */
+   /* intro section */
    .slider-text {
      margin-top: 42px;
      margin-bottom: 30px;
@@ -191,8 +180,7 @@
    .slides .slider-image { width: 100%; }
    .slides { overflow: hidden; }
 
-   /* journal section - main page
-   --------------------------------------------------------------------- */
+   /* journal section */
    #journal {
       padding-top: 54px;
       padding-bottom: 36px;
@@ -226,8 +214,6 @@
       padding-right: 5px;
    }
 
-   /* Blog Post
-   ------------------------------------------------------------------ */
    .post .entry-header h1 { font: 32px/42px raleway-semibold, sans-serif; }
 
     /* bio */
@@ -244,7 +230,7 @@
       text-align: center;
    }
 
-   /* post-nav */
+   /* Post-nav */
    .post-nav { margin-top: 18px; }
    .post-nav li {
       display: block;
@@ -273,7 +259,7 @@
    }
    .commentlist  li .avatar { display: none; }
 
-   /* comment form */
+   /* Comment form */
    #comments form { margin-left: 0; }
    #comments form input,
    #comments form textarea,
@@ -288,8 +274,7 @@
    #comments form .message label { display: block; }
 
 
-   /* contact
-   ----------------------------------------------------------------------- */
+   /* Contact-form */
    #contact-form div, #contact-form .half  {
       width: 100%;
       float: none !important;
@@ -306,8 +291,7 @@
       margin-bottom: 18px;
    }
 
-   /* footer
-   ------------------------------------------------------------------------ */
+   /* Footer */
    footer .copyright li:before { content: none; }
    footer .copyright li { margin-right: 10px; }
    footer .copyright, footer .social-links {
@@ -315,7 +299,7 @@
       float: none;
    }
 
-   /* footer nav */
+   /* Footer nav */
    footer .footer-nav {
       font: 15px/42px raleway-bold, sans-serif;
       margin: 0;
@@ -328,7 +312,6 @@
       margin-left: 12px;
    }
 
-   /* social links */
    footer .footer-social {
      margin: 30px 0 12px 0;
      font-size: 23px;
@@ -341,46 +324,38 @@
 
 }
 
-/* mobile narrow
-  -------------------------------------------------------------------------- */
+/* Mobile narrow */
 
 @media only screen and (max-width: 480px) {
 
    header .logo { z-index: 99999; }
 
-   /* page content
-   -------------------------------------------------------------------- */
+   /* Contenuto pagina */
    #page-content {
       width: auto;
    }
 
-   /* primary navigation */
+   /*Primary navigation */
    #nav-wrap { width: 100%; }
    #nav-wrap ul#nav {
       top: 72px;
       right: 0px;
    }
 
-   /* intro section - main page
-   ------------------------------------------------------------------------- */
+   /* Itro section  */
    .slider-text { margin-top: 36px; margin-bottom: 27px; }
    .slider-text h1 { font: 32px/42px raleway-bold, sans-serif; }
    .slider-text p { font: 14px/27px notosans-regular, sans-serif; }
 
-    /* journal section - main page
-   ------------------------------------------------------------------------- */
+    /* Journal section*/
    #journal .entry-title h3 {
       font-size: 28px;
       line-height: 36px;
    }
-   /* tweets section - main page
-   ----------------------------------------------------------------------- */
-   #tweets #twitter li span { font: 20px/39px raleway-semibold, sans-serif; }
-   #tweets #twitter li b a { font: 14px/24px notosans-regular, sans-serif; }
-
+   
+   /*Footer*/
    footer { margin-top: 48px; }
 
-   /* social links */
    footer .footer-social { font-size: 22px; }
    footer .footer-social li {
       margin-left: 10px;

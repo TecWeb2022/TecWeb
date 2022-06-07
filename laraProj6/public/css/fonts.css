@@ -1,5 +1,4 @@
-/* Raleway
-================================================================================ */
+/* Raleway */
 @font-face {
     font-family: 'raleway-thin';
     src: url('fonts/raleway/raleway-thin-webfont.eot');
@@ -81,9 +80,7 @@
     font-style: normal;
 }
 
-/*
- * Noto Sans
-================================================================================ */
+/*Noto Sans */
 
 @font-face {
     font-family: 'notosans-bold';
@@ -129,9 +126,7 @@
 }
 
 
-/*
- * FIXED for Font-Face Chrome Rendering
-================================================================================ */
+/*FIXED for Font-Face Chrome Rendering*/
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 
    @font-face {
