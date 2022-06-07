@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
        DB::table('faqs')->insert([
        ['id'=>1,'domanda'=> 'Quando posso chiedere il rimborso?', 'risposta'=>'Il rimborso non può essere richiesto da parte nostra, è necessario che vi accordiate con il locatore.'],
-       ['id'=>2,'domanda'=>'Posso opzionare più di un alloggio contemporaneamente?', 'risposta'=>'No, non si può opzionare più di un alloggio contemporaneamente. La cosa viene meno alle regole di siucurezza e prevenzione alle truffe dello statuto della nostra azienda.'],
+       ['id'=>2,'domanda'=> 'Posso opzionare più di un\'offerta contemporaneamente?', 'risposta'=>'Sì, è possibile. Non esistono vincoli per il numero di offerte opzionabili.'],
        ['id'=>3,'domanda'=> 'Nel caso avessi opzionato un alloggio e il locatore non è più disponibile, come mi devo comportare?', 'risposta'=>'Potete chiarirvi tramite il sistema di messaggistica predisposto nel sito.']
        ]);    // $this->call(UsersTableSeeder::class);
        
