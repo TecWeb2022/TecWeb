@@ -120,7 +120,7 @@ endguest
         <div class="twelve columns align-center">
            
             <p>
-                La nostra azienda 'Airdrop', nasce con lo scopo di agevolare la vita degli studenti, 
+                La nostra azienda 'HouStudent', nasce con lo scopo di agevolare la vita degli studenti, 
                 in particolare l'obiettivo principale corrisponde a rendere fruibile un'ampia gamma di offerte
                 per trovare una sistemazione nella città scelta da ogni ragazzo per il proprio percorso di studi.
                 Questo viene reso possibile dalla rete informatica che si viene ad instaurare grazie alla piattaforma HouStudent, 
