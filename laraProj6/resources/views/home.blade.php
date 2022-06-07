@@ -111,7 +111,7 @@ endguest
     <div class="row">
         
         <div class="twelve columns align-center">
-             <p> <a href="{{asset('/Gruppo 08.pdf')}}" download> PDF TESINA DEL PROGETTO</a></p>
+            <h3><a href="{{asset('/Gruppo 08.pdf')}}" download><u>DOCUMENTAZIONE DEL PROGETTO IN FORMATO PDF</u></a></h3><br><br>
             <h2>OBIETTIVO</h2>
         </div>
     </div>
