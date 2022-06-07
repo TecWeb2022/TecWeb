@@ -319,8 +319,6 @@ input::-moz-focus-inner {
 
 
 /*Forms*/
-
-
 fieldset {
     margin-bottom: 24px;
 }
@@ -652,13 +650,9 @@ input[type="checkbox"] {
 
 /* Smaller Screens  */
 @media only screen and (max-width: 900px) {
-
-
     .s-bgrid-halves [class*="column"]   {
         width: 50%;
     }
-
-
 }
 
 /* Mobile wide/smaller Tablets */
