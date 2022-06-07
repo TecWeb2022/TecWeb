@@ -449,7 +449,7 @@ ul#nav ul li a {
 /*  Intro Section */
 
 #intro {
-    background: #383232 url(/images/sfondo2.jpg);
+    background: #383232 url(../images/sfondo2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }

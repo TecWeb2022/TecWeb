@@ -31,7 +31,7 @@
                 </p>
                 <p class="titolo">Disponibilità: <span class="testo">{{ $acc->inizio_disp }} / {{ $acc->fine_disp }}</span></p> 
                 <div class="flex-box flex-inline flex-left">
-                    <img class="icona_posizione" src="/images/position-icon.png" alt="">
+                    <img class="icona_posizione" src="{{ URL::asset('/images/position-icon.png') }}" alt="">
                     <h5><a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a></h5>
                 </div>
                 <p class="titolo">Posti letto totali: <span class="testo">{{ $acc->posti_letto_tot}}</span></p> 

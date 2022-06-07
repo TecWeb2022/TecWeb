@@ -68,18 +68,9 @@ class LocController extends Controller {
             'locale_ricreativo' => 'nullable|boolean',
             'garage' => 'nullable|boolean'
         ]);
-        info('Validazione dei filtri');
-        info($validatedRequest);
         session(['filters' => $validatedRequest]);
        
-        info('I FILTRI GLOBALI: ');
-        info(session()->get('filters'));
-        /*
-        return view('catalogo')
-            ->with('oldFilters',$validatedRequest)
-            ->with('cat', $cat);
-         */
-         return redirect()->route('catalogoLoc');
+        return redirect()->route('catalogoLoc');
     }
     
     public function opzioneForm($id_acc){

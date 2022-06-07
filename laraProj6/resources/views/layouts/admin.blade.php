@@ -20,7 +20,7 @@
                 <div class="row">
                    <div class="twelve columns">
                       <div class="logo">
-                         <a href="{{ Route('home') }}"><img alt="" src="/images/logo.png"></a>
+                         <a href="{{ Route('home') }}"><img alt="" src="{{ URL::asset('/images/logo.png') }}"></a>
                       </div>
 
                       <nav id="nav-wrap">

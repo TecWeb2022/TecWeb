@@ -358,7 +358,7 @@
                             </div>
 
                             <div>
-                                <img width="10" height="10" class="icona_posizione" src="/images/position-icon.png" alt="">
+                                <img width="10" height="10" class="icona_posizione" src="{{ URL::asset('/images/position-icon.png') }}" alt="">
                                 <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
                                 <p>@include('helpers/tipologiaAcc', ['tipologia' => $acc->tipologia])</p>
                                 <p>@include('helpers/descrAcc', ['acc' => $acc])</p>

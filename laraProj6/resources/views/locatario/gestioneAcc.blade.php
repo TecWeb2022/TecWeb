@@ -2,11 +2,16 @@
 
 @section('title', 'Gestione alloggi')
 
-@section('content')
-
-<script type="text/javascript">
-    currNavBar(1);
+@section('scripts')
+@parent
+<script>
+    $(document).ready( function() {
+        currNavBar(1);
+    });
 </script>
+@endsection
+
+@section('content')
 
 @isset($catHost)
 <div class="content-outer">
@@ -37,7 +42,7 @@
                         </div>
 
                         <div class="dettagli_cat">
-                            <img width="10" height="10" class="icona_posizione" src="/images/position-icon.png" alt="">
+                            <img width="10" height="10" class="icona_posizione" src="{{ URL::asset('/images/position-icon.png') }}" alt="">
                             <a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a>
                             <p>@include('helpers/tipologiaAcc', ['acc' => $acc])</p>
                             @include('helpers/descrAcc', ['acc' => $acc])
@@ -70,6 +75,6 @@
 
 
 
-@endisset()
+@endisset
 
 @endsection

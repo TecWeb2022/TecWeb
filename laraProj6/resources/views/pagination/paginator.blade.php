@@ -1,5 +1,5 @@
 @if ($paginator->lastPage() != 1)
-<div id="pagination">
+<div>
     {{ $paginator->firstItem() }} - {{ $paginator->lastItem() }} di {{ $paginator->total() }} ---
 
     <!-- Link alla prima pagina -->

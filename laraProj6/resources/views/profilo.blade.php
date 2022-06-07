@@ -22,7 +22,7 @@
                 <div class="crick"><h1>Profilo utente</h1></div>
 
                 <div>
-                    <img class="avatar_profilo" src="/images/icona_utente.png" alt="">
+                    <img class="avatar_profilo" src="{{ URL::asset('/images/icona_utente.png') }}" alt="">
                 </div>
 
 

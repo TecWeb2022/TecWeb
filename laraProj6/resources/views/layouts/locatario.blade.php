@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/fonts.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/media-queries.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layout.css') }}" >
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/images/favicon.ico')}}" >
         <script type="text/javascript" src="{{ URL::asset('js/functions.js') }}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         @section('scripts')
@@ -19,7 +20,7 @@
                 <div class="row">
                    <div class="twelve columns">
                       <div class="logo">
-                         <a href="{{ Route('home') }}"><img alt="" src="/images/logo.png"></a>
+                         <a href="{{ Route('home') }}"><img alt="" src="{{ URL::asset('/images/logo.png') }}"></a>
                       </div>
 
                       <nav id="nav-wrap">

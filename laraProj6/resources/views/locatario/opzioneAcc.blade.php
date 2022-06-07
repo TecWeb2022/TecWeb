@@ -2,11 +2,16 @@
 
 @section('title', 'Opzionamento')
 
-@section('content')
-
-<script type="text/javascript">
-    currNavBar(1);
+@section('scripts')
+@parent
+<script>
+    $(document).ready( function() {
+        currNavBar(1);
+    });
 </script>
+@endsection
+
+@section('content')
 
 @isset($acc)
 
@@ -22,7 +27,7 @@
                 </p>
                 <p class="titolo">Disponibilità: <span class="testo">{{ $acc->inizio_disp }} / {{ $acc->fine_disp }}</span></p> 
                 <div class="flex-box flex-inline flex-left">
-                    <img class="icona_posizione" src="/images/position-icon.png" alt="">
+                    <img class="icona_posizione" src="{{ URL::asset('/images/position-icon.png') }}" alt="">
                     <h5><a href="http://maps.google.com/?q={{ $acc->via }}, {{ $acc->num_civ }}, {{ $acc->prov }}" target="_blank">{{ $acc->via }} {{ $acc->num_civ }}, {{ $acc->citta }}, {{ $acc->prov }}</a></h5>
                 </div>
                 <p class="titolo">Descrizione: <span class="testo">{{ $acc->descr}}</span></p> 
@@ -54,6 +59,6 @@
         </div>
     </div> 
 </section>
-@endisset()
+@endisset
 
 @endsection
