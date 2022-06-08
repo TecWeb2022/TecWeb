@@ -70,6 +70,7 @@ class Catalog
         return $cat;
     }
     
+    /* Seconda funzionalità opzionale, da sostituire array con query, causa Paginator */
     public function getCatByFilters2($filtri) {
         $cat = Accomodation::where('id', '<', pow(2, 64) - 1);
         $result = array();
