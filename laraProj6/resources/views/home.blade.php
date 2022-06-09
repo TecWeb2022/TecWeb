@@ -217,22 +217,20 @@ endguest
     <div class="row">
         <div class="twelve columns align-center">
             <p>
-                1. Una volta entrati nel sito, è preferibile creare un account ed effettuare l'accesso. <br>
+                1. Un utente non registrato, può solamente visualizzare la HomePage del sito e le relative FAQs <br>
                 2. E' possibile accedere al catalogo degli annunci e navigare fra di essi anche senza effettuare l'accesso <br>
-                3. All'interno della form di Registrazione, vi è la necessità di decidere la tipologia dell'account
-                da creare in base alle esigenze dell'utente. (Creare annunci o richiedere di prenotarli) <br>
-                4. Se si accede come locatori, verrà caricata una Homepage specifica dalla quale è possibile
-                gestire gli annunci personali e visualizzare il catalogo.
-                5. Se si accede come studenti, verrà caricata una Homepage specifica dalla quale ci si può muovere 
-                all'interno dei vari annunci nel catalogo e presentare delle richieste di prenotazione. <br>
-                6. Attraverso le form contenenti gli annunci prenotabili per gli studenti, le richieste di prenotazione pervenute
-                ai locatori e il sistema di messaggistica, è possibile inviare messaggi ad utenti specifici.<br>
-                7. E' presente un sistema di messaggistica raggiungibile dalle varie Homepage specifiche cliccando sull'apposito
-                bottone, all'interno si sviluppa in varie parti: messaggi ricevuti, messaggi inviati, descrizione di un messaggio
-                e l'invio di un nuovo messaggio. <br>
-                8. Una volta effettuato l'accesso, dalla barra di navigazione in alto è possibile scorrere fino all'icona di un omino
-                rappresentante la gestione profilo. Cliccando su di esso è possibile aprire il profilo personale, effettuare la disconnessione
-                oppure visualizzare le FAQS.
+                3. All'interno della pagina di Registrazione, vi è la necessità di decidere la tipologia dell'account 
+                da creare in base alle esigenze dell'utente. <br>
+                4. Se si accede come locatori, sarà possibile gestire le proprie offerte personali, accettare eventuali richieste 
+			 e visualizzare il catalogo. <br>
+                5. Se si accede come locatari, sarà possibile filtrare il catalogo delle offerte secondo le proprie esigenze, 
+                presentando eventuali richieste di prenotazione. <br>
+                6. Quando un locatario opziona un'offerta, è tenuto ad inviare un messaggio al proprietario dell'alloggio, 
+			 così da iniziare una nuova conversazione all'interno del sistema di messaggistica tra i due utenti. <br>
+                7. Attraverso il sistema di messaggistica, gli utenti registrati potranno visualizzare l'elenco degli eventuali 
+			 messaggi ricevuti e di quelli inviati. Potranno, inoltre, rispondere ai vari mittenti. <br>
+                8. Un utente registrato, potrà visualizzare il proprio profilo utente e modificarlo. Potrà, inoltre, effettuare, 
+			 in qualsiasi momento, il logout.
             </p>
         </div>
     </div>
