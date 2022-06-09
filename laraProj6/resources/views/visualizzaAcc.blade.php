@@ -57,9 +57,6 @@
                 <p class="titolo">Angolo studio:  
                     @include('helpers/boolTransAcc', ['value' => $acc->angolo_studio])
                 </p> 
-                <p class="titolo">Climatizzatore: 
-                    @include('helpers/boolTransAcc', ['value' => $acc->climatizzatore])
-                </p> 
                 @else
                 <p class="titolo">Cucina:
                     @include('helpers/boolTransAcc', ['value' => $acc->cucina])
@@ -75,6 +72,9 @@
                 </p> 
                 <p class="titolo">Garage: 
                     @include('helpers/boolTransAcc', ['value' => $acc->garage])
+                </p> 
+                <p class="titolo">Climatizzatore: 
+                    @include('helpers/boolTransAcc', ['value' => $acc->climatizzatore])
                 </p> 
 
             </div>
