@@ -71,7 +71,7 @@
                             {{ Form::submit('Accetta', ['class' => 'submit_button', 'title' => 'Assegnamento alloggio al locatario richiedente']) }}
                             {{ Form::close() }}
                       @elseif($d->fine_disp < now() && $d->data_stipula == null)
-                            <button disabled>Scaduta</button>
+                            <button class="submit_button" disabled>Scaduta</button>
                       @else
                             {{ Form::open(array('route' => 'contratto', 'class' => 'flex-box')) }}
                             {{ Form::hidden('id_opt', $d->id_opt, ['id' => 'id_opt']) }}
