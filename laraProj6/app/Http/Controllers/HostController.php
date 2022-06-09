@@ -228,6 +228,7 @@ class HostController extends Controller {
             }
         }
         
+        //Cambia il redirect in base alla pagina di provenienza della request(passato attraverso il valore froom_bool come input hidden)
         if($request->from_bool){
             return redirect()->route('visualizzaTutteOpzioni');
         }else{
