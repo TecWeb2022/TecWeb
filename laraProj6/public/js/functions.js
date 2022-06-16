@@ -203,10 +203,10 @@ function sliderHome () {
 	$('.pulsanti>span:first').addClass('grigio');
 	
 	$('.dot').click(function(){
-		$('.dot').eq(current_img).removeClass('grigio');
+		$('.dot').eq(current_img).removeClass('grigio'); //Il .eq serve per prendere solo l'elemento di indice current_img dal set in esame
 		$(this).addClass("grigio");
 		$('figure').eq(current_img).hide();
-		current_img=+$(this).data('num')-1;
+		current_img=+$(this).data('num')-1; //current_img diventa il numero del dot premuto
 		$('figure').eq(current_img).fadeIn();
 	});
 	

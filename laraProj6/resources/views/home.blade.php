@@ -13,6 +13,13 @@ endguest
 
 @section('scripts')
 @parent
+<!-- comment
+integrity: consente al browser di controllare l'origine del file per assicurarsi che il codice
+    non venga mai caricato se l'origine è stata manipolata.
+
+crossorigin: verifica l'integrità del file; anonymous serve per non inviare nessuna credenziale
+    (nessun cookie, nessun certificato, nessuna autorizzazione HTTP, ecc)
+-->
 <script
     src="https://code.jquery.com/jquery-3.1.1.js"
     integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
