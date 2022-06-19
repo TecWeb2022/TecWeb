@@ -310,14 +310,15 @@ function dateFormat(data){
     return data;
 }
 
-
+//valori rappresentati dal grafico vengono inizializzati
 function istogrammaStats(alloggi_tot = 0, offerte = 0, alloggi_locati = 0) {
+    // produce un riferimento all'elemento canvas e imposta la larghezza e l'altezza a 300px
     var myCanvas = document.getElementById("myCanvas");
     myCanvas.width = 300;
     myCanvas.height = 300;
-
+    //contesto in due dimensioni
     var ctx = myCanvas.getContext("2d");
-
+//funzione che imposta coordinate di inizio e fine, più il colore della linea disegnata per la griglia; ctx=contesto di riferimento
     function drawLine(ctx, startX, startY, endX, endY,color){
         ctx.save();
         ctx.strokeStyle = color;
@@ -327,39 +328,48 @@ function istogrammaStats(alloggi_tot = 0, offerte = 0, alloggi_locati = 0) {
         ctx.stroke();
         ctx.restore();
     }
-
+//funzione che imposta i paramettri di disegno delle barre del grafico; ctx=contesto di riferimento
     function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height,color){
         ctx.save();
         ctx.fillStyle=color;
         ctx.fillRect(upperLeftCornerX,upperLeftCornerY,width,height);
         ctx.restore();
     }
-
+//assegnazione dei valori da rappresentare, tramite parametri della funzione principale
     var Stats = {
         "Alloggi totali": alloggi_tot,
         "Offerte locatari": offerte,
         "Alloggi locati": alloggi_locati
 
     };
-
+//fase di memorizzazione delle opzioni passate alla classe
     var Barchart = function(options){
         this.options = options;
         this.canvas = options.canvas;
         this.ctx = this.canvas.getContext("2d");
         this.colors = options.colors;
 
+        //funzione draw: disegnerà il grafico partendo dalle linee della griglia, 
+        //successivamente i marcatori della griglia e infine le barre usando i parametri passati attraverso l'oggetto options
         this.draw = function(){
+            //calcoliamo il valore massimo per il nostro modello dei dati poiché avremo bisogno di ridimensionare
+            // tutte le barre in base a questo valore e in base alle dimensioni del canvas, per evitare che le barre escono dall'area di visualiz.
             var maxValue = 0;
             for (var categ in this.options.data){
                 maxValue = Math.max(maxValue,this.options.data[categ]);
-            }
+            } 
+            //la variabile padding indica il numero dei pixel tra il bordo del canvas e l'interno del grafico
             var canvasActualHeight = this.canvas.height - this.options.padding * 2;
             var canvasActualWidth = this.canvas.width - this.options.padding * 2;
 
-            //drawing the grid lines
+            
+            //disegno della griglia
             var gridValue = 0;
             while (gridValue <= maxValue){
+                //le coordinate del canvas corrispondono a 0;0 nell'angolo in alto a sinistra e aumentano andando verso destra e verso il basso
+                //le coordinate della griglia hanno l'andamento opposto cioè dal basso verso l'alto, quindi calcoliamo gridY con questa formula
                 var gridY = canvasActualHeight * (1 - gridValue/maxValue) + this.options.padding;
+                //funzione di aiuto drawline
                 drawLine(
                     this.ctx,
                     0,
@@ -369,7 +379,7 @@ function istogrammaStats(alloggi_tot = 0, offerte = 0, alloggi_locati = 0) {
                     this.options.gridColor
                 );
 
-                //writing grid markers
+                //scrittura dei marcatori della griglia, cioè i valori corrispondenti a ciascuna linea della griglia
                 this.ctx.save();
                 this.ctx.fillStyle = this.options.gridColor;
                 this.ctx.textBaseline="bottom"; 
@@ -380,7 +390,7 @@ function istogrammaStats(alloggi_tot = 0, offerte = 0, alloggi_locati = 0) {
                 gridValue+=this.options.gridScale;
             }      
 
-            //drawing the bars
+            //disegno delle barre tramite la funzione drawBar
             var barIndex = 0;
             var numberOfBars = Object.keys(this.options.data).length;
             var barSize = (canvasActualWidth)/numberOfBars;
@@ -388,6 +398,8 @@ function istogrammaStats(alloggi_tot = 0, offerte = 0, alloggi_locati = 0) {
             for (categ in this.options.data){
                 var val = this.options.data[categ];
                 var barHeight = Math.round( canvasActualHeight * val/maxValue) ;
+                //per calcolare l'altezza e la larghezza di ogni barra si tiene conto del padding,
+                //del valore e del colore per ogni categoria nel modello di dati del grafico.
                 drawBar(
                     this.ctx,
                     this.options.padding + barIndex * barSize,
@@ -400,7 +412,7 @@ function istogrammaStats(alloggi_tot = 0, offerte = 0, alloggi_locati = 0) {
                 barIndex++;
             }
 
-            //drawing series name
+            //impostazione per aggiungere il nome della serie di dati sotto il grafico, cioè "Statistiche"
             this.ctx.save();
             this.ctx.textBaseline="bottom";
             this.ctx.textAlign="center";
@@ -409,7 +421,8 @@ function istogrammaStats(alloggi_tot = 0, offerte = 0, alloggi_locati = 0) {
             this.ctx.fillText(this.options.seriesName, this.canvas.width/2,this.canvas.height);
             this.ctx.restore();  
 
-            //draw legend
+            //legenda: il codice identifica il tag legenda agganciandolo al grafico, 
+            //essa verrà aggiunta sotto al grafico, riportando i nomi dei valori insieme al colore corrispondente.
             barIndex = 0;
             var legend = document.querySelector("legend[for='myCanvas']");
             var ul = document.createElement("ul");
@@ -426,16 +439,16 @@ function istogrammaStats(alloggi_tot = 0, offerte = 0, alloggi_locati = 0) {
         }
     }
 
-
+    //classe barchart viene istanziata, impostando dei parametri fondamentali e richiama la funzione "draw()"
     var myBarchart = new Barchart(
         {
-            canvas:myCanvas,
-            seriesName:"Statistiche",
-            padding:25,
-            gridScale:5,
-            gridColor:"#0a0909",
-            data:Stats,
-            colors:["#a55ca5","#67b6c7", "#bccd7a"]
+            canvas:myCanvas, //nome canvas
+            seriesName:"Statistiche", //nome grafico
+            padding:25, //numero dei pixel tra il bordo del canvas e l'interno del grafico
+            gridScale:5, //scala della griglia
+            gridColor:"#0a0909", //colore griglia
+            data:Stats, //dove prendere i dati per le barre
+            colors:["#a55ca5","#67b6c7", "#bccd7a"] //colori delle barre
         }
     );
     myBarchart.draw();
